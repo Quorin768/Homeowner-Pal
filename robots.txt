@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /signin.html
+Disallow: /my-home.html
+
+Sitemap: https://homeownerpal.com/sitemap.xml

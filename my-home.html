@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<title>My Home | HomeownerPal</title>
+<meta name="description" content="Set up and manage your private home profile — equipment, documents, reminders, and maintenance history, all in one place.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue-deep:#003D97;
+    --blue-sky:#4FA8E0;
+    --blue-pale:#EFF7FF;
+    --orange:#F5820D;
+    --orange-pale:#FFF3E6;
+    --red-pale:#FDEDEC;
+    --red:#C0392B;
+    --white:#FFFFFF;
+    --ink:#1B2430;
+    --slate:#5F6B7A;
+    --line:#E3EDF7;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',system-ui,sans-serif;color:var(--ink);line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    background-color:#EAF2FB;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='none' stroke='%23CFE0F2' stroke-width='1.1' opacity='0.6'%3E%3Cpath d='M12 30 L20 23 L28 30 M14 28.5 V37 H26 V28.5'/%3E%3Cpath d='M42 6 L50 -1 L58 6 M44 4.5 V13 H56 V4.5'/%3E%3Cpath d='M42 54 L50 47 L58 54 M44 52.5 V61 H56 V52.5'/%3E%3C/g%3E%3C/svg%3E");
+  }
+  h1,h2,h3{font-family:'Fraunces',serif;color:var(--ink);line-height:1.15;}
+  a{text-decoration:none;color:inherit;}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;}
+  .wrap{max-width:900px;margin:0 auto;padding:0 24px;}
+
+  /* ===== App header ===== */
+  .mh-header{background:#F7FAFD;border-bottom:1px solid var(--line);}
+  .mh-header-inner{max-width:900px;margin:0 auto;padding:20px 24px;display:flex;align-items:center;gap:16px;}
+  .mh-back{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--ink);flex-shrink:0;transition:background .15s ease;}
+  .mh-back:hover{background:var(--blue-pale);}
+  .mh-back svg{width:20px;height:20px;}
+  .mh-logo{display:flex;align-items:center;gap:11px;}
+  .mh-logo .mark{width:38px;height:38px;flex-shrink:0;}
+  .mh-logo-txt{display:flex;flex-direction:column;line-height:1.05;}
+  .mh-logo-title{font-family:'Fraunces',serif;font-size:22px;font-weight:700;color:var(--ink);}
+  .mh-logo-sub{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:var(--slate);text-transform:uppercase;margin-top:2px;}
+  .mh-free-badge{margin-left:auto;background:#E4F7EC;color:#1E8A5A;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:6px 13px;border-radius:999px;}
+
+  /* ===== Body ===== */
+  .mh-main{padding:34px 0 70px;}
+  .mh-welcome{font-size:15px;color:var(--slate);margin-bottom:18px;}
+  .mh-welcome strong{color:var(--ink);font-weight:700;}
+
+  .mh-manage-btn{
+    display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);
+    border-radius:999px;padding:11px 20px;font-size:14px;font-weight:600;color:var(--ink);
+    box-shadow:0 2px 8px rgba(0,61,151,.05);transition:box-shadow .15s ease,transform .15s ease;margin-bottom:22px;
+  }
+  .mh-manage-btn:hover{box-shadow:0 6px 16px rgba(0,61,151,.1);transform:translateY(-1px);}
+  .mh-manage-btn svg{width:17px;height:17px;color:var(--blue-deep);}
+
+  /* Plus promo */
+  .mh-plus{
+    display:flex;gap:16px;align-items:flex-start;background:var(--blue-pale);
+    border:1.5px solid #CFE3F7;border-radius:20px;padding:22px 24px;margin-bottom:26px;
+  }
+  .mh-plus-icon{width:44px;height:44px;border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 8px rgba(0,61,151,.08);}
+  .mh-plus-icon svg{width:22px;height:22px;color:var(--blue-deep);}
+  .mh-plus h3{font-size:19px;margin-bottom:6px;}
+  .mh-plus > div > p{font-size:14px;color:var(--slate);line-height:1.6;margin-bottom:16px;}
+  .mh-plus-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+  .mh-plus-btn{display:inline-flex;align-items:center;gap:8px;background:var(--blue-deep);color:#fff;font-weight:700;font-size:14px;padding:11px 20px;border-radius:999px;transition:opacity .15s ease;}
+  .mh-plus-btn:hover{opacity:.92;}
+  .mh-plus-btn svg{width:15px;height:15px;}
+  .mh-plus-note{font-size:13px;color:var(--slate);}
+  .mh-plus-note strong{color:var(--ink);font-weight:700;}
+
+  /* Tabs */
+  .mh-tabs-wrap{position:relative;margin-bottom:18px;}
+  .mh-tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px;}
+  .mh-tabs::-webkit-scrollbar{display:none;}
+  .mh-tab{
+    display:inline-flex;align-items:center;gap:7px;white-space:nowrap;flex-shrink:0;
+    padding:10px 16px;border-radius:12px;font-size:13.5px;font-weight:600;color:var(--slate);transition:background .15s ease,color .15s ease;
+  }
+  .mh-tab svg{width:15px;height:15px;}
+  .mh-tab:hover{color:var(--ink);}
+  .mh-tab.active{background:#fff;color:var(--blue-deep);box-shadow:0 2px 8px rgba(0,61,151,.06);border:1px solid var(--line);}
+
+  /* Card */
+  .mh-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px 32px;box-shadow:0 10px 30px rgba(0,61,151,.05);}
+  .mh-card h2{font-size:24px;margin-bottom:8px;}
+  .mh-card-sub{font-size:14px;color:var(--slate);line-height:1.6;margin-bottom:26px;}
+
+  /* Form */
+  .mh-field{margin-bottom:18px;}
+  label{display:block;font-size:12.5px;font-weight:700;color:var(--slate);margin-bottom:7px;}
+  input,select,textarea{
+    width:100%;padding:13px 15px;border:1.5px solid var(--line);border-radius:12px;
+    font-family:inherit;font-size:14px;color:var(--ink);background:#FBFDFF;transition:border-color .15s ease,background .15s ease;
+  }
+  input::placeholder,textarea::placeholder{color:#9AA7B4;}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--blue-sky);background:#fff;}
+  textarea{resize:vertical;min-height:92px;}
+  .mh-row-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .mh-row-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;}
+  @media(max-width:560px){ .mh-row-2,.mh-row-3{grid-template-columns:1fr;} }
+
+  .mh-address{border:1.5px solid var(--line);border-radius:12px;margin-bottom:22px;background:#FBFDFF;}
+  .mh-address summary{list-style:none;cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:600;color:var(--ink);}
+  .mh-address summary::-webkit-details-marker{display:none;}
+  .mh-address summary .chev{width:16px;height:16px;color:var(--slate);transition:transform .2s ease;}
+  .mh-address[open] summary .chev{transform:rotate(180deg);}
+  .mh-address-body{padding:0 16px 16px;}
+
+  .mh-create-btn{
+    display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:var(--blue-deep);color:#fff;
+    font-weight:700;font-size:15px;padding:15px;border-radius:14px;transition:opacity .15s ease;
+  }
+  .mh-create-btn:hover{opacity:.92;}
+  .mh-create-btn svg{width:17px;height:17px;}
+
+  /* Coming soon panel */
+  .mh-coming{text-align:center;padding:60px 32px;}
+  .mh-coming-icon{width:56px;height:56px;border-radius:16px;background:var(--blue-pale);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}
+  .mh-coming-icon svg{width:26px;height:26px;color:var(--blue-deep);}
+  .mh-coming h2{font-size:20px;margin-bottom:8px;}
+  .mh-coming p{font-size:14px;color:var(--slate);}
+
+  .mh-saved-msg{display:none;margin-top:14px;background:#E4F7EC;color:#1E8A5A;border-radius:12px;padding:12px 16px;font-size:13.5px;font-weight:600;text-align:center;}
+
+  /* ===== Modals ===== */
+  .mh-overlay{
+    display:none;position:fixed;inset:0;z-index:200;background:rgba(15,28,45,.55);
+    align-items:flex-start;justify-content:center;padding:40px 20px;overflow-y:auto;
+  }
+  .mh-overlay.open{display:flex;}
+  .mh-modal{background:#fff;border-radius:24px;width:100%;max-width:520px;box-shadow:0 30px 80px rgba(0,20,60,.35);position:relative;animation:mhpop .2s ease;}
+  @keyframes mhpop{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
+  .mh-modal-x{position:absolute;top:18px;right:18px;width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;color:var(--slate);transition:background .15s ease;}
+  .mh-modal-x:hover{background:var(--blue-pale);}
+  .mh-modal-x svg{width:18px;height:18px;}
+
+  /* My Homes modal */
+  .mh-homes-modal{max-width:620px;padding:0;overflow:hidden;background:#EAF2FB;}
+  .mh-homes-head{background:#F7FAFD;border-bottom:1px solid var(--line);padding:20px 26px;display:flex;align-items:center;gap:14px;}
+  .mh-homes-head .mh-back{background:none;}
+  .mh-homes-head h2{font-size:20px;}
+  .mh-homes-content{padding:26px;}
+  .mh-homes-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px;flex-wrap:wrap;}
+  .mh-homes-top p{font-size:14px;color:var(--slate);}
+  .mh-homes-empty{background:#fff;border:1px solid var(--line);border-radius:20px;padding:48px 26px;text-align:center;box-shadow:0 10px 30px rgba(0,61,151,.05);}
+  .mh-homes-empty-icon{width:56px;height:56px;border-radius:16px;background:var(--blue-pale);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}
+  .mh-homes-empty-icon svg{width:26px;height:26px;color:var(--blue-deep);}
+  .mh-homes-empty p{font-size:14px;color:var(--slate);margin-bottom:18px;}
+
+  .btn-blue{display:inline-flex;align-items:center;gap:8px;background:var(--blue-deep);color:#fff;font-weight:700;font-size:14px;padding:12px 22px;border-radius:999px;transition:opacity .15s ease;}
+  .btn-blue:hover{opacity:.92;}
+  .btn-blue svg{width:15px;height:15px;}
+
+  /* Membership modal */
+  .mh-membership-modal{padding:34px 34px 30px;}
+  .mh-mem-kicker{display:inline-flex;align-items:center;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--blue-deep);font-weight:600;margin-bottom:14px;}
+  .mh-mem-kicker svg{width:14px;height:14px;color:var(--orange);}
+  .mh-membership-modal > h2{font-size:26px;margin-bottom:10px;}
+  .mh-mem-lede{font-size:14px;color:var(--slate);line-height:1.6;margin-bottom:22px;}
+  .mh-benefits{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:24px;}
+  .mh-benefits li{display:flex;align-items:flex-start;gap:11px;font-size:13.5px;color:var(--ink);line-height:1.5;}
+  .mh-benefits li svg{width:17px;height:17px;color:#1E8A5A;flex-shrink:0;margin-top:1px;}
+  .mh-pricing{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px;}
+  @media(max-width:480px){ .mh-pricing{grid-template-columns:1fr;} }
+  .mh-price{border:1.5px solid var(--line);border-radius:16px;padding:18px;position:relative;cursor:pointer;transition:border-color .15s ease,box-shadow .15s ease;}
+  .mh-price:hover{border-color:var(--blue-sky);}
+  .mh-price.selected{border-color:var(--blue-deep);box-shadow:0 0 0 3px rgba(0,61,151,.1);}
+  .mh-price-label{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);margin-bottom:10px;}
+  .mh-price-amt{font-family:'Fraunces',serif;font-size:30px;font-weight:700;color:var(--ink);margin-bottom:4px;}
+  .mh-price-amt span{font-size:14px;font-weight:600;color:var(--slate);font-family:'Inter',sans-serif;}
+  .mh-price-sub{font-size:12px;color:var(--slate);line-height:1.5;}
+  .mh-year-badge{position:absolute;top:12px;right:12px;background:var(--blue-deep);color:#fff;font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:4px 8px;border-radius:6px;}
+  .mh-free-note{background:var(--blue-pale);border:1.5px dashed #B9CFE8;border-radius:14px;padding:16px 18px;margin-bottom:20px;}
+  .mh-free-note-title{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--blue-deep);margin-bottom:6px;}
+  .mh-free-note-title svg{width:15px;height:15px;color:var(--orange);}
+  .mh-free-note p{font-size:12.5px;color:var(--slate);line-height:1.6;}
+  .mh-volume-link{display:block;text-align:center;font-size:13px;font-weight:700;color:var(--blue-deep);text-decoration:underline;margin-bottom:16px;}
+  .mh-maybe{display:block;width:100%;text-align:center;font-size:13.5px;font-weight:600;color:var(--slate);padding:6px;}
+  .mh-maybe:hover{color:var(--ink);}
+
+/* ==== HOP: mascot logo mark (img replacing svg mark, appended) ==== */
+.hop-brand-icon .mark{width:20px;height:20px;object-fit:contain;}
+.logo .mark{object-fit:contain;}
+</style>
+</head>
+<body>
+
+<header class="mh-header">
+  <div class="mh-header-inner">
+    <a href="index.html" class="mh-back" aria-label="Back to HomeownerPal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    </a>
+    <a href="index.html" class="mh-logo">
+      <img class="mark" src="assets/hop-logo-mark.png" alt="HomeownerPal">
+      <span class="mh-logo-txt">
+        <span class="mh-logo-title">My Home</span>
+        <span class="mh-logo-sub">HomeownerPal</span>
+      </span>
+    </a>
+    <span class="mh-free-badge">Free</span>
+  </div>
+</header>
+
+<main class="mh-main">
+  <div class="wrap">
+    <p class="mh-welcome">Welcome back, <strong id="mhName">there</strong>. Everything you save here is private to your account.</p>
+
+    <button class="mh-manage-btn" onclick="openHomes()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l9-8 9 8M5 10v10h14V10"/></svg>
+      Manage all my homes / add another home
+    </button>
+
+    <div class="mh-plus">
+      <div class="mh-plus-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6.3 6.3l2.4 2.4M15.3 15.3l2.4 2.4M17.7 6.3l-2.4 2.4M8.7 15.3l-2.4 2.4"/></svg>
+      </div>
+      <div>
+        <h3>HomeownerPal Plus</h3>
+        <p>Every appliance, every receipt, every tech visit — scanned and saved with your home record.</p>
+        <div class="mh-plus-row">
+          <button class="mh-plus-btn" onclick="openMembership()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/></svg>
+            Get year 1 free
+          </button>
+          <span class="mh-plus-note">Founding Member Offer — only <strong>95</strong> of 100 free-year spots left</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="mh-tabs-wrap">
+      <div class="mh-tabs" id="mhTabs">
+        <button class="mh-tab active" data-tab="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l9-8 9 8M5 10v10h14V10"/></svg>Home</button>
+        <button class="mh-tab" data-tab="Equipment"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a4 4 0 00-5.4 5.4l-6 6 2 2 6-6a4 4 0 005.4-5.4l-2.5 2.5-2-2 2.5-2.5z"/></svg>Equipment</button>
+        <button class="mh-tab" data-tab="Components"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/></svg>Components</button>
+        <button class="mh-tab" data-tab="Insurance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 3v6c0 4.5-3.2 7.9-8 9-4.8-1.1-8-4.5-8-9V6z"/></svg>Insurance</button>
+        <button class="mh-tab" data-tab="Inventory"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7l9-4 9 4-9 4-9-4zM3 7v10l9 4 9-4V7"/></svg>Inventory</button>
+        <button class="mh-tab" data-tab="Reminders"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 00-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.7 21a2 2 0 01-3.4 0"/></svg>Reminders</button>
+        <button class="mh-tab" data-tab="Log"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4zM8 9h8M8 13h8M8 17h5"/></svg>Log</button>
+        <button class="mh-tab" data-tab="Docs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6v18h12V7zM14 3v4h4"/></svg>Docs</button>
+        <button class="mh-tab" data-tab="Photos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.5"/><path d="M21 16l-5-5-9 8"/></svg>Photos</button>
+        <button class="mh-tab" data-tab="Pros"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg>Pros</button>
+      </div>
+    </div>
+
+    <!-- HOME TAB: setup form -->
+    <div class="mh-card" id="panel-home">
+      <h2>Set up your home</h2>
+      <p class="mh-card-sub">Only the basics for now — add what you know, leave the rest blank. We never ask for your address unless you want to add it.</p>
+
+      <div class="mh-field">
+        <label>Nickname (e.g. 'Main house')</label>
+        <input type="text" id="f-nickname">
+      </div>
+
+      <div class="mh-row-2">
+        <div class="mh-field"><label>Sq ft</label><input type="text" id="f-sqft"></div>
+        <div class="mh-field"><label>Year built</label><input type="text" id="f-yearbuilt"></div>
+      </div>
+
+      <div class="mh-row-3">
+        <div class="mh-field"><label>Bedrooms</label><input type="text" id="f-beds"></div>
+        <div class="mh-field"><label>Bathrooms</label><input type="text" id="f-baths"></div>
+        <div class="mh-field"><label>Stories</label><input type="text" id="f-stories"></div>
+      </div>
+
+      <div class="mh-row-2">
+        <div class="mh-field"><label>HVAC type</label><input type="text" id="f-hvac" placeholder="Central AC, heat pump..."></div>
+        <div class="mh-field"><label>Heating type</label><input type="text" id="f-heating" placeholder="Gas furnace, electric..."></div>
+      </div>
+
+      <div class="mh-row-2">
+        <div class="mh-field"><label>Water heater type</label><input type="text" id="f-whtype" placeholder="Gas tank, tankless..."></div>
+        <div class="mh-field"><label>Water heater year</label><input type="text" id="f-whyear"></div>
+      </div>
+
+      <div class="mh-row-2">
+        <div class="mh-field"><label>Electrical panel (amps)</label><input type="text" id="f-panel" placeholder="100, 150, 200..."></div>
+        <div class="mh-field"><label>Roof year</label><input type="text" id="f-roof"></div>
+      </div>
+
+      <div class="mh-field">
+        <label>Notes</label>
+        <textarea id="f-notes" placeholder="Anything else worth remembering about the house"></textarea>
+      </div>
+
+      <details class="mh-address">
+        <summary>Address <span style="color:var(--slate);font-weight:400;">(optional)</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="mh-address-body">
+          <div class="mh-field" style="margin-bottom:12px;"><label>Street address</label><input type="text" id="f-street"></div>
+          <div class="mh-row-2">
+            <div class="mh-field" style="margin-bottom:0;"><label>City</label><input type="text" id="f-city"></div>
+            <div class="mh-field" style="margin-bottom:0;"><label>State / ZIP</label><input type="text" id="f-statezip"></div>
+          </div>
+        </div>
+      </details>
+
+      <button class="mh-create-btn" onclick="createHome()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l9-8 9 8M5 10v10h14V10"/></svg>
+        Create my home
+      </button>
+      <div class="mh-saved-msg" id="savedMsg">Saved to this browser. Your home profile is ready.</div>
+    </div>
+
+    <!-- OTHER TABS: coming soon -->
+    <div class="mh-card mh-coming" id="panel-other" style="display:none;">
+      <div class="mh-coming-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 2M12 3a9 9 0 100 18 9 9 0 000-18z"/></svg>
+      </div>
+      <h2 id="comingTitle">Coming soon</h2>
+      <p id="comingText">This section is on the way. Set up your home first and it'll live here.</p>
+    </div>
+  </div>
+</main>
+
+<!-- ===== My Homes modal ===== -->
+<div class="mh-overlay" id="homesOverlay" onclick="if(event.target===this)closeHomes()">
+  <div class="mh-modal mh-homes-modal">
+    <div class="mh-homes-head">
+      <button class="mh-back" onclick="closeHomes()" aria-label="Back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      </button>
+      <h2>My Homes</h2>
+    </div>
+    <div class="mh-homes-content">
+      <div class="mh-homes-top">
+        <p>You haven't added a home yet.</p>
+        <button class="btn-blue" onclick="openMembership()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          Add a home
+        </button>
+      </div>
+      <div class="mh-homes-empty">
+        <div class="mh-homes-empty-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l9-8 9 8M5 10v10h14V10"/></svg>
+        </div>
+        <p>Get started by creating your first home profile.</p>
+        <button class="btn-blue" onclick="openMembership()">Create your home</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Membership modal ===== -->
+<div class="mh-overlay" id="memOverlay" onclick="if(event.target===this)closeMembership()">
+  <div class="mh-modal mh-membership-modal">
+    <button class="mh-modal-x" onclick="closeMembership()" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <span class="mh-mem-kicker">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l9-8 9 8M5 10v10h14V10"/></svg>
+      Home Membership
+    </span>
+    <h2>Add membership for your new home</h2>
+    <p class="mh-mem-lede">Membership stays with the home. If you transfer the home, the membership goes with it.</p>
+    <ul class="mh-benefits">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 6"/></svg>Unlimited equipment, documents &amp; maintenance history for this home</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 6"/></svg>AI label scanner — snap a nameplate, auto-fill brand/model/serial</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 6"/></svg>AI invoice scanner — snap a receipt, auto-log the visit</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 6"/></svg>Photo uploads on every maintenance entry</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 6"/></svg>Printable Home Report PDF — perfect for selling, insurance, the next tech</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 6"/></svg>Service &amp; warranty reminders before things break</li>
+    </ul>
+    <div class="mh-pricing">
+      <div class="mh-price" onclick="selectPrice(this)">
+        <div class="mh-price-label">Monthly</div>
+        <div class="mh-price-amt">$7<span>/mo</span></div>
+        <div class="mh-price-sub">Auto-renews · cancel anytime</div>
+      </div>
+      <div class="mh-price selected" onclick="selectPrice(this)">
+        <div class="mh-year-badge">Year 1 Free</div>
+        <div class="mh-price-label">Yearly</div>
+        <div class="mh-price-amt">$0<span> year 1</span></div>
+        <div class="mh-price-sub">One year · then renew manually for $60</div>
+      </div>
+    </div>
+    <div class="mh-free-note">
+      <div class="mh-free-note-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 22V7M12 7S12 3 8.5 3 5 7 12 7zM12 7s0-4 3.5-4S19 7 12 7z"/></svg>
+        95 of 100 free-year spots left
+      </div>
+      <p>Pick yearly and your first 12 months on this home are on us. Applies to your first home only — additional homes stay $60/yr.</p>
+    </div>
+    <a href="support-hop.html" class="mh-volume-link">Managing multiple homes? See volume packs →</a>
+    <button class="mh-maybe" onclick="closeMembership()">Maybe later</button>
+  </div>
+</div>
+
+<script>
+  // ---- Greet by name from stored sign-in (browser-only) ----
+  (function(){
+    var u=null; try{ u=JSON.parse(localStorage.getItem('hop_user')); }catch(e){}
+    if(u && u.name){ document.getElementById('mhName').textContent = u.name; }
+  })();
+
+  // ---- Tabs ----
+  var tabs=document.querySelectorAll('.mh-tab');
+  var panelHome=document.getElementById('panel-home');
+  var panelOther=document.getElementById('panel-other');
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){
+      tabs.forEach(function(x){x.classList.remove('active');});
+      t.classList.add('active');
+      var name=t.getAttribute('data-tab');
+      if(name==='home'){ panelHome.style.display=''; panelOther.style.display='none'; }
+      else{
+        panelHome.style.display='none'; panelOther.style.display='';
+        document.getElementById('comingTitle').textContent=name+' — coming soon';
+        document.getElementById('comingText').textContent='The '+name+' section is on the way. For now, set up your home under the Home tab.';
+      }
+    });
+  });
+
+  // ---- Modals ----
+  function openHomes(){ document.getElementById('homesOverlay').classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeHomes(){ document.getElementById('homesOverlay').classList.remove('open'); document.body.style.overflow=''; }
+  function openMembership(){ document.getElementById('memOverlay').classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeMembership(){ document.getElementById('memOverlay').classList.remove('open'); if(!document.getElementById('homesOverlay').classList.contains('open')) document.body.style.overflow=''; }
+  function selectPrice(el){ document.querySelectorAll('.mh-price').forEach(function(p){p.classList.remove('selected');}); el.classList.add('selected'); }
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'){ closeMembership(); closeHomes(); } });
+
+  // ---- Create home (saves to this browser) ----
+  function createHome(){
+    var data={
+      nickname:val('f-nickname'), sqft:val('f-sqft'), yearBuilt:val('f-yearbuilt'),
+      beds:val('f-beds'), baths:val('f-baths'), stories:val('f-stories'),
+      hvac:val('f-hvac'), heating:val('f-heating'), whType:val('f-whtype'), whYear:val('f-whyear'),
+      panel:val('f-panel'), roof:val('f-roof'), notes:val('f-notes'),
+      street:val('f-street'), city:val('f-city'), stateZip:val('f-statezip'), savedAt:Date.now()
+    };
+    try{ localStorage.setItem('hop_home', JSON.stringify(data)); }catch(e){}
+    var m=document.getElementById('savedMsg'); m.style.display='block';
+    m.scrollIntoView({behavior:'smooth',block:'center'});
+  }
+  function val(id){ var el=document.getElementById(id); return el?el.value.trim():''; }
+
+  // ---- Prefill if a home was previously saved in this browser ----
+  (function(){
+    var h=null; try{ h=JSON.parse(localStorage.getItem('hop_home')); }catch(e){}
+    if(!h) return;
+    var map={'f-nickname':'nickname','f-sqft':'sqft','f-yearbuilt':'yearBuilt','f-beds':'beds','f-baths':'baths','f-stories':'stories','f-hvac':'hvac','f-heating':'heating','f-whtype':'whType','f-whyear':'whYear','f-panel':'panel','f-roof':'roof','f-notes':'notes','f-street':'street','f-city':'city','f-statezip':'stateZip'};
+    Object.keys(map).forEach(function(id){ var el=document.getElementById(id); if(el&&h[map[id]]) el.value=h[map[id]]; });
+  })();
+</script>
+</body>
+</html>

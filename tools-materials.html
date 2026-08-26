@@ -1,0 +1,1597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.classList.add('js');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<title>Tools & Materials We Trust | HomeownerPal</title>
+<meta name="description" content="The tools and materials we actually reach for on the job. No sponsors, no paid placement, just gear that's earned its spot in our own bags.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue-deep:#003D97;
+  --blue-sky:#4FA8E0;
+  --blue-pale:#EFF7FF;
+  --orange:#F5820D;
+  --orange-pale:#FFF3E6;
+  --red-pale:#FDEDEC;
+  --red:#C0392B;
+  --white:#FFFFFF;
+  --ink:#1B2430;
+  --slate:#5F6B7A;
+  --line:#E3EDF7;
+  --radius:16px;
+  --maxw:1600px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--white);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{
+  font-family:'Fraunces',serif;
+  font-weight:600;
+  line-height:1.15;
+  letter-spacing:-0.01em;
+}
+.mono{font-family:'IBM Plex Mono',monospace;}
+a{color:inherit;text-decoration:none;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 40px;}
+img,svg{display:block;max-width:100%;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;}
+section{padding:44px 0;}
+
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:999px;font-weight:700;font-size:15px;transition:transform .15s ease, box-shadow .15s ease;}
+.btn-primary{background:var(--orange);color:#fff;}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(245,130,13,.32);}
+.btn-blue{background:var(--blue-deep);color:#fff;}
+.btn-blue:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,61,151,.24);}
+.btn-outline{background:transparent;color:var(--blue-deep);border:1.5px solid var(--blue-deep);}
+.btn-outline:hover{background:var(--blue-deep);color:#fff;}
+.btn-sm{padding:10px 18px;font-size:13.5px;}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Fraunces';font-weight:700;font-size:19px;}
+.logo .mark{width:36px;height:36px;}
+.logo .pal{color:var(--orange);}
+nav.primary-nav{display:flex;gap:26px;font-size:14.5px;font-weight:600;color:var(--slate);}
+nav.primary-nav a:hover{color:var(--blue-deep);}
+nav.primary-nav a.active{color:var(--blue-deep);}
+.header-actions{display:flex;align-items:center;gap:12px;}
+.btn-signin{color:var(--blue-deep);font-weight:700;font-size:14px;padding:10px 6px;}
+@media (max-width:900px){ nav.primary-nav{display:none;} }
+.portal-link{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--slate);padding:8px 12px;border-radius:8px;border:1px solid var(--line);background:var(--blue-pale);white-space:nowrap;}
+.portal-link:hover{border-color:var(--blue-deep);color:var(--blue-deep);}
+.portal-link svg{width:14px;height:14px;flex-shrink:0;}
+@media (max-width:1080px){ .portal-link span.txt{display:none;} .portal-link{padding:9px;} }
+
+/* Section head */
+.section-head{max-width:1600px;margin-bottom:24px;}
+.section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+.kicker{font-family:'IBM Plex Mono';font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:12px;display:block;font-weight:600;}
+.section-head h1,.section-head h2{font-size:clamp(26px,3vw,36px);margin-bottom:14px;color:var(--ink);}
+.section-head p{color:var(--slate);font-size:16px;line-height:1.65;}
+
+/* Breadcrumb */
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--slate);margin-bottom:24px;}
+.breadcrumb a{color:var(--blue-deep);font-weight:600;}
+.breadcrumb a:hover{text-decoration:underline;}
+
+/* CTA band */
+.cta-band{background:#fff;}
+.cta-band .inner{background:var(--blue-pale);border:1.5px solid var(--line);border-radius:24px;padding:56px 40px;text-align:center;}
+.cta-band h2{font-size:clamp(24px,3vw,32px);margin-bottom:12px;color:var(--ink);}
+.cta-band p{color:var(--slate);margin-bottom:26px;font-size:15.5px;}
+.cta-band .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+/* Footer */
+footer{background:#fff;border-top:1px solid var(--line);padding:30px 0 18px;}
+.footer-grid{display:grid;grid-template-columns:1.4fr repeat(4,1fr);gap:36px;margin-bottom:22px;}
+@media (max-width:800px){ .footer-grid{grid-template-columns:repeat(2,1fr);} }
+.footer-brand p{font-size:13px;color:var(--slate);max-width:250px;line-height:1.6;margin-top:12px;}
+footer h5{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--slate);margin-bottom:14px;font-weight:700;}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+footer ul a{font-size:13.5px;color:var(--ink);}
+footer ul a:hover{color:var(--blue-deep);}
+.legal-box{background:var(--blue-pale);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-bottom:16px;}
+.legal-box .lb-head{display:flex;align-items:center;gap:8px;font-weight:700;font-size:13px;color:var(--blue-deep);margin-bottom:10px;}
+.legal-box .lb-head svg{width:15px;height:15px;}
+.legal-box p{font-size:12.5px;color:var(--slate);line-height:1.6;margin-bottom:8px;}
+.legal-box p:last-child{margin-bottom:0;}
+.legal-box a{color:var(--blue-deep);text-decoration:underline;font-weight:600;}
+.footer-bottom{border-top:1px solid var(--line);padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;font-size:12.5px;color:var(--slate);}
+.footer-bottom .links{display:flex;gap:18px;flex-wrap:wrap;}
+.footer-bottom .socials{display:flex;gap:12px;}
+.footer-bottom .socials svg{width:16px;height:16px;color:var(--slate);}
+.footer-bottom .socials a:hover svg{color:var(--blue-deep);}
+
+
+  /* ---- Page-specific additions below ---- */
+  .tm-hero{background:linear-gradient(180deg,var(--blue-pale) 0%, #fff 85%);padding:24px 0 26px;}
+  .tm-hero .wrap{max-width:1600px;}
+  .tm-hero-text{text-align:left;}
+  .tm-placeholder{
+    background:#E3EDF7;border:1.5px solid var(--line);border-radius:18px;
+    overflow:hidden;
+    margin-bottom:16px;color:var(--blue-deep);
+  }
+  .tm-placeholder img{width:100%;height:auto;display:block;border-radius:16.5px;}
+
+  .tm-badge{
+    display:inline-flex;align-items:center;gap:6px;background:var(--orange-pale);color:#B5650C;
+    font-size:12px;font-weight:700;padding:6px 14px;border-radius:999px;margin-bottom:18px;
+  }
+  .tm-badge svg{width:13px;height:13px;}
+  .tm-hero h1{font-size:clamp(26px,3.4vw,36px);margin-bottom:20px;max-width:1600px;}
+  .tm-hero p{font-size:14.5px;color:var(--slate);line-height:1.75;margin-bottom:16px;max-width:none;}
+  .tm-hero p:last-child{margin-bottom:0;}
+  .tm-hero p a{color:var(--blue-deep);font-weight:700;text-decoration:underline;}
+
+  .tm-body{max-width:1600px;margin:0;padding:0 28px;}
+  .tm-section-h{font-size:20px;margin:28px 0 20px;}
+
+  .tm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  @media (max-width:760px){ .tm-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:520px){ .tm-grid{grid-template-columns:1fr;} }
+
+  .tm-card{
+    background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:22px;
+    transition:border-color .15s ease, box-shadow .15s ease;
+  }
+  .tm-card.open{border-color:var(--blue-deep);box-shadow:0 12px 30px rgba(0,61,151,.1);}
+  .tm-card .tm-icon{width:38px;height:38px;border-radius:10px;background:var(--blue-pale);color:var(--blue-deep);display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+  .tm-card .tm-icon svg{width:19px;height:19px;}
+  .tm-card h4{font-size:15px;margin-bottom:6px;}
+  .tm-card p{font-size:12.5px;color:var(--slate);line-height:1.55;margin-bottom:16px;min-height:38px;}
+
+  .tm-expand-bar{
+    display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;
+    background:var(--blue-pale);border:1px solid var(--line);border-radius:11px;
+    padding:11px 14px;font-family:inherit;cursor:pointer;transition:background .15s ease, border-color .15s ease;
+  }
+  .tm-expand-bar:hover{background:#DCEBFB;}
+  .tm-expand-bar.open{background:var(--blue-deep);border-color:var(--blue-deep);}
+  .tm-expand-left{display:flex;flex-direction:column;align-items:flex-start;gap:1px;}
+  .tm-expand-label{font-size:12px;font-weight:700;color:var(--blue-deep);}
+  .tm-expand-bar.open .tm-expand-label{color:#fff;}
+  .tm-expand-count{font-size:10.5px;color:var(--slate);}
+  .tm-expand-bar.open .tm-expand-count{color:#BFD8F5;}
+  .tm-expand-bar svg{width:14px;height:14px;color:var(--blue-deep);transition:transform .2s ease;flex-shrink:0;}
+  .tm-expand-bar.open svg{color:#fff;transform:rotate(180deg);}
+
+  .tm-panel{
+    display:none;grid-column:1/-1;background:#fff;border:1.5px solid var(--line);border-radius:16px;
+    padding:24px;margin-top:-2px;
+  }
+  .tm-panel.show{display:block;}
+  .tm-panel-head{display:flex;align-items:center;gap:12px;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--line);}
+  .tm-panel-head .tm-icon{margin-bottom:0;}
+  .tm-panel-head h4{font-size:16px;}
+  .tm-panel-head p{font-size:12.5px;color:var(--slate);margin:0;min-height:0;}
+
+  .tm-product{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);}
+  .tm-product:last-child{border-bottom:none;}
+  .tm-product-thumb{
+    width:46px;height:46px;border-radius:11px;background:var(--blue-pale);flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;color:var(--blue-deep);position:relative;
+  }
+  .tm-product-thumb svg{width:22px;height:22px;}
+  .tm-product-num{
+    position:absolute;top:-6px;left:-6px;width:18px;height:18px;border-radius:50%;
+    background:var(--orange);color:#fff;font-family:'IBM Plex Mono';font-size:9.5px;font-weight:700;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .tm-product-info h5{font-size:14px;margin-bottom:5px;}
+  .tm-product-info p{font-size:12.5px;color:var(--slate);line-height:1.65;margin-bottom:9px;min-height:0;}
+  .tm-amazon-link{font-size:12px;font-weight:700;color:var(--orange);display:inline-flex;align-items:center;gap:4px;}
+  .tm-amazon-link svg{width:11px;height:11px;}
+
+  .tm-empty{
+    text-align:center;padding:24px;color:var(--slate);font-size:13px;
+  }
+
+  .tm-disclosure{
+    max-width:1600px;margin:48px auto 56px;background:var(--blue-pale);border:1px solid var(--line);
+    border-radius:14px;padding:18px 24px;font-size:12.5px;color:var(--slate);line-height:1.65;text-align:center;
+  }
+
+  /* ===== SECTION HEADLINE WIPE (site-wide, matches homepage) ===== */
+  .js .wipe{clip-path:inset(0 100% 0 0);transition:clip-path 5.5s cubic-bezier(.22,1,.36,1);will-change:clip-path;}
+  .js .wipe.is-visible{clip-path:inset(0 0 0 0);}
+  @media (prefers-reduced-motion:reduce){ .js .wipe{clip-path:none!important;transition:none!important;} }
+
+/* ==== HOP: full-width sections (uniform, left-to-right, no centering) — appended override ==== */
+/* Outermost section containers: span full width with one uniform side gutter */
+.wrap,
+.guide-body, .guide-hero .wrap, .other-issues .wrap,
+.insp-body, .insp-hero .wrap, .insp-other .wrap,
+.lrn-body, .lrn-hero .wrap,
+.tm-body, .tm-hero .wrap,
+.tc-body,
+.sup-body, .sup-hero .wrap,
+.story-body, .story-hero .wrap,
+.em-body, .em-hero .wrap,
+.cf-body, .cf-hero .wrap,
+.arc-body, .arc-hero .wrap,
+.re-hero .wrap,
+.pm-hero .wrap, .pm-pricing .wrap, .pm-features .wrap,
+.fap-hero .wrap,
+.reviews-strip .wrap,
+.myhome-section .wrap,
+.hl-hero .wrap, .hl-body {
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+/* Nested containers (already inside a padded .wrap): widen only, no extra gutter */
+.hero-center,
+.diag-hero-inner,
+.helpband-inner,
+.pack-section-inner,
+.trade-grid {
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+@media (max-width: 640px) {
+.wrap,
+.guide-body, .guide-hero .wrap, .other-issues .wrap,
+.insp-body, .insp-hero .wrap, .insp-other .wrap,
+.lrn-body, .lrn-hero .wrap,
+.tm-body, .tm-hero .wrap,
+.tc-body,
+.sup-body, .sup-hero .wrap,
+.story-body, .story-hero .wrap,
+.em-body, .em-hero .wrap,
+.cf-body, .cf-hero .wrap,
+.arc-body, .arc-hero .wrap,
+.re-hero .wrap,
+.pm-hero .wrap, .pm-pricing .wrap, .pm-features .wrap,
+.fap-hero .wrap,
+.reviews-strip .wrap,
+.myhome-section .wrap,
+.hl-hero .wrap, .hl-body {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+/* ==== end HOP full-width override ==== */
+
+/* ==== HOP AUTH (sign-in popup + account menu) — appended ==== */
+.hop-auth-slot{position:relative;display:inline-flex;align-items:center;}
+.hop-welcome{display:inline-flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 6px 5px 15px;font-size:13.5px;font-weight:600;color:var(--ink);box-shadow:0 2px 8px rgba(0,61,151,.05);transition:box-shadow .15s ease;}
+.hop-welcome:hover{box-shadow:0 5px 14px rgba(0,61,151,.12);}
+.hop-welcome strong{font-weight:700;}
+.hop-avatar{width:30px;height:30px;border-radius:50%;background:var(--orange);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;text-transform:uppercase;box-shadow:0 0 0 2px #fff,0 0 0 3px rgba(245,130,13,.35);}
+.hop-menu{position:absolute;top:calc(100% + 10px);right:0;min-width:240px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 18px 50px rgba(0,20,60,.18);padding:8px;z-index:260;display:none;}
+.hop-menu.open{display:block;}
+.hop-menu-email{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--slate);padding:10px 12px 12px;border-bottom:1px solid var(--line);margin-bottom:6px;word-break:break-all;}
+.hop-menu-email svg{width:15px;height:15px;color:var(--slate);flex-shrink:0;}
+.hop-menu-item{display:flex;align-items:center;gap:11px;width:100%;text-align:left;padding:11px 12px;border-radius:10px;font-size:14px;font-weight:600;color:var(--ink);transition:background .12s ease;}
+.hop-menu-item:hover{background:var(--blue-pale);}
+.hop-menu-item svg{width:17px;height:17px;color:var(--blue-deep);flex-shrink:0;}
+.hop-signout{color:var(--red);border-top:1px solid var(--line);margin-top:6px;border-radius:0 0 10px 10px;}
+.hop-signout svg{color:var(--red);}
+.hop-modal-overlay{display:none;position:fixed;inset:0;z-index:300;background:rgba(15,28,45,.55);align-items:flex-start;justify-content:center;padding:44px 20px;overflow-y:auto;}
+.hop-modal-overlay.open{display:flex;}
+.hop-modal{background:#fff;border-radius:22px;width:100%;max-width:420px;padding:32px 32px 26px;box-shadow:0 30px 80px rgba(0,20,60,.35);position:relative;animation:hoppop .2s ease;}
+@keyframes hoppop{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:none;}}
+.hop-modal-x{position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;color:var(--slate);background:none;border:none;cursor:pointer;transition:background .15s ease;}
+.hop-modal-x:hover{background:var(--blue-pale);}
+.hop-modal-x svg{width:18px;height:18px;}
+.hop-brand{display:flex;align-items:center;gap:9px;margin-bottom:18px;}
+.hop-brand-icon{width:32px;height:32px;border-radius:9px;background:var(--blue-pale);display:flex;align-items:center;justify-content:center;}
+.hop-brand-icon svg{width:20px;height:20px;}
+.hop-brand-name{font-size:14px;font-weight:700;color:var(--ink);}
+.hop-modal h2{font-family:'Fraunces',serif;font-size:23px;color:var(--ink);margin-bottom:6px;line-height:1.15;}
+.hop-modal-sub{font-size:13.5px;color:var(--slate);line-height:1.55;margin-bottom:22px;}
+.hop-google{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:13px;font-family:inherit;font-weight:700;font-size:14px;color:var(--ink);cursor:pointer;transition:background .15s ease;}
+.hop-google:hover{background:#F7F9FC;}
+.hop-google svg{width:18px;height:18px;}
+.hop-or{display:flex;align-items:center;gap:12px;margin:18px 0;color:var(--slate);font-size:12px;}
+.hop-or::before,.hop-or::after{content:"";flex:1;height:1px;background:var(--line);}
+.hop-field{margin-bottom:14px;}
+.hop-field label{display:block;font-size:12px;font-weight:700;color:var(--slate);margin-bottom:6px;}
+.hop-field input{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;font-family:inherit;font-size:14px;color:var(--ink);background:#FBFDFF;}
+.hop-field input:focus{outline:none;border-color:var(--blue-sky);background:#fff;}
+.hop-forgot{text-align:right;margin-bottom:18px;}
+.hop-forgot a{font-size:12.5px;font-weight:600;color:var(--blue-deep);}
+.hop-submit{display:block;width:100%;background:var(--blue-deep);color:#fff;font-family:inherit;font-weight:700;font-size:15px;padding:14px;border:none;border-radius:12px;text-align:center;cursor:pointer;margin-bottom:16px;transition:opacity .15s ease;}
+.hop-submit:hover{opacity:.92;}
+.hop-legal{font-size:11.5px;color:var(--slate);text-align:center;line-height:1.6;}
+.hop-legal a{color:var(--blue-deep);text-decoration:underline;}
+/* ==== end HOP AUTH ==== */
+
+/* ==== HOP: hamburger nav + install modal (global, appended) ==== */
+.header-left{display:flex;align-items:center;gap:14px;}
+.hamburger-btn{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:38px;height:38px;border-radius:8px;background:transparent;flex-shrink:0;}
+.hamburger-btn:hover{background:var(--blue-pale);}
+.hamburger-btn span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;}
+
+.nav-drawer-overlay{display:none;position:fixed;inset:0;z-index:200;background:rgba(15,28,45,.5);align-items:stretch;justify-content:flex-start;}
+.nav-drawer-overlay.open{display:flex;}
+.nav-drawer{background:#fff;width:300px;max-width:84vw;height:100%;box-shadow:12px 0 40px rgba(0,0,0,.18);display:flex;flex-direction:column;padding:20px 0;animation:hopnavslide .2s ease;}
+@keyframes hopnavslide{from{transform:translateX(-16px);opacity:.6;}to{transform:translateX(0);opacity:1;}}
+.nav-drawer-head{display:flex;align-items:center;justify-content:space-between;padding:0 20px 16px;border-bottom:1px solid var(--line);margin-bottom:6px;}
+.nav-drawer-head .logo{font-size:17px;}
+.nav-drawer-head .logo .mark{width:30px;height:30px;}
+.nav-drawer-close{width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:8px;color:var(--slate);flex-shrink:0;}
+.nav-drawer-close:hover{background:var(--blue-pale);color:var(--blue-deep);}
+.nav-drawer-close svg{width:16px;height:16px;}
+.nav-drawer-list{list-style:none;display:flex;flex-direction:column;overflow-y:auto;margin:0;padding:0;}
+.nav-drawer-list li a{display:block;padding:13px 20px;font-size:14.5px;font-weight:600;color:var(--ink);border-bottom:1px solid var(--line);}
+.nav-drawer-list li:last-child a{border-bottom:none;}
+.nav-drawer-list li a:hover{background:var(--blue-pale);color:var(--blue-deep);}
+
+.hop-modal.install-modal{max-width:460px;}
+.install-modal .install-intro{font-size:14px;color:var(--slate);line-height:1.65;margin:2px 0 22px;}
+.install-modal h2{font-size:21px;margin-bottom:2px;padding-right:18px;}
+.install-os-block{margin-bottom:20px;}
+.install-os-block h4{font-family:'Inter',sans-serif;font-size:12.5px;font-weight:700;color:var(--blue-deep);text-transform:uppercase;letter-spacing:.03em;margin-bottom:10px;}
+.install-os-block ol{list-style:none;counter-reset:installstep;display:flex;flex-direction:column;gap:10px;margin:0;padding:0;}
+.install-os-block ol li{counter-increment:installstep;position:relative;padding-left:30px;font-size:13.5px;color:var(--ink);line-height:1.55;}
+.install-os-block ol li::before{content:counter(installstep);position:absolute;left:0;top:0;width:20px;height:20px;border-radius:50%;background:var(--blue-pale);color:var(--blue-deep);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.install-modal .install-footer{font-size:12.5px;color:var(--slate);line-height:1.6;border-top:1px solid var(--line);padding-top:16px;margin-top:2px;margin-bottom:0;}
+@media (max-width:520px){ .hop-modal.install-modal{padding:26px 22px 22px;} }
+
+/* ==== HOP: mascot logo mark (img replacing svg mark, appended) ==== */
+.hop-brand-icon .mark{width:20px;height:20px;object-fit:contain;}
+.logo .mark{object-fit:contain;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="header-left">
+      <button type="button" class="hamburger-btn" aria-label="Open menu" onclick="HOPNav.open()">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="index.html" class="logo">
+      <img class="mark" src="assets/hop-logo-mark.png" alt="HomeownerPal">
+      Homeowner<span class="pal">Pal</span>
+    </a>
+    </div>
+    <div class="header-actions">
+      <a href="#" class="btn-signin">Sign in</a>
+      <button type="button" class="btn btn-outline btn-sm" onclick="HOPInstall.open()">Install the app</button>
+    </div>
+  </div>
+</header>
+
+<section class="tm-hero">
+  <div class="wrap">
+    <div class="breadcrumb">
+      <a href="tools-costs.html">Tools &amp; Costs</a>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+      <span>Tools &amp; Materials</span>
+    </div>
+
+    <div class="tm-placeholder">
+      <img src="assets/tools-materials-hero.png" alt="Plumbing and HVAC tools, copper pipes, and a calculator laid out on a workbench" />
+    </div>
+
+    <div class="tm-hero-text">
+      <div class="tm-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.5-3.5a5 5 0 01-6.7 6.7L4.7 22.3a1.5 1.5 0 01-2-2l10.5-9.8a5 5 0 016.7-6.7z"/></svg>
+        Tools &amp; Materials We Trust
+      </div>
+      <h1>Thinking about tackling it yourself?</h1>
+      <p>These are the tools and materials we actually reach for on the job, recommended because they've earned their spot in our own bags, not because anyone paid us to say so. If you buy through these links, we may earn a small commission at no extra cost to you, which keeps HomeownerPal hopping on.</p>
+      <p>We're not sponsored by any of these brands, our opinions are our own. The product images shown here are AI-generated representations, not actual product photos, because we can't legally use manufacturers' copyrighted images. The real product will look just as good (or better) when it shows up at your door.</p>
+      <p>Every job is different, so the exact materials you'll need depend on your specific project. These are our general go-tos, but if you want a tailored shopping list with the right wire gauge, box size, or fixture count for your exact situation, call or text the <a href="diagnose.html">HOPline</a>, it's free, and we'll send you direct links to exactly what you need.</p>
+    </div>
+  </div>
+</section>
+
+<div class="tm-body">
+
+  <h2 class="tm-section-h">Recommended Tools</h2>
+  <div class="tm-grid">
+
+    <div class="tm-card" id="card-handtools">
+      <div class="tm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.5-3.5a5 5 0 01-6.7 6.7L4.7 22.3a1.5 1.5 0 01-2-2l10.5-9.8a5 5 0 016.7-6.7z"/></svg></div>
+      <h4>Hand Tools</h4>
+      <p>The basics every homeowner should keep within reach.</p>
+      <button class="tm-expand-bar" onclick="toggleTM('handtools')" id="btn-handtools">
+        <span class="tm-expand-left"><span class="tm-expand-label">Browse picks</span><span class="tm-expand-count">10 tools, real notes from the field</span></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+    </div>
+
+    <div class="tm-card" id="card-powertools">
+      <div class="tm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="10" width="12" height="6" rx="1"/><circle cx="18" cy="13" r="3"/><path d="M15 13h3"/></svg></div>
+      <h4>Power Tools</h4>
+      <p>Cordless workhorses that punch above their weight.</p>
+      <button class="tm-expand-bar" onclick="toggleTM('powertools')" id="btn-powertools">
+        <span class="tm-expand-left"><span class="tm-expand-label">Browse picks</span><span class="tm-expand-count">4 tools, real notes from the field</span></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+    </div>
+
+    <div class="tm-card" id="card-safetytools">
+      <div class="tm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg></div>
+      <h4>Electrical Safety Tools</h4>
+      <p>Test before you touch, every single time.</p>
+      <button class="tm-expand-bar" onclick="toggleTM('safetytools')" id="btn-safetytools">
+        <span class="tm-expand-left"><span class="tm-expand-label">Browse picks</span><span class="tm-expand-count">6 tools, real notes from the field</span></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+    </div>
+
+    <div class="tm-panel" id="panel-handtools">
+      <div class="tm-panel-head">
+        <div class="tm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.5-3.5a5 5 0 01-6.7 6.7L4.7 22.3a1.5 1.5 0 01-2-2l10.5-9.8a5 5 0 016.7-6.7z"/></svg></div>
+        <div><h4>Hand Tools</h4><p>The basics every homeowner should keep within reach.</p></div>
+      </div>
+
+      <div class="tm-product">
+        <div class="tm-product-thumb"><span class="tm-product-num">1</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="10" width="14" height="4" rx="1"/><path d="M17 12h4"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Crescent Lufkin Shockforce Magnetic 25 ft Tape Measure</h5>
+          <p>This is my go-to tape measure. The blade is way easier to read than standard tapes, trust me, the older I get the harder it is to see those tiny marks. The bold markings pop even in low light, the magnetic tip grabs steel so you can measure solo, and the Shockforce case takes a beating. A 25-footer covers almost every home project you'll tackle.</p>
+          <a href="https://www.amazon.com/dp/B0F3QJ83PC?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+
+      <div class="tm-product">
+        <div class="tm-product-thumb"><span class="tm-product-num">2</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3l6 6-9 9-3-3 9-9zM12 9l6-6 3 3-6 6"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Klein Tools J207-8CR Wire Stripper / Crimper</h5>
+          <p>This is one of the best, most versatile pair of strippers I have ever purchased. I have kept a new pair every year for years. Highly recommend.</p>
+          <a href="https://www.amazon.com/dp/B016XE2CHA?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+
+      <div class="tm-product">
+        <div class="tm-product-thumb"><span class="tm-product-num">3</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2v6a4 4 0 008 0V2M4 8h12v12a2 2 0 01-2 2H6a2 2 0 01-2-2V8z"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Klein Tools Insulated Tool Kit (9-Piece)</h5>
+          <p>Honestly I would only use the "Kleins" Lineman's pliers, and the insulated screw drivers in this set, but the price here is worth buying the kit. I have actually bought this kit a few times (I lose tools a lot in attics) and I give away the strippers and diagonal cutters.</p>
+          <a href="https://www.amazon.com/dp/B088V99QGG?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+
+      <div class="tm-product">
+        <div class="tm-product-thumb"><span class="tm-product-num">4</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3l6 6-9 9-3-3 9-9zM12 9l6-6 3 3-6 6"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Klein Tools J2000-48 Diagonal Cutters</h5>
+          <p>These are the "Dykes" diagonal cutters I keep in my bag, they are big enough and strong enough to cut through a decent gauge of wire.</p>
+          <a href="https://www.amazon.com/dp/B0006M6Y8O?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+
+      <div class="tm-product">
+        <div class="tm-product-thumb"><span class="tm-product-num">5</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3l6 6-9 9-3-3 9-9zM12 9l6-6 3 3-6 6"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Klein Tools Insulated Lineman's Pliers</h5>
+          <p>These are, I am pretty sure, the same "Kleins" Lineman's pliers you get in the kit. I have had this pair for several years. As electricians we frown on people who use hammers, these are our hammers and they work great. (Using it as a hammer voids the warranty, FYI.) Highly recommend.</p>
+          <a href="https://www.amazon.com/dp/B00JGG5SAQ?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+
+      <div class="tm-product">
+        <div class="tm-product-thumb"><span class="tm-product-num">6</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 3l4 4L7 18l-5 1 1-5z"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Klein Tools 11-in-1 Ratcheting Screwdriver</h5>
+          <p>This is relatively new, a ratcheting 11-in-1 from Klein, and I love it. My buddy is always breaking his in impact use (they claim to be impact rated), I have never had an issue with mine, whether handheld or impact. Highly recommend.</p>
+          <a href="https://www.amazon.com/dp/B0CX2DN388?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+
+      <div class="tm-product">
+        <div class="tm-product-thumb"><span class="tm-product-num">7</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 3l4 4L7 18l-5 1 1-5z"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Klein Tools 32717 Precision Screwdriver Set</h5>
+          <p>This little guy is great for the small stuff. Wiring transfer switches, circuit boards, or any tiny thing, it has so many different bits.</p>
+          <a href="https://www.amazon.com/dp/B09SVP9NDQ?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+
+      <div class="tm-product">
+        <div class="tm-product-thumb"><span class="tm-product-num">8</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 3l4 4L7 18l-5 1 1-5z"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Klein Tools 32288 Insulated 8-in-1 Screwdriver</h5>
+          <p>Good little insulated tool set should you ever have to work on live circuitry. (You should never work on live circuitry!) If any of your insulated electrical handles get damaged you should throw them out and get new ones.</p>
+          <a href="https://www.amazon.com/dp/B07WTRTVFS?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+
+      <div class="tm-product">
+        <div class="tm-product-thumb"><span class="tm-product-num">9</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h4l2-3 4 6 2-3h4"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Fluke Networks Pro3000 Tone Generator &amp; Probe</h5>
+          <p>This is the famous fox and the hound. Fluke is another big name in high and low voltage electrical tools. This device is a genius invention, you hook the fox to one end of the wires (typically one lead on hot wire and one on neutral) and the hound will make a little siren sound when it gets close to the wire wherever it is. Downside is if the wire is underground or in cement/metal you won't hear it.</p>
+          <a href="https://www.amazon.com/dp/B000FTADX0?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+
+      <div class="tm-product">
+        <div class="tm-product-thumb"><span class="tm-product-num">10</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h4l2-3 4 6 2-3h4"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Klein Tools ET450 Advanced Circuit Tracer</h5>
+          <p>This is Fluke's big brother, when I break this out, no wire can hide. I have never not found a wire with this guy. The Klein advanced circuit tracer is the best I have ever used. It is pricy though.</p>
+          <a href="https://www.amazon.com/dp/B09XG38XLP?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tm-panel" id="panel-powertools">
+      <div class="tm-panel-head">
+        <div class="tm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="10" width="12" height="6" rx="1"/><circle cx="18" cy="13" r="3"/><path d="M15 13h3"/></svg></div>
+        <div><h4>Power Tools</h4><p>Cordless workhorses that punch above their weight.</p></div>
+      </div>
+
+      <div class="tm-product">
+        <div class="tm-product-thumb"><span class="tm-product-num">1</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="10" width="12" height="6" rx="1"/><circle cx="18" cy="13" r="3"/><path d="M15 13h3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Milwaukee M18 Fuel 1/4" Impact Driver</h5>
+          <p>We are not sponsored by any of the products we recommend, but we would be because we only recommend the best from our experience. Milwaukee is the best that we have used. (Full disclosure, we have never used Hilti.) We do not like the yellow tools. We have only ever used Milwaukee power tools and this is all we recommend to people we train as well. This Milwaukee impact driver will not let you down.</p>
+          <a href="https://www.amazon.com/dp/B0BZSWTVCV?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+
+      <div class="tm-product">
+        <div class="tm-product-thumb"><span class="tm-product-num">2</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="10" width="12" height="6" rx="1"/><circle cx="18" cy="13" r="3"/><path d="M15 13h3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Milwaukee M18 Fuel Hammer Drill/Driver</h5>
+          <p>This Milwaukee hammer drill is an amazing piece of equipment. They last and they eat through anything in their path. Highly recommend.</p>
+          <a href="https://www.amazon.com/dp/B0BB854SJ8?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+
+      <div class="tm-product">
+        <div class="tm-product-thumb"><span class="tm-product-num">3</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="9" width="14" height="6" rx="1"/><path d="M18 12h2"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Milwaukee M18 Fuel Hackzall</h5>
+          <p>The Milwaukee Fuel Hackzall, this thing is amazing. I had a Milwaukee Hackzall for 10 years and eventually gave it to a trainee. I am good at what I do because I make sure I have the best tools to get the job done quickly and efficiently. This is one of those tools.</p>
+          <a href="https://www.amazon.com/dp/B076JHJKR8?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+
+      <div class="tm-product">
+        <div class="tm-product-thumb"><span class="tm-product-num">4</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="9" width="14" height="6" rx="1"/><path d="M18 12h2"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Milwaukee M18 Fuel Oscillating Multi-Tool</h5>
+          <p>Milwaukee multi-tool. Full disclosure, this might be the one tool that DeWalt designed a better version of, regardless I will use this one until the end. They last forever, Tim threw my brand new one in the trash a couple years ago, and I bet somebody is still using it somewhere.</p>
+          <a href="https://www.amazon.com/dp/B09RXZXR4R?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tm-panel" id="panel-safetytools">
+      <div class="tm-panel-head">
+        <div class="tm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg></div>
+        <div><h4>Electrical Safety Tools</h4><p>Test before you touch, every single time.</p></div>
+      </div>
+
+      <div class="tm-product">
+        <div class="tm-product-thumb"><span class="tm-product-num">1</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="3" width="14" height="18" rx="2"/><rect x="8" y="6" width="8" height="5" rx="1"/><path d="M9 15h.01M12 15h.01M15 15h.01M9 18h.01M12 18h.01"/></svg></div>
+        <div class="tm-product-info">
+          <h5>HESPLUS Digital Multimeter</h5>
+          <p>This is a great little starter meter, very simple to operate, and it has every function and then some you will ever need doing a home project.</p>
+          <a href="https://www.amazon.com/dp/B0DRBZHJWN?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+
+      <div class="tm-product">
+        <div class="tm-product-thumb"><span class="tm-product-num">2</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 3a4 4 0 00-4 4v3a4 4 0 008 0V7a4 4 0 00-4-4z"/><path d="M14 10h6M20 8v4"/></svg></div>
+        <div class="tm-product-info">
+          <h5>CL810 Digital Clamp Meter</h5>
+          <p>This meter is a little more advanced than the previous one, but clamp meters are my favorite. With these you can clamp it around a wire and see how much amperage you are pulling on a leg. Very useful but not so much for a DIY project, I suppose.</p>
+          <a href="https://www.amazon.com/dp/B0DQ6D3VXT?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+
+      <div class="tm-product">
+        <div class="tm-product-thumb"><span class="tm-product-num">3</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 3l4 4L7 18l-5 1 1-5z"/><path d="M17 3l4 4"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Klein Tools NCVT3P Non-Contact Voltage Tester w/ Flashlight</h5>
+          <p>Trust me when I say this is one of the most important tools you will ever have. The "tick tester," or non-contact voltage tester, allows you to tell if you have live voltage without having to actually touch anything. This particular one is my favorite because it has a flashlight as well, and I am a little bougie. They make a cheaper version too, which I'll post next.</p>
+          <a href="https://www.amazon.com/dp/B08DQMX7YF?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+
+      <div class="tm-product">
+        <div class="tm-product-thumb"><span class="tm-product-num">4</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 3l4 4L7 18l-5 1 1-5z"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Klein Tools NCVT1P Non-Contact Voltage Tester</h5>
+          <p>The cheaper "tick tester," but it will still keep you safe. If you haven't picked up on it yet, Klein reigns supreme in the electrical hand tool world, their tools are amazing and have saved my life and my time more than once.</p>
+          <a href="https://www.amazon.com/dp/B099SJ6469?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+
+      <div class="tm-product">
+        <div class="tm-product-thumb"><span class="tm-product-num">5</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 2v4M15 2v4M7 10h10v3a5 5 0 01-10 0v-3z"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Klein Tools RT210 GFCI Outlet Tester</h5>
+          <p>Klein outlet tester, this little guy is amazing if you are troubleshooting, or just checking if an outlet is wired right. When you plug it into an outlet that has power, it shows a series of lights (diagram on the device) that let you know if the device is wired correctly. This particular one allows you to "trip test" GFCI circuits as well.</p>
+          <a href="https://www.amazon.com/dp/B01AKX8L0M?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+
+      <div class="tm-product">
+        <div class="tm-product-thumb"><span class="tm-product-num">6</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 2v4M15 2v4M7 10h10v3a5 5 0 01-10 0v-3z"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Klein Tools RT250 GFCI Outlet Tester w/ Voltage Display</h5>
+          <p>Another outlet tester, but this one is bougie even for me. It requires batteries and is slower than the smaller one, however this one will also tell you the voltage your outlet has, which can be useful.</p>
+          <a href="https://www.amazon.com/dp/B08QW7K1JJ?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <h2 class="tm-section-h">Recommended Materials</h2>
+  <div class="tm-grid">
+
+    <div class="tm-card" id="card-wirecable">
+      <div class="tm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12c3 0 3-6 6-6s3 6 6 6 3-6 6-6"/></svg></div>
+      <h4>Wire &amp; Cable</h4>
+      <p>Romex, THHN, low-voltage, the stuff that actually moves the power.</p>
+      <button class="tm-expand-bar" onclick="toggleTM('wirecable')" id="btn-wirecable">
+        <span class="tm-expand-left"><span class="tm-expand-label">Browse picks</span><span class="tm-expand-count">12 items, real notes from the field</span></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+    </div>
+
+    <div class="tm-card" id="card-outlets">
+      <div class="tm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 2v4M15 2v4M7 10h10v3a5 5 0 01-10 0v-3z"/><path d="M12 18v3"/></svg></div>
+      <h4>Outlets &amp; Switches</h4>
+      <p>Standard receptacles, GFCIs, dimmers, and wall plates.</p>
+      <button class="tm-expand-bar" onclick="toggleTM('outlets')" id="btn-outlets">
+        <span class="tm-expand-left"><span class="tm-expand-label">Browse picks</span><span class="tm-expand-count">30 items, real notes from the field</span></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+    </div>
+
+    <div class="tm-card" id="card-boxes">
+      <div class="tm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M3 7l9 5 9-5M12 12v10"/></svg></div>
+      <h4>Electrical Boxes</h4>
+      <p>Old work (remodels), new work, the right box for the job.</p>
+      <button class="tm-expand-bar" onclick="toggleTM('boxes')" id="btn-boxes">
+        <span class="tm-expand-left"><span class="tm-expand-label">Browse picks</span><span class="tm-expand-count">15 items, real notes from the field</span></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+    </div>
+
+    <div class="tm-card" id="card-connectors">
+      <div class="tm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+      <h4>Connectors &amp; Tape</h4>
+      <p>Wire nuts, lever nuts, electrical tape, staples, and the small bits.</p>
+      <button class="tm-expand-bar" onclick="toggleTM('connectors')" id="btn-connectors">
+        <span class="tm-expand-left"><span class="tm-expand-label">Browse picks</span><span class="tm-expand-count">3 items, real notes from the field</span></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+    </div>
+
+    <div class="tm-card" id="card-lighting">
+      <div class="tm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18h6M10 22h4M12 2a6 6 0 00-4 10.5c.7.7 1 1.3 1 2.5h6c0-1.2.3-1.8 1-2.5A6 6 0 0012 2z"/></svg></div>
+      <h4>Lighting &amp; Bulbs</h4>
+      <p>Bulbs, smart bulbs, fixture kits, and lighting accessories.</p>
+      <button class="tm-expand-bar" onclick="toggleTM('lighting')" id="btn-lighting">
+        <span class="tm-expand-left"><span class="tm-expand-label">Browse picks</span><span class="tm-expand-count">6 items, real notes from the field</span></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+    </div>
+
+    <div class="tm-card" id="card-subpanels">
+      <div class="tm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v6M18.4 6.6a9 9 0 11-12.8 0"/></svg></div>
+      <h4>Sub Panels &amp; Disconnects</h4>
+      <p>Sub panels, AC disconnects, and feed-through enclosures for sheds, A/Cs, and add-on loads.</p>
+      <button class="tm-expand-bar" onclick="toggleTM('subpanels')" id="btn-subpanels">
+        <span class="tm-expand-left"><span class="tm-expand-label">Browse picks</span><span class="tm-expand-count">3 items, real notes from the field</span></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+    </div>
+
+    <div class="tm-panel" id="panel-wirecable">
+      <div class="tm-panel-head">
+        <div class="tm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12c3 0 3-6 6-6s3 6 6 6 3-6 6-6"/></svg></div>
+        <div><h4>Wire &amp; Cable</h4><p>Romex, THHN, low-voltage, the stuff that actually moves the power.</p></div>
+      </div>
+            <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Southwire 12/2 Romex NM-B Wire (100 ft)</h5>
+          <p>12/2 Romex NM-B non-metallic sheathed cable, the standard for 20-amp general purpose circuits. 12 gauge wire is rated for up to 25 amps. Southwire is the only brand I recommend, it strips easier, pulls smoother, and the jacket is more flexible than the cheap stuff (and it&#39;s not much more expensive). I&#39;m listing the 100&#39; roll here, but click through to the product page and you can select 25&#39;, 50&#39;, 250&#39;, or 500&#39; rolls depending on your job size. Copper prices fluctuate, so Amazon&#39;s pricing is usually competitive.</p>
+          <a href="https://www.amazon.com/dp/B000LNO9FI?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Southwire 12/3 Romex NM-B Wire (100 ft)</h5>
+          <p>12/3 Romex NM-B non-metallic sheathed cable with three insulated conductors and a ground, essential for 3-way switch circuits, multi-wire branch circuits, or anywhere you need an extra hot wire. 12 gauge wire is rated for up to 25 amps. Same Southwire quality: easy to strip, smooth to pull, flexible jacket. Click through to select different roll sizes on the product page.</p>
+          <a href="https://www.amazon.com/dp/B000BQMZ9M?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Southwire 14/2 Romex NM-B Wire (50 ft)</h5>
+          <p>14/2 Romex NM-B non-metallic sheathed cable, typically used for lighting circuits or 15-amp receptacle circuits like bedrooms and hallways. 14 gauge wire is rated for up to 15 amps. Never use this on a GFCI circuit, GFCI receptacles require a 20-amp circuit, which means you need 12/2 wire for those. Same Southwire quality you&#39;ve come to expect: easy to strip, smooth to pull, flexible jacket. Click through to select different roll sizes on the product page.</p>
+          <a href="https://www.amazon.com/dp/B07124WP7R?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Southwire 14/3 Romex NM-B Wire (250 ft)</h5>
+          <p>14/3 Romex NM-B non-metallic sheathed cable with three insulated conductors and a ground, typically used for ceiling fans (one leg powers the fan, one leg powers the light) or for 3-way and 4-way switch circuits. 14 gauge wire is rated for up to 15 amps. Same Southwire quality: easy to strip, smooth to pull, flexible jacket.</p>
+          <a href="https://www.amazon.com/dp/B000LNKUNI?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Southwire 10/2 Romex NM-B Wire (50 ft)</h5>
+          <p>10/2 Romex NM-B non-metallic sheathed cable, typically used for 240V 30-amp circuits that don&#39;t require a neutral, like your exterior A/C unit (some A/Cs are rated higher or lower, so always read the label!) or a tanked water heater (again, voltage and amperage vary, always read the label!). This wire is also good for 120V 30-amp circuits, such as a 30-amp RV plug. 10 gauge wire is rated for up to 30 amps. Same Southwire quality: easy to strip, smooth to pull, flexible jacket.</p>
+          <a href="https://www.amazon.com/dp/B000BQS5TG?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Southwire 10/3 Romex NM-B Wire (50 ft)</h5>
+          <p>10/3 Romex NM-B non-metallic sheathed cable with three insulated conductors and a ground, typically used for 240V 30-amp circuits that require a neutral, such as your dryer. 10 gauge wire is rated for up to 30 amps. Same Southwire quality: easy to strip, smooth to pull, flexible jacket.</p>
+          <a href="https://www.amazon.com/dp/B0D9MTBRPL?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Southwire 8/3 Romex NM-B Wire (125 ft)</h5>
+          <p>8/3 Romex NM-B non-metallic sheathed cable with three insulated conductors and a ground, typically run for ranges or other 240V 40-amp circuits (ranges differ in amperage, always read the label!). 8 gauge wire is rated for up to 40 amps. Heads up, this is where copper really starts to get expensive, look around for other sizes/brands, and as long as it&#39;s copper, feel free to grab the cheaper option.</p>
+          <a href="https://www.amazon.com/dp/B001B158FY?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>12/3 SJTW Outdoor Flexible Cord</h5>
+          <p>12 gauge 3-conductor SJTW cord, essentially looks like an extension cord without the male and female ends. Great for running wire outdoors along eaves to add receptacles or outdoor lighting. You&#39;ll need SO cord connectors and weatherproof boxes to terminate it properly, those will be in other links as soon as I get them added.</p>
+          <a href="https://www.amazon.com/dp/B08NCNVQV6?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>12/2 UF-B Underground Feeder Wire</h5>
+          <p>12/2 UF (Underground Feeder) wire, great if you can&#39;t afford or don&#39;t have the time to run conduit. This wire can be buried directly in the ground! Always check your local code for required depth, but NEC minimum is 24" from finished grade.</p>
+          <span class="tm-amazon-link" style="color:var(--slate);cursor:default;">Link coming soon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>10/2 UF-B Underground Feeder Wire</h5>
+          <p>10/2 UF (Underground Feeder) wire, great for 30-amp 120V circuits or 240V 30-amp circuits that don&#39;t require a neutral. Same direct-bury convenience as the 12/2: no conduit needed, just bury it in the ground. Always check your local code for required depth, but NEC minimum is 24" from finished grade. At 10 gauge, this is rated for up to 30 amps. Copper prices jump at this size, so shop around, as long as it&#39;s copper UF-B, grab the better deal.</p>
+          <a href="https://www.amazon.com/dp/B000BQU58K?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>2-2-4-6 Aluminum Mobile Home Feeder Wire (150&#39;)</h5>
+          <p>2-2-4-6 aluminum mobile home feeder, a lifesaver for adding outdoor sub panels. Direct burial rated (no conduit required) and great for wiring sub panels in sheds. I&#39;ve used this wire in estimates and field work more than anything else. Rated for 90 amps. This link is the 150&#39; roll, but there are multiple lengths available, pick what fits your run.</p>
+          <a href="https://www.amazon.com/dp/B07FN2QL8D?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>12/2 MC (Metal Clad) Cable (250 ft)</h5>
+          <p>12/2 MC (metal clad) cable, flexible spiral steel armor over black, white, and green conductors. This is the best wire for warehouses, shops, and sheds where the walls aren&#39;t getting closed in and you don&#39;t want to run conduit everywhere. The armor protects the conductors, so it can run exposed along joists, trusses, and block walls (keep it dry, standard MC is for indoor/dry locations). 12 gauge, good for 20-amp circuits. The straps and connectors for this cable are in the Connectors &amp; Tape section.</p>
+          <a href="https://www.amazon.com/dp/B01N0PADKT?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tm-panel" id="panel-outlets">
+      <div class="tm-panel-head">
+        <div class="tm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 2v4M15 2v4M7 10h10v3a5 5 0 01-10 0v-3z"/><path d="M12 18v3"/></svg></div>
+        <div><h4>Outlets &amp; Switches</h4><p>Standard receptacles, GFCIs, dimmers, and wall plates.</p></div>
+      </div>
+            <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Legrand Pass &amp; Seymour Single-Pole Toggle Switch (10-Pack)</h5>
+          <p>Single-pole toggle switch. Legrand Pass &amp; Seymour devices reign supreme in my book, that&#39;s all I&#39;ll be suggesting here. There are tons of options for switches and receptacles, but after all the years I&#39;ve been doing this, these are the best. Quality build (plates too), the other stuff breaks or feels flimsy. Not this stuff. If it&#39;s a plate, a switch, or receptacle I recommend, it&#39;s Legrand Pass &amp; Seymour.</p>
+          <a href="https://www.amazon.com/dp/B000BW0YQM?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Legrand Pass &amp; Seymour 3-Way Toggle Switch</h5>
+          <p>3-way toggle switch for controlling a light from two locations. Legrand Pass &amp; Seymour, same quality, same trust.</p>
+          <a href="https://www.amazon.com/dp/B009VYASQW?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Legrand Pass &amp; Seymour 4-Way Toggle Switch</h5>
+          <p>4-way toggle switch for controlling a light from three or more locations. Legrand Pass &amp; Seymour, built to last.</p>
+          <a href="https://www.amazon.com/dp/B000BW0YGM?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Legrand Pass &amp; Seymour Stacked Single-Pole Switch</h5>
+          <p>Two single-pole switches in one device, a great solution when you want to add another light but don&#39;t want to swap the box for a bigger one. This is NOT a 3-way switch; both switches operate independently. You will need a duplex receptacle plate for this switch. If it&#39;s sitting next to another toggle switch in a 2-gang box, grab a duplex/toggle 2-gang plate, they&#39;re very common and easy to find.</p>
+          <a href="https://www.amazon.com/dp/B001B19EM2?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Legrand Pass &amp; Seymour Stacked Single-Pole / 3-Way Switch</h5>
+          <p>One single-pole switch and one 3-way switch in a single device, perfect when you want to add a 3-way circuit but don&#39;t want to upgrade to a bigger box. Same plate advice as the stacked single-pole: you&#39;ll need a duplex receptacle plate, and if it&#39;s next to another toggle in a 2-gang box, grab a duplex/toggle 2-gang plate.</p>
+          <a href="https://www.amazon.com/dp/B000BQU102?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Legrand Radiant Stacked Decora Switch (Single-Pole / Single-Pole)</h5>
+          <p>Two single-pole Decora rocker switches in one device, the modern, clean-lined version of the stacked toggle. Great for adding another light without swapping to a bigger box. Both switches operate independently. This just needs a standard 1-gang Decora wall plate.</p>
+          <a href="https://www.amazon.com/dp/B01N0B9T09?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Legrand Radiant Stacked Decora Switch (3-Way / 3-Way)</h5>
+          <p>Two 3-way Decora rocker switches in one device, both switches can be wired into 3-way circuits so each light is controllable from two locations. (You can also wire a 3-way switch to operate from a single location if that&#39;s all you need, more on that in a future video.) Same as the other stacked Decora option: just a standard 1-gang wall plate.</p>
+          <a href="https://www.amazon.com/dp/B01N0B9VZR?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Legrand Pass &amp; Seymour Single-Pole Decora Rocker Switch</h5>
+          <p>Single-pole Decora rocker switch. Same Legrand Pass &amp; Seymour quality in the modern Decora style that matches contemporary homes.</p>
+          <a href="https://www.amazon.com/dp/B003RBGH7E?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Legrand Pass &amp; Seymour 3-Way Decora Rocker Switch</h5>
+          <p>3-way Decora rocker switch. Control a light from two locations with the clean Decora look.</p>
+          <a href="https://www.amazon.com/dp/B072Y161DR?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Legrand Pass &amp; Seymour 4-Way Decora Rocker Switch</h5>
+          <p>4-way Decora rocker switch. Control a light from three or more locations with the modern Decora style.</p>
+          <a href="https://www.amazon.com/dp/B000H6K7Z0?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Legrand Pass &amp; Seymour Duplex Receptacle</h5>
+          <p>Standard 15A duplex receptacle, the everyday outlet. Same Legrand Pass &amp; Seymour quality you&#39;ve come to expect.</p>
+          <a href="https://www.amazon.com/dp/B000BQPZM6?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Legrand Pass &amp; Seymour Decora Receptacle</h5>
+          <p>Decora-style duplex receptacle, same reliable outlet, modern rectangular look that matches Decora switches and plates.</p>
+          <a href="https://www.amazon.com/dp/5007860980?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Legrand Pass &amp; Seymour Radiant GFCI Receptacle</h5>
+          <p>Self-testing GFCI receptacle, required for kitchens, bathrooms, outdoors, garages, and anywhere near water. Automatically tests itself every few seconds to make sure it&#39;s still protecting you.</p>
+          <a href="https://www.amazon.com/dp/B017IPR92G?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>RS Single Duplex Receptacle Cover for 4-Square Metal Box</h5>
+          <p>Raised (RS) single-gang cover for a 4-square metal box with one standard duplex receptacle opening. Galvanized steel with a raised center section that brings the receptacle out past the box edge, making it perfect for exposed walls, unfinished spaces, sheds, and warehouses. Mounts with corner screws to the 4-square box listed in the Electrical Boxes section. Pair with a standard duplex receptacle and a single-gang wall plate for a complete surface-mounted outlet.</p>
+          <a href="https://www.amazon.com/dp/B00PSMOVD2?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>RS Quad Duplex Receptacle Cover for 4-Square Metal Box</h5>
+          <p>Raised (RS) two-gang cover for a 4-square metal box with two standard duplex receptacle openings (four outlets total). Galvanized steel with a raised center section that brings the receptacles out past the box edge. Perfect for exposed walls, unfinished spaces, sheds, and warehouses where you need more receptacles in one location. Mounts with corner screws to the 4-square box listed in the Electrical Boxes section. Pair with two standard duplex receptacles and a single-gang wall plate over each receptacle for a complete surface-mounted quad outlet.</p>
+          <a href="https://www.amazon.com/dp/B000HEIU9W?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>RS Single-Gang Toggle Switch Cover for 4-Square Metal Box</h5>
+          <p>Raised (RS) single-gang cover for a 4-square metal box with one standard toggle switch opening. Galvanized steel with a raised center section that brings the switch out past the box edge, making it ideal for exposed walls, unfinished spaces, sheds, shops, and warehouses. Mounts with corner screws to the 4-square box listed in the Electrical Boxes section. Pair with a standard single-pole, 3-way, or 4-way toggle switch and a single-gang toggle wall plate for a complete surface-mounted switch.</p>
+          <a href="https://www.amazon.com/dp/B0BDMZP2D9?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>RS 2-Gang Toggle Switch Cover for 4-Square Metal Box</h5>
+          <p>Raised (RS) two-gang cover for a 4-square metal box with two standard toggle switch openings. Galvanized steel with a raised center section that brings the switches out past the box edge, making it ideal for exposed walls, unfinished spaces, sheds, shops, and warehouses where you need two switches in one location. Mounts with corner screws to the 4-square box listed in the Electrical Boxes section. Pair with two standard single-pole, 3-way, or 4-way toggle switches and single-gang toggle wall plates over each switch for a complete surface-mounted 2-switch setup.</p>
+          <a href="https://www.amazon.com/dp/B0BDN117MV?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Legrand Pass &amp; Seymour Single-Gang Toggle Switch Plate</h5>
+          <p>Single-gang wall plate for toggle switches. Clean, durable, and matches the rest of the Legrand Pass &amp; Seymour line.</p>
+          <a href="https://www.amazon.com/dp/B005VQ1QBA?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Legrand Pass &amp; Seymour 2-Gang Toggle Switch Plate</h5>
+          <p>Two-gang wall plate for toggle switches. Clean, durable, and matches the rest of the Legrand Pass &amp; Seymour line.</p>
+          <a href="https://www.amazon.com/dp/B0001M6FPG?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Legrand Pass &amp; Seymour 3-Gang Toggle Switch Plate</h5>
+          <p>Three-gang wall plate for toggle switches. Clean, durable, and matches the rest of the Legrand Pass &amp; Seymour line.</p>
+          <a href="https://www.amazon.com/dp/B000BQU6YI?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Legrand Pass &amp; Seymour 4-Gang Toggle Switch Plate</h5>
+          <p>Four-gang wall plate for toggle switches. Clean, durable, and matches the rest of the Legrand Pass &amp; Seymour line.</p>
+          <a href="https://www.amazon.com/dp/B001PWJOTU?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Legrand Pass &amp; Seymour Single-Gang Decora Wall Plate</h5>
+          <p>Single-gang Decora wall plate, works for Decora rocker switches, Decora receptacles, and GFCI outlets. Clean rectangular opening, same durable Legrand Pass &amp; Seymour quality.</p>
+          <a href="https://www.amazon.com/dp/B000GUPR16?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Legrand Pass &amp; Seymour 2-Gang Decora Wall Plate</h5>
+          <p>Two-gang Decora wall plate, fits two Decora rocker switches, Decora receptacles, GFCI outlets, or any combination. Same clean look and durable Legrand Pass &amp; Seymour quality.</p>
+          <a href="https://www.amazon.com/dp/B0001M6FRO?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Legrand Pass &amp; Seymour 3-Gang Decora Wall Plate</h5>
+          <p>Three-gang Decora wall plate, fits three Decora rocker switches, Decora receptacles, GFCI outlets, or any combination. Same clean look and durable Legrand Pass &amp; Seymour quality.</p>
+          <a href="https://www.amazon.com/dp/B000BQU6YI?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Legrand Pass &amp; Seymour 4-Gang Decora Screwless Wall Plate</h5>
+          <p>Four-gang Decora screwless wall plate, seamless, modern look with no visible screws. Fits four Decora rocker switches, Decora receptacles, GFCI outlets, or any combination. Note: Could not find a white 4-Gang Decora with screws on Amazon, so this screwless version is the best available Legrand option for 4-gang Decora setups.</p>
+          <a href="https://www.amazon.com/dp/B0734S2MKB?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Lutron LED+ Toggle Dimmer Switch</h5>
+          <p>Toggle-style dimmer for LED and incandescent loads. Legrand Pass &amp; Seymour doesn&#39;t make dimmers, Lutron runs the show for hardwired dimmers. Make sure you choose LED+ (like this one) so it can handle both LED and incandescent bulbs. *Double-check your bulbs or fixtures are dimmable before you buy!</p>
+          <a href="https://www.amazon.com/dp/B006UTQCA2?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Lutron Diva LED+ Decora Dimmer Switch</h5>
+          <p>Decora-style paddle dimmer with side slider. Lutron Diva is the go-to for modern homes that want dimming in the clean Decora look. LED+ handles both LED and incandescent loads. Same reminder: *make sure your bulbs/fixtures are actually dimmable first!</p>
+          <a href="https://www.amazon.com/dp/B004DZOMKC?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Weatherproof Bubble Cover, Single Gang, Gray</h5>
+          <p>Single-gang weatherproof bubble cover for exterior outlets, switches, or receptacles. I recommend using these whether the device is under a covered awning or not, if it&#39;s outside, this is your best protection. They stick out a bit, and this one is gray. A white option that&#39;s a little better looking is coming up next!</p>
+          <a href="https://www.amazon.com/dp/B001PKP4J6?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Weatherproof Bubble Cover, Single Gang, White (Expandable)</h5>
+          <p>White single-gang weatherproof bubble cover with an expandable design that can extend outward. Better looking than the gray option and my top recommendation for exterior outlets, switches, or receptacles. Use this anytime you have a device outside, covered awning or not.</p>
+          <a href="https://www.amazon.com/dp/B00OHRNX0G?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Weatherproof Bubble Cover, Two Gang, Gray (Expandable)</h5>
+          <p>Two-gang weatherproof bubble cover with an expandable design, similar to the single-gang white version. Sleek look that covers two exterior devices, great for dual receptacles, switch + receptacle combos, or any two-gang exterior setup.</p>
+          <a href="https://www.amazon.com/dp/B00JU530ZI?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tm-panel" id="panel-boxes">
+      <div class="tm-panel-head">
+        <div class="tm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M3 7l9 5 9-5M12 12v10"/></svg></div>
+        <div><h4>Electrical Boxes</h4><p>Old work (remodels), new work, the right box for the job.</p></div>
+      </div>
+            <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Old Work Box, Single Gang (Remodel)</h5>
+          <p>For remodeling: just cut the hole out, put the box in the wall, and screw the tabs in until they tighten on the sheet rock. Easy peasy!</p>
+          <a href="https://www.amazon.com/dp/B0DBKZTP4F?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>New Work Box, Single Gang</h5>
+          <p>For new construction or additions where sheet rock isn&#39;t up yet. Nail it to the stud, then install your receptacle, GFCI, or switch, or even a stack switch if you&#39;re tight on space.</p>
+          <a href="https://www.amazon.com/dp/B0F23PKX3M?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Old Work Box, Two Gang (Remodel)</h5>
+          <p>For already-finished walls: cut the hole, insert the box, and tighten the tabs against the sheet rock. Perfect for quad receptacles (2 receptacles / 4 total plugs), dryer receptacles, range receptacles (same one used for most car chargers), or when you&#39;re adding two switches side by side.</p>
+          <a href="https://www.amazon.com/dp/B0F2HSLRNZ?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>New Work Box, Two Gang</h5>
+          <p>For new construction or additions where sheet rock isn&#39;t up yet. Same uses as the cut-in version, quad receptacles, dryer or range receptacles, or two side-by-side switches. This one has an adjustment bracket so you can bring the box out past the stud further. Adding tile or shiplap over your sheet rock? Bring the box out and sit it flush with the finished wall.</p>
+          <a href="https://www.amazon.com/dp/B0DTP84Q6R?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Old Work Box, Three Gang (Remodel)</h5>
+          <p>For finished walls where you need to expand a 2-gang switch box to 3 gang, usually because you&#39;re adding another switch. Cut in the larger opening, insert the box, and tighten the tabs to the sheet rock. (You could always use a stack switch instead!) Video on how to swap this without damaging sheet rock coming soon.</p>
+          <a href="https://www.amazon.com/dp/B0G6CVRT9G?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>New Work Box, Three Gang</h5>
+          <p>For new construction or additions where sheet rock isn&#39;t up yet. Mainly used when you&#39;re adding three switches side by side. This one has the same adjustable bracket as the 2-gang version, bring the box out past the stud so it sits flush with tile, shiplap, or any other layer you add over the sheet rock.</p>
+          <a href="https://www.amazon.com/dp/B0DSKWZ8HX?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Old Work Box, Four Gang (Remodel)</h5>
+          <p>For finished walls when you&#39;re adding a bunch of switches, you&#39;ll most likely never need this, but here it is just in case. Cut in the opening, insert the box, and tighten the tabs to the sheet rock.</p>
+          <a href="https://www.amazon.com/dp/B0G4M29YRY?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>New Work Box, Four Gang</h5>
+          <p>For new construction or additions where sheet rock isn&#39;t up yet. Typically needed in living rooms and bathrooms, places you&#39;ll have lots of switches. Same as the other new work boxes, but no adjustable bracket on this one. (You may find a 4-gang option with a bracket through the other links above.)</p>
+          <a href="https://www.amazon.com/dp/B0DC6DPSGG?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>4-Square Deep Box with Mounting Brackets</h5>
+          <p>Metal 4-square deep box with mounting brackets, the standard commercial box for exposed walls, unfinished spaces, sheds, and warehouses where you aren&#39;t closing in the walls. Built for landing Metal Clad (MC) cable, with side knockouts and mounting ears for solid attachment to studs or block. Several metal raised (RS) covers for these boxes are listed in the Outlets &amp; Switches section, pair those covers with switches, receptacles, or blank plates to finish the job.</p>
+          <a href="https://www.amazon.com/dp/B0CM8P3YPR?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>4-Square Deep Box (No Bracket)</h5>
+          <p>Metal 4-square deep box without mounting brackets, same deep volume as the bracketed version, but without the integrated side ears. Use it when you&#39;re mounting to a flat backboard, inside a panel, or in a custom enclosure where the built-in brackets would interfere. Same great application for exposed walls, sheds, shops, and warehouses with MC cable. Pair with the RS covers, MC connectors, and straps in the other sections for a complete installation.</p>
+          <a href="https://www.amazon.com/dp/B0F1F4FWQQ?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>4-Square Shallow Metal Box with Mounting Brackets</h5>
+          <p>Metal 4-square shallow box with mounting brackets, same footprint as the deep version but with less internal volume. Use this when you have fewer conductors and devices to land inside the box, such as a single switch or receptacle with just one cable entering. Choose the deep box when you have more wiring, multiple cables, or larger devices that need the extra space. Same exposed-wall applications: sheds, shops, warehouses, and anywhere the walls aren&#39;t getting closed in.</p>
+          <a href="https://www.amazon.com/dp/B0H4VW1GVY?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>4-Square Shallow Metal Box (No Bracket)</h5>
+          <p>Metal 4-square shallow box without mounting brackets, same shallow volume as the bracketed version, but designed to be mounted directly to a surface or inside an enclosure where the integrated ears aren&#39;t needed. Great for exposed-wall work, sheds, shops, and warehouses when you&#39;re attaching the box to a backboard, panel, or custom mounting setup. Pair with the RS covers, MC connectors, and straps in the other sections for a complete surface-mounted installation.</p>
+          <a href="https://www.amazon.com/dp/B0FSCHWS1D?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Old Work Box, Round (Remodel)</h5>
+          <p>Round cut-in box for finished walls, great for adding vanity lights in the bathroom, sconce lights outside, or putting flood lights and cameras in the soffit. Cut the hole, insert the box, and tighten the tabs to the sheet rock.</p>
+          <a href="https://www.amazon.com/dp/B07DMSL9HV?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Weatherproof Bell Box, Exterior</h5>
+          <p>Weatherproof box for the exterior of your home. This one has ½" knockouts if you want to carry power from this box to somewhere else. If not, it comes with grommets you can screw in to maintain the weatherproofing. Pair it with a weatherproof cover from our Switches, Receptacles &amp; Plates section for a complete outdoor setup.</p>
+          <a href="https://www.amazon.com/dp/B000BW0YXU?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Weatherproof Bell Box, Two Gang, Exterior</h5>
+          <p>Two-gang weatherproof box for the exterior of your home. Perfect for a quad receptacle location (2 receptacles, 4 total plugs) or multiple switches outside. Pair it with a weatherproof cover from our Switches, Receptacles &amp; Plates section for a complete outdoor setup.</p>
+          <a href="https://www.amazon.com/dp/B00004WZ2U?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tm-panel" id="panel-connectors">
+      <div class="tm-panel-head">
+        <div class="tm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div><h4>Connectors &amp; Tape</h4><p>Wire nuts, lever nuts, electrical tape, staples, and the small bits.</p></div>
+      </div>
+            <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Metal Straps for MC (Metal Clad) Cable</h5>
+          <p>Zinc-plated steel straps for securing 12/2 and 12/3 MC (Metal Clad) cable to studs, joists, block, or trusses. The saddle loop holds the armored cable while the two screw holes keep it solidly fastened. These are the standard straps for running exposed MC in warehouses, sheds, shops, and anywhere the walls aren&#39;t getting closed in. A must-have companion to the 12/2 MC cable and 4-square boxes listed in the other sections.</p>
+          <a href="https://www.amazon.com/dp/B0GVJRF2G1?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>MC (Metal Clad) Cable Connectors</h5>
+          <p>Zinc-plated steel MC connectors for terminating Metal Clad cable into 4-square boxes, panel enclosures, and other metal boxes. The clamp-style body grips the armored cable while the locknut secures it to the knockout, giving you a solid mechanical connection and grounding path. Sized for standard 12/2 and 12/3 MC cable. Use these wherever the MC cable enters or leaves a box, pair them with the 12/2 MC cable, metal straps, and 4-square boxes in the other sections.</p>
+          <a href="https://www.amazon.com/dp/B0FH4FBB65?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>3M Performance Plus Wire Nuts, Tan &amp; Red (Pouch)</h5>
+          <p>My absolute favorite wire nuts and my go-to brand. This pouch gives you a mix of tan and red 3M Performance Plus spring connectors, the tan size handles most everyday splices (think #18 to #8 solid or stranded), and the red size is perfect for larger splices or when you have more conductors in the joint. The spring inside grips tight, the shell is easy to twist, and they don&#39;t crack or slip like the cheap stuff. If you&#39;re only buying one bag of wire nuts for your house, this is the one.</p>
+          <a href="https://www.amazon.com/dp/B00A03CPZ0?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tm-panel" id="panel-lighting">
+      <div class="tm-panel-head">
+        <div class="tm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18h6M10 22h4M12 2a6 6 0 00-4 10.5c.7.7 1 1.3 1 2.5h6c0-1.2.3-1.8 1-2.5A6 6 0 0012 2z"/></svg></div>
+        <div><h4>Lighting &amp; Bulbs</h4><p>Bulbs, smart bulbs, fixture kits, and lighting accessories.</p></div>
+      </div>
+
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>4" Slim LED Downlight Fixture</h5>
+          <p>AKA the "rat trap," arguably the best electrical invention of the 21st century. No more worrying about trusses or installing a bulky remodel recessed can. Just cut the right size hole (templates included with most brands), wire the junction box (comes with the light), and the fixture clips directly to the sheet rock. Ultra-thin profile makes it perfect for tight ceilings with limited clearance. If you're retrofitting old cans, skip them entirely and use these instead.</p>
+          <a href="https://www.amazon.com/dp/B0BGP4N75Y?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>6" Slim LED Downlight Fixture</h5>
+          <p>AKA the "rat trap," arguably the best electrical invention of the 21st century. No more worrying about trusses or installing a bulky remodel recessed can. Just cut the right size hole (templates included with most brands), wire the junction box (comes with the light), and the fixture clips directly to the sheet rock. Ultra-thin profile makes it perfect for tight ceilings with limited clearance. If you're retrofitting old cans, skip them entirely and use these instead.</p>
+          <a href="https://www.amazon.com/dp/B087JDFH4K?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>4" All-in-One LED Recessed Can Trim</h5>
+          <p>Color-selectable LED trim and module combo for existing 4-inch recessed cans. Great replacement when your old trim or bulb is worn out, just twist it into the existing can housing. If you're remodeling and adding new lighting, we recommend rat traps all day, so much simpler. But if you already have cans and just need a fresh trim and LED module, this is the way to go.</p>
+          <a href="https://www.amazon.com/dp/B096GZLVH7?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>6" All-in-One LED Recessed Can Trim</h5>
+          <p>Color-selectable LED trim and module combo for existing 6-inch recessed cans. Great replacement when your old trim or bulb is worn out, just twist it into the existing can housing. If you&#39;re remodeling and adding new lighting, we recommend rat traps all day, so much simpler. But if you already have cans and just need a fresh trim and LED module, this is the way to go.</p>
+          <a href="https://www.amazon.com/dp/B0CJWJ2ZCR?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>Smart LED Tape Light Kit (200 ft, 2 x 100&#39; Rolls)</h5>
+          <p>Color-changing LED tape lighting you can control from your phone, great for under-cabinet accent lighting, cove lighting, back-lighting, or anywhere you want to add a little ambiance with full color control. This kit includes two 100-foot rolls (200 ft total). I&#39;ve installed tape lighting from several different brands over the years and honestly haven&#39;t found one I didn&#39;t like, so feel free to shop around, this is just an example I&#39;ve used before that worked well.</p>
+          <a href="https://www.amazon.com/dp/B09BR3DYKS?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>1x4 Vapor Proof LED Light Fixture</h5>
+          <p>Vapor-proof LED fixture, built with a sealed gasketed housing and prismatic lens to keep out moisture and dust. Usually found in commercial settings like warehouses, parking garages, and car washes, but it&#39;s a fantastic pick for exterior gazebos, covered patios, sheds, or any damp location where you want reliable, bright LED lighting that won&#39;t quit on you. Dimmable and rated for 100-277V, so it works in both residential and commercial voltage setups.</p>
+          <a href="https://www.amazon.com/dp/B0GHR5XN1Y?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tm-panel" id="panel-subpanels">
+      <div class="tm-panel-head">
+        <div class="tm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v6M18.4 6.6a9 9 0 11-12.8 0"/></svg></div>
+        <div><h4>Sub Panels &amp; Disconnects</h4><p>Sub panels, AC disconnects, and feed-through enclosures for sheds, A/Cs, and add-on loads.</p></div>
+      </div>
+      <div style="background:var(--blue-pale);border-radius:12px;padding:16px 18px;margin-bottom:16px;font-size:12.5px;color:var(--ink);line-height:1.65;">
+        <strong style="color:var(--blue-deep);">Brand disclaimer:</strong> Over the years, I have installed and serviced equipment from many manufacturers. Siemens, Eaton, and Square D are the three brands I have personally used the most and have consistently had good experiences with in the field. Because of that, these are the brands I feel comfortable recommending based on my own real-world experience. No manufacturer pays HomeownerPal to recommend their products.
+      </div>
+            <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>50 Amp GFCI Spa Panel</h5>
+          <p>Outdoor-rated 50-amp GFCI load center / spa panel, built specifically for hot tubs, spas, and high-end saunas that need a dedicated 240V GFCI-protected circuit. This is a Square D Homeline panel with a factory-installed 50A two-pole GFCI breaker in a weatherproof enclosure. If you&#39;re installing a hot tub, this is exactly what you need: it provides both overcurrent protection and GFCI ground-fault protection in one unit. Mount it within sight of the spa equipment per NEC requirements.</p>
+          <a href="https://www.amazon.com/dp/B004Q0N9OY?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>125 Amp 8-Space NEMA 3R Outdoor Sub Panel</h5>
+          <p>125-amp, 8-space outdoor-rated sub panel in a NEMA 3R enclosure, perfect for small additions, sheds, garages, or when your main panel is full and you need to make room for new circuits. NEMA 3R means it&#39;s built for outdoor use: rain-tight, dust-resistant, and ready to mount on an exterior wall. The product page has several different sizes and amperages available, so you can pick what fits your specific load and space requirements.</p>
+          <a href="https://www.amazon.com/dp/B00002N7KJ?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+      <div class="tm-product">
+        <div class="tm-product-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="tm-product-info">
+          <h5>60 Amp 240V Non-Fused Switched Disconnect</h5>
+          <p>60-amp, 240V non-fused switched disconnect, a heavy-duty metal enclosure with a proper switch handle instead of the cheap plastic pull-out style you see contractors throw in to save a buck. In my opinion this looks better, lasts longer, and stands up to weather and abuse. Use it for A/C condensers, air handlers, or tanked water heaters that need a local disconnect within sight of the equipment.</p>
+          <a href="https://www.amazon.com/dp/B07PS6F5PV?tag=homeownerpal2-20" class="tm-amazon-link">View on Amazon <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="tm-disclosure">
+    As an Amazon Associate and affiliate of other retailers, HomeownerPal earns from qualifying purchases. Always match wire gauge and device ratings to your circuit, follow local code, and when in doubt, hire a licensed electrician.
+  </div>
+
+</div>
+
+<section class="cta-band">
+  <div class="wrap">
+    <div class="inner">
+      <h2>Start documenting your home today.</h2>
+      <p>Free forever. No credit card. No sales calls.</p>
+      <div class="btns">
+        <a href="index.html" class="btn btn-primary">Start my home profile, free</a>
+        <a href="hopline.html" class="btn btn-outline">Talk to the HOPline</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <img class="mark" src="assets/hop-logo-mark.png" alt="HomeownerPal">
+          HomeownerPal
+        </a>
+        <p>Your home, documented and protected. Free tools for homeowners, built from real trade experience.</p>
+      </div>
+      <div>
+        <h5>My Home</h5>
+        <ul><li><a href="index.html#homeowners">Equipment &amp; records</a></li><li><a href="index.html#homeowners">Warranties</a></li><li><a href="index.html#stayfree">Premium scan</a></li></ul>
+      </div>
+      <div>
+        <h5>Diagnose</h5>
+        <ul><li><a href="diagnose.html#electrical-problems">Electrical guide</a></li><li><a href="diagnose.html#plumbing-problems">Plumbing guide</a></li><li><a href="diagnose.html#hvac-problems">HVAC guide</a></li></ul>
+      </div>
+      <div>
+        <h5>Tools &amp; Costs</h5>
+        <ul><li><a href="tools-costs.html#material-calculator">Material calculator</a></li><li><a href="tools-materials.html">Tools &amp; materials</a></li><li><a href="tools-costs.html#inspection-costs">Inspection costs</a></li></ul>
+      </div>
+      <div>
+        <h5>Community</h5>
+        <ul><li><a href="contractor-forum.html">Contractor forum</a></li><li><a href="find-a-pro.html">Find a pro</a></li></ul>
+      </div>
+    </div>
+
+    <div class="legal-box">
+      <div class="lb-head">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+        Important, please read
+      </div>
+      <p>HomeownerPal (HOP) is built and maintained by people with decades of combined hands-on trade experience. The guidance here is grounded in real field experience and is intended to help homeowners understand what's likely happening, what a fair price range looks like, and what questions to ask. That said, home systems are complex and every situation is different. Some issues simply require a qualified technician on-site to physically test, locate, and confirm the actual cause before any repair should be made.</p>
+      <p>Electricity, gas, and water systems can cause serious injury or death. If you smell burning, see smoke or sparks, hear sustained buzzing, or otherwise suspect an emergency, stop, leave the area, and call 911 and/or a licensed professional immediately. Do not attempt repairs you are not trained or permitted to perform; many jurisdictions legally require licensed and inspected work.</p>
+      <p>Price ranges shown are rough estimates only and vary by region, code requirements, and site conditions. See our <a href="terms.html">Terms of Service</a> and <a href="privacy.html">Privacy Policy</a>.</p>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="links">
+        <a href="terms.html">Terms</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="property-managers.html">For Property Managers</a>
+        <a href="hopline.html">Call the HOPline</a>
+        <a href="#">Send feedback</a>
+      </div>
+      <div class="socials">
+        <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 5.9c-.7.3-1.5.6-2.3.7.8-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.6 1-.8-.8-1.9-1.3-3-1.3-2.3 0-4.1 1.9-4.1 4.1 0 .3 0 .6.1.9-3.4-.2-6.5-1.8-8.5-4.3-.4.6-.6 1.3-.6 2.1 0 1.4.7 2.7 1.8 3.4-.7 0-1.3-.2-1.9-.5v.1c0 2 1.4 3.6 3.3 4-.3.1-.7.1-1.1.1-.3 0-.5 0-.8-.1.5 1.6 2 2.8 3.8 2.8-1.4 1.1-3.2 1.7-5.1 1.7-.3 0-.7 0-1-.1 1.8 1.2 4 1.8 6.3 1.8 7.5 0 11.7-6.3 11.7-11.7v-.5c.8-.6 1.5-1.3 2-2.1z"/></svg></a>
+        <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5H16l.5-3H13.5V8.4c0-.9.2-1.5 1.5-1.5H16.5V4.2C16.2 4.2 15.2 4 14 4c-2.4 0-4 1.5-4 4.1v2.4H7.5v3H10V21h3.5z"/></svg></a>
+        <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="5"/></svg></a>
+        <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></a>
+      </div>
+      <div>© 2026 HomeownerPal. Built with care for homeowners.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleTM(key){
+  var panel = document.getElementById('panel-' + key);
+  var btn = document.getElementById('btn-' + key);
+  var card = document.getElementById('card-' + key);
+  var isOpen = panel.classList.contains('show');
+
+  document.querySelectorAll('.tm-panel.show').forEach(function(p){ p.classList.remove('show'); });
+  document.querySelectorAll('.tm-expand-bar.open').forEach(function(b){ b.classList.remove('open'); });
+  document.querySelectorAll('.tm-card.open').forEach(function(c){ c.classList.remove('open'); });
+
+  if(!isOpen){
+    panel.classList.add('show');
+    btn.classList.add('open');
+    card.classList.add('open');
+    setTimeout(function(){ panel.scrollIntoView({behavior:'smooth', block:'nearest'}); }, 50);
+  }
+}
+</script>
+
+
+<script>
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var wipeSelectors = ['h1', 'h2', 'h3'];
+  var excludeAncestors = ['header', 'nav', 'footer'];
+  var wipes = [];
+  function isExcluded(el) {
+    var p = el.parentElement;
+    while (p) {
+      if (excludeAncestors.indexOf(p.tagName.toLowerCase()) !== -1) return true;
+      p = p.parentElement;
+    }
+    return false;
+  }
+  wipeSelectors.forEach(function (sel) {
+    document.querySelectorAll(sel).forEach(function (el) {
+      if (isExcluded(el)) return;
+      if (!el.classList.contains('wipe')) el.classList.add('wipe');
+      wipes.push(el);
+    });
+  });
+  if (reduce || !('IntersectionObserver' in window)) {
+    wipes.forEach(function (el) { el.classList.add('is-visible'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries, obs) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.querySelectorAll('.wipe').forEach(function (c) { c.classList.add('is-visible'); });
+      obs.unobserve(e.target);
+    });
+  }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
+  var wipeParents = [];
+  wipes.forEach(function (el) {
+    var parent = el.parentElement;
+    if (parent && wipeParents.indexOf(parent) === -1) {
+      wipeParents.push(parent);
+      io.observe(parent);
+    }
+  });
+})();
+</script>
+
+
+<!-- ==== HOP NAV drawer ==== -->
+<div class="nav-drawer-overlay" id="hopNavOverlay" onclick="if(event.target===this)HOPNav.close()">
+  <nav class="nav-drawer" aria-label="Site menu">
+    <div class="nav-drawer-head">
+      <a href="index.html" class="logo">
+        <img class="mark" src="assets/hop-logo-mark.png" alt="HomeownerPal">
+        Homeowner<span class="pal">Pal</span>
+      </a>
+      <button class="nav-drawer-close" onclick="HOPNav.close()" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <ul class="nav-drawer-list">
+      <li><a href="diagnose.html">Diagnose</a></li>
+      <li><a href="find-a-pro.html">Find a Pro</a></li>
+      <li><a href="tools-costs.html">Tools and Costs</a></li>
+      <li><a href="realestate.html">Real Estate and Builder Packs</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="emergency.html">Emergency</a></li>
+      <li><a href="contractor-forum.html">Contractor Forum</a></li>
+      <li><a href="support-hop.html">Support</a></li>
+      <li><a href="game-arcade.html">Game Arcade</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="terms.html">Terms of Service</a></li>
+    </ul>
+  </nav>
+</div>
+<script>
+window.HOPNav={
+  open:function(){ var o=document.getElementById('hopNavOverlay'); if(o){ o.classList.add('open'); document.body.style.overflow='hidden'; } },
+  close:function(){ var o=document.getElementById('hopNavOverlay'); if(o){ o.classList.remove('open'); document.body.style.overflow=''; } }
+};
+document.addEventListener('keydown',function(e){ if(e.key==='Escape') HOPNav.close(); });
+</script>
+<!-- ==== end HOP NAV drawer ==== -->
+
+<!-- ==== HOP INSTALL modal ==== -->
+<div class="hop-modal-overlay" id="hopInstallOverlay" onclick="if(event.target===this)HOPInstall.close()">
+  <div class="hop-modal install-modal">
+    <button class="hop-modal-x" onclick="HOPInstall.close()" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <h2>Install the HOP app</h2>
+    <p class="install-intro">HOP works great as an app on your phone &mdash; quick to open the next time something goes sideways at home. It only takes a few taps.</p>
+    <div class="install-os-block">
+      <h4>On iPhone / iPad (Safari)</h4>
+      <ol>
+        <li>Tap the <strong>Share</strong> button at the bottom of Safari.</li>
+        <li>Scroll and tap <strong>Add to Home Screen</strong>.</li>
+        <li>Tap <strong>Add</strong> in the top corner. Done &mdash; HOP is on your home screen.</li>
+      </ol>
+    </div>
+    <div class="install-os-block">
+      <h4>On Android (Chrome)</h4>
+      <ol>
+        <li>Tap the <strong>menu</strong> in the top-right of Chrome.</li>
+        <li>Tap <strong>Add to Home screen</strong> (or <strong>Install app</strong>).</li>
+        <li>Confirm with <strong>Add / Install</strong>. Look for the bunny on your home screen.</li>
+      </ol>
+    </div>
+    <p class="install-footer">HOP is always free, and the app is just our website saved to your home screen &mdash; no app store needed.</p>
+  </div>
+</div>
+<script>
+window.HOPInstall={
+  open:function(){ var m=document.getElementById('hopInstallOverlay'); if(m){ m.classList.add('open'); document.body.style.overflow='hidden'; } },
+  close:function(){ var m=document.getElementById('hopInstallOverlay'); if(m){ m.classList.remove('open'); document.body.style.overflow=''; } }
+};
+document.addEventListener('keydown',function(e){ if(e.key==='Escape') HOPInstall.close(); });
+</script>
+<!-- ==== end HOP INSTALL modal ==== -->
+
+<!-- ==== HOP AUTH modal ==== -->
+<div class="hop-modal-overlay" id="hopSignin" onclick="if(event.target===this)HOP.close()">
+  <div class="hop-modal">
+    <button class="hop-modal-x" onclick="HOP.close()" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div class="hop-brand">
+      <span class="hop-brand-icon">
+        <img class="mark" src="assets/hop-logo-mark.png" alt="HomeownerPal">
+      </span>
+      <span class="hop-brand-name">HomeownerPal</span>
+    </div>
+    <h2>Welcome to HomeownerPal</h2>
+    <p class="hop-modal-sub">Sign in or create your free account. Your home record stays private to you.</p>
+    <button class="hop-google" onclick="HOP.signin('google')">
+      <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.5 12.2c0-.7-.1-1.4-.2-2H12v3.8h5.9a5 5 0 01-2.2 3.3v2.7h3.5c2-1.9 3.3-4.7 3.3-7.8z"/><path fill="#34A853" d="M12 23c3 0 5.5-1 7.3-2.7l-3.5-2.7c-1 .7-2.3 1.1-3.8 1.1-2.9 0-5.4-2-6.3-4.6H2v2.8A11 11 0 0012 23z"/><path fill="#FBBC05" d="M5.7 14.1a6.6 6.6 0 010-4.2V7.1H2a11 11 0 000 9.8z"/><path fill="#EA4335" d="M12 5.4c1.6 0 3 .6 4.2 1.6l3.1-3.1A11 11 0 002 7.1l3.7 2.8C6.6 7.3 9.1 5.4 12 5.4z"/></svg>
+      Continue with Google
+    </button>
+    <div class="hop-or"><span>or</span></div>
+    <div class="hop-field"><label>First name</label><input id="hopName" type="text" placeholder="e.g. Khadija" autocomplete="given-name"></div>
+    <div class="hop-field"><label>Email</label><input id="hopEmail" type="email" placeholder="you@example.com" autocomplete="email"></div>
+    <div class="hop-field"><label>Password</label><input id="hopPass" type="password" placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;" autocomplete="current-password"></div>
+    <div class="hop-forgot"><a href="#" onclick="return false;">Forgot password?</a></div>
+    <button class="hop-submit" onclick="HOP.signin('email')">Sign in</button>
+    <p class="hop-legal">By continuing you agree to our <a href="terms.html">Terms</a> &amp; <a href="privacy.html">Privacy Policy</a>.</p>
+  </div>
+</div>
+<script>
+(function(){
+  var KEY='hop_user';
+  function get(){ try{return JSON.parse(localStorage.getItem(KEY));}catch(e){return null;} }
+  function esc(s){ return (s||'').replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+  window.HOP={
+    open:function(){ var m=document.getElementById('hopSignin'); if(m){m.classList.add('open');document.body.style.overflow='hidden';var n=document.getElementById('hopName');if(n)setTimeout(function(){n.focus();},50);} },
+    close:function(){ var m=document.getElementById('hopSignin'); if(m){m.classList.remove('open');document.body.style.overflow='';} },
+    signin:function(method){
+      var name=(document.getElementById('hopName').value||'').trim();
+      var email=(document.getElementById('hopEmail').value||'').trim();
+      if(!name){ var n=document.getElementById('hopName'); n.focus(); n.style.borderColor='var(--orange)'; return; }
+      var user={name:name, email:email||(name.toLowerCase().replace(/\s+/g,'')+'@homeownerpal.com'), via:method};
+      try{ localStorage.setItem(KEY, JSON.stringify(user)); }catch(e){}
+      HOP.close(); HOP.render();
+    },
+    signout:function(){ try{ localStorage.removeItem(KEY); }catch(e){} HOP.render(); },
+    toggleMenu:function(e){ e.stopPropagation(); var m=document.getElementById('hopMenu'); if(m) m.classList.toggle('open'); },
+    render:function(){
+      var slot=document.getElementById('hopAuthSlot'); if(!slot) return;
+      var u=get();
+      if(u && u.name){
+        var init=esc(u.name.charAt(0));
+        slot.innerHTML='<button class="hop-welcome" onclick="HOP.toggleMenu(event)"><span class="hop-welcome-txt">Welcome, <strong>'+esc(u.name)+'</strong></span><span class="hop-avatar">'+init+'</span></button>'+
+        '<div class="hop-menu" id="hopMenu">'+
+          '<div class="hop-menu-email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg>'+esc(u.email)+'</div>'+
+          '<a href="my-home.html" class="hop-menu-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l9-8 9 8M5 10v10h14V10"/></svg>My Home</a>'+
+          '<a href="property-managers.html" class="hop-menu-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V5h9v16M14 21V9h5v12M8 9h2M8 13h2M8 17h2"/></svg>For property managers</a>'+
+          '<button class="hop-menu-item hop-signout" onclick="HOP.signout()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/></svg>Sign Out</button>'+
+        '</div>';
+      } else {
+        slot.innerHTML='<a href="#" class="btn-signin" onclick="HOP.open();return false;">Sign in Free</a>';
+      }
+    }
+  };
+  document.addEventListener('click',function(){ var m=document.getElementById('hopMenu'); if(m) m.classList.remove('open'); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') HOP.close(); });
+  document.addEventListener('DOMContentLoaded',function(){
+    var orig=document.querySelector('.btn-signin');
+    if(orig && !document.getElementById('hopAuthSlot')){
+      var slot=document.createElement('span'); slot.id='hopAuthSlot'; slot.className='hop-auth-slot';
+      orig.parentNode.replaceChild(slot, orig);
+      HOP.render();
+    }
+  });
+})();
+</script>
+<!-- ==== end HOP AUTH modal ==== -->
+</body>
+</html>

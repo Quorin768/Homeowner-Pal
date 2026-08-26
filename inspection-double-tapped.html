@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.classList.add('js');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<title>Double-Tapped Breakers: Repair Cost & Why It's Flagged | HomeownerPal</title>
+<meta name="description" content="Two wires under one breaker terminal is a common inspection flag. Realistic repair cost is $150 to $600, one of the cheapest fixes on an inspection report.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue-deep:#003D97;
+  --blue-sky:#4FA8E0;
+  --blue-pale:#EFF7FF;
+  --orange:#F5820D;
+  --orange-pale:#FFF3E6;
+  --red-pale:#FDEDEC;
+  --red:#C0392B;
+  --white:#FFFFFF;
+  --ink:#1B2430;
+  --slate:#5F6B7A;
+  --line:#E3EDF7;
+  --radius:16px;
+  --maxw:1600px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--white);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{
+  font-family:'Fraunces',serif;
+  font-weight:600;
+  line-height:1.15;
+  letter-spacing:-0.01em;
+}
+.mono{font-family:'IBM Plex Mono',monospace;}
+a{color:inherit;text-decoration:none;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 40px;}
+img,svg{display:block;max-width:100%;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;}
+section{padding:44px 0;}
+
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:999px;font-weight:700;font-size:15px;transition:transform .15s ease, box-shadow .15s ease;}
+.btn-primary{background:var(--orange);color:#fff;}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(245,130,13,.32);}
+.btn-blue{background:var(--blue-deep);color:#fff;}
+.btn-blue:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,61,151,.24);}
+.btn-outline{background:transparent;color:var(--blue-deep);border:1.5px solid var(--blue-deep);}
+.btn-outline:hover{background:var(--blue-deep);color:#fff;}
+.btn-sm{padding:10px 18px;font-size:13.5px;}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Fraunces';font-weight:700;font-size:19px;}
+.logo .mark{width:36px;height:36px;}
+.logo .pal{color:var(--orange);}
+nav.primary-nav{display:flex;gap:26px;font-size:14.5px;font-weight:600;color:var(--slate);}
+nav.primary-nav a:hover{color:var(--blue-deep);}
+nav.primary-nav a.active{color:var(--blue-deep);}
+.header-actions{display:flex;align-items:center;gap:12px;}
+.btn-signin{color:var(--blue-deep);font-weight:700;font-size:14px;padding:10px 6px;}
+@media (max-width:900px){ nav.primary-nav{display:none;} }
+.portal-link{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--slate);padding:8px 12px;border-radius:8px;border:1px solid var(--line);background:var(--blue-pale);white-space:nowrap;}
+.portal-link:hover{border-color:var(--blue-deep);color:var(--blue-deep);}
+.portal-link svg{width:14px;height:14px;flex-shrink:0;}
+@media (max-width:1080px){ .portal-link span.txt{display:none;} .portal-link{padding:9px;} }
+
+/* Section head */
+.section-head{max-width:1600px;margin-bottom:24px;}
+.section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+.kicker{font-family:'IBM Plex Mono';font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:12px;display:block;font-weight:600;}
+.section-head h1,.section-head h2{font-size:clamp(26px,3vw,36px);margin-bottom:14px;color:var(--ink);}
+.section-head p{color:var(--slate);font-size:16px;line-height:1.65;}
+
+/* Breadcrumb */
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--slate);margin-bottom:24px;}
+.breadcrumb a{color:var(--blue-deep);font-weight:600;}
+.breadcrumb a:hover{text-decoration:underline;}
+
+/* CTA band */
+.cta-band{background:#fff;}
+.cta-band .inner{background:var(--blue-pale);border:1.5px solid var(--line);border-radius:24px;padding:56px 40px;text-align:center;}
+.cta-band h2{font-size:clamp(24px,3vw,32px);margin-bottom:12px;color:var(--ink);}
+.cta-band p{color:var(--slate);margin-bottom:26px;font-size:15.5px;}
+.cta-band .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+/* Footer */
+footer{background:#fff;border-top:1px solid var(--line);padding:30px 0 18px;}
+.footer-grid{display:grid;grid-template-columns:1.4fr repeat(4,1fr);gap:36px;margin-bottom:22px;}
+@media (max-width:800px){ .footer-grid{grid-template-columns:repeat(2,1fr);} }
+.footer-brand p{font-size:13px;color:var(--slate);max-width:250px;line-height:1.6;margin-top:12px;}
+footer h5{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--slate);margin-bottom:14px;font-weight:700;}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+footer ul a{font-size:13.5px;color:var(--ink);}
+footer ul a:hover{color:var(--blue-deep);}
+.legal-box{background:var(--blue-pale);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-bottom:16px;}
+.legal-box .lb-head{display:flex;align-items:center;gap:8px;font-weight:700;font-size:13px;color:var(--blue-deep);margin-bottom:10px;}
+.legal-box .lb-head svg{width:15px;height:15px;}
+.legal-box p{font-size:12.5px;color:var(--slate);line-height:1.6;margin-bottom:8px;}
+.legal-box p:last-child{margin-bottom:0;}
+.legal-box a{color:var(--blue-deep);text-decoration:underline;font-weight:600;}
+.footer-bottom{border-top:1px solid var(--line);padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;font-size:12.5px;color:var(--slate);}
+.footer-bottom .links{display:flex;gap:18px;flex-wrap:wrap;}
+.footer-bottom .socials{display:flex;gap:12px;}
+.footer-bottom .socials svg{width:16px;height:16px;color:var(--slate);}
+.footer-bottom .socials a:hover svg{color:var(--blue-deep);}
+
+
+  /* ---- Page-specific additions below ---- */
+  .insp-hero{background:linear-gradient(180deg,var(--blue-pale) 0%, #fff 85%);padding:20px 0 26px;}
+  .insp-hero .wrap{max-width:1600px;}
+  .insp-kicker{font-size:11.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--blue-deep);margin-bottom:10px;}
+  .insp-hero h1{font-size:clamp(26px,3.4vw,36px);margin-bottom:14px;max-width:600px;}
+  .insp-hero p{font-size:14.5px;color:var(--slate);line-height:1.75;max-width:1600px;}
+
+  .insp-body{max-width:1600px;margin:0;padding:0 28px;}
+
+  .insp-cost-box{background:var(--blue-pale);border-radius:16px;padding:24px 26px;margin:18px 0;}
+  .insp-cost-label{font-size:11px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--blue-deep);margin-bottom:6px;}
+  .insp-cost-range{font-family:'IBM Plex Mono';font-size:28px;font-weight:700;color:var(--blue-deep);margin-bottom:10px;}
+  .insp-cost-note{font-size:13px;color:var(--slate);line-height:1.7;}
+
+  .insp-drywall{background:#FFF6E9;border:1px solid #F0D9A8;border-radius:14px;padding:16px 20px;margin:20px 0;display:flex;gap:12px;align-items:flex-start;}
+  .insp-drywall svg{width:19px;height:19px;color:#B5650C;flex-shrink:0;margin-top:2px;}
+  .insp-drywall p{font-size:13px;color:#8A5D18;line-height:1.65;}
+  .insp-drywall p strong{color:#6B4712;}
+
+  .insp-why{margin-top:18px;}
+  .insp-why-label{font-size:16px;font-weight:600;color:var(--ink);margin-bottom:14px;font-family:'Fraunces';}
+  .insp-why-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
+  .insp-why-list li{display:flex;gap:12px;font-size:13.5px;color:var(--slate);line-height:1.7;padding:14px 16px;background:#fff;border:1px solid var(--line);border-radius:12px;}
+  .insp-why-list li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--red);flex-shrink:0;margin-top:7px;}
+
+  .insp-scan-box{
+    background:linear-gradient(135deg, var(--blue-deep) 0%, #0A4FB5 100%);border-radius:20px;
+    padding:30px 32px;margin:24px 0;color:#fff;
+  }
+  .insp-scan-box h3{font-size:19px;margin-bottom:8px;color:#fff;}
+  .insp-scan-box p{font-size:13.5px;color:#CFE0F7;line-height:1.65;margin-bottom:16px;}
+  .insp-scan-price{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:18px;}
+  .insp-scan-price div{background:rgba(255,255,255,.12);border-radius:10px;padding:10px 16px;}
+  .insp-scan-price .v{font-family:'IBM Plex Mono';font-size:15px;font-weight:700;color:#fff;}
+  .insp-scan-price .l{font-size:10.5px;color:#BFD8F5;text-transform:uppercase;letter-spacing:.03em;}
+  .insp-scan-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px;}
+  .insp-scan-btn{background:#fff;color:var(--blue-deep);font-weight:700;font-size:13px;padding:11px 20px;border-radius:999px;}
+  .insp-scan-btn.outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4);}
+  .insp-scan-fine{font-size:11px;color:#A9C7EE;line-height:1.6;}
+
+  .insp-estimate-note{
+    background:var(--blue-pale);border-radius:14px;padding:22px 26px;margin-top:24px;text-align:center;
+  }
+  .insp-estimate-note p{font-size:13.5px;color:var(--slate);line-height:1.7;margin-bottom:16px;}
+  .insp-legal{
+    text-align:center;font-size:11.5px;color:var(--slate);line-height:1.65;max-width:600px;margin:20px auto 0;
+  }
+
+  .insp-other{background:var(--blue-pale);margin-top:30px;}
+  .insp-other .wrap{max-width:1600px;}
+  .insp-other-panel{background:#fff;border-radius:18px;border:1px solid var(--line);overflow:hidden;}
+  .insp-other-row{display:flex;align-items:center;gap:12px;padding:14px 20px;border-bottom:1px solid var(--line);transition:background .12s ease;}
+  .insp-other-row:last-child{border-bottom:none;}
+  .insp-other-row:hover{background:var(--blue-pale);}
+  .insp-other-row .or-name{font-size:14px;font-weight:600;color:var(--ink);flex:1;}
+  .insp-other-row .or-price{font-family:'IBM Plex Mono';font-size:12.5px;color:var(--blue-deep);font-weight:600;margin-right:8px;}
+  .insp-other-row svg.arrow{width:14px;height:14px;color:var(--slate);opacity:.5;flex-shrink:0;}
+
+  /* ===== SECTION HEADLINE WIPE (site-wide, matches homepage) ===== */
+  .js .wipe{clip-path:inset(0 100% 0 0);transition:clip-path 5.5s cubic-bezier(.22,1,.36,1);will-change:clip-path;}
+  .js .wipe.is-visible{clip-path:inset(0 0 0 0);}
+  @media (prefers-reduced-motion:reduce){ .js .wipe{clip-path:none!important;transition:none!important;} }
+
+/* ==== HOP: full-width sections (uniform, left-to-right, no centering) — appended override ==== */
+/* Outermost section containers: span full width with one uniform side gutter */
+.wrap,
+.guide-body, .guide-hero .wrap, .other-issues .wrap,
+.insp-body, .insp-hero .wrap, .insp-other .wrap,
+.lrn-body, .lrn-hero .wrap,
+.tm-body, .tm-hero .wrap,
+.tc-body,
+.sup-body, .sup-hero .wrap,
+.story-body, .story-hero .wrap,
+.em-body, .em-hero .wrap,
+.cf-body, .cf-hero .wrap,
+.arc-body, .arc-hero .wrap,
+.re-hero .wrap,
+.pm-hero .wrap, .pm-pricing .wrap, .pm-features .wrap,
+.fap-hero .wrap,
+.reviews-strip .wrap,
+.myhome-section .wrap,
+.hl-hero .wrap, .hl-body {
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+/* Nested containers (already inside a padded .wrap): widen only, no extra gutter */
+.hero-center,
+.diag-hero-inner,
+.helpband-inner,
+.pack-section-inner,
+.trade-grid {
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+@media (max-width: 640px) {
+.wrap,
+.guide-body, .guide-hero .wrap, .other-issues .wrap,
+.insp-body, .insp-hero .wrap, .insp-other .wrap,
+.lrn-body, .lrn-hero .wrap,
+.tm-body, .tm-hero .wrap,
+.tc-body,
+.sup-body, .sup-hero .wrap,
+.story-body, .story-hero .wrap,
+.em-body, .em-hero .wrap,
+.cf-body, .cf-hero .wrap,
+.arc-body, .arc-hero .wrap,
+.re-hero .wrap,
+.pm-hero .wrap, .pm-pricing .wrap, .pm-features .wrap,
+.fap-hero .wrap,
+.reviews-strip .wrap,
+.myhome-section .wrap,
+.hl-hero .wrap, .hl-body {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+/* ==== end HOP full-width override ==== */
+
+/* ==== HOP AUTH (sign-in popup + account menu) — appended ==== */
+.hop-auth-slot{position:relative;display:inline-flex;align-items:center;}
+.hop-welcome{display:inline-flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 6px 5px 15px;font-size:13.5px;font-weight:600;color:var(--ink);box-shadow:0 2px 8px rgba(0,61,151,.05);transition:box-shadow .15s ease;}
+.hop-welcome:hover{box-shadow:0 5px 14px rgba(0,61,151,.12);}
+.hop-welcome strong{font-weight:700;}
+.hop-avatar{width:30px;height:30px;border-radius:50%;background:var(--orange);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;text-transform:uppercase;box-shadow:0 0 0 2px #fff,0 0 0 3px rgba(245,130,13,.35);}
+.hop-menu{position:absolute;top:calc(100% + 10px);right:0;min-width:240px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 18px 50px rgba(0,20,60,.18);padding:8px;z-index:260;display:none;}
+.hop-menu.open{display:block;}
+.hop-menu-email{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--slate);padding:10px 12px 12px;border-bottom:1px solid var(--line);margin-bottom:6px;word-break:break-all;}
+.hop-menu-email svg{width:15px;height:15px;color:var(--slate);flex-shrink:0;}
+.hop-menu-item{display:flex;align-items:center;gap:11px;width:100%;text-align:left;padding:11px 12px;border-radius:10px;font-size:14px;font-weight:600;color:var(--ink);transition:background .12s ease;}
+.hop-menu-item:hover{background:var(--blue-pale);}
+.hop-menu-item svg{width:17px;height:17px;color:var(--blue-deep);flex-shrink:0;}
+.hop-signout{color:var(--red);border-top:1px solid var(--line);margin-top:6px;border-radius:0 0 10px 10px;}
+.hop-signout svg{color:var(--red);}
+.hop-modal-overlay{display:none;position:fixed;inset:0;z-index:300;background:rgba(15,28,45,.55);align-items:flex-start;justify-content:center;padding:44px 20px;overflow-y:auto;}
+.hop-modal-overlay.open{display:flex;}
+.hop-modal{background:#fff;border-radius:22px;width:100%;max-width:420px;padding:32px 32px 26px;box-shadow:0 30px 80px rgba(0,20,60,.35);position:relative;animation:hoppop .2s ease;}
+@keyframes hoppop{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:none;}}
+.hop-modal-x{position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;color:var(--slate);background:none;border:none;cursor:pointer;transition:background .15s ease;}
+.hop-modal-x:hover{background:var(--blue-pale);}
+.hop-modal-x svg{width:18px;height:18px;}
+.hop-brand{display:flex;align-items:center;gap:9px;margin-bottom:18px;}
+.hop-brand-icon{width:32px;height:32px;border-radius:9px;background:var(--blue-pale);display:flex;align-items:center;justify-content:center;}
+.hop-brand-icon svg{width:20px;height:20px;}
+.hop-brand-name{font-size:14px;font-weight:700;color:var(--ink);}
+.hop-modal h2{font-family:'Fraunces',serif;font-size:23px;color:var(--ink);margin-bottom:6px;line-height:1.15;}
+.hop-modal-sub{font-size:13.5px;color:var(--slate);line-height:1.55;margin-bottom:22px;}
+.hop-google{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:13px;font-family:inherit;font-weight:700;font-size:14px;color:var(--ink);cursor:pointer;transition:background .15s ease;}
+.hop-google:hover{background:#F7F9FC;}
+.hop-google svg{width:18px;height:18px;}
+.hop-or{display:flex;align-items:center;gap:12px;margin:18px 0;color:var(--slate);font-size:12px;}
+.hop-or::before,.hop-or::after{content:"";flex:1;height:1px;background:var(--line);}
+.hop-field{margin-bottom:14px;}
+.hop-field label{display:block;font-size:12px;font-weight:700;color:var(--slate);margin-bottom:6px;}
+.hop-field input{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;font-family:inherit;font-size:14px;color:var(--ink);background:#FBFDFF;}
+.hop-field input:focus{outline:none;border-color:var(--blue-sky);background:#fff;}
+.hop-forgot{text-align:right;margin-bottom:18px;}
+.hop-forgot a{font-size:12.5px;font-weight:600;color:var(--blue-deep);}
+.hop-submit{display:block;width:100%;background:var(--blue-deep);color:#fff;font-family:inherit;font-weight:700;font-size:15px;padding:14px;border:none;border-radius:12px;text-align:center;cursor:pointer;margin-bottom:16px;transition:opacity .15s ease;}
+.hop-submit:hover{opacity:.92;}
+.hop-legal{font-size:11.5px;color:var(--slate);text-align:center;line-height:1.6;}
+.hop-legal a{color:var(--blue-deep);text-decoration:underline;}
+/* ==== end HOP AUTH ==== */
+
+/* ==== HOP: hamburger nav + install modal (global, appended) ==== */
+.header-left{display:flex;align-items:center;gap:14px;}
+.hamburger-btn{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:38px;height:38px;border-radius:8px;background:transparent;flex-shrink:0;}
+.hamburger-btn:hover{background:var(--blue-pale);}
+.hamburger-btn span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;}
+
+.nav-drawer-overlay{display:none;position:fixed;inset:0;z-index:200;background:rgba(15,28,45,.5);align-items:stretch;justify-content:flex-start;}
+.nav-drawer-overlay.open{display:flex;}
+.nav-drawer{background:#fff;width:300px;max-width:84vw;height:100%;box-shadow:12px 0 40px rgba(0,0,0,.18);display:flex;flex-direction:column;padding:20px 0;animation:hopnavslide .2s ease;}
+@keyframes hopnavslide{from{transform:translateX(-16px);opacity:.6;}to{transform:translateX(0);opacity:1;}}
+.nav-drawer-head{display:flex;align-items:center;justify-content:space-between;padding:0 20px 16px;border-bottom:1px solid var(--line);margin-bottom:6px;}
+.nav-drawer-head .logo{font-size:17px;}
+.nav-drawer-head .logo .mark{width:30px;height:30px;}
+.nav-drawer-close{width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:8px;color:var(--slate);flex-shrink:0;}
+.nav-drawer-close:hover{background:var(--blue-pale);color:var(--blue-deep);}
+.nav-drawer-close svg{width:16px;height:16px;}
+.nav-drawer-list{list-style:none;display:flex;flex-direction:column;overflow-y:auto;margin:0;padding:0;}
+.nav-drawer-list li a{display:block;padding:13px 20px;font-size:14.5px;font-weight:600;color:var(--ink);border-bottom:1px solid var(--line);}
+.nav-drawer-list li:last-child a{border-bottom:none;}
+.nav-drawer-list li a:hover{background:var(--blue-pale);color:var(--blue-deep);}
+
+.hop-modal.install-modal{max-width:460px;}
+.install-modal .install-intro{font-size:14px;color:var(--slate);line-height:1.65;margin:2px 0 22px;}
+.install-modal h2{font-size:21px;margin-bottom:2px;padding-right:18px;}
+.install-os-block{margin-bottom:20px;}
+.install-os-block h4{font-family:'Inter',sans-serif;font-size:12.5px;font-weight:700;color:var(--blue-deep);text-transform:uppercase;letter-spacing:.03em;margin-bottom:10px;}
+.install-os-block ol{list-style:none;counter-reset:installstep;display:flex;flex-direction:column;gap:10px;margin:0;padding:0;}
+.install-os-block ol li{counter-increment:installstep;position:relative;padding-left:30px;font-size:13.5px;color:var(--ink);line-height:1.55;}
+.install-os-block ol li::before{content:counter(installstep);position:absolute;left:0;top:0;width:20px;height:20px;border-radius:50%;background:var(--blue-pale);color:var(--blue-deep);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.install-modal .install-footer{font-size:12.5px;color:var(--slate);line-height:1.6;border-top:1px solid var(--line);padding-top:16px;margin-top:2px;margin-bottom:0;}
+@media (max-width:520px){ .hop-modal.install-modal{padding:26px 22px 22px;} }
+
+/* ==== HOP: mascot logo mark (img replacing svg mark, appended) ==== */
+.hop-brand-icon .mark{width:20px;height:20px;object-fit:contain;}
+.logo .mark{object-fit:contain;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="header-left">
+      <button type="button" class="hamburger-btn" aria-label="Open menu" onclick="HOPNav.open()">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="index.html" class="logo">
+      <img class="mark" src="assets/hop-logo-mark.png" alt="HomeownerPal">
+      Homeowner<span class="pal">Pal</span>
+    </a>
+    </div>
+    <div class="header-actions">
+      <a href="#" class="btn-signin">Sign in</a>
+      <button type="button" class="btn btn-outline btn-sm" onclick="HOPInstall.open()">Install the app</button>
+    </div>
+  </div>
+</header>
+
+<section class="insp-hero">
+  <div class="wrap">
+    <div class="breadcrumb">
+      <a href="tools-costs.html#inspection-costs">Flagged Inspection Costs</a>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+      <span>Double-tapped breakers</span>
+    </div>
+    <div class="insp-kicker">Inspection issue</div>
+    <h1>Double-tapped breakers</h1>
+    <p>Two wires shoved under one breaker terminal that's only rated for one. Easy to spot in any panel inspection.</p>
+  </div>
+</section>
+
+<div class="insp-body">
+
+  <div class="insp-cost-box">
+    <div class="insp-cost-label">Realistic cost range</div>
+    <div class="insp-cost-range">$150 to $600</div>
+    <div class="insp-cost-note">One of the cheapest inspection items to remediate.</div>
+  </div>
+
+  <div class="insp-why">
+    <div class="insp-why-label">Why inspectors flag this</div>
+    <ul class="insp-why-list">
+      <li>Most breakers are listed for a single conductor only, adding a second creates a loose connection that arcs and overheats.</li>
+      <li>It's an inexpensive fix but a common red flag on inspection reports.</li>
+    </ul>
+  </div>
+
+  <div class="insp-scan-box">
+    <h3>Snap a photo of your panel</h3>
+    <p>Open the panel door and take a clear, straight-on shot. HOP will identify the brand and flag visible issues.</p>
+    <div class="insp-scan-price">
+      <div><div class="v">$2.99</div><div class="l">Per scan</div></div>
+      <div><div class="v">$9.99</div><div class="l">5-pack</div></div>
+      <div><div class="v">1 free</div><div class="l">Per month, signed in</div></div>
+    </div>
+    <div class="insp-scan-btns">
+      <a href="#" class="insp-scan-btn">Sign in to scan, 1 free/month</a>
+      <a href="#" class="insp-scan-btn outline">Email it in for free</a>
+    </div>
+    <div class="insp-scan-fine">Photo-based evaluations are limited to visible conditions only and do not constitute an official electrical inspection, engineering evaluation, or code compliance certification. This is general homeowner guidance only, always confirm with a licensed electrical contractor or your local authority having jurisdiction.</div>
+  </div>
+
+  <div class="insp-estimate-note">
+    <p><strong>Get 3 written estimates.</strong> Prices vary dramatically by region, by company, and by what they include. HOP's range is a national midpoint, your local market may be higher or lower. Always get at least three written quotes from separately licensed contractors before signing anything.</p>
+    <a href="find-a-pro.html?trade=electrician" class="btn btn-primary">Find an electrician near me →</a>
+  </div>
+  <div class="insp-legal">Estimates are national midpoints. Actual cost depends heavily on your area and the company. Always get written estimates from at least 3 separately licensed electrical contractors before committing to any major job.</div>
+
+</div>
+
+<section class="insp-other">
+  <div class="wrap">
+    <h3 style="font-size:18px;margin:0 0 16px;padding-top:44px;">Other flagged issues we cover</h3>
+    <div class="insp-other-panel">
+      <a href="inspection-panel.html" class="insp-other-row"><span class="or-name">Challenger / FPE / Zinsco panel</span><span class="or-price">$1,500–$4,000</span><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a href="inspection-cloth-wiring.html" class="insp-other-row"><span class="or-name">Cloth-insulated wiring</span><span class="or-price">$8,000–$25,000</span><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a href="inspection-knob-tube.html" class="insp-other-row"><span class="or-name">Knob-and-tube wiring</span><span class="or-price">$12,000–$30,000</span><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a href="inspection-aluminum-wiring.html" class="insp-other-row"><span class="or-name">Aluminum branch wiring</span><span class="or-price">$1,800–$18,000</span><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a href="inspection-gfci-afci.html" class="insp-other-row"><span class="or-name">Missing GFCI/AFCI protection</span><span class="or-price">$200–$1,500</span><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></a>
+    </div>
+    <div style="height:44px;"></div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <div class="inner">
+      <h2>Start documenting your home today.</h2>
+      <p>Free forever. No credit card. No sales calls.</p>
+      <div class="btns">
+        <a href="index.html" class="btn btn-primary">Start my home profile, free</a>
+        <a href="hopline.html" class="btn btn-outline">Talk to the HOPline</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <img class="mark" src="assets/hop-logo-mark.png" alt="HomeownerPal">
+          HomeownerPal
+        </a>
+        <p>Your home, documented and protected. Free tools for homeowners, built from real trade experience.</p>
+      </div>
+      <div>
+        <h5>My Home</h5>
+        <ul><li><a href="index.html#homeowners">Equipment &amp; records</a></li><li><a href="index.html#homeowners">Warranties</a></li><li><a href="index.html#stayfree">Premium scan</a></li></ul>
+      </div>
+      <div>
+        <h5>Diagnose</h5>
+        <ul><li><a href="diagnose.html#electrical-problems">Electrical guide</a></li><li><a href="diagnose.html#plumbing-problems">Plumbing guide</a></li><li><a href="diagnose.html#hvac-problems">HVAC guide</a></li></ul>
+      </div>
+      <div>
+        <h5>Tools &amp; Costs</h5>
+        <ul><li><a href="tools-costs.html#material-calculator">Material calculator</a></li><li><a href="tools-materials.html">Tools &amp; materials</a></li><li><a href="tools-costs.html#inspection-costs">Inspection costs</a></li></ul>
+      </div>
+      <div>
+        <h5>Community</h5>
+        <ul><li><a href="contractor-forum.html">Contractor forum</a></li><li><a href="find-a-pro.html">Find a pro</a></li></ul>
+      </div>
+    </div>
+
+    <div class="legal-box">
+      <div class="lb-head">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+        Important, please read
+      </div>
+      <p>HomeownerPal (HOP) is built and maintained by people with decades of combined hands-on trade experience. The guidance here is grounded in real field experience and is intended to help homeowners understand what's likely happening, what a fair price range looks like, and what questions to ask. That said, home systems are complex and every situation is different. Some issues simply require a qualified technician on-site to physically test, locate, and confirm the actual cause before any repair should be made.</p>
+      <p>Electricity, gas, and water systems can cause serious injury or death. If you smell burning, see smoke or sparks, hear sustained buzzing, or otherwise suspect an emergency, stop, leave the area, and call 911 and/or a licensed professional immediately. Do not attempt repairs you are not trained or permitted to perform; many jurisdictions legally require licensed and inspected work.</p>
+      <p>Price ranges shown are rough estimates only and vary by region, code requirements, and site conditions. See our <a href="terms.html">Terms of Service</a> and <a href="privacy.html">Privacy Policy</a>.</p>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="links">
+        <a href="terms.html">Terms</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="property-managers.html">For Property Managers</a>
+        <a href="hopline.html">Call the HOPline</a>
+        <a href="#">Send feedback</a>
+      </div>
+      <div class="socials">
+        <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 5.9c-.7.3-1.5.6-2.3.7.8-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.6 1-.8-.8-1.9-1.3-3-1.3-2.3 0-4.1 1.9-4.1 4.1 0 .3 0 .6.1.9-3.4-.2-6.5-1.8-8.5-4.3-.4.6-.6 1.3-.6 2.1 0 1.4.7 2.7 1.8 3.4-.7 0-1.3-.2-1.9-.5v.1c0 2 1.4 3.6 3.3 4-.3.1-.7.1-1.1.1-.3 0-.5 0-.8-.1.5 1.6 2 2.8 3.8 2.8-1.4 1.1-3.2 1.7-5.1 1.7-.3 0-.7 0-1-.1 1.8 1.2 4 1.8 6.3 1.8 7.5 0 11.7-6.3 11.7-11.7v-.5c.8-.6 1.5-1.3 2-2.1z"/></svg></a>
+        <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5H16l.5-3H13.5V8.4c0-.9.2-1.5 1.5-1.5H16.5V4.2C16.2 4.2 15.2 4 14 4c-2.4 0-4 1.5-4 4.1v2.4H7.5v3H10V21h3.5z"/></svg></a>
+        <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="5"/></svg></a>
+        <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></a>
+      </div>
+      <div>© 2026 HomeownerPal. Built with care for homeowners.</div>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var wipeSelectors = ['h1', 'h2', 'h3'];
+  var excludeAncestors = ['header', 'nav', 'footer'];
+  var wipes = [];
+  function isExcluded(el) {
+    var p = el.parentElement;
+    while (p) {
+      if (excludeAncestors.indexOf(p.tagName.toLowerCase()) !== -1) return true;
+      p = p.parentElement;
+    }
+    return false;
+  }
+  wipeSelectors.forEach(function (sel) {
+    document.querySelectorAll(sel).forEach(function (el) {
+      if (isExcluded(el)) return;
+      if (!el.classList.contains('wipe')) el.classList.add('wipe');
+      wipes.push(el);
+    });
+  });
+  if (reduce || !('IntersectionObserver' in window)) {
+    wipes.forEach(function (el) { el.classList.add('is-visible'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries, obs) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.querySelectorAll('.wipe').forEach(function (c) { c.classList.add('is-visible'); });
+      obs.unobserve(e.target);
+    });
+  }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
+  var wipeParents = [];
+  wipes.forEach(function (el) {
+    var parent = el.parentElement;
+    if (parent && wipeParents.indexOf(parent) === -1) {
+      wipeParents.push(parent);
+      io.observe(parent);
+    }
+  });
+})();
+</script>
+
+
+<!-- ==== HOP NAV drawer ==== -->
+<div class="nav-drawer-overlay" id="hopNavOverlay" onclick="if(event.target===this)HOPNav.close()">
+  <nav class="nav-drawer" aria-label="Site menu">
+    <div class="nav-drawer-head">
+      <a href="index.html" class="logo">
+        <img class="mark" src="assets/hop-logo-mark.png" alt="HomeownerPal">
+        Homeowner<span class="pal">Pal</span>
+      </a>
+      <button class="nav-drawer-close" onclick="HOPNav.close()" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <ul class="nav-drawer-list">
+      <li><a href="diagnose.html">Diagnose</a></li>
+      <li><a href="find-a-pro.html">Find a Pro</a></li>
+      <li><a href="tools-costs.html">Tools and Costs</a></li>
+      <li><a href="realestate.html">Real Estate and Builder Packs</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="emergency.html">Emergency</a></li>
+      <li><a href="contractor-forum.html">Contractor Forum</a></li>
+      <li><a href="support-hop.html">Support</a></li>
+      <li><a href="game-arcade.html">Game Arcade</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="terms.html">Terms of Service</a></li>
+    </ul>
+  </nav>
+</div>
+<script>
+window.HOPNav={
+  open:function(){ var o=document.getElementById('hopNavOverlay'); if(o){ o.classList.add('open'); document.body.style.overflow='hidden'; } },
+  close:function(){ var o=document.getElementById('hopNavOverlay'); if(o){ o.classList.remove('open'); document.body.style.overflow=''; } }
+};
+document.addEventListener('keydown',function(e){ if(e.key==='Escape') HOPNav.close(); });
+</script>
+<!-- ==== end HOP NAV drawer ==== -->
+
+<!-- ==== HOP INSTALL modal ==== -->
+<div class="hop-modal-overlay" id="hopInstallOverlay" onclick="if(event.target===this)HOPInstall.close()">
+  <div class="hop-modal install-modal">
+    <button class="hop-modal-x" onclick="HOPInstall.close()" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <h2>Install the HOP app</h2>
+    <p class="install-intro">HOP works great as an app on your phone &mdash; quick to open the next time something goes sideways at home. It only takes a few taps.</p>
+    <div class="install-os-block">
+      <h4>On iPhone / iPad (Safari)</h4>
+      <ol>
+        <li>Tap the <strong>Share</strong> button at the bottom of Safari.</li>
+        <li>Scroll and tap <strong>Add to Home Screen</strong>.</li>
+        <li>Tap <strong>Add</strong> in the top corner. Done &mdash; HOP is on your home screen.</li>
+      </ol>
+    </div>
+    <div class="install-os-block">
+      <h4>On Android (Chrome)</h4>
+      <ol>
+        <li>Tap the <strong>menu</strong> in the top-right of Chrome.</li>
+        <li>Tap <strong>Add to Home screen</strong> (or <strong>Install app</strong>).</li>
+        <li>Confirm with <strong>Add / Install</strong>. Look for the bunny on your home screen.</li>
+      </ol>
+    </div>
+    <p class="install-footer">HOP is always free, and the app is just our website saved to your home screen &mdash; no app store needed.</p>
+  </div>
+</div>
+<script>
+window.HOPInstall={
+  open:function(){ var m=document.getElementById('hopInstallOverlay'); if(m){ m.classList.add('open'); document.body.style.overflow='hidden'; } },
+  close:function(){ var m=document.getElementById('hopInstallOverlay'); if(m){ m.classList.remove('open'); document.body.style.overflow=''; } }
+};
+document.addEventListener('keydown',function(e){ if(e.key==='Escape') HOPInstall.close(); });
+</script>
+<!-- ==== end HOP INSTALL modal ==== -->
+
+<!-- ==== HOP AUTH modal ==== -->
+<div class="hop-modal-overlay" id="hopSignin" onclick="if(event.target===this)HOP.close()">
+  <div class="hop-modal">
+    <button class="hop-modal-x" onclick="HOP.close()" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div class="hop-brand">
+      <span class="hop-brand-icon">
+        <img class="mark" src="assets/hop-logo-mark.png" alt="HomeownerPal">
+      </span>
+      <span class="hop-brand-name">HomeownerPal</span>
+    </div>
+    <h2>Welcome to HomeownerPal</h2>
+    <p class="hop-modal-sub">Sign in or create your free account. Your home record stays private to you.</p>
+    <button class="hop-google" onclick="HOP.signin('google')">
+      <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.5 12.2c0-.7-.1-1.4-.2-2H12v3.8h5.9a5 5 0 01-2.2 3.3v2.7h3.5c2-1.9 3.3-4.7 3.3-7.8z"/><path fill="#34A853" d="M12 23c3 0 5.5-1 7.3-2.7l-3.5-2.7c-1 .7-2.3 1.1-3.8 1.1-2.9 0-5.4-2-6.3-4.6H2v2.8A11 11 0 0012 23z"/><path fill="#FBBC05" d="M5.7 14.1a6.6 6.6 0 010-4.2V7.1H2a11 11 0 000 9.8z"/><path fill="#EA4335" d="M12 5.4c1.6 0 3 .6 4.2 1.6l3.1-3.1A11 11 0 002 7.1l3.7 2.8C6.6 7.3 9.1 5.4 12 5.4z"/></svg>
+      Continue with Google
+    </button>
+    <div class="hop-or"><span>or</span></div>
+    <div class="hop-field"><label>First name</label><input id="hopName" type="text" placeholder="e.g. Khadija" autocomplete="given-name"></div>
+    <div class="hop-field"><label>Email</label><input id="hopEmail" type="email" placeholder="you@example.com" autocomplete="email"></div>
+    <div class="hop-field"><label>Password</label><input id="hopPass" type="password" placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;" autocomplete="current-password"></div>
+    <div class="hop-forgot"><a href="#" onclick="return false;">Forgot password?</a></div>
+    <button class="hop-submit" onclick="HOP.signin('email')">Sign in</button>
+    <p class="hop-legal">By continuing you agree to our <a href="terms.html">Terms</a> &amp; <a href="privacy.html">Privacy Policy</a>.</p>
+  </div>
+</div>
+<script>
+(function(){
+  var KEY='hop_user';
+  function get(){ try{return JSON.parse(localStorage.getItem(KEY));}catch(e){return null;} }
+  function esc(s){ return (s||'').replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+  window.HOP={
+    open:function(){ var m=document.getElementById('hopSignin'); if(m){m.classList.add('open');document.body.style.overflow='hidden';var n=document.getElementById('hopName');if(n)setTimeout(function(){n.focus();},50);} },
+    close:function(){ var m=document.getElementById('hopSignin'); if(m){m.classList.remove('open');document.body.style.overflow='';} },
+    signin:function(method){
+      var name=(document.getElementById('hopName').value||'').trim();
+      var email=(document.getElementById('hopEmail').value||'').trim();
+      if(!name){ var n=document.getElementById('hopName'); n.focus(); n.style.borderColor='var(--orange)'; return; }
+      var user={name:name, email:email||(name.toLowerCase().replace(/\s+/g,'')+'@homeownerpal.com'), via:method};
+      try{ localStorage.setItem(KEY, JSON.stringify(user)); }catch(e){}
+      HOP.close(); HOP.render();
+    },
+    signout:function(){ try{ localStorage.removeItem(KEY); }catch(e){} HOP.render(); },
+    toggleMenu:function(e){ e.stopPropagation(); var m=document.getElementById('hopMenu'); if(m) m.classList.toggle('open'); },
+    render:function(){
+      var slot=document.getElementById('hopAuthSlot'); if(!slot) return;
+      var u=get();
+      if(u && u.name){
+        var init=esc(u.name.charAt(0));
+        slot.innerHTML='<button class="hop-welcome" onclick="HOP.toggleMenu(event)"><span class="hop-welcome-txt">Welcome, <strong>'+esc(u.name)+'</strong></span><span class="hop-avatar">'+init+'</span></button>'+
+        '<div class="hop-menu" id="hopMenu">'+
+          '<div class="hop-menu-email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg>'+esc(u.email)+'</div>'+
+          '<a href="my-home.html" class="hop-menu-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l9-8 9 8M5 10v10h14V10"/></svg>My Home</a>'+
+          '<a href="property-managers.html" class="hop-menu-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V5h9v16M14 21V9h5v12M8 9h2M8 13h2M8 17h2"/></svg>For property managers</a>'+
+          '<button class="hop-menu-item hop-signout" onclick="HOP.signout()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/></svg>Sign Out</button>'+
+        '</div>';
+      } else {
+        slot.innerHTML='<a href="#" class="btn-signin" onclick="HOP.open();return false;">Sign in Free</a>';
+      }
+    }
+  };
+  document.addEventListener('click',function(){ var m=document.getElementById('hopMenu'); if(m) m.classList.remove('open'); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') HOP.close(); });
+  document.addEventListener('DOMContentLoaded',function(){
+    var orig=document.querySelector('.btn-signin');
+    if(orig && !document.getElementById('hopAuthSlot')){
+      var slot=document.createElement('span'); slot.id='hopAuthSlot'; slot.className='hop-auth-slot';
+      orig.parentNode.replaceChild(slot, orig);
+      HOP.render();
+    }
+  });
+})();
+</script>
+<!-- ==== end HOP AUTH modal ==== -->
+</body>
+</html>
