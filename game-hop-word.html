@@ -11,8 +11,8 @@
 <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-<title>Home HVAC: The Homeowner's Plain-English Reference | HomeownerPal</title>
-<meta name="description" content="Split systems, heat pumps vs AC vs furnace, refrigerant and condensate, outdoor disconnects, filters, thermostat C-wire, and what's safe DIY vs a licensed tech.">
+<title>HOP Word | HOP Game Arcade | HomeownerPal</title>
+<meta name="description" content="Six chances. Five letters. Home, trade & bunny words. A free daily word game from HomeownerPal.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -62,6 +62,7 @@ section{padding:44px 0;}
 .btn-outline{background:transparent;color:var(--blue-deep);border:1.5px solid var(--blue-deep);}
 .btn-outline:hover{background:var(--blue-deep);color:#fff;}
 .btn-sm{padding:10px 18px;font-size:13.5px;}
+.btn:disabled{opacity:.5;cursor:not-allowed;transform:none!important;box-shadow:none!important;}
 
 /* Header */
 header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
@@ -69,7 +70,7 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;heigh
 .logo{display:flex;align-items:center;gap:10px;font-family:'Fraunces';font-weight:700;font-size:19px;}
 .logo .mark{width:30px;height:46px;}
 .logo .pal{color:var(--orange);}
-nav.primary-nav{display:flex;gap:26px;font-size:14.5px;font-weight:600;color:var(--slate);}
+nav.primary-nav{display:flex;gap:20px;font-size:14px;font-weight:600;color:var(--slate);}
 nav.primary-nav a:hover{color:var(--blue-deep);}
 nav.primary-nav a.active{color:var(--blue-deep);}
 .header-actions{display:flex;align-items:center;gap:12px;}
@@ -88,7 +89,7 @@ nav.primary-nav a.active{color:var(--blue-deep);}
 .section-head p{color:var(--slate);font-size:16px;line-height:1.65;}
 
 /* Breadcrumb */
-.breadcrumb{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--slate);margin-bottom:24px;}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--slate);margin-bottom:24px;flex-wrap:wrap;}
 .breadcrumb a{color:var(--blue-deep);font-weight:600;}
 .breadcrumb a:hover{text-decoration:underline;}
 
@@ -124,137 +125,12 @@ footer ul a:hover{color:var(--blue-deep);}
 .footer-bottom .socials svg{width:16px;height:16px;color:var(--slate);}
 .footer-bottom .socials a:hover svg{color:var(--blue-deep);}
 
+/* ===== SECTION HEADLINE WIPE (site-wide) ===== */
+.js .wipe{clip-path:inset(0 100% 0 0);transition:clip-path 5.5s cubic-bezier(.22,1,.36,1);will-change:clip-path;}
+.js .wipe.is-visible{clip-path:inset(0 0 0 0);}
+@media (prefers-reduced-motion:reduce){ .js .wipe{clip-path:none!important;transition:none!important;} }
 
-  /* ---- Page-specific additions below ---- */
-  .lrn-hero{background:linear-gradient(180deg,var(--blue-pale) 0%, #fff 85%);padding:20px 0 24px;}
-  .lrn-hero .wrap{max-width:1600px;}
-  .lrn-kicker{font-size:11.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--blue-deep);margin-bottom:10px;}
-  .lrn-hero h1{font-size:clamp(24px,3.2vw,34px);margin-bottom:14px;max-width:1600px;}
-  .lrn-hero p{font-size:14.5px;color:var(--slate);line-height:1.75;max-width:660px;margin-bottom:16px;}
-  .lrn-cta-note{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 18px;font-size:13px;color:var(--slate);line-height:1.6;}
-  .lrn-cta-note a{color:var(--blue-deep);font-weight:700;text-decoration:underline;}
-
-  .lrn-body{max-width:1600px;margin:0;padding:0 28px;}
-
-  .lrn-toc{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:26px 28px;margin:20px 0;}
-  .lrn-toc-title{font-size:13px;font-weight:700;color:var(--blue-deep);text-transform:uppercase;letter-spacing:.03em;margin-bottom:14px;}
-  .lrn-toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;}
-  @media (max-width:560px){ .lrn-toc-grid{grid-template-columns:1fr;} }
-  .lrn-toc-grid a{font-size:13.5px;color:var(--ink);font-weight:600;padding:6px 0;border-bottom:1px dashed var(--line);}
-  .lrn-toc-grid a:hover{color:var(--blue-deep);}
-
-  .lrn-section{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:30px 32px;margin:16px 0;scroll-margin-top:48px;}
-  .lrn-section-head{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
-  .lrn-section-icon{width:38px;height:38px;border-radius:10px;background:var(--blue-pale);color:var(--blue-deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;}
-  .lrn-section h2{font-size:19px;}
-  .lrn-section p{font-size:13.5px;color:var(--slate);line-height:1.7;margin-bottom:14px;}
-
-  .lrn-diagram{background:var(--blue-pale);border-radius:14px;padding:22px;margin:16px 0 20px;}
-  .lrn-diagram-title{font-size:11px;font-weight:700;color:var(--blue-deep);text-transform:uppercase;letter-spacing:.03em;margin-bottom:14px;text-align:center;}
-
-  .split-diagram{display:flex;align-items:stretch;gap:10px;justify-content:center;flex-wrap:wrap;}
-  .split-col{background:#fff;border-radius:12px;padding:14px 16px;flex:1;min-width:150px;max-width:220px;border:1.5px solid var(--line);}
-  .split-col-title{font-size:11.5px;font-weight:700;color:var(--blue-deep);margin-bottom:8px;text-align:center;padding-bottom:6px;border-bottom:1px solid var(--line);}
-  .split-item{font-size:11px;color:var(--ink);padding:5px 0;border-bottom:1px dashed var(--line);}
-  .split-item:last-child{border-bottom:none;}
-  .split-connector{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:0 4px;min-width:110px;}
-  .split-connector-line{width:100%;height:2px;background:repeating-linear-gradient(90deg,var(--orange),var(--orange) 5px,transparent 5px,transparent 9px);}
-  .split-connector-text{font-size:10px;color:var(--orange);font-weight:700;text-align:center;line-height:1.4;}
-
-  .lrn-bullets{list-style:none;display:flex;flex-direction:column;gap:9px;margin:14px 0;}
-  .lrn-bullets li{position:relative;padding-left:17px;font-size:13.5px;color:var(--ink);line-height:1.65;}
-  .lrn-bullets li::before{content:"";position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--blue-deep);}
-  .lrn-bullets li strong{color:var(--blue-deep);}
-
-  .lrn-warn{background:#FFF6E9;border:1px solid #F0D9A8;border-radius:12px;padding:14px 18px;margin:16px 0;font-size:13px;color:#8A5D18;line-height:1.65;}
-  .lrn-warn strong{color:#6B4712;}
-
-  .lrn-rule{background:var(--blue-deep);color:#fff;border-radius:12px;padding:16px 20px;font-size:13px;line-height:1.7;margin:16px 0;}
-
-  .lrn-link-box{background:var(--blue-pale);border-radius:12px;padding:14px 18px;margin:14px 0;font-size:13px;}
-  .lrn-link-box a{color:var(--blue-deep);font-weight:700;text-decoration:underline;}
-
-  .diy-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0;}
-  @media (max-width:600px){ .diy-grid{grid-template-columns:1fr;} }
-  .diy-col{border-radius:14px;padding:18px 20px;}
-  .diy-col.yes{background:#F0FAF4;border:1px solid #C9E6D6;}
-  .diy-col.no{background:#FDEDEC;border:1px solid #F0C4BE;}
-  .diy-col h4{font-size:13px;font-weight:700;margin-bottom:10px;}
-  .diy-col.yes h4{color:#1D5C3F;}
-  .diy-col.no h4{color:var(--red);}
-  .diy-col ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
-  .diy-col li{font-size:12.5px;line-height:1.55;padding-left:16px;position:relative;}
-  .diy-col.yes li{color:#1D5C3F;}
-  .diy-col.no li{color:#8B2E23;}
-  .diy-col li::before{content:"";position:absolute;left:0;top:6px;width:5px;height:5px;border-radius:50%;}
-  .diy-col.yes li::before{background:#1E8A5A;}
-  .diy-col.no li::before{background:var(--red);}
-
-  /* ===== SECTION HEADLINE WIPE (site-wide, matches homepage) ===== */
-  .js .wipe{clip-path:inset(0 100% 0 0);transition:clip-path 5.5s cubic-bezier(.22,1,.36,1);will-change:clip-path;}
-  .js .wipe.is-visible{clip-path:inset(0 0 0 0);}
-  @media (prefers-reduced-motion:reduce){ .js .wipe{clip-path:none!important;transition:none!important;} }
-
-/* ==== HOP: full-width sections (uniform, left-to-right, no centering) — appended override ==== */
-/* Outermost section containers: span full width with one uniform side gutter */
-.wrap,
-.guide-body, .guide-hero .wrap, .other-issues .wrap,
-.insp-body, .insp-hero .wrap, .insp-other .wrap,
-.lrn-body, .lrn-hero .wrap,
-.tm-body, .tm-hero .wrap,
-.tc-body,
-.sup-body, .sup-hero .wrap,
-.story-body, .story-hero .wrap,
-.em-body, .em-hero .wrap,
-.cf-body, .cf-hero .wrap,
-.arc-body, .arc-hero .wrap,
-.re-hero .wrap,
-.pm-hero .wrap, .pm-pricing .wrap, .pm-features .wrap,
-.fap-hero .wrap,
-.reviews-strip .wrap,
-.myhome-section .wrap,
-.hl-hero .wrap, .hl-body {
-  max-width: none;
-  margin-left: 0;
-  margin-right: 0;
-  padding-left: 40px;
-  padding-right: 40px;
-}
-/* Nested containers (already inside a padded .wrap): widen only, no extra gutter */
-.hero-center,
-.diag-hero-inner,
-.helpband-inner,
-.pack-section-inner,
-.trade-grid {
-  max-width: none;
-  margin-left: 0;
-  margin-right: 0;
-}
-@media (max-width: 640px) {
-.wrap,
-.guide-body, .guide-hero .wrap, .other-issues .wrap,
-.insp-body, .insp-hero .wrap, .insp-other .wrap,
-.lrn-body, .lrn-hero .wrap,
-.tm-body, .tm-hero .wrap,
-.tc-body,
-.sup-body, .sup-hero .wrap,
-.story-body, .story-hero .wrap,
-.em-body, .em-hero .wrap,
-.cf-body, .cf-hero .wrap,
-.arc-body, .arc-hero .wrap,
-.re-hero .wrap,
-.pm-hero .wrap, .pm-pricing .wrap, .pm-features .wrap,
-.fap-hero .wrap,
-.reviews-strip .wrap,
-.myhome-section .wrap,
-.hl-hero .wrap, .hl-body {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-}
-/* ==== end HOP full-width override ==== */
-
-/* ==== HOP AUTH (sign-in popup + account menu) — appended ==== */
+/* ==== HOP AUTH (sign-in popup + account menu) ==== */
 .hop-auth-slot{position:relative;display:inline-flex;align-items:center;}
 .hop-welcome{display:inline-flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 6px 5px 15px;font-size:13.5px;font-weight:600;color:var(--ink);box-shadow:0 2px 8px rgba(0,61,151,.05);transition:box-shadow .15s ease;}
 .hop-welcome:hover{box-shadow:0 5px 14px rgba(0,61,151,.12);}
@@ -297,9 +173,8 @@ footer ul a:hover{color:var(--blue-deep);}
 .hop-submit:hover{opacity:.92;}
 .hop-legal{font-size:11.5px;color:var(--slate);text-align:center;line-height:1.6;}
 .hop-legal a{color:var(--blue-deep);text-decoration:underline;}
-/* ==== end HOP AUTH ==== */
 
-/* ==== HOP: hamburger nav + install modal (global, appended) ==== */
+/* ==== HOP: hamburger nav + install modal ==== */
 .header-left{display:flex;align-items:center;gap:14px;}
 .hamburger-btn{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:38px;height:38px;border-radius:8px;background:transparent;flex-shrink:0;}
 .hamburger-btn:hover{background:var(--blue-pale);}
@@ -331,9 +206,82 @@ footer ul a:hover{color:var(--blue-deep);}
 .install-modal .install-footer{font-size:12.5px;color:var(--slate);line-height:1.6;border-top:1px solid var(--line);padding-top:16px;margin-top:2px;margin-bottom:0;}
 @media (max-width:520px){ .hop-modal.install-modal{padding:26px 22px 22px;} }
 
-/* ==== HOP: mascot logo mark (img replacing svg mark, appended) ==== */
 .hop-brand-icon .mark{width:22px;height:34px;object-fit:contain;}
 .logo .mark{object-fit:contain;}
+
+/* ==== HOP: full-width sections (matches other game/utility pages) ==== */
+.wd-body{max-width:1600px;margin:0 auto;padding:0 40px 8px;}
+@media (max-width:640px){ .wd-body{padding:0 20px 8px;} }
+
+/* ==== HOP WORD — page-specific (prefix: wd-) ==== */
+.wd-hero{background:linear-gradient(135deg, var(--blue-deep) 0%, #0A4FB5 60%, var(--orange) 140%);padding:28px 0 30px;color:#fff;}
+.wd-hero .breadcrumb{color:#DCE9FA;}
+.wd-hero .breadcrumb a{color:#fff;}
+.wd-hero .breadcrumb span[aria-current]{color:#fff;font-weight:600;}
+.wd-title-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+.wd-title-row svg{width:28px;height:28px;color:var(--orange);flex-shrink:0;}
+.wd-hero h1{font-size:clamp(28px,4vw,42px);color:#fff;margin:0;}
+.wd-hero p{font-size:15.5px;color:#DCE9FA;line-height:1.6;margin-top:10px;max-width:560px;}
+
+.wd-panel{background:#fff;border:1.5px solid var(--line);border-radius:var(--radius);padding:26px;margin:26px 0;box-shadow:0 14px 40px rgba(0,20,60,.06);max-width:480px;margin-left:auto;margin-right:auto;}
+
+.wd-datebar{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:22px;}
+.wd-datebtn{width:32px;height:32px;border-radius:8px;background:var(--blue-pale);color:var(--blue-deep);display:flex;align-items:center;justify-content:center;border:1px solid var(--line);}
+.wd-datebtn:hover:not(:disabled){background:#DCEBFB;}
+.wd-datebtn:disabled{opacity:.4;cursor:not-allowed;}
+.wd-datebtn svg{width:14px;height:14px;}
+.wd-datelabel{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700;color:var(--ink);background:#F7FAFD;border:1px solid var(--line);border-radius:999px;padding:8px 16px;}
+.wd-datelabel svg{width:14px;height:14px;color:var(--slate);}
+
+.wd-board{display:flex;flex-direction:column;gap:7px;align-items:center;margin-bottom:22px;}
+.wd-row{display:flex;gap:7px;}
+.wd-cell{width:48px;height:48px;border:2px solid var(--line);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:22px;color:var(--ink);background:#fff;text-transform:uppercase;transition:transform .15s ease;}
+.wd-cell.filled{border-color:#B8C6D6;}
+.wd-cell.correct{background:#4CAF6C;border-color:#4CAF6C;color:#fff;}
+.wd-cell.present{background:var(--orange);border-color:var(--orange);color:#fff;}
+.wd-cell.absent{background:#8A97A6;border-color:#8A97A6;color:#fff;}
+.wd-cell.shake{animation:wdshake .35s;}
+@keyframes wdshake{0%,100%{transform:translateX(0);}25%{transform:translateX(-4px);}75%{transform:translateX(4px);}}
+
+.wd-status{text-align:center;margin-bottom:14px;min-height:20px;font-size:13px;font-weight:700;color:var(--red);}
+
+.wd-keyboard{display:flex;flex-direction:column;gap:8px;align-items:center;}
+.wd-key-row{display:flex;gap:6px;justify-content:center;}
+.wd-key{min-width:32px;height:46px;padding:0 8px;border-radius:6px;background:#EFEAE1;color:var(--ink);font-weight:700;font-size:12.5px;display:flex;align-items:center;justify-content:center;transition:background .12s ease;}
+.wd-key:hover{background:#E4DED2;}
+.wd-key.wide{min-width:52px;font-size:11px;}
+.wd-key.correct{background:#4CAF6C;color:#fff;}
+.wd-key.present{background:var(--orange);color:#fff;}
+.wd-key.absent{background:#8A97A6;color:#fff;}
+
+.wd-result{display:none;text-align:center;margin-top:18px;}
+.wd-result.show{display:block;}
+.wd-result h3{font-size:19px;color:var(--ink);margin-bottom:6px;}
+.wd-result p{font-size:13.5px;color:var(--slate);margin-bottom:6px;}
+
+.wd-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+
+.wd-lb{background:#fff;border:1.5px solid var(--line);border-radius:var(--radius);padding:22px 24px;margin-bottom:26px;}
+.wd-lb-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+.wd-lb-title{display:flex;align-items:center;gap:9px;font-family:'Fraunces',serif;font-size:16px;font-weight:600;color:var(--ink);}
+.wd-lb-title svg{width:18px;height:18px;color:var(--orange);}
+.wd-lb-tag{font-size:12px;color:var(--slate);font-weight:600;}
+.wd-lb-row{display:flex;align-items:center;gap:14px;padding:11px 12px;border-radius:10px;font-size:13.5px;}
+.wd-lb-row:nth-child(odd){background:#F7FAFD;}
+.wd-lb-rank{width:22px;flex-shrink:0;font-weight:700;color:var(--slate);text-align:center;}
+.wd-lb-rank.gold{color:#C8901A;}
+.wd-lb-rank.silver{color:#8A97A6;}
+.wd-lb-rank.bronze{color:#B5651D;}
+.wd-lb-name{flex:1;font-weight:700;color:var(--ink);}
+.wd-lb-score{font-weight:700;color:var(--blue-deep);}
+.wd-lb-date{font-size:11.5px;color:var(--slate);width:60px;text-align:right;flex-shrink:0;}
+.wd-lb-empty{font-size:13px;color:var(--slate);text-align:center;padding:18px 0;}
+
+@media (max-width:420px){
+  .wd-cell{width:40px;height:40px;font-size:19px;}
+  .wd-key{min-width:26px;height:42px;font-size:11px;}
+  .wd-key.wide{min-width:40px;font-size:9.5px;}
+}
 </style>
 </head>
 <body>
@@ -345,9 +293,9 @@ footer ul a:hover{color:var(--blue-deep);}
         <span></span><span></span><span></span>
       </button>
       <a href="index.html" class="logo">
-      <img class="mark" src="assets/hop-logo-mark.png" alt="HomeownerPal">
-      
-    </a>
+        <img class="mark" src="assets/hop-logo-mark.png" alt="HomeownerPal">
+        
+      </a>
     </div>
     <div class="header-actions">
       <a href="#" class="btn-signin">Sign in</a>
@@ -356,204 +304,63 @@ footer ul a:hover{color:var(--blue-deep);}
   </div>
 </header>
 
-<section class="lrn-hero">
+<section class="wd-hero">
   <div class="wrap">
-    <div class="breadcrumb">
-      <a href="tools-costs.html#learn">Learn</a>
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
-      <span>HVAC</span>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      <a href="game-arcade.html">Game Arcade</a>
+      <span>/</span>
+      <span aria-current="page">HOP Word</span>
+    </nav>
+    <div class="wd-title-row">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h6"/></svg>
+      <h1>HOP Word</h1>
     </div>
-    <div class="lrn-kicker">Learn · HVAC</div>
-    <h1>Home HVAC, the homeowner's plain-English reference</h1>
-    <p>The basics every homeowner should know about heating and cooling, enough to keep your system happy between service visits and recognize what needs a pro. HVAC equipment varies widely; treat this as a general primer and confirm specifics with a licensed local technician.</p>
-    <div class="lrn-cta-note"><strong>General reference.</strong> Plumbing &amp; HVAC codes, equipment, and "who owns what" vary by city, utility, and state. Always verify with a licensed local pro before working on your system.</div>
+    <p>Six chances. Five letters. Home, trade &amp; bunny words.</p>
   </div>
 </section>
 
-<div class="lrn-body">
-
-  <div class="lrn-toc">
-    <div class="lrn-toc-title">On this page</div>
-    <div class="lrn-toc-grid">
-      <a href="#split-system">Split system overview</a>
-      <a href="#heat-vs-cool">Heat pump vs AC vs furnace</a>
-      <a href="#refrigerant">Refrigerant &amp; condensate</a>
-      <a href="#disconnect">Outdoor disconnect</a>
-      <a href="#filters">Filters &amp; change cadence</a>
-      <a href="#thermostat">Thermostat C-wire</a>
-      <a href="#diy-vs-pro">DIY vs call-a-pro</a>
+<div class="wd-body">
+  <div class="wd-panel">
+    <div class="wd-datebar">
+      <button type="button" class="wd-datebtn" id="wdPrevBtn" aria-label="Previous day">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <span class="wd-datelabel">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>
+        <span id="wdDateLabel">Today</span>
+      </span>
+      <button type="button" class="wd-datebtn" id="wdNextBtn" aria-label="Next day">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
     </div>
+
+    <div class="wd-board" id="wdBoard"></div>
+    <div class="wd-status" id="wdStatus" aria-live="polite"></div>
+    <div class="wd-keyboard" id="wdKeyboard"></div>
+
+    <div class="wd-result" id="wdResult">
+      <h3 id="wdResultTitle">Solved!</h3>
+      <p id="wdResultText">The word was HOUSE.</p>
+    </div>
+
+    <div id="wdLiveRegion" class="wd-sr-only" role="status" aria-live="polite"></div>
   </div>
 
-  <!-- SECTION 1: SPLIT SYSTEM -->
-  <div class="lrn-section" id="split-system">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">🏠</div>
-      <h2>The classic split system</h2>
-    </div>
-    <p>Most American homes have a "split" system, two halves of the same machine, separated by an exterior wall and connected by a pair of refrigerant lines.</p>
-
-    <div class="lrn-diagram">
-      <div class="lrn-diagram-title">Outside ↔ Inside</div>
-      <div class="split-diagram">
-        <div class="split-col">
-          <div class="split-col-title">OUTSIDE</div>
-          <div class="split-item">Condenser (compressor + fan)</div>
-          <div class="split-item">Disconnect</div>
-        </div>
-        <div class="split-connector">
-          <div class="split-connector-line"></div>
-          <div class="split-connector-text">Refrigerant lines<br>(suction + liquid)</div>
-          <div class="split-connector-line"></div>
-        </div>
-        <div class="split-col">
-          <div class="split-col-title">INSIDE</div>
-          <div class="split-item">Air handler / furnace</div>
-          <div class="split-item">Filter</div>
-          <div class="split-item">Evap coil</div>
-          <div class="split-item">Supply / Return</div>
-          <div class="split-item">Condensate drain</div>
-          <div class="split-item">Disconnect</div>
-        </div>
+  <div class="wd-lb">
+    <div class="wd-lb-head">
+      <div class="wd-lb-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 01-10 0V4zM7 4H4a3 3 0 003 3M17 4h3a3 3 0 01-3 3"/></svg>
+        Top 3 Global &mdash; HOP Word
       </div>
+      <span class="wd-lb-tag">All-time</span>
     </div>
-
-    <ul class="lrn-bullets">
-      <li><strong>Outdoor unit (condenser):</strong> the metal box on a pad outside. Contains the compressor and a big fan. This is what hums in the summer.</li>
-      <li><strong>Indoor unit (air handler or furnace):</strong> in a closet, attic, basement, or garage. Holds the blower motor, the evaporator coil, and the air filter. Pushes conditioned air through your ducts.</li>
-      <li><strong>Refrigerant lines:</strong> the insulated copper line plus smaller bare copper line running between the two units. Refrigerant cycles between them, carrying heat outdoors in summer (and indoors in winter, if you have a heat pump).</li>
-    </ul>
-  </div>
-
-  <!-- SECTION 2: HEAT PUMP VS AC VS FURNACE -->
-  <div class="lrn-section" id="heat-vs-cool">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">🌡️</div>
-      <h2>Heat pump vs AC vs furnace</h2>
-    </div>
-    <ul class="lrn-bullets">
-      <li><strong>Air conditioner (AC) + furnace:</strong> the traditional setup. AC cools in summer, a gas (or electric) furnace heats in winter. Two completely different heat sources, one shared blower and duct system.</li>
-      <li><strong>Heat pump:</strong> looks just like an AC condenser but works both directions, moves heat out of the house in summer and pulls heat in from outdoors in winter. Increasingly common because they're very efficient down to surprisingly cold temperatures.</li>
-      <li><strong>Dual-fuel / hybrid:</strong> heat pump for mild weather plus gas furnace as backup for deep cold. Best of both in most climates.</li>
-      <li><strong>Mini-splits (ductless):</strong> wall-mounted indoor heads connected to a small outdoor unit with refrigerant lines and a control wire. No ducts needed, great for additions, garages, or retrofits.</li>
-    </ul>
-  </div>
-
-  <!-- SECTION 3: REFRIGERANT & CONDENSATE -->
-  <div class="lrn-section" id="refrigerant">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">💧</div>
-      <h2>Refrigerant lines &amp; condensate drain</h2>
-    </div>
-    <ul class="lrn-bullets">
-      <li>Refrigerant is a closed loop, it should never need "topping off." If a tech says you need refrigerant, you have a leak; topping it off without finding the leak just delays the problem.</li>
-      <li>As warm humid indoor air passes over the cold evaporator coil, water condenses out (same reason a cold glass sweats). That water drains through the condensate drain line, usually a PVC pipe leading outside or to a floor drain.</li>
-      <li>Clogged condensate drain is the single most common reason a healthy AC suddenly stops cooling, most systems have a safety float switch that shuts down the system when the drain backs up. Pouring a cup of distilled vinegar down the cleanout port once a year prevents most clogs.</li>
-    </ul>
-  </div>
-
-  <!-- SECTION 4: OUTDOOR DISCONNECT -->
-  <div class="lrn-section" id="disconnect">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">🔌</div>
-      <h2>The outdoor disconnect</h2>
-    </div>
-    <p>Required by code within sight of the outdoor unit. Some are cheap plastic pull-out blocks; better ones are switched metal disconnects with a real handle. This is what gets turned off before anyone services the condenser, and what a homeowner can flip if the outdoor unit ever needs to be killed in a hurry.</p>
-    <div class="lrn-link-box">See our recommended 60A switched disconnect in <a href="tools-materials.html">Tools &amp; Materials →</a></div>
-    <div class="lrn-warn"><strong>Heads up:</strong> pulling the outdoor disconnect doesn't cut power to the indoor air handler, that has its own disconnect near the unit (and its own breaker at the main panel).</div>
-  </div>
-
-  <!-- SECTION 5: FILTERS -->
-  <div class="lrn-section" id="filters">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">🌬️</div>
-      <h2>Filters, the cheapest insurance you can buy</h2>
-    </div>
-    <ul class="lrn-bullets">
-      <li><strong>Where it lives:</strong> usually at the return air opening or in a slot on the side/bottom of the air handler. Some homes have one big return-grille filter; others have a slot at the unit.</li>
-      <li><strong>Change cadence:</strong> 1" filters every 1 to 3 months, 4 to 5" media filters every 6 to 12 months. More often if you have pets or run the system hard.</li>
-      <li><strong>MERV rating:</strong> higher numbers filter finer particles but restrict more airflow. MERV 8 to MERV 11 is a sweet spot for most residential systems. Going too high (MERV 13+) without a properly-sized return can starve the unit and cause coil freeze-ups.</li>
-      <li>A neglected filter is the #1 cause of "my system stopped working" service calls. Frozen coils, tripped limit switches, dead blowers, most trace back to airflow.</li>
-    </ul>
-  </div>
-
-  <!-- SECTION 6: THERMOSTAT C-WIRE -->
-  <div class="lrn-section" id="thermostat">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">🧭</div>
-      <h2>Thermostat C-wire (what smart thermostats need)</h2>
-    </div>
-    <p>The "C" (common) wire provides constant 24V power to a thermostat. Older mechanical thermostats and many older digital ones don't need it, they're powered by the heating/cooling call wires themselves. Smart thermostats (Nest, Ecobee, Honeywell smart, and similar) do need it for reliable operation.</p>
-    <ul class="lrn-bullets">
-      <li>If you don't have a C-wire, options include: running a new wire (best), using a C-wire adapter at the air handler, or using a thermostat that ships with its own power-extender kit (Ecobee).</li>
-      <li>Common color convention: R = 24V hot, C = common, W = heat, Y = cool, G = fan. Brands vary, always photograph the existing wiring before disconnecting anything.</li>
-    </ul>
-  </div>
-
-  <!-- SECTION 7: DIY VS CALL A PRO -->
-  <div class="lrn-section" id="diy-vs-pro">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">🛠️</div>
-      <h2>DIY vs call-a-pro</h2>
-    </div>
-
-    <div class="diy-grid">
-      <div class="diy-col yes">
-        <h4>Safe DIY</h4>
-        <ul>
-          <li>Changing filters</li>
-          <li>Clearing the condensate drain</li>
-          <li>Hosing dust off the outdoor condenser coil (power off!)</li>
-          <li>Keeping vegetation 2 ft back from the outdoor unit</li>
-          <li>Programming the thermostat</li>
-          <li>Replacing the thermostat itself</li>
-        </ul>
-      </div>
-      <div class="diy-col no">
-        <h4>Call a pro</h4>
-        <ul>
-          <li>Any refrigerant work (it's federally regulated)</li>
-          <li>Gas furnace problems (combustion safety)</li>
-          <li>Electrical issues at the unit</li>
-          <li>Capacitor or contactor replacement on the condenser</li>
-          <li>Anything that involves opening the sealed refrigerant system</li>
-          <li>Frozen coils that don't resolve after filter change + 24 hr off</li>
-          <li>No heat in winter</li>
-          <li>System shutting off on its own</li>
-        </ul>
-      </div>
+    <div id="wdLeaderboard">
+      <p class="wd-lb-empty">Loading scores&hellip;</p>
     </div>
   </div>
-
 </div>
-
-<section class="other-issues" style="background:var(--blue-pale);padding:30px 0;">
-  <div class="wrap">
-    <h3 style="font-size:18px;margin-bottom:6px;">Having one of these problems right now?</h3>
-    <p style="font-size:13.5px;color:var(--slate);margin-bottom:20px;">Walk through it step by step with HOP, free, no signup.</p>
-    <div class="other-panel" style="background:#fff;border-radius:18px;border:1px solid var(--line);overflow:hidden;">
-      <a href="hvac-ac-not-cooling.html" class="other-row" style="display:flex;align-items:center;gap:12px;padding:13px 20px;border-bottom:1px solid var(--line);"><span style="font-size:13.5px;font-weight:600;flex:1;">AC running but not cooling</span></a>
-      <a href="hvac-no-heat.html" class="other-row" style="display:flex;align-items:center;gap:12px;padding:13px 20px;border-bottom:1px solid var(--line);"><span style="font-size:13.5px;font-weight:600;flex:1;">Furnace or heat not working</span></a>
-      <a href="hvac-thermostat-blank.html" class="other-row" style="display:flex;align-items:center;gap:12px;padding:13px 20px;"><span style="font-size:13.5px;font-weight:600;flex:1;">Thermostat blank or unresponsive</span></a>
-    </div>
-    <p style="margin-top:20px;font-size:13.5px;"><a href="find-a-pro.html?trade=hvac" style="color:var(--blue-deep);font-weight:700;text-decoration:underline;">Or find a trusted local HVAC pro →</a></p>
-  </div>
-</section>
-
-<section style="padding:30px 0;">
-  <div class="wrap">
-    <div style="background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:24px 28px;text-align:center;">
-      <p style="font-size:13.5px;color:var(--slate);line-height:1.7;margin-bottom:8px;">Stuck on something specific? Call or text the <a href="diagnose.html" style="color:var(--blue-deep);font-weight:700;text-decoration:underline;">HOPline</a>, it's free. We can walk you through your exact situation, no account needed. For active emergencies (smoke, sparks, or fire) call 911.</p>
-    </div>
-    <a href="emergency.html" style="display:flex;align-items:center;gap:14px;background:#FDEDEC;border:1.5px solid #F5C2BC;border-radius:16px;padding:18px 22px;margin-top:16px;text-decoration:none;">
-      <div style="width:36px;height:36px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;">🚨</div>
-      <div>
-        <div style="font-size:13.5px;font-weight:700;color:#8B2E23;margin-bottom:2px;">Emergency</div>
-        <div style="font-size:12.5px;color:#8B2E23;">When to call 911 vs. a licensed electrician →</div>
-      </div>
-    </a>
-  </div>
-</section>
 
 <section class="cta-band">
   <div class="wrap">
@@ -653,7 +460,6 @@ footer ul a:hover{color:var(--blue-deep);}
   </div>
 </footer>
 
-
 <script>
 (function () {
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -696,7 +502,6 @@ footer ul a:hover{color:var(--blue-deep);}
   });
 })();
 </script>
-
 
 <!-- ==== HOP NAV drawer ==== -->
 <div class="nav-drawer-overlay" id="hopNavOverlay" onclick="if(event.target===this)HOPNav.close()">
@@ -849,5 +654,367 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape') HOPInstall
 })();
 </script>
 <!-- ==== end HOP AUTH modal ==== -->
+
+<!-- ==== HOPScores shared helper (see build rules doc, §8) ==== -->
+<script>
+window.HOPScores = (function () {
+  var BASE = 'https://homeownerpal.com/api/scores';
+
+  function localKey(gameId) { return 'hop_scores_' + gameId; }
+
+  function submit(gameId, name, score) {
+    return fetch(BASE, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ gameId: gameId, name: name, score: score })
+    }).then(function (res) {
+      if (!res.ok) throw new Error('bad response');
+      return res.json();
+    }).catch(function () {
+      var list = [];
+      try { list = JSON.parse(localStorage.getItem(localKey(gameId))) || []; } catch (e2) {}
+      list.push({ name: name, score: score, date: new Date().toISOString() });
+      list.sort(function (a, b) { return b.score - a.score; });
+      list = list.slice(0, 10);
+      try { localStorage.setItem(localKey(gameId), JSON.stringify(list)); } catch (e3) {}
+      return { ok: true, local: true };
+    });
+  }
+
+  function getTop(gameId, limit) {
+    limit = limit || 3;
+    return fetch(BASE + '/' + gameId + '/top?limit=' + limit).then(function (res) {
+      if (!res.ok) throw new Error('bad response');
+      return res.json();
+    }).catch(function () {
+      var list = [];
+      try { list = JSON.parse(localStorage.getItem(localKey(gameId))) || []; } catch (e2) {}
+      return list.slice(0, limit);
+    });
+  }
+
+  function getBest(gameId) {
+    return fetch(BASE + '/' + gameId + '/best').then(function (res) {
+      if (!res.ok) throw new Error('bad response');
+      return res.json();
+    }).then(function (data) {
+      return data.score || 0;
+    }).catch(function () {
+      var list = [];
+      try { list = JSON.parse(localStorage.getItem(localKey(gameId))) || []; } catch (e2) {}
+      return list.length ? list[0].score : 0;
+    });
+  }
+
+  return { submit: submit, getTop: getTop, getBest: getBest };
+})();
+</script>
+
+<!-- ====================================================================
+     HOP WORD — game logic
+     Daily 5-letter word puzzle (Wordle-style), themed around home,
+     trade, and bunny words. The word for a given date is deterministic
+     (hashed from the date string) so everyone sees the same puzzle on
+     the same day; the arrows browse past days for practice. Six guesses,
+     on-screen + physical keyboard, standard green/yellow/gray feedback
+     with correct duplicate-letter handling.
+     ==================================================================== -->
+<script>
+(function () {
+  var GAME_ID = 'hop-word';
+  var WORD_LENGTH = 5;
+  var MAX_GUESSES = 6;
+
+  var WORD_POOL = [
+    'VALVE','DRAIN','PANEL','JOIST','HINGE','CAULK','BUNNY','HUTCH','GRIME','STUCK',
+    'LEAKY','PIPES','WIRED','SPARK','MOTOR','VENTS','DUCTS','ROOFS','BEAMS','STUDS',
+    'NAILS','SCREW','DRILL','LEVEL','PAINT','PATCH','GROUT','TILES','FLOOR','ATTIC',
+    'DECKS','FENCE','HEDGE','WATER','POWER','ALARM','SMOKE','STOVE','OVENS','SINKS',
+    'DRAPE','BLIND','HOUSE','HOMES','YARDS','LAWNS','MULCH','SPADE','RAKES','HOSES',
+    'CORDS','PLUGS','VOLTS'
+  ];
+  var VALID_GUESSES = WORD_POOL.slice();
+
+  var boardEl = document.getElementById('wdBoard');
+  var keyboardEl = document.getElementById('wdKeyboard');
+  var statusEl = document.getElementById('wdStatus');
+  var dateLabelEl = document.getElementById('wdDateLabel');
+  var prevBtn = document.getElementById('wdPrevBtn');
+  var nextBtn = document.getElementById('wdNextBtn');
+  var resultEl = document.getElementById('wdResult');
+  var resultTitle = document.getElementById('wdResultTitle');
+  var resultText = document.getElementById('wdResultText');
+  var liveRegion = document.getElementById('wdLiveRegion');
+  var lbEl = document.getElementById('wdLeaderboard');
+
+  var KEY_ROWS = [
+    'QWERTYUIOP'.split(''),
+    'ASDFGHJKL'.split(''),
+    ['ENTER', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', 'BACK']
+  ];
+
+  var dayOffset = 0; // 0 = today
+  var target, guesses, currentGuess, gameOver;
+  var keyStates = {};
+
+  function todayDate() {
+    var d = new Date();
+    d.setHours(0, 0, 0, 0);
+    return d;
+  }
+
+  function dateForOffset(offset) {
+    var d = todayDate();
+    d.setDate(d.getDate() + offset);
+    return d;
+  }
+
+  function dateKey(d) {
+    return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate();
+  }
+
+  function hashString(s) {
+    var h = 0;
+    for (var i = 0; i < s.length; i++) {
+      h = (h * 31 + s.charCodeAt(i)) >>> 0;
+    }
+    return h;
+  }
+
+  function wordForOffset(offset) {
+    var key = dateKey(dateForOffset(offset));
+    var idx = hashString(key) % WORD_POOL.length;
+    return WORD_POOL[idx];
+  }
+
+  function formatDateLabel(offset) {
+    if (offset === 0) return 'Today \u2014 ' + formatDate(dateForOffset(0));
+    return formatDate(dateForOffset(offset));
+  }
+
+  function formatDate(d) {
+    var opts = { weekday: 'short', month: 'short', day: 'numeric' };
+    return d.toLocaleDateString(undefined, opts);
+  }
+
+  function announce(msg) { liveRegion.textContent = msg; }
+
+  function evaluateGuess(guess, target) {
+    var result = new Array(WORD_LENGTH).fill('absent');
+    var targetArr = target.split('');
+    var used = new Array(WORD_LENGTH).fill(false);
+    for (var i = 0; i < WORD_LENGTH; i++) {
+      if (guess[i] === targetArr[i]) { result[i] = 'correct'; used[i] = true; }
+    }
+    for (var i = 0; i < WORD_LENGTH; i++) {
+      if (result[i] === 'correct') continue;
+      for (var j = 0; j < WORD_LENGTH; j++) {
+        if (!used[j] && guess[i] === targetArr[j]) { result[i] = 'present'; used[j] = true; break; }
+      }
+    }
+    return result;
+  }
+
+  function renderBoard() {
+    var html = '';
+    for (var r = 0; r < MAX_GUESSES; r++) {
+      html += '<div class="wd-row" id="wdRow' + r + '">';
+      for (var c = 0; c < WORD_LENGTH; c++) {
+        html += '<div class="wd-cell" id="wdCell' + r + '_' + c + '"></div>';
+      }
+      html += '</div>';
+    }
+    boardEl.innerHTML = html;
+  }
+
+  function renderKeyboard() {
+    var html = '';
+    KEY_ROWS.forEach(function (row) {
+      html += '<div class="wd-key-row">';
+      row.forEach(function (k) {
+        var label = k === 'BACK' ? '&larr;' : k;
+        var wide = (k === 'ENTER' || k === 'BACK') ? ' wide' : '';
+        html += '<button type="button" class="wd-key' + wide + '" data-key="' + k + '">' + label + '</button>';
+      });
+      html += '</div>';
+    });
+    keyboardEl.innerHTML = html;
+    keyboardEl.querySelectorAll('.wd-key').forEach(function (btn) {
+      btn.addEventListener('click', function () { handleKey(btn.dataset.key); });
+    });
+  }
+
+  function updateKeyVisual(letter, state) {
+    var rank = { absent: 0, present: 1, correct: 2 };
+    if (keyStates[letter] === undefined || rank[state] > rank[keyStates[letter]]) {
+      keyStates[letter] = state;
+    }
+    var btn = keyboardEl.querySelector('.wd-key[data-key="' + letter + '"]');
+    if (btn) {
+      btn.classList.remove('correct', 'present', 'absent');
+      btn.classList.add(keyStates[letter]);
+    }
+  }
+
+  function shakeRow(r) {
+    var row = document.getElementById('wdRow' + r);
+    if (!row) return;
+    row.querySelectorAll('.wd-cell').forEach(function (cell) {
+      cell.classList.add('shake');
+      setTimeout(function () { cell.classList.remove('shake'); }, 350);
+    });
+  }
+
+  function handleKey(k) {
+    if (gameOver) return;
+    statusEl.textContent = '';
+
+    if (k === 'ENTER') {
+      submitGuess();
+      return;
+    }
+    if (k === 'BACK') {
+      currentGuess = currentGuess.slice(0, -1);
+      renderCurrentRow();
+      return;
+    }
+    if (/^[A-Z]$/.test(k) && currentGuess.length < WORD_LENGTH) {
+      currentGuess += k;
+      renderCurrentRow();
+    }
+  }
+
+  function renderCurrentRow() {
+    var r = guesses.length;
+    for (var c = 0; c < WORD_LENGTH; c++) {
+      var cell = document.getElementById('wdCell' + r + '_' + c);
+      if (!cell) continue;
+      cell.textContent = currentGuess[c] || '';
+      cell.classList.toggle('filled', !!currentGuess[c]);
+    }
+  }
+
+  function submitGuess() {
+    if (currentGuess.length < WORD_LENGTH) {
+      statusEl.textContent = 'Not enough letters.';
+      shakeRow(guesses.length);
+      return;
+    }
+    if (VALID_GUESSES.indexOf(currentGuess) === -1) {
+      statusEl.textContent = 'Not in word list.';
+      shakeRow(guesses.length);
+      return;
+    }
+
+    var r = guesses.length;
+    var result = evaluateGuess(currentGuess, target);
+    for (var c = 0; c < WORD_LENGTH; c++) {
+      var cell = document.getElementById('wdCell' + r + '_' + c);
+      cell.classList.add(result[c]);
+      updateKeyVisual(currentGuess[c], result[c]);
+    }
+
+    guesses.push({ word: currentGuess, result: result });
+    announce('Guess ' + (r + 1) + ': ' + currentGuess.split('').join(' ') + '.');
+
+    if (currentGuess === target) {
+      currentGuess = '';
+      finishGame(true);
+      return;
+    }
+
+    currentGuess = '';
+    if (guesses.length >= MAX_GUESSES) {
+      finishGame(false);
+    }
+  }
+
+  function finishGame(won) {
+    gameOver = true;
+    resultEl.classList.add('show');
+    if (won) {
+      resultTitle.textContent = ['Splendid!', 'Great!', 'Nice one!', 'Well played!', 'Phew!', 'Got it!'][guesses.length - 1] || 'Solved!';
+      resultText.textContent = 'Solved in ' + guesses.length + ' of ' + MAX_GUESSES + ' guesses.';
+      announce('You solved it in ' + guesses.length + ' guesses. The word was ' + target + '.');
+    } else {
+      resultTitle.textContent = 'Out of guesses';
+      resultText.textContent = 'The word was ' + target + '.';
+      announce('Out of guesses. The word was ' + target + '.');
+    }
+
+    var score = won ? Math.max(50, (MAX_GUESSES - guesses.length + 1) * 100) : 0;
+    var user = null;
+    try { user = JSON.parse(localStorage.getItem('hop_user')); } catch (e) {}
+    var name = (user && user.name) ? user.name : 'Anonymous';
+
+    HOPScores.submit(GAME_ID, name, score).then(function () {
+      refreshLeaderboard();
+    });
+  }
+
+  function loadPuzzle(offset) {
+    dayOffset = offset;
+    target = wordForOffset(offset);
+    guesses = [];
+    currentGuess = '';
+    gameOver = false;
+    keyStates = {};
+    statusEl.textContent = '';
+    resultEl.classList.remove('show');
+    dateLabelEl.textContent = formatDateLabel(offset);
+    nextBtn.disabled = (offset >= 0);
+    renderBoard();
+    renderKeyboard();
+    announce('New puzzle loaded for ' + formatDateLabel(offset) + '. Guess the five-letter word.');
+  }
+
+  document.addEventListener('keydown', function (e) {
+    if (gameOver) return;
+    var k = e.key.toUpperCase();
+    if (k === 'ENTER') { handleKey('ENTER'); return; }
+    if (k === 'BACKSPACE') { handleKey('BACK'); return; }
+    if (/^[A-Z]$/.test(k)) { handleKey(k); }
+  });
+
+  prevBtn.addEventListener('click', function () { loadPuzzle(dayOffset - 1); });
+  nextBtn.addEventListener('click', function () { if (dayOffset < 0) loadPuzzle(dayOffset + 1); });
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  }
+
+  function renderLeaderboard(rows) {
+    if (!rows || !rows.length) {
+      lbEl.innerHTML = '<p class="wd-lb-empty">No scores yet. Be the first on the board.</p>';
+      return;
+    }
+    var medalClass = ['gold', 'silver', 'bronze'];
+    var html = '';
+    rows.slice(0, 3).forEach(function (r, i) {
+      var d = r.date ? new Date(r.date) : null;
+      var dateStr = d ? (d.getMonth() + 1) + '/' + d.getDate() : '';
+      html += '<div class="wd-lb-row">' +
+        '<span class="wd-lb-rank ' + (medalClass[i] || '') + '">' + (i + 1) + '</span>' +
+        '<span class="wd-lb-name">' + escapeHtml(r.name || 'Anonymous') + '</span>' +
+        '<span class="wd-lb-score">' + r.score + '</span>' +
+        '<span class="wd-lb-date">' + dateStr + '</span>' +
+        '</div>';
+    });
+    lbEl.innerHTML = html;
+  }
+
+  function refreshLeaderboard() {
+    HOPScores.getTop(GAME_ID, 3).then(renderLeaderboard).catch(function () {
+      lbEl.innerHTML = '<p class="wd-lb-empty">Scores unavailable right now.</p>';
+    });
+  }
+
+  loadPuzzle(0);
+  refreshLeaderboard();
+})();
+</script>
+
 </body>
 </html>

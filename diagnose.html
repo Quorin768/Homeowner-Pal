@@ -67,7 +67,7 @@ section{padding:44px 0;}
 header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
 header .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;}
 .logo{display:flex;align-items:center;gap:10px;font-family:'Fraunces';font-weight:700;font-size:19px;}
-.logo .mark{width:36px;height:36px;}
+.logo .mark{width:30px;height:46px;}
 .logo .pal{color:var(--orange);}
 nav.primary-nav{display:flex;gap:26px;font-size:14.5px;font-weight:600;color:var(--slate);}
 nav.primary-nav a:hover{color:var(--blue-deep);}
@@ -101,8 +101,12 @@ nav.primary-nav a.active{color:var(--blue-deep);}
 
 /* Footer */
 footer{background:#fff;border-top:1px solid var(--line);padding:30px 0 18px;}
-.footer-grid{display:grid;grid-template-columns:1.4fr repeat(4,1fr);gap:36px;margin-bottom:22px;}
-@media (max-width:800px){ .footer-grid{grid-template-columns:repeat(2,1fr);} }
+.footer-grid{display:grid;grid-template-columns:1.1fr repeat(5,1fr);gap:28px;margin-bottom:22px;}
+@media (max-width:1100px){ .footer-grid{grid-template-columns:repeat(3,1fr);} }
+@media (max-width:700px){ .footer-grid{grid-template-columns:repeat(2,1fr);} }
+@media (max-width:460px){ .footer-grid{grid-template-columns:1fr;} }
+.footer-soon{display:block;font-size:13.5px;color:var(--slate);cursor:default;}
+.footer-soon em{font-style:normal;color:#B9C2CE;font-size:11.5px;}
 .footer-brand p{font-size:13px;color:var(--slate);max-width:250px;line-height:1.6;margin-top:12px;}
 footer h5{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--slate);margin-bottom:14px;font-weight:700;}
 footer ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
@@ -124,12 +128,22 @@ footer ul a:hover{color:var(--blue-deep);}
   /* ---- Page-specific additions below ---- */
   /* ---- Page-specific: Diagnose ---- */
   .diag-hero{background:linear-gradient(180deg,var(--blue-pale) 0%, #fff 85%);padding:30px 0 36px;position:relative;overflow:hidden;}
-  .diag-hero-inner{display:flex;gap:20px;align-items:flex-start;max-width:1600px;margin:0;text-align:left;flex-direction:column;position:relative;z-index:2;}
-  .diag-hero img.hop-sm{width:118px;height:auto;margin-bottom:2px;animation:hopFloatSm 5s ease-in-out infinite;}
-  @keyframes hopFloatSm{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
-  @media (prefers-reduced-motion: reduce){ .diag-hero img.hop-sm{animation:none;} }
-  .diag-hero h1{font-size:clamp(28px,3.6vw,42px);}
-  .diag-hero p.lede{color:var(--slate);font-size:16.5px;margin-top:8px;}
+  .diag-hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:flex-start;max-width:1600px;margin:0 0 40px;text-align:left;position:relative;z-index:2;}
+  @media (max-width:860px){ .diag-hero-inner{grid-template-columns:1fr;gap:26px;} }
+  .diag-hero-text{display:flex;flex-direction:column;align-items:flex-start;width:100%;}
+  .diag-hero-text .kicker{font-size:25px;}
+  .hop-duo{display:flex;justify-content:center;align-items:flex-end;width:100%;margin-top:26px;gap:0;}
+  .hop-duo img{width:190px;height:auto;filter:drop-shadow(0 14px 20px rgba(0,61,151,.14));}
+  .hop-duo-a{margin-right:-34px;z-index:1;animation:hopFloatA 3.2s ease-in-out infinite;}
+  .hop-duo-b{margin-left:-34px;animation:hopFloatB 3.2s ease-in-out infinite;animation-delay:.35s;}
+  @keyframes hopFloatA{0%,100%{transform:translateY(0) rotate(-20deg);}50%{transform:translateY(-10px) rotate(-24deg);}}
+  @keyframes hopFloatB{0%,100%{transform:scaleX(-1) translateY(0) rotate(-20deg);}50%{transform:scaleX(-1) translateY(-10px) rotate(-24deg);}}
+  @media (prefers-reduced-motion: reduce){ .hop-duo-a, .hop-duo-b{animation:none;} }
+  @media (max-width:520px){ .hop-duo img{width:140px;} }
+  .diag-hero h1{font-size:clamp(36px,4.8vw,58px);}
+  .diag-hero p.lede{color:var(--slate);font-size:17.5px;margin-top:10px;max-width:100%;}
+  .diag-hero .hero-img-placeholder{margin-bottom:0;aspect-ratio:4/3;}
+  .diag-hero .hero-img-placeholder img{height:100%;object-fit:cover;}
 
   /* decorative drift, matching homepage motif */
   .diag-bg-scene{position:absolute;inset:0;z-index:1;pointer-events:none;}
@@ -201,13 +215,39 @@ footer ul a:hover{color:var(--blue-deep);}
   .helpband-inner{max-width:1600px;margin:0;display:grid;grid-template-columns:1fr;gap:16px;}
   .help-card{
     background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:24px 28px;
-    display:flex;align-items:flex-start;gap:16px;
+    display:flex;flex-direction:column;gap:20px;
   }
+  .help-card-top{display:flex;align-items:flex-start;gap:16px;}
   .help-card .hc-icon{width:38px;height:38px;border-radius:10px;background:var(--blue-pale);color:var(--blue-deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
   .help-card .hc-icon svg{width:19px;height:19px;}
   .help-card h4{font-size:16px;margin-bottom:4px;}
   .help-card p{font-size:13.5px;color:var(--slate);line-height:1.55;}
-  .help-card a.hc-link{font-size:13.5px;font-weight:700;color:var(--blue-deep);white-space:nowrap;margin-left:auto;align-self:center;}
+
+  /* Inline HOPline form */
+  .hc-form{border-top:1px solid var(--line);padding-top:20px;}
+  .hc-form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:14px;}
+  @media (max-width:600px){ .hc-form-row{grid-template-columns:1fr;} }
+  .hc-field{display:flex;flex-direction:column;margin-bottom:14px;}
+  .hc-field-zip{max-width:220px;}
+  @media (max-width:600px){ .hc-field-zip{max-width:none;} }
+  .hc-field label{font-size:12.5px;font-weight:700;color:var(--ink);margin-bottom:6px;}
+  .hc-req{color:var(--orange);}
+  .hc-field input,.hc-field textarea{
+    width:100%;padding:11px 14px;border:1.5px solid var(--line);border-radius:10px;
+    font-family:inherit;font-size:14px;color:var(--ink);background:#FBFDFF;
+  }
+  .hc-field input:focus,.hc-field textarea:focus{outline:none;border-color:var(--blue-sky);background:#fff;}
+  .hc-field textarea{min-height:96px;resize:vertical;line-height:1.5;}
+  .hc-counter{font-size:11.5px;color:var(--slate);text-align:right;margin-top:4px;}
+  .hc-form-foot{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+  .hc-emergency-note{display:flex;align-items:flex-start;gap:8px;font-size:12.5px;color:var(--slate);max-width:520px;line-height:1.5;margin:0;}
+  .hc-emergency-note svg{width:16px;height:16px;flex-shrink:0;margin-top:1px;color:#C15A00;}
+  .hc-buttons{display:flex;gap:10px;flex-shrink:0;}
+  .hc-sent{display:none;align-items:center;gap:14px;padding:8px 0;}
+  .hc-sent:not([hidden]){display:flex;}
+  .hc-sent svg{width:32px;height:32px;color:var(--blue-deep);flex-shrink:0;}
+  .hc-sent h4{margin-bottom:2px;}
+  .hc-sent p{margin:0;}
 
   .disclaimer{background:#fff;}
   .disclaimer-box{
@@ -318,7 +358,7 @@ footer ul a:hover{color:var(--blue-deep);}
 .hop-modal-x:hover{background:var(--blue-pale);}
 .hop-modal-x svg{width:18px;height:18px;}
 .hop-brand{display:flex;align-items:center;gap:9px;margin-bottom:18px;}
-.hop-brand-icon{width:32px;height:32px;border-radius:9px;background:var(--blue-pale);display:flex;align-items:center;justify-content:center;}
+.hop-brand-icon{width:32px;height:42px;border-radius:9px;background:var(--blue-pale);display:flex;align-items:center;justify-content:center;}
 .hop-brand-icon svg{width:20px;height:20px;}
 .hop-brand-name{font-size:14px;font-weight:700;color:var(--ink);}
 .hop-modal h2{font-family:'Fraunces',serif;font-size:23px;color:var(--ink);margin-bottom:6px;line-height:1.15;}
@@ -352,7 +392,7 @@ footer ul a:hover{color:var(--blue-deep);}
 @keyframes hopnavslide{from{transform:translateX(-16px);opacity:.6;}to{transform:translateX(0);opacity:1;}}
 .nav-drawer-head{display:flex;align-items:center;justify-content:space-between;padding:0 20px 16px;border-bottom:1px solid var(--line);margin-bottom:6px;}
 .nav-drawer-head .logo{font-size:17px;}
-.nav-drawer-head .logo .mark{width:30px;height:30px;}
+.nav-drawer-head .logo .mark{width:26px;height:40px;}
 .nav-drawer-close{width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:8px;color:var(--slate);flex-shrink:0;}
 .nav-drawer-close:hover{background:var(--blue-pale);color:var(--blue-deep);}
 .nav-drawer-close svg{width:16px;height:16px;}
@@ -381,7 +421,7 @@ footer ul a:hover{color:var(--blue-deep);}
   .hero-img-placeholder img{width:100%;height:auto;display:block;border-radius:16.5px;}
 
 /* ==== HOP: mascot logo mark (img replacing svg mark, appended) ==== */
-.hop-brand-icon .mark{width:20px;height:20px;object-fit:contain;}
+.hop-brand-icon .mark{width:22px;height:34px;object-fit:contain;}
 .logo .mark{object-fit:contain;}
 </style>
 </head>
@@ -395,7 +435,7 @@ footer ul a:hover{color:var(--blue-deep);}
       </button>
       <a href="index.html" class="logo">
       <img class="mark" src="assets/hop-logo-mark.png" alt="HomeownerPal">
-      Homeowner<span class="pal">Pal</span>
+      
     </a>
     </div>
     <div class="header-actions">
@@ -411,15 +451,20 @@ footer ul a:hover{color:var(--blue-deep);}
     <span class="drift drift-2"></span>
   </div>
   <div class="wrap">
-    <div class="hero-img-placeholder">
-      <img src="assets/diagnose-hero.png" alt="Diagnostic tools, gauges, and a tablet showing a system diagnosis report" />
-    </div>
-
     <div class="diag-hero-inner">
-      <img src="assets/hop-real.png" alt="HOP" class="hop-sm">
-      <span class="kicker" style="color:var(--blue-deep);">What kind of issue?</span>
-      <h1>Pick the trade closest to your problem.</h1>
-      <p class="lede">HOP will walk you through it step by step. Totally free, no signup needed.</p>
+      <div class="hero-img-placeholder">
+        <img src="assets/diagnose-hero.png" alt="Diagnostic tools, gauges, and a tablet showing a system diagnosis report" />
+      </div>
+
+      <div class="diag-hero-text">
+        <span class="kicker" style="color:var(--blue-deep);">What kind of issue?</span>
+        <h1>Pick the trade closest to your problem.</h1>
+        <p class="lede">HOP will walk you through it step by step. Totally free, no signup needed.</p>
+        <div class="hop-duo">
+          <img src="assets/hop-pointing-medium.png" alt="HOP" class="hop-duo-a">
+          <img src="assets/hop-pointing-medium.png" alt="HOP" class="hop-duo-b">
+        </div>
+      </div>
     </div>
 
     <div class="trade-grid">
@@ -589,7 +634,7 @@ footer ul a:hover{color:var(--blue-deep);}
           </a>
         </div>
         <div class="problem-panel-foot">
-          <a href="#" class="guide-link">Free electrical guide →</a>
+          <a href="learn-electrical.html" class="guide-link">Free electrical guide →</a>
         </div>
       </div>
 
@@ -637,7 +682,7 @@ footer ul a:hover{color:var(--blue-deep);}
           </a>
         </div>
         <div class="problem-panel-foot">
-          <a href="#" class="guide-link">Free plumbing guide →</a>
+          <a href="learn-plumbing.html" class="guide-link">Free plumbing guide →</a>
         </div>
       </div>
 
@@ -677,7 +722,7 @@ footer ul a:hover{color:var(--blue-deep);}
           </a>
         </div>
         <div class="problem-panel-foot">
-          <a href="#" class="guide-link">Free HVAC guide →</a>
+          <a href="learn-hvac.html" class="guide-link">Free HVAC guide →</a>
         </div>
       </div>
     </div>
@@ -688,12 +733,53 @@ footer ul a:hover{color:var(--blue-deep);}
   <div class="wrap">
     <div class="helpband-inner">
       <div class="help-card">
-        <div class="hc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10a6 6 0 10-12 0c0 4-2 5-2 5h16s-2-1-2-5"/><path d="M13.7 21a2 2 0 01-3.4 0"/></svg></div>
-        <div>
-          <h4>My problem isn't listed, ping the HOPline</h4>
-          <p>Don't see your problem here? Reach the HOPline, HomeownerPal's helpline for questions and project walkthroughs, and we'll respond as soon as we can. For active emergencies (smoke, sparks, or fire) call 911.</p>
+        <div class="help-card-top">
+          <div class="hc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10a6 6 0 10-12 0c0 4-2 5-2 5h16s-2-1-2-5"/><path d="M13.7 21a2 2 0 01-3.4 0"/></svg></div>
+          <div>
+            <h4>My problem isn't listed, ping the HOPline</h4>
+            <p>Don't see your problem here? Reach the HOPline, HomeownerPal's helpline for questions and project walkthroughs, and we'll respond as soon as we can. For active emergencies (smoke, sparks, or fire) call 911.</p>
+          </div>
         </div>
-        <a href="#" class="hc-link">Contact HOPline →</a>
+
+        <form class="hc-form" id="hcForm">
+          <div class="hc-form-row">
+            <div class="hc-field">
+              <label for="hcEmail">Email <span class="hc-req">*</span></label>
+              <input type="email" id="hcEmail" placeholder="you@example.com" required>
+            </div>
+            <div class="hc-field">
+              <label for="hcPhone">Phone (optional)</label>
+              <input type="tel" id="hcPhone" placeholder="(555) 123-4567">
+            </div>
+          </div>
+          <div class="hc-field hc-field-zip">
+            <label for="hcZip">Zip code (optional)</label>
+            <input type="text" id="hcZip" placeholder="12345">
+          </div>
+          <div class="hc-field">
+            <label for="hcDesc">Describe the problem</label>
+            <textarea id="hcDesc" maxlength="1000" placeholder="Example: My bathroom exhaust fan started humming but never turns on, and now the light on the same switch flickers when the fan is selected…" oninput="document.getElementById('hcCount').textContent=this.value.length;"></textarea>
+            <div class="hc-counter"><span id="hcCount">0</span>/1000</div>
+          </div>
+          <div class="hc-form-foot">
+            <p class="hc-emergency-note">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.3 3.9L2.5 17a2 2 0 001.7 3h15.6a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/></svg>
+              For active emergencies (smoke, sparks, or fire) call <strong>911</strong>. The HOPline is for questions and/or advice, not emergencies!
+            </p>
+            <div class="hc-buttons">
+              <a href="find-a-pro.html" class="btn btn-outline btn-sm">Find an electrician</a>
+              <button type="submit" class="btn btn-blue btn-sm">Send to the HOPline →</button>
+            </div>
+          </div>
+        </form>
+
+        <div class="hc-sent" id="hcSent" hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+          <div>
+            <h4>Sent to the HOPline</h4>
+            <p>Thanks — we'll get back to you as soon as we can.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -724,7 +810,7 @@ footer ul a:hover{color:var(--blue-deep);}
   <div class="wrap">
     <div class="reviews-strip-head">
       <span class="kicker"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.1 6.3 7 1-5 4.9 1.2 6.9L12 17.8l-6.3 3.3L7 14.2l-5-4.9 7-1z"/></svg> Reviews</span>
-      <a href="about.html#reviews">Read more reviews →</a>
+      <a href="reviews.html">Read more reviews →</a>
     </div>
     <div class="reviews-strip-grid">
       <div class="review-card">
@@ -763,20 +849,48 @@ footer ul a:hover{color:var(--blue-deep);}
         <p>Your home, documented and protected. Free tools for homeowners, built from real trade experience.</p>
       </div>
       <div>
-        <h5>My Home</h5>
-        <ul><li><a href="index.html#homeowners">Equipment &amp; records</a></li><li><a href="index.html#homeowners">Warranties</a></li><li><a href="index.html#stayfree">Premium scan</a></li></ul>
+        <h5>Homeowners</h5>
+        <ul>
+          <li><a href="my-home.html">My Home</a></li>
+          <li><a href="diagnose.html">Diagnose a Problem</a></li>
+          <li><a href="tools-costs.html#learn">Learn</a></li>
+          <li><a href="emergency.html">Emergency: 911 vs Pro</a></li>
+          <li><a href="#" onclick="HOP.open();return false;">Sign in / Start free</a></li>
+        </ul>
       </div>
       <div>
-        <h5>Diagnose</h5>
-        <ul><li><a href="diagnose.html#electrical-problems">Electrical guide</a></li><li><a href="diagnose.html#plumbing-problems">Plumbing guide</a></li><li><a href="diagnose.html#hvac-problems">HVAC guide</a></li></ul>
+        <h5>Tools &amp; Support</h5>
+        <ul>
+          <li><a href="tools-costs.html">Tools &amp; Costs</a></li>
+          <li><a href="tools-materials.html">Tools &amp; Materials</a></li>
+          <li><a href="tools-costs.html#inspection-costs">Inspection Red Flags</a></li>
+          <li><span class="footer-soon">Generator Sizing <em>(coming soon)</em></span></li>
+          <li><a href="hopline.html">Call the HOPline</a></li>
+        </ul>
       </div>
       <div>
-        <h5>Tools &amp; Costs</h5>
-        <ul><li><a href="tools-costs.html">Material calculator</a></li><li><a href="tools-costs.html">Generator sizing</a></li><li><a href="tools-costs.html">Tools &amp; materials</a></li></ul>
+        <h5>For Pros &amp; Contractors</h5>
+        <ul>
+          <li><a href="find-a-pro.html">Find a Pro</a></li>
+          <li><a href="contractor-forum.html">Contractor Forum</a></li>
+          <li><a href="contractor-forum.html">List Your Business Free</a></li>
+        </ul>
       </div>
       <div>
-        <h5>Community</h5>
-        <ul><li><a href="contractor-forum.html">Contractor forum</a></li><li><a href="find-a-pro.html">Find a pro</a></li></ul>
+        <h5>Real Estate &amp; Builders</h5>
+        <ul>
+          <li><a href="realestate.html">Real Estate &amp; Builder Packs</a></li>
+          <li><a href="property-managers.html">Property Managers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>About HOP</h5>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="support-hop.html">Support</a></li>
+          <li><a href="game-arcade.html">Game Arcade</a></li>
+        </ul>
       </div>
     </div>
 
@@ -867,15 +981,19 @@ footer ul a:hover{color:var(--blue-deep);}
       </button>
     </div>
     <ul class="nav-drawer-list">
+      <li><a href="index.html">Home</a></li>
       <li><a href="diagnose.html">Diagnose</a></li>
       <li><a href="find-a-pro.html">Find a Pro</a></li>
       <li><a href="tools-costs.html">Tools and Costs</a></li>
+      <li><a href="tools-materials.html">Tools and Materials</a></li>
+      <li><a href="tools-costs.html#learn">Learn</a></li>
       <li><a href="realestate.html">Real Estate and Builder Packs</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="emergency.html">Emergency</a></li>
       <li><a href="contractor-forum.html">Contractor Forum</a></li>
       <li><a href="support-hop.html">Support</a></li>
       <li><a href="game-arcade.html">Game Arcade</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
       <li><a href="privacy.html">Privacy Policy</a></li>
       <li><a href="terms.html">Terms of Service</a></li>
     </ul>
@@ -1001,5 +1119,18 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape') HOPInstall
 })();
 </script>
 <!-- ==== end HOP AUTH modal ==== -->
+<script>
+(function(){
+  var form = document.getElementById('hcForm');
+  if (!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var email = document.getElementById('hcEmail');
+    if (!email.value || email.value.indexOf('@') === -1) { email.focus(); return; }
+    form.hidden = true;
+    document.getElementById('hcSent').hidden = false;
+  });
+})();
+</script>
 </body>
 </html>

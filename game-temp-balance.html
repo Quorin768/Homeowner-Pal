@@ -11,8 +11,8 @@
 <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-<title>Home HVAC: The Homeowner's Plain-English Reference | HomeownerPal</title>
-<meta name="description" content="Split systems, heat pumps vs AC vs furnace, refrigerant and condensate, outdoor disconnects, filters, thermostat C-wire, and what's safe DIY vs a licensed tech.">
+<title>Temp Balance | HOP Game Arcade | HomeownerPal</title>
+<meta name="description" content="Hold the temp in the comfort zone. A free HVAC-themed balance game from the HOP Game Arcade.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -62,6 +62,7 @@ section{padding:44px 0;}
 .btn-outline{background:transparent;color:var(--blue-deep);border:1.5px solid var(--blue-deep);}
 .btn-outline:hover{background:var(--blue-deep);color:#fff;}
 .btn-sm{padding:10px 18px;font-size:13.5px;}
+.btn:disabled{opacity:.5;cursor:not-allowed;transform:none!important;box-shadow:none!important;}
 
 /* Header */
 header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
@@ -88,9 +89,10 @@ nav.primary-nav a.active{color:var(--blue-deep);}
 .section-head p{color:var(--slate);font-size:16px;line-height:1.65;}
 
 /* Breadcrumb */
-.breadcrumb{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--slate);margin-bottom:24px;}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--slate);margin-bottom:24px;flex-wrap:wrap;}
 .breadcrumb a{color:var(--blue-deep);font-weight:600;}
 .breadcrumb a:hover{text-decoration:underline;}
+.breadcrumb svg{width:12px;height:12px;flex-shrink:0;}
 
 /* CTA band */
 .cta-band{background:#fff;}
@@ -124,79 +126,12 @@ footer ul a:hover{color:var(--blue-deep);}
 .footer-bottom .socials svg{width:16px;height:16px;color:var(--slate);}
 .footer-bottom .socials a:hover svg{color:var(--blue-deep);}
 
-
-  /* ---- Page-specific additions below ---- */
-  .lrn-hero{background:linear-gradient(180deg,var(--blue-pale) 0%, #fff 85%);padding:20px 0 24px;}
-  .lrn-hero .wrap{max-width:1600px;}
-  .lrn-kicker{font-size:11.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--blue-deep);margin-bottom:10px;}
-  .lrn-hero h1{font-size:clamp(24px,3.2vw,34px);margin-bottom:14px;max-width:1600px;}
-  .lrn-hero p{font-size:14.5px;color:var(--slate);line-height:1.75;max-width:660px;margin-bottom:16px;}
-  .lrn-cta-note{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 18px;font-size:13px;color:var(--slate);line-height:1.6;}
-  .lrn-cta-note a{color:var(--blue-deep);font-weight:700;text-decoration:underline;}
-
-  .lrn-body{max-width:1600px;margin:0;padding:0 28px;}
-
-  .lrn-toc{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:26px 28px;margin:20px 0;}
-  .lrn-toc-title{font-size:13px;font-weight:700;color:var(--blue-deep);text-transform:uppercase;letter-spacing:.03em;margin-bottom:14px;}
-  .lrn-toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;}
-  @media (max-width:560px){ .lrn-toc-grid{grid-template-columns:1fr;} }
-  .lrn-toc-grid a{font-size:13.5px;color:var(--ink);font-weight:600;padding:6px 0;border-bottom:1px dashed var(--line);}
-  .lrn-toc-grid a:hover{color:var(--blue-deep);}
-
-  .lrn-section{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:30px 32px;margin:16px 0;scroll-margin-top:48px;}
-  .lrn-section-head{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
-  .lrn-section-icon{width:38px;height:38px;border-radius:10px;background:var(--blue-pale);color:var(--blue-deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;}
-  .lrn-section h2{font-size:19px;}
-  .lrn-section p{font-size:13.5px;color:var(--slate);line-height:1.7;margin-bottom:14px;}
-
-  .lrn-diagram{background:var(--blue-pale);border-radius:14px;padding:22px;margin:16px 0 20px;}
-  .lrn-diagram-title{font-size:11px;font-weight:700;color:var(--blue-deep);text-transform:uppercase;letter-spacing:.03em;margin-bottom:14px;text-align:center;}
-
-  .split-diagram{display:flex;align-items:stretch;gap:10px;justify-content:center;flex-wrap:wrap;}
-  .split-col{background:#fff;border-radius:12px;padding:14px 16px;flex:1;min-width:150px;max-width:220px;border:1.5px solid var(--line);}
-  .split-col-title{font-size:11.5px;font-weight:700;color:var(--blue-deep);margin-bottom:8px;text-align:center;padding-bottom:6px;border-bottom:1px solid var(--line);}
-  .split-item{font-size:11px;color:var(--ink);padding:5px 0;border-bottom:1px dashed var(--line);}
-  .split-item:last-child{border-bottom:none;}
-  .split-connector{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:0 4px;min-width:110px;}
-  .split-connector-line{width:100%;height:2px;background:repeating-linear-gradient(90deg,var(--orange),var(--orange) 5px,transparent 5px,transparent 9px);}
-  .split-connector-text{font-size:10px;color:var(--orange);font-weight:700;text-align:center;line-height:1.4;}
-
-  .lrn-bullets{list-style:none;display:flex;flex-direction:column;gap:9px;margin:14px 0;}
-  .lrn-bullets li{position:relative;padding-left:17px;font-size:13.5px;color:var(--ink);line-height:1.65;}
-  .lrn-bullets li::before{content:"";position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--blue-deep);}
-  .lrn-bullets li strong{color:var(--blue-deep);}
-
-  .lrn-warn{background:#FFF6E9;border:1px solid #F0D9A8;border-radius:12px;padding:14px 18px;margin:16px 0;font-size:13px;color:#8A5D18;line-height:1.65;}
-  .lrn-warn strong{color:#6B4712;}
-
-  .lrn-rule{background:var(--blue-deep);color:#fff;border-radius:12px;padding:16px 20px;font-size:13px;line-height:1.7;margin:16px 0;}
-
-  .lrn-link-box{background:var(--blue-pale);border-radius:12px;padding:14px 18px;margin:14px 0;font-size:13px;}
-  .lrn-link-box a{color:var(--blue-deep);font-weight:700;text-decoration:underline;}
-
-  .diy-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0;}
-  @media (max-width:600px){ .diy-grid{grid-template-columns:1fr;} }
-  .diy-col{border-radius:14px;padding:18px 20px;}
-  .diy-col.yes{background:#F0FAF4;border:1px solid #C9E6D6;}
-  .diy-col.no{background:#FDEDEC;border:1px solid #F0C4BE;}
-  .diy-col h4{font-size:13px;font-weight:700;margin-bottom:10px;}
-  .diy-col.yes h4{color:#1D5C3F;}
-  .diy-col.no h4{color:var(--red);}
-  .diy-col ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
-  .diy-col li{font-size:12.5px;line-height:1.55;padding-left:16px;position:relative;}
-  .diy-col.yes li{color:#1D5C3F;}
-  .diy-col.no li{color:#8B2E23;}
-  .diy-col li::before{content:"";position:absolute;left:0;top:6px;width:5px;height:5px;border-radius:50%;}
-  .diy-col.yes li::before{background:#1E8A5A;}
-  .diy-col.no li::before{background:var(--red);}
-
-  /* ===== SECTION HEADLINE WIPE (site-wide, matches homepage) ===== */
-  .js .wipe{clip-path:inset(0 100% 0 0);transition:clip-path 5.5s cubic-bezier(.22,1,.36,1);will-change:clip-path;}
-  .js .wipe.is-visible{clip-path:inset(0 0 0 0);}
-  @media (prefers-reduced-motion:reduce){ .js .wipe{clip-path:none!important;transition:none!important;} }
+/* ===== SECTION HEADLINE WIPE (site-wide, matches homepage) ===== */
+.js .wipe{clip-path:inset(0 100% 0 0);transition:clip-path 5.5s cubic-bezier(.22,1,.36,1);will-change:clip-path;}
+.js .wipe.is-visible{clip-path:inset(0 0 0 0);}
+@media (prefers-reduced-motion:reduce){ .js .wipe{clip-path:none!important;transition:none!important;} }
 
 /* ==== HOP: full-width sections (uniform, left-to-right, no centering) — appended override ==== */
-/* Outermost section containers: span full width with one uniform side gutter */
 .wrap,
 .guide-body, .guide-hero .wrap, .other-issues .wrap,
 .insp-body, .insp-hero .wrap, .insp-other .wrap,
@@ -213,14 +148,14 @@ footer ul a:hover{color:var(--blue-deep);}
 .fap-hero .wrap,
 .reviews-strip .wrap,
 .myhome-section .wrap,
-.hl-hero .wrap, .hl-body {
+.hl-hero .wrap, .hl-body,
+.tb-hero .wrap, .tb-body {
   max-width: none;
   margin-left: 0;
   margin-right: 0;
   padding-left: 40px;
   padding-right: 40px;
 }
-/* Nested containers (already inside a padded .wrap): widen only, no extra gutter */
 .hero-center,
 .diag-hero-inner,
 .helpband-inner,
@@ -247,7 +182,8 @@ footer ul a:hover{color:var(--blue-deep);}
 .fap-hero .wrap,
 .reviews-strip .wrap,
 .myhome-section .wrap,
-.hl-hero .wrap, .hl-body {
+.hl-hero .wrap, .hl-body,
+.tb-hero .wrap, .tb-body {
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -334,6 +270,77 @@ footer ul a:hover{color:var(--blue-deep);}
 /* ==== HOP: mascot logo mark (img replacing svg mark, appended) ==== */
 .hop-brand-icon .mark{width:22px;height:34px;object-fit:contain;}
 .logo .mark{object-fit:contain;}
+
+/* ---- Page-specific: Temp Balance (.tb-*) ---- */
+.tb-hero{background:linear-gradient(180deg,var(--blue-pale) 0%, #fff 85%);padding:20px 0 26px;}
+.tb-hero .wrap{max-width:1600px;}
+.tb-hero .kicker{color:var(--blue-deep);}
+.tb-hero h1{font-size:clamp(28px,4vw,42px);margin-bottom:10px;display:flex;align-items:center;gap:12px;}
+.tb-hero h1 svg{width:.82em;height:.82em;color:var(--orange);flex-shrink:0;}
+.tb-sub{color:var(--slate);font-size:16px;}
+
+.tb-body{max-width:1600px;margin:0;padding:32px 28px 8px;}
+
+.tb-panel{background:#fff;border:1.5px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:0 20px 44px rgba(0,61,151,.08);max-width:520px;margin:0 auto;}
+.tb-stat-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-size:13.5px;font-weight:700;color:var(--ink);}
+.tb-stat-row .num{font-family:'IBM Plex Mono';}
+.tb-stat-timer{display:flex;align-items:center;gap:6px;}
+.tb-stat-timer svg{width:14px;height:14px;color:var(--slate);}
+.tb-lives{display:flex;gap:3px;}
+.tb-lives svg{width:16px;height:16px;color:var(--line);}
+.tb-lives svg.on{color:var(--orange);}
+.tb-stat-comfort .num{color:var(--blue-deep);}
+
+.tb-gauge-wrap{position:relative;width:100%;max-width:340px;margin:14px auto 6px;}
+.tb-gauge-labels{display:flex;justify-content:space-between;font-size:11px;font-weight:700;letter-spacing:.04em;color:var(--slate);padding:0 4px;margin-top:2px;}
+.tb-gauge-labels .cool{color:var(--blue-sky);}
+.tb-gauge-labels .heat{color:var(--red);}
+.tb-needle{transform-origin:100px 110px;transition:transform .05s linear;}
+@media (prefers-reduced-motion:reduce){ .tb-needle{transition:none;} }
+
+.tb-controls{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px;}
+.tb-holdbtn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  padding:15px;border-radius:12px;font-weight:700;font-size:14px;
+  border:1.5px solid var(--line);transition:background .12s ease, border-color .12s ease, transform .08s ease, color .12s ease;
+  user-select:none;-webkit-user-select:none;
+}
+.tb-holdbtn svg{width:17px;height:17px;}
+.tb-cool{background:var(--blue-pale);color:var(--blue-deep);}
+.tb-cool:hover{border-color:var(--blue-sky);}
+.tb-cool.active{background:var(--blue-deep);color:#fff;transform:scale(.97);}
+.tb-heat{background:var(--orange-pale);color:var(--orange);}
+.tb-heat:hover{border-color:var(--orange);}
+.tb-heat.active{background:var(--orange);color:#fff;transform:scale(.97);}
+
+.tb-start{display:block;width:100%;margin-top:14px;text-align:center;justify-content:center;}
+.tb-hint{text-align:center;font-size:12.5px;color:var(--slate);margin-top:12px;}
+.tb-hint kbd{font-family:'IBM Plex Mono';background:var(--blue-pale);border:1px solid var(--line);border-radius:5px;padding:1px 6px;font-size:11.5px;}
+
+.tb-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+
+.tb-lb-card{background:#fff;border:1.5px solid var(--line);border-radius:var(--radius);padding:24px;max-width:520px;margin:24px auto 0;}
+.tb-lb-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;gap:12px;}
+.tb-lb-title{display:flex;align-items:center;gap:10px;font-family:'Fraunces';font-size:16.5px;font-weight:600;}
+.tb-lb-title svg{width:19px;height:19px;color:var(--orange);flex-shrink:0;}
+.tb-lb-all{font-size:12px;color:var(--slate);font-weight:600;white-space:nowrap;}
+.tb-lb-rows{margin-top:10px;}
+.tb-lb-row{display:flex;align-items:center;gap:13px;padding:12px 0;border-bottom:1px solid var(--line);}
+.tb-lb-row:last-child{border-bottom:none;}
+.tb-lb-rank{width:26px;height:26px;border-radius:50%;background:var(--blue-pale);color:var(--blue-deep);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;}
+.tb-lb-rank svg{width:14px;height:14px;}
+.tb-lb-rank.r1{background:#FCE7B8;color:#9A6B10;}
+.tb-lb-rank.r2{background:#E9EDF2;color:#5F6B7A;}
+.tb-lb-rank.r3{background:#F3E0D2;color:#9A5A2E;}
+.tb-lb-name{flex:1;font-size:13.5px;font-weight:600;color:var(--ink);}
+.tb-lb-score{font-family:'IBM Plex Mono';font-size:13px;font-weight:600;color:var(--blue-deep);}
+.tb-lb-date{font-size:11.5px;color:var(--slate);min-width:52px;text-align:right;}
+.tb-lb-empty{font-size:13.5px;color:var(--slate);padding:10px 0;}
+
+@media (max-width:640px){
+  .tb-body{padding:24px 20px 8px;}
+  .tb-panel,.tb-lb-card{padding:18px;}
+}
 </style>
 </head>
 <body>
@@ -356,204 +363,84 @@ footer ul a:hover{color:var(--blue-deep);}
   </div>
 </header>
 
-<section class="lrn-hero">
+<section class="tb-hero">
   <div class="wrap">
     <div class="breadcrumb">
-      <a href="tools-costs.html#learn">Learn</a>
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
-      <span>HVAC</span>
+      <a href="index.html">Home</a>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+      <a href="game-arcade.html">Game Arcade</a>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+      <span>Temp Balance</span>
     </div>
-    <div class="lrn-kicker">Learn · HVAC</div>
-    <h1>Home HVAC, the homeowner's plain-English reference</h1>
-    <p>The basics every homeowner should know about heating and cooling, enough to keep your system happy between service visits and recognize what needs a pro. HVAC equipment varies widely; treat this as a general primer and confirm specifics with a licensed local technician.</p>
-    <div class="lrn-cta-note"><strong>General reference.</strong> Plumbing &amp; HVAC codes, equipment, and "who owns what" vary by city, utility, and state. Always verify with a licensed local pro before working on your system.</div>
+    <span class="kicker">HOP Game Arcade</span>
+    <h1><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M12 2l3 3M12 2L9 5M12 22l3-3M12 22l-3-3M2 12h20M2 12l3 3M2 12l3-3M22 12l-3 3M22 12l-3-3"/></svg>Temp Balance</h1>
+    <p class="tb-sub">Hold the temp in the comfort zone.</p>
   </div>
 </section>
 
-<div class="lrn-body">
+<div class="tb-body">
 
-  <div class="lrn-toc">
-    <div class="lrn-toc-title">On this page</div>
-    <div class="lrn-toc-grid">
-      <a href="#split-system">Split system overview</a>
-      <a href="#heat-vs-cool">Heat pump vs AC vs furnace</a>
-      <a href="#refrigerant">Refrigerant &amp; condensate</a>
-      <a href="#disconnect">Outdoor disconnect</a>
-      <a href="#filters">Filters &amp; change cadence</a>
-      <a href="#thermostat">Thermostat C-wire</a>
-      <a href="#diy-vs-pro">DIY vs call-a-pro</a>
+  <div class="tb-panel">
+    <div class="tb-stat-row">
+      <span class="tb-stat-timer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        <span class="num" id="tbTimer">30.0</span>s
+      </span>
+      <span class="tb-lives" id="tbLives" aria-hidden="true">
+        <svg class="on" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.6 6.9 7.4.5-5.7 4.8 1.9 7.2L12 17l-6.2 3.4L7.7 14 2 9.2l7.4-.5L12 2z"/></svg>
+        <svg class="on" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.6 6.9 7.4.5-5.7 4.8 1.9 7.2L12 17l-6.2 3.4L7.7 14 2 9.2l7.4-.5L12 2z"/></svg>
+        <svg class="on" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.6 6.9 7.4.5-5.7 4.8 1.9 7.2L12 17l-6.2 3.4L7.7 14 2 9.2l7.4-.5L12 2z"/></svg>
+      </span>
+      <span class="tb-stat-comfort">Comfort: <span class="num" id="tbComfort">0</span></span>
     </div>
-  </div>
 
-  <!-- SECTION 1: SPLIT SYSTEM -->
-  <div class="lrn-section" id="split-system">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">🏠</div>
-      <h2>The classic split system</h2>
-    </div>
-    <p>Most American homes have a "split" system, two halves of the same machine, separated by an exterior wall and connected by a pair of refrigerant lines.</p>
-
-    <div class="lrn-diagram">
-      <div class="lrn-diagram-title">Outside ↔ Inside</div>
-      <div class="split-diagram">
-        <div class="split-col">
-          <div class="split-col-title">OUTSIDE</div>
-          <div class="split-item">Condenser (compressor + fan)</div>
-          <div class="split-item">Disconnect</div>
-        </div>
-        <div class="split-connector">
-          <div class="split-connector-line"></div>
-          <div class="split-connector-text">Refrigerant lines<br>(suction + liquid)</div>
-          <div class="split-connector-line"></div>
-        </div>
-        <div class="split-col">
-          <div class="split-col-title">INSIDE</div>
-          <div class="split-item">Air handler / furnace</div>
-          <div class="split-item">Filter</div>
-          <div class="split-item">Evap coil</div>
-          <div class="split-item">Supply / Return</div>
-          <div class="split-item">Condensate drain</div>
-          <div class="split-item">Disconnect</div>
-        </div>
+    <div class="tb-gauge-wrap">
+      <svg viewBox="0 0 200 120" id="tbGaugeSvg" aria-hidden="true">
+        <path d="M14 110 A86 86 0 0 1 62 30" fill="none" stroke="#4FA8E0" stroke-width="14" stroke-linecap="round"/>
+        <path d="M62 30 A86 86 0 0 1 138 30" fill="none" stroke="#3FA860" stroke-width="14"/>
+        <path d="M138 30 A86 86 0 0 1 186 110" fill="none" stroke="#C0392B" stroke-width="14" stroke-linecap="round"/>
+        <g class="tb-needle" id="tbNeedle">
+          <line x1="100" y1="110" x2="100" y2="28" stroke="#1B2430" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="100" cy="110" r="8" fill="#1B2430"/>
+        </g>
+      </svg>
+      <div class="tb-gauge-labels">
+        <span class="cool">COOL</span>
+        <span class="heat">HEAT</span>
       </div>
     </div>
 
-    <ul class="lrn-bullets">
-      <li><strong>Outdoor unit (condenser):</strong> the metal box on a pad outside. Contains the compressor and a big fan. This is what hums in the summer.</li>
-      <li><strong>Indoor unit (air handler or furnace):</strong> in a closet, attic, basement, or garage. Holds the blower motor, the evaporator coil, and the air filter. Pushes conditioned air through your ducts.</li>
-      <li><strong>Refrigerant lines:</strong> the insulated copper line plus smaller bare copper line running between the two units. Refrigerant cycles between them, carrying heat outdoors in summer (and indoors in winter, if you have a heat pump).</li>
-    </ul>
-  </div>
-
-  <!-- SECTION 2: HEAT PUMP VS AC VS FURNACE -->
-  <div class="lrn-section" id="heat-vs-cool">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">🌡️</div>
-      <h2>Heat pump vs AC vs furnace</h2>
-    </div>
-    <ul class="lrn-bullets">
-      <li><strong>Air conditioner (AC) + furnace:</strong> the traditional setup. AC cools in summer, a gas (or electric) furnace heats in winter. Two completely different heat sources, one shared blower and duct system.</li>
-      <li><strong>Heat pump:</strong> looks just like an AC condenser but works both directions, moves heat out of the house in summer and pulls heat in from outdoors in winter. Increasingly common because they're very efficient down to surprisingly cold temperatures.</li>
-      <li><strong>Dual-fuel / hybrid:</strong> heat pump for mild weather plus gas furnace as backup for deep cold. Best of both in most climates.</li>
-      <li><strong>Mini-splits (ductless):</strong> wall-mounted indoor heads connected to a small outdoor unit with refrigerant lines and a control wire. No ducts needed, great for additions, garages, or retrofits.</li>
-    </ul>
-  </div>
-
-  <!-- SECTION 3: REFRIGERANT & CONDENSATE -->
-  <div class="lrn-section" id="refrigerant">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">💧</div>
-      <h2>Refrigerant lines &amp; condensate drain</h2>
-    </div>
-    <ul class="lrn-bullets">
-      <li>Refrigerant is a closed loop, it should never need "topping off." If a tech says you need refrigerant, you have a leak; topping it off without finding the leak just delays the problem.</li>
-      <li>As warm humid indoor air passes over the cold evaporator coil, water condenses out (same reason a cold glass sweats). That water drains through the condensate drain line, usually a PVC pipe leading outside or to a floor drain.</li>
-      <li>Clogged condensate drain is the single most common reason a healthy AC suddenly stops cooling, most systems have a safety float switch that shuts down the system when the drain backs up. Pouring a cup of distilled vinegar down the cleanout port once a year prevents most clogs.</li>
-    </ul>
-  </div>
-
-  <!-- SECTION 4: OUTDOOR DISCONNECT -->
-  <div class="lrn-section" id="disconnect">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">🔌</div>
-      <h2>The outdoor disconnect</h2>
-    </div>
-    <p>Required by code within sight of the outdoor unit. Some are cheap plastic pull-out blocks; better ones are switched metal disconnects with a real handle. This is what gets turned off before anyone services the condenser, and what a homeowner can flip if the outdoor unit ever needs to be killed in a hurry.</p>
-    <div class="lrn-link-box">See our recommended 60A switched disconnect in <a href="tools-materials.html">Tools &amp; Materials →</a></div>
-    <div class="lrn-warn"><strong>Heads up:</strong> pulling the outdoor disconnect doesn't cut power to the indoor air handler, that has its own disconnect near the unit (and its own breaker at the main panel).</div>
-  </div>
-
-  <!-- SECTION 5: FILTERS -->
-  <div class="lrn-section" id="filters">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">🌬️</div>
-      <h2>Filters, the cheapest insurance you can buy</h2>
-    </div>
-    <ul class="lrn-bullets">
-      <li><strong>Where it lives:</strong> usually at the return air opening or in a slot on the side/bottom of the air handler. Some homes have one big return-grille filter; others have a slot at the unit.</li>
-      <li><strong>Change cadence:</strong> 1" filters every 1 to 3 months, 4 to 5" media filters every 6 to 12 months. More often if you have pets or run the system hard.</li>
-      <li><strong>MERV rating:</strong> higher numbers filter finer particles but restrict more airflow. MERV 8 to MERV 11 is a sweet spot for most residential systems. Going too high (MERV 13+) without a properly-sized return can starve the unit and cause coil freeze-ups.</li>
-      <li>A neglected filter is the #1 cause of "my system stopped working" service calls. Frozen coils, tripped limit switches, dead blowers, most trace back to airflow.</li>
-    </ul>
-  </div>
-
-  <!-- SECTION 6: THERMOSTAT C-WIRE -->
-  <div class="lrn-section" id="thermostat">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">🧭</div>
-      <h2>Thermostat C-wire (what smart thermostats need)</h2>
-    </div>
-    <p>The "C" (common) wire provides constant 24V power to a thermostat. Older mechanical thermostats and many older digital ones don't need it, they're powered by the heating/cooling call wires themselves. Smart thermostats (Nest, Ecobee, Honeywell smart, and similar) do need it for reliable operation.</p>
-    <ul class="lrn-bullets">
-      <li>If you don't have a C-wire, options include: running a new wire (best), using a C-wire adapter at the air handler, or using a thermostat that ships with its own power-extender kit (Ecobee).</li>
-      <li>Common color convention: R = 24V hot, C = common, W = heat, Y = cool, G = fan. Brands vary, always photograph the existing wiring before disconnecting anything.</li>
-    </ul>
-  </div>
-
-  <!-- SECTION 7: DIY VS CALL A PRO -->
-  <div class="lrn-section" id="diy-vs-pro">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">🛠️</div>
-      <h2>DIY vs call-a-pro</h2>
+    <div class="tb-controls">
+      <button type="button" class="tb-holdbtn tb-cool" id="tbCoolBtn" aria-label="Hold to cool down">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 2v20M4 7l16 10M20 7L4 17"/></svg>
+        Cool
+      </button>
+      <button type="button" class="tb-holdbtn tb-heat" id="tbHeatBtn" aria-label="Hold to heat up">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c1 3-3 4-3 7a3 3 0 006 0c0-1-1-2-1-3 2 1 4 4 4 7a6 6 0 01-12 0c0-5 4-7 6-11z"/></svg>
+        Heat
+      </button>
     </div>
 
-    <div class="diy-grid">
-      <div class="diy-col yes">
-        <h4>Safe DIY</h4>
-        <ul>
-          <li>Changing filters</li>
-          <li>Clearing the condensate drain</li>
-          <li>Hosing dust off the outdoor condenser coil (power off!)</li>
-          <li>Keeping vegetation 2 ft back from the outdoor unit</li>
-          <li>Programming the thermostat</li>
-          <li>Replacing the thermostat itself</li>
-        </ul>
-      </div>
-      <div class="diy-col no">
-        <h4>Call a pro</h4>
-        <ul>
-          <li>Any refrigerant work (it's federally regulated)</li>
-          <li>Gas furnace problems (combustion safety)</li>
-          <li>Electrical issues at the unit</li>
-          <li>Capacitor or contactor replacement on the condenser</li>
-          <li>Anything that involves opening the sealed refrigerant system</li>
-          <li>Frozen coils that don't resolve after filter change + 24 hr off</li>
-          <li>No heat in winter</li>
-          <li>System shutting off on its own</li>
-        </ul>
-      </div>
+    <button type="button" class="btn btn-blue tb-start" id="tbStartBtn">Start</button>
+    <p class="tb-hint">Hold Cool or Heat (or <kbd>&larr;</kbd> <kbd>&rarr;</kbd>) to keep the needle in the green. Drift too far into the red and you'll lose a life.</p>
+
+    <div class="tb-sr-only" id="tbLive" aria-live="polite" role="status"></div>
+  </div>
+
+  <div class="tb-lb-card" id="tbLbCard">
+    <div class="tb-lb-head">
+      <span class="tb-lb-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v4a4 4 0 01-8 0V4z"/><path d="M8 5H5a3 3 0 003 3M16 5h3a3 3 0 01-3 3"/><path d="M12 12v3M9 19h6M10 19v-1a2 2 0 012-2 2 2 0 012 2v1"/></svg>
+        Top 3 Global &mdash; Temp Balance
+      </span>
+      <span class="tb-lb-all">All-time</span>
+    </div>
+    <div class="tb-lb-rows" id="tbLbRows">
+      <p class="tb-lb-empty">Loading scores&hellip;</p>
     </div>
   </div>
 
 </div>
-
-<section class="other-issues" style="background:var(--blue-pale);padding:30px 0;">
-  <div class="wrap">
-    <h3 style="font-size:18px;margin-bottom:6px;">Having one of these problems right now?</h3>
-    <p style="font-size:13.5px;color:var(--slate);margin-bottom:20px;">Walk through it step by step with HOP, free, no signup.</p>
-    <div class="other-panel" style="background:#fff;border-radius:18px;border:1px solid var(--line);overflow:hidden;">
-      <a href="hvac-ac-not-cooling.html" class="other-row" style="display:flex;align-items:center;gap:12px;padding:13px 20px;border-bottom:1px solid var(--line);"><span style="font-size:13.5px;font-weight:600;flex:1;">AC running but not cooling</span></a>
-      <a href="hvac-no-heat.html" class="other-row" style="display:flex;align-items:center;gap:12px;padding:13px 20px;border-bottom:1px solid var(--line);"><span style="font-size:13.5px;font-weight:600;flex:1;">Furnace or heat not working</span></a>
-      <a href="hvac-thermostat-blank.html" class="other-row" style="display:flex;align-items:center;gap:12px;padding:13px 20px;"><span style="font-size:13.5px;font-weight:600;flex:1;">Thermostat blank or unresponsive</span></a>
-    </div>
-    <p style="margin-top:20px;font-size:13.5px;"><a href="find-a-pro.html?trade=hvac" style="color:var(--blue-deep);font-weight:700;text-decoration:underline;">Or find a trusted local HVAC pro →</a></p>
-  </div>
-</section>
-
-<section style="padding:30px 0;">
-  <div class="wrap">
-    <div style="background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:24px 28px;text-align:center;">
-      <p style="font-size:13.5px;color:var(--slate);line-height:1.7;margin-bottom:8px;">Stuck on something specific? Call or text the <a href="diagnose.html" style="color:var(--blue-deep);font-weight:700;text-decoration:underline;">HOPline</a>, it's free. We can walk you through your exact situation, no account needed. For active emergencies (smoke, sparks, or fire) call 911.</p>
-    </div>
-    <a href="emergency.html" style="display:flex;align-items:center;gap:14px;background:#FDEDEC;border:1.5px solid #F5C2BC;border-radius:16px;padding:18px 22px;margin-top:16px;text-decoration:none;">
-      <div style="width:36px;height:36px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;">🚨</div>
-      <div>
-        <div style="font-size:13.5px;font-weight:700;color:#8B2E23;margin-bottom:2px;">Emergency</div>
-        <div style="font-size:12.5px;color:#8B2E23;">When to call 911 vs. a licensed electrician →</div>
-      </div>
-    </a>
-  </div>
-</section>
 
 <section class="cta-band">
   <div class="wrap">
@@ -648,11 +535,10 @@ footer ul a:hover{color:var(--blue-deep);}
         <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="5"/></svg></a>
         <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></a>
       </div>
-      <div>© 2026 HomeownerPal. Built with care for homeowners.</div>
+      <div>&copy; 2026 HomeownerPal. Built with care for homeowners.</div>
     </div>
   </div>
 </footer>
-
 
 <script>
 (function () {
@@ -696,7 +582,6 @@ footer ul a:hover{color:var(--blue-deep);}
   });
 })();
 </script>
-
 
 <!-- ==== HOP NAV drawer ==== -->
 <div class="nav-drawer-overlay" id="hopNavOverlay" onclick="if(event.target===this)HOPNav.close()">
@@ -849,5 +734,297 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape') HOPInstall
 })();
 </script>
 <!-- ==== end HOP AUTH modal ==== -->
+
+<!-- ==== HOPScores: shared leaderboard contract, identical on every game page ==== -->
+<script>
+window.HOPScores = (function () {
+  var BASE = 'https://homeownerpal.com/api/scores';
+
+  function localKey(gameId) { return 'hop_scores_' + gameId; }
+
+  async function submit(gameId, name, score) {
+    try {
+      var res = await fetch(BASE, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ gameId: gameId, name: name, score: score })
+      });
+      if (!res.ok) throw new Error('bad response');
+      return await res.json();
+    } catch (e) {
+      // Fallback: local-only leaderboard until the backend is live
+      var list = [];
+      try { list = JSON.parse(localStorage.getItem(localKey(gameId))) || []; } catch (e2) {}
+      list.push({ name: name, score: score, date: new Date().toISOString() });
+      list.sort(function (a, b) { return b.score - a.score; });
+      list = list.slice(0, 10);
+      try { localStorage.setItem(localKey(gameId), JSON.stringify(list)); } catch (e3) {}
+      return { ok: true, local: true };
+    }
+  }
+
+  async function getTop(gameId, limit) {
+    limit = limit || 3;
+    try {
+      var res = await fetch(BASE + '/' + gameId + '/top?limit=' + limit);
+      if (!res.ok) throw new Error('bad response');
+      return await res.json();
+    } catch (e) {
+      var list = [];
+      try { list = JSON.parse(localStorage.getItem(localKey(gameId))) || []; } catch (e2) {}
+      return list.slice(0, limit);
+    }
+  }
+
+  async function getBest(gameId) {
+    try {
+      var res = await fetch(BASE + '/' + gameId + '/best');
+      if (!res.ok) throw new Error('bad response');
+      var data = await res.json();
+      return data.score || 0;
+    } catch (e) {
+      var list = [];
+      try { list = JSON.parse(localStorage.getItem(localKey(gameId))) || []; } catch (e2) {}
+      return list.length ? list[0].score : 0;
+    }
+  }
+
+  return { submit: submit, getTop: getTop, getBest: getBest };
+})();
+</script>
+<!-- ==== end HOPScores ==== -->
+
+<!-- ==== Temp Balance: game logic ==== -->
+<script>
+/*
+ * Temp Balance — DOM/SVG-based gauge-holding game.
+ * Rules: a needle drifts along a COOL <-> HEAT gauge under a shifting
+ * "ambient load" (sine sway + noise). Hold Cool or Heat to counteract the
+ * drift and keep the needle in the green comfort band. While in the green,
+ * Comfort points accrue. Staying too long in the red costs a life (3 total);
+ * lose all 3 and the run ends early. Otherwise the run ends when the
+ * 30-second clock runs out. Final score submitted = total Comfort.
+ *
+ * Controls: press-and-hold Cool/Heat buttons (mouse/touch via Pointer
+ * Events), or hold ArrowLeft (cool) / ArrowRight (heat).
+ *
+ * Score/leaderboard: uses window.HOPScores exclusively (see contract above).
+ */
+(function () {
+  'use strict';
+
+  var GAME_ID = 'temp-balance';
+  var TOTAL_TIME = 30; // seconds
+  var COMFORT_LO = 42, COMFORT_HI = 58; // green band
+  var RED_LO = 25, RED_HI = 75;         // beyond this = red / danger
+  var RED_LIMIT = 2.2;                  // seconds allowed in red before losing a life
+
+  var timerEl = document.getElementById('tbTimer');
+  var comfortEl = document.getElementById('tbComfort');
+  var livesWrap = document.getElementById('tbLives');
+  var lifeIcons = livesWrap.querySelectorAll('svg');
+  var needle = document.getElementById('tbNeedle');
+  var coolBtn = document.getElementById('tbCoolBtn');
+  var heatBtn = document.getElementById('tbHeatBtn');
+  var startBtn = document.getElementById('tbStartBtn');
+  var liveEl = document.getElementById('tbLive');
+  var lbRows = document.getElementById('tbLbRows');
+  var lbCard = document.getElementById('tbLbCard');
+
+  var value = 50; // 0 (full cool) .. 100 (full heat)
+  var lives = 3, comfort = 0, best = 0;
+  var state = 'idle';
+  var input = { cool: false, heat: false };
+  var elapsed = 0, redTimer = 0;
+  var rafId = null, lastTs = null;
+  var lastAnnouncedComfort = 0;
+
+  function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+
+  function escapeHtml(s) {
+    return String(s || '').replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  function announce(msg) { liveEl.textContent = msg; }
+
+  function setNeedle(v) {
+    var angle = (v - 50) / 50 * 85; // -85..85 deg
+    needle.style.transform = 'rotate(' + angle.toFixed(1) + 'deg)';
+  }
+
+  function setLives(n) {
+    lifeIcons.forEach(function (icon, i) { icon.classList.toggle('on', i < n); });
+  }
+
+  function driftForElapsed(t, dt) {
+    // ambient sway + gentle random walk, both scaling up as the run goes on
+    var amp = 6 + 5 * clamp(t / TOTAL_TIME, 0, 1);
+    var sway = Math.sin(t * 0.9) * amp * dt;
+    var noise = (Math.random() - 0.5) * amp * 0.6 * dt;
+    return sway + noise;
+  }
+
+  function resetRun() {
+    value = 50; lives = 3; comfort = 0; elapsed = 0; redTimer = 0;
+    lastAnnouncedComfort = 0;
+    setNeedle(value);
+    setLives(lives);
+    comfortEl.textContent = '0';
+    timerEl.textContent = TOTAL_TIME.toFixed(1);
+  }
+
+  function startGame() {
+    resetRun();
+    state = 'playing';
+    startBtn.textContent = 'Restart';
+    announce('Game started. Hold Cool or Heat to stay in the comfort zone.');
+    lastTs = null;
+    if (rafId) cancelAnimationFrame(rafId);
+    rafId = requestAnimationFrame(loop);
+  }
+
+  function endGame(bust) {
+    state = 'over';
+    if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+    var finalScore = Math.floor(comfort);
+    if (finalScore > best) best = finalScore;
+    startBtn.textContent = 'Play Again';
+    announce(bust
+      ? 'Out of lives. Final comfort score ' + finalScore + '.'
+      : 'Time. Final comfort score ' + finalScore + '.');
+    submitScore(finalScore);
+  }
+
+  function submitScore(finalScore) {
+    var user = null;
+    try { user = JSON.parse(localStorage.getItem('hop_user')); } catch (e) {}
+    var name = (user && user.name) ? user.name : 'Anonymous';
+    Promise.resolve(window.HOPScores.submit(GAME_ID, name, finalScore))
+      .catch(function () {})
+      .then(refreshLeaderboard);
+  }
+
+  function loop(ts) {
+    if (state !== 'playing') return;
+    if (lastTs == null) lastTs = ts;
+    var dt = Math.min(0.05, (ts - lastTs) / 1000);
+    lastTs = ts;
+    elapsed += dt;
+
+    var remaining = TOTAL_TIME - elapsed;
+    if (remaining <= 0) { timerEl.textContent = '0.0'; endGame(false); return; }
+    timerEl.textContent = remaining.toFixed(1);
+
+    var COOL_POWER = 38, HEAT_POWER = 38;
+    var dv = driftForElapsed(elapsed, dt);
+    if (input.cool) dv -= COOL_POWER * dt;
+    if (input.heat) dv += HEAT_POWER * dt;
+    value = clamp(value + dv, 0, 100);
+    setNeedle(value);
+
+    var inRed = value < RED_LO || value > RED_HI;
+    var inComfort = value >= COMFORT_LO && value <= COMFORT_HI;
+
+    if (inComfort) {
+      comfort += 10 * dt;
+      var c = Math.floor(comfort);
+      if (c !== Math.floor(comfort - 10 * dt)) comfortEl.textContent = String(c);
+      if (c - lastAnnouncedComfort >= 20) { lastAnnouncedComfort = c; announce('Comfort ' + c + '.'); }
+    }
+
+    if (inRed) {
+      redTimer += dt;
+      if (redTimer >= RED_LIMIT) {
+        redTimer = 0;
+        lives -= 1;
+        setLives(lives);
+        // mercy nudge back toward center so the same drift doesn't insta-repeat
+        value = clamp(value + (value < 50 ? 18 : -18), 0, 100);
+        setNeedle(value);
+        if (lives <= 0) { endGame(true); return; }
+        announce('Lost a life. ' + lives + ' remaining.');
+      }
+    } else {
+      redTimer = Math.max(0, redTimer - dt * 1.5);
+    }
+
+    comfortEl.textContent = String(Math.floor(comfort));
+    rafId = requestAnimationFrame(loop);
+  }
+
+  // --- input wiring ---
+  function wireHold(btn, key) {
+    var set = function (v) { return function (e) { input[key] = v; btn.classList.toggle('active', v); if (e && e.cancelable) e.preventDefault(); }; };
+    btn.addEventListener('pointerdown', set(true));
+    btn.addEventListener('pointerup', set(false));
+    btn.addEventListener('pointerleave', set(false));
+    btn.addEventListener('pointercancel', set(false));
+  }
+  wireHold(coolBtn, 'cool');
+  wireHold(heatBtn, 'heat');
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') { input.cool = true; coolBtn.classList.add('active'); e.preventDefault(); }
+    else if (e.key === 'ArrowRight') { input.heat = true; heatBtn.classList.add('active'); e.preventDefault(); }
+    else if ((e.key === ' ' || e.key === 'Enter') && (state === 'idle' || state === 'over') && document.activeElement !== startBtn) {
+      startGame();
+    }
+  });
+  document.addEventListener('keyup', function (e) {
+    if (e.key === 'ArrowLeft') { input.cool = false; coolBtn.classList.remove('active'); }
+    else if (e.key === 'ArrowRight') { input.heat = false; heatBtn.classList.remove('active'); }
+  });
+
+  startBtn.addEventListener('click', startGame);
+
+  // --- leaderboard ---
+  function formatDate(iso) {
+    try {
+      var d = new Date(iso);
+      if (isNaN(d.getTime())) return '';
+      return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    } catch (e) { return ''; }
+  }
+  function crownSvg() {
+    return '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 18h14l1.5-9-5 3-3.5-5-3.5 5-5-3L5 18z"/></svg>';
+  }
+  function renderLeaderboardRows(list) {
+    if (!list || !list.length) {
+      lbRows.innerHTML = '<p class="tb-lb-empty">No scores yet &mdash; be the first on the board.</p>';
+      return;
+    }
+    var html = list.slice(0, 3).map(function (row, i) {
+      var rank = i + 1;
+      var rankInner = rank === 1 ? crownSvg() : String(rank);
+      return '<div class="tb-lb-row">' +
+        '<span class="tb-lb-rank r' + rank + '">' + rankInner + '</span>' +
+        '<span class="tb-lb-name">' + escapeHtml(row.name || 'Anonymous') + '</span>' +
+        '<span class="tb-lb-score">' + escapeHtml(row.score) + '</span>' +
+        '<span class="tb-lb-date">' + formatDate(row.date) + '</span>' +
+        '</div>';
+    }).join('');
+    lbRows.innerHTML = html;
+  }
+  function refreshLeaderboard() {
+    Promise.resolve(window.HOPScores.getTop(GAME_ID, 3))
+      .then(function (top) { lbCard.style.display = ''; renderLeaderboardRows(top); })
+      .catch(function () { lbCard.style.display = 'none'; });
+  }
+  function loadBest() {
+    Promise.resolve(window.HOPScores.getBest(GAME_ID))
+      .then(function (b) { best = b || 0; })
+      .catch(function () { best = 0; });
+  }
+
+  // --- init ---
+  setNeedle(value);
+  loadBest();
+  refreshLeaderboard();
+})();
+</script>
+<!-- ==== end Temp Balance game logic ==== -->
+
 </body>
 </html>

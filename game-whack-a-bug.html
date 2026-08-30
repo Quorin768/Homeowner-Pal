@@ -11,8 +11,8 @@
 <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-<title>Home HVAC: The Homeowner's Plain-English Reference | HomeownerPal</title>
-<meta name="description" content="Split systems, heat pumps vs AC vs furnace, refrigerant and condensate, outdoor disconnects, filters, thermostat C-wire, and what's safe DIY vs a licensed tech.">
+<title>Whack-a-Bug | HOP Game Arcade | HomeownerPal</title>
+<meta name="description" content="Squish roaches and spiders. Spare the ladybug. A free pest-themed reflex game from the HOP Game Arcade.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -62,6 +62,7 @@ section{padding:44px 0;}
 .btn-outline{background:transparent;color:var(--blue-deep);border:1.5px solid var(--blue-deep);}
 .btn-outline:hover{background:var(--blue-deep);color:#fff;}
 .btn-sm{padding:10px 18px;font-size:13.5px;}
+.btn:disabled{opacity:.5;cursor:not-allowed;transform:none!important;box-shadow:none!important;}
 
 /* Header */
 header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
@@ -88,9 +89,10 @@ nav.primary-nav a.active{color:var(--blue-deep);}
 .section-head p{color:var(--slate);font-size:16px;line-height:1.65;}
 
 /* Breadcrumb */
-.breadcrumb{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--slate);margin-bottom:24px;}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--slate);margin-bottom:24px;flex-wrap:wrap;}
 .breadcrumb a{color:var(--blue-deep);font-weight:600;}
 .breadcrumb a:hover{text-decoration:underline;}
+.breadcrumb svg{width:12px;height:12px;flex-shrink:0;}
 
 /* CTA band */
 .cta-band{background:#fff;}
@@ -124,79 +126,12 @@ footer ul a:hover{color:var(--blue-deep);}
 .footer-bottom .socials svg{width:16px;height:16px;color:var(--slate);}
 .footer-bottom .socials a:hover svg{color:var(--blue-deep);}
 
-
-  /* ---- Page-specific additions below ---- */
-  .lrn-hero{background:linear-gradient(180deg,var(--blue-pale) 0%, #fff 85%);padding:20px 0 24px;}
-  .lrn-hero .wrap{max-width:1600px;}
-  .lrn-kicker{font-size:11.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--blue-deep);margin-bottom:10px;}
-  .lrn-hero h1{font-size:clamp(24px,3.2vw,34px);margin-bottom:14px;max-width:1600px;}
-  .lrn-hero p{font-size:14.5px;color:var(--slate);line-height:1.75;max-width:660px;margin-bottom:16px;}
-  .lrn-cta-note{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 18px;font-size:13px;color:var(--slate);line-height:1.6;}
-  .lrn-cta-note a{color:var(--blue-deep);font-weight:700;text-decoration:underline;}
-
-  .lrn-body{max-width:1600px;margin:0;padding:0 28px;}
-
-  .lrn-toc{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:26px 28px;margin:20px 0;}
-  .lrn-toc-title{font-size:13px;font-weight:700;color:var(--blue-deep);text-transform:uppercase;letter-spacing:.03em;margin-bottom:14px;}
-  .lrn-toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;}
-  @media (max-width:560px){ .lrn-toc-grid{grid-template-columns:1fr;} }
-  .lrn-toc-grid a{font-size:13.5px;color:var(--ink);font-weight:600;padding:6px 0;border-bottom:1px dashed var(--line);}
-  .lrn-toc-grid a:hover{color:var(--blue-deep);}
-
-  .lrn-section{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:30px 32px;margin:16px 0;scroll-margin-top:48px;}
-  .lrn-section-head{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
-  .lrn-section-icon{width:38px;height:38px;border-radius:10px;background:var(--blue-pale);color:var(--blue-deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;}
-  .lrn-section h2{font-size:19px;}
-  .lrn-section p{font-size:13.5px;color:var(--slate);line-height:1.7;margin-bottom:14px;}
-
-  .lrn-diagram{background:var(--blue-pale);border-radius:14px;padding:22px;margin:16px 0 20px;}
-  .lrn-diagram-title{font-size:11px;font-weight:700;color:var(--blue-deep);text-transform:uppercase;letter-spacing:.03em;margin-bottom:14px;text-align:center;}
-
-  .split-diagram{display:flex;align-items:stretch;gap:10px;justify-content:center;flex-wrap:wrap;}
-  .split-col{background:#fff;border-radius:12px;padding:14px 16px;flex:1;min-width:150px;max-width:220px;border:1.5px solid var(--line);}
-  .split-col-title{font-size:11.5px;font-weight:700;color:var(--blue-deep);margin-bottom:8px;text-align:center;padding-bottom:6px;border-bottom:1px solid var(--line);}
-  .split-item{font-size:11px;color:var(--ink);padding:5px 0;border-bottom:1px dashed var(--line);}
-  .split-item:last-child{border-bottom:none;}
-  .split-connector{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:0 4px;min-width:110px;}
-  .split-connector-line{width:100%;height:2px;background:repeating-linear-gradient(90deg,var(--orange),var(--orange) 5px,transparent 5px,transparent 9px);}
-  .split-connector-text{font-size:10px;color:var(--orange);font-weight:700;text-align:center;line-height:1.4;}
-
-  .lrn-bullets{list-style:none;display:flex;flex-direction:column;gap:9px;margin:14px 0;}
-  .lrn-bullets li{position:relative;padding-left:17px;font-size:13.5px;color:var(--ink);line-height:1.65;}
-  .lrn-bullets li::before{content:"";position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--blue-deep);}
-  .lrn-bullets li strong{color:var(--blue-deep);}
-
-  .lrn-warn{background:#FFF6E9;border:1px solid #F0D9A8;border-radius:12px;padding:14px 18px;margin:16px 0;font-size:13px;color:#8A5D18;line-height:1.65;}
-  .lrn-warn strong{color:#6B4712;}
-
-  .lrn-rule{background:var(--blue-deep);color:#fff;border-radius:12px;padding:16px 20px;font-size:13px;line-height:1.7;margin:16px 0;}
-
-  .lrn-link-box{background:var(--blue-pale);border-radius:12px;padding:14px 18px;margin:14px 0;font-size:13px;}
-  .lrn-link-box a{color:var(--blue-deep);font-weight:700;text-decoration:underline;}
-
-  .diy-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0;}
-  @media (max-width:600px){ .diy-grid{grid-template-columns:1fr;} }
-  .diy-col{border-radius:14px;padding:18px 20px;}
-  .diy-col.yes{background:#F0FAF4;border:1px solid #C9E6D6;}
-  .diy-col.no{background:#FDEDEC;border:1px solid #F0C4BE;}
-  .diy-col h4{font-size:13px;font-weight:700;margin-bottom:10px;}
-  .diy-col.yes h4{color:#1D5C3F;}
-  .diy-col.no h4{color:var(--red);}
-  .diy-col ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
-  .diy-col li{font-size:12.5px;line-height:1.55;padding-left:16px;position:relative;}
-  .diy-col.yes li{color:#1D5C3F;}
-  .diy-col.no li{color:#8B2E23;}
-  .diy-col li::before{content:"";position:absolute;left:0;top:6px;width:5px;height:5px;border-radius:50%;}
-  .diy-col.yes li::before{background:#1E8A5A;}
-  .diy-col.no li::before{background:var(--red);}
-
-  /* ===== SECTION HEADLINE WIPE (site-wide, matches homepage) ===== */
-  .js .wipe{clip-path:inset(0 100% 0 0);transition:clip-path 5.5s cubic-bezier(.22,1,.36,1);will-change:clip-path;}
-  .js .wipe.is-visible{clip-path:inset(0 0 0 0);}
-  @media (prefers-reduced-motion:reduce){ .js .wipe{clip-path:none!important;transition:none!important;} }
+/* ===== SECTION HEADLINE WIPE (site-wide, matches homepage) ===== */
+.js .wipe{clip-path:inset(0 100% 0 0);transition:clip-path 5.5s cubic-bezier(.22,1,.36,1);will-change:clip-path;}
+.js .wipe.is-visible{clip-path:inset(0 0 0 0);}
+@media (prefers-reduced-motion:reduce){ .js .wipe{clip-path:none!important;transition:none!important;} }
 
 /* ==== HOP: full-width sections (uniform, left-to-right, no centering) — appended override ==== */
-/* Outermost section containers: span full width with one uniform side gutter */
 .wrap,
 .guide-body, .guide-hero .wrap, .other-issues .wrap,
 .insp-body, .insp-hero .wrap, .insp-other .wrap,
@@ -213,14 +148,14 @@ footer ul a:hover{color:var(--blue-deep);}
 .fap-hero .wrap,
 .reviews-strip .wrap,
 .myhome-section .wrap,
-.hl-hero .wrap, .hl-body {
+.hl-hero .wrap, .hl-body,
+.wb-hero .wrap, .wb-body {
   max-width: none;
   margin-left: 0;
   margin-right: 0;
   padding-left: 40px;
   padding-right: 40px;
 }
-/* Nested containers (already inside a padded .wrap): widen only, no extra gutter */
 .hero-center,
 .diag-hero-inner,
 .helpband-inner,
@@ -247,7 +182,8 @@ footer ul a:hover{color:var(--blue-deep);}
 .fap-hero .wrap,
 .reviews-strip .wrap,
 .myhome-section .wrap,
-.hl-hero .wrap, .hl-body {
+.hl-hero .wrap, .hl-body,
+.wb-hero .wrap, .wb-body {
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -334,6 +270,72 @@ footer ul a:hover{color:var(--blue-deep);}
 /* ==== HOP: mascot logo mark (img replacing svg mark, appended) ==== */
 .hop-brand-icon .mark{width:22px;height:34px;object-fit:contain;}
 .logo .mark{object-fit:contain;}
+
+/* ---- Page-specific: Whack-a-Bug (.wb-*) ---- */
+.wb-hero{background:linear-gradient(180deg,var(--blue-pale) 0%, #fff 85%);padding:20px 0 26px;}
+.wb-hero .wrap{max-width:1600px;}
+.wb-hero .kicker{color:var(--blue-deep);}
+.wb-hero h1{font-size:clamp(28px,4vw,42px);margin-bottom:10px;display:flex;align-items:center;gap:12px;}
+.wb-hero h1 svg{width:.82em;height:.82em;color:var(--orange);flex-shrink:0;}
+.wb-sub{color:var(--slate);font-size:16px;}
+
+.wb-body{max-width:1600px;margin:0;padding:32px 28px 8px;}
+
+.wb-panel{background:#fff;border:1.5px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:0 20px 44px rgba(0,61,151,.08);max-width:460px;margin:0 auto;}
+.wb-stat-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px;font-size:14px;font-weight:700;color:var(--ink);}
+.wb-stat-row .num{font-family:'IBM Plex Mono';}
+.wb-stat-score .num{color:var(--blue-deep);}
+.wb-stat-timer{display:flex;align-items:center;gap:6px;}
+.wb-stat-timer svg{width:14px;height:14px;color:var(--slate);}
+
+.wb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;background:#EFE2CF;border-radius:14px;padding:14px;}
+
+.wb-tile{
+  position:relative;aspect-ratio:1/1;border-radius:12px;
+  background:#8B5E3C;border:1.5px solid #6E4A2E;
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+  transition:transform .08s ease;
+}
+.wb-tile:focus-visible{outline:3px solid var(--blue-sky);outline-offset:2px;}
+.wb-tile:active{transform:scale(.95);}
+.wb-tile-icon{width:46%;height:46%;opacity:0;transform:scale(.6);transition:opacity .12s ease, transform .12s ease;}
+.wb-tile.up .wb-tile-icon{opacity:1;transform:scale(1);}
+.wb-popfx{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono';font-weight:700;font-size:15px;opacity:0;pointer-events:none;}
+.wb-tile.hit-good .wb-popfx{color:#2E8B4F;animation:wbpop .5s ease forwards;}
+.wb-tile.hit-bad .wb-popfx{color:var(--red);animation:wbpop .5s ease forwards;}
+@keyframes wbpop{0%{opacity:0;transform:translateY(4px);}25%{opacity:1;transform:translateY(-6px);}100%{opacity:0;transform:translateY(-22px);}}
+@media (prefers-reduced-motion:reduce){ .wb-tile.hit-good .wb-popfx,.wb-tile.hit-bad .wb-popfx{animation:none;opacity:1;} }
+
+.wb-start{display:block;width:100%;margin-top:16px;text-align:center;justify-content:center;}
+.wb-hint{text-align:center;font-size:12.5px;color:var(--slate);margin-top:12px;}
+.wb-legend{display:flex;justify-content:center;gap:16px;margin-top:6px;font-size:11.5px;color:var(--slate);flex-wrap:wrap;}
+.wb-legend span{display:inline-flex;align-items:center;gap:5px;}
+.wb-legend svg{width:15px;height:15px;}
+
+.wb-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+
+.wb-lb-card{background:#fff;border:1.5px solid var(--line);border-radius:var(--radius);padding:24px;max-width:460px;margin:24px auto 0;}
+.wb-lb-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;gap:12px;}
+.wb-lb-title{display:flex;align-items:center;gap:10px;font-family:'Fraunces';font-size:16.5px;font-weight:600;}
+.wb-lb-title svg{width:19px;height:19px;color:var(--orange);flex-shrink:0;}
+.wb-lb-all{font-size:12px;color:var(--slate);font-weight:600;white-space:nowrap;}
+.wb-lb-rows{margin-top:10px;}
+.wb-lb-row{display:flex;align-items:center;gap:13px;padding:12px 0;border-bottom:1px solid var(--line);}
+.wb-lb-row:last-child{border-bottom:none;}
+.wb-lb-rank{width:26px;height:26px;border-radius:50%;background:var(--blue-pale);color:var(--blue-deep);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;}
+.wb-lb-rank svg{width:14px;height:14px;}
+.wb-lb-rank.r1{background:#FCE7B8;color:#9A6B10;}
+.wb-lb-rank.r2{background:#E9EDF2;color:#5F6B7A;}
+.wb-lb-rank.r3{background:#F3E0D2;color:#9A5A2E;}
+.wb-lb-name{flex:1;font-size:13.5px;font-weight:600;color:var(--ink);}
+.wb-lb-score{font-family:'IBM Plex Mono';font-size:13px;font-weight:600;color:var(--blue-deep);}
+.wb-lb-date{font-size:11.5px;color:var(--slate);min-width:52px;text-align:right;}
+.wb-lb-empty{font-size:13.5px;color:var(--slate);padding:10px 0;}
+
+@media (max-width:640px){
+  .wb-body{padding:24px 20px 8px;}
+  .wb-panel,.wb-lb-card{padding:18px;}
+}
 </style>
 </head>
 <body>
@@ -356,204 +358,59 @@ footer ul a:hover{color:var(--blue-deep);}
   </div>
 </header>
 
-<section class="lrn-hero">
+<section class="wb-hero">
   <div class="wrap">
     <div class="breadcrumb">
-      <a href="tools-costs.html#learn">Learn</a>
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
-      <span>HVAC</span>
+      <a href="index.html">Home</a>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+      <a href="game-arcade.html">Game Arcade</a>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+      <span>Whack-a-Bug</span>
     </div>
-    <div class="lrn-kicker">Learn · HVAC</div>
-    <h1>Home HVAC, the homeowner's plain-English reference</h1>
-    <p>The basics every homeowner should know about heating and cooling, enough to keep your system happy between service visits and recognize what needs a pro. HVAC equipment varies widely; treat this as a general primer and confirm specifics with a licensed local technician.</p>
-    <div class="lrn-cta-note"><strong>General reference.</strong> Plumbing &amp; HVAC codes, equipment, and "who owns what" vary by city, utility, and state. Always verify with a licensed local pro before working on your system.</div>
+    <span class="kicker">HOP Game Arcade</span>
+    <h1><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="13" rx="6" ry="4"/><path d="M6 11L2 9M6 15l-4 2M18 11l4-2M18 15l4 2M9 9l-1-3M15 9l1-3"/></svg>Whack-a-Bug</h1>
+    <p class="wb-sub">Squish roaches and spiders. Spare the ladybug.</p>
   </div>
 </section>
 
-<div class="lrn-body">
+<div class="wb-body">
 
-  <div class="lrn-toc">
-    <div class="lrn-toc-title">On this page</div>
-    <div class="lrn-toc-grid">
-      <a href="#split-system">Split system overview</a>
-      <a href="#heat-vs-cool">Heat pump vs AC vs furnace</a>
-      <a href="#refrigerant">Refrigerant &amp; condensate</a>
-      <a href="#disconnect">Outdoor disconnect</a>
-      <a href="#filters">Filters &amp; change cadence</a>
-      <a href="#thermostat">Thermostat C-wire</a>
-      <a href="#diy-vs-pro">DIY vs call-a-pro</a>
+  <div class="wb-panel">
+    <div class="wb-stat-row">
+      <span class="wb-stat-score">Score: <span class="num" id="wbScore">0</span></span>
+      <span class="wb-stat-timer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        <span class="num" id="wbTimer">30.0</span>s
+      </span>
     </div>
+
+    <div class="wb-grid" id="wbGrid" role="group" aria-label="Whack-a-Bug game board, 9 holes"></div>
+
+    <button type="button" class="btn btn-blue wb-start" id="wbStartBtn">Start</button>
+    <p class="wb-hint">Tap the bugs as they pop up. Roaches and spiders score points &mdash; the ladybug is a friend, leave her be.</p>
+    <div class="wb-legend">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="#5B3A29" stroke-width="1.8"><ellipse cx="12" cy="13" rx="6" ry="4"/></svg>Roach +1</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="#3A2E58" stroke-width="1.8"><circle cx="12" cy="12" r="4"/></svg>Spider +2</span>
+      <span><svg viewBox="0 0 24 24" fill="#C0392B"><circle cx="12" cy="12" r="7"/></svg>Ladybug &minus;3</span>
+    </div>
+
+    <div class="wb-sr-only" id="wbLive" aria-live="polite" role="status"></div>
   </div>
 
-  <!-- SECTION 1: SPLIT SYSTEM -->
-  <div class="lrn-section" id="split-system">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">🏠</div>
-      <h2>The classic split system</h2>
+  <div class="wb-lb-card" id="wbLbCard">
+    <div class="wb-lb-head">
+      <span class="wb-lb-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v4a4 4 0 01-8 0V4z"/><path d="M8 5H5a3 3 0 003 3M16 5h3a3 3 0 01-3 3"/><path d="M12 12v3M9 19h6M10 19v-1a2 2 0 012-2 2 2 0 012 2v1"/></svg>
+        Top 3 Global &mdash; Whack-a-Bug
+      </span>
+      <span class="wb-lb-all">All-time</span>
     </div>
-    <p>Most American homes have a "split" system, two halves of the same machine, separated by an exterior wall and connected by a pair of refrigerant lines.</p>
-
-    <div class="lrn-diagram">
-      <div class="lrn-diagram-title">Outside ↔ Inside</div>
-      <div class="split-diagram">
-        <div class="split-col">
-          <div class="split-col-title">OUTSIDE</div>
-          <div class="split-item">Condenser (compressor + fan)</div>
-          <div class="split-item">Disconnect</div>
-        </div>
-        <div class="split-connector">
-          <div class="split-connector-line"></div>
-          <div class="split-connector-text">Refrigerant lines<br>(suction + liquid)</div>
-          <div class="split-connector-line"></div>
-        </div>
-        <div class="split-col">
-          <div class="split-col-title">INSIDE</div>
-          <div class="split-item">Air handler / furnace</div>
-          <div class="split-item">Filter</div>
-          <div class="split-item">Evap coil</div>
-          <div class="split-item">Supply / Return</div>
-          <div class="split-item">Condensate drain</div>
-          <div class="split-item">Disconnect</div>
-        </div>
-      </div>
-    </div>
-
-    <ul class="lrn-bullets">
-      <li><strong>Outdoor unit (condenser):</strong> the metal box on a pad outside. Contains the compressor and a big fan. This is what hums in the summer.</li>
-      <li><strong>Indoor unit (air handler or furnace):</strong> in a closet, attic, basement, or garage. Holds the blower motor, the evaporator coil, and the air filter. Pushes conditioned air through your ducts.</li>
-      <li><strong>Refrigerant lines:</strong> the insulated copper line plus smaller bare copper line running between the two units. Refrigerant cycles between them, carrying heat outdoors in summer (and indoors in winter, if you have a heat pump).</li>
-    </ul>
-  </div>
-
-  <!-- SECTION 2: HEAT PUMP VS AC VS FURNACE -->
-  <div class="lrn-section" id="heat-vs-cool">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">🌡️</div>
-      <h2>Heat pump vs AC vs furnace</h2>
-    </div>
-    <ul class="lrn-bullets">
-      <li><strong>Air conditioner (AC) + furnace:</strong> the traditional setup. AC cools in summer, a gas (or electric) furnace heats in winter. Two completely different heat sources, one shared blower and duct system.</li>
-      <li><strong>Heat pump:</strong> looks just like an AC condenser but works both directions, moves heat out of the house in summer and pulls heat in from outdoors in winter. Increasingly common because they're very efficient down to surprisingly cold temperatures.</li>
-      <li><strong>Dual-fuel / hybrid:</strong> heat pump for mild weather plus gas furnace as backup for deep cold. Best of both in most climates.</li>
-      <li><strong>Mini-splits (ductless):</strong> wall-mounted indoor heads connected to a small outdoor unit with refrigerant lines and a control wire. No ducts needed, great for additions, garages, or retrofits.</li>
-    </ul>
-  </div>
-
-  <!-- SECTION 3: REFRIGERANT & CONDENSATE -->
-  <div class="lrn-section" id="refrigerant">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">💧</div>
-      <h2>Refrigerant lines &amp; condensate drain</h2>
-    </div>
-    <ul class="lrn-bullets">
-      <li>Refrigerant is a closed loop, it should never need "topping off." If a tech says you need refrigerant, you have a leak; topping it off without finding the leak just delays the problem.</li>
-      <li>As warm humid indoor air passes over the cold evaporator coil, water condenses out (same reason a cold glass sweats). That water drains through the condensate drain line, usually a PVC pipe leading outside or to a floor drain.</li>
-      <li>Clogged condensate drain is the single most common reason a healthy AC suddenly stops cooling, most systems have a safety float switch that shuts down the system when the drain backs up. Pouring a cup of distilled vinegar down the cleanout port once a year prevents most clogs.</li>
-    </ul>
-  </div>
-
-  <!-- SECTION 4: OUTDOOR DISCONNECT -->
-  <div class="lrn-section" id="disconnect">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">🔌</div>
-      <h2>The outdoor disconnect</h2>
-    </div>
-    <p>Required by code within sight of the outdoor unit. Some are cheap plastic pull-out blocks; better ones are switched metal disconnects with a real handle. This is what gets turned off before anyone services the condenser, and what a homeowner can flip if the outdoor unit ever needs to be killed in a hurry.</p>
-    <div class="lrn-link-box">See our recommended 60A switched disconnect in <a href="tools-materials.html">Tools &amp; Materials →</a></div>
-    <div class="lrn-warn"><strong>Heads up:</strong> pulling the outdoor disconnect doesn't cut power to the indoor air handler, that has its own disconnect near the unit (and its own breaker at the main panel).</div>
-  </div>
-
-  <!-- SECTION 5: FILTERS -->
-  <div class="lrn-section" id="filters">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">🌬️</div>
-      <h2>Filters, the cheapest insurance you can buy</h2>
-    </div>
-    <ul class="lrn-bullets">
-      <li><strong>Where it lives:</strong> usually at the return air opening or in a slot on the side/bottom of the air handler. Some homes have one big return-grille filter; others have a slot at the unit.</li>
-      <li><strong>Change cadence:</strong> 1" filters every 1 to 3 months, 4 to 5" media filters every 6 to 12 months. More often if you have pets or run the system hard.</li>
-      <li><strong>MERV rating:</strong> higher numbers filter finer particles but restrict more airflow. MERV 8 to MERV 11 is a sweet spot for most residential systems. Going too high (MERV 13+) without a properly-sized return can starve the unit and cause coil freeze-ups.</li>
-      <li>A neglected filter is the #1 cause of "my system stopped working" service calls. Frozen coils, tripped limit switches, dead blowers, most trace back to airflow.</li>
-    </ul>
-  </div>
-
-  <!-- SECTION 6: THERMOSTAT C-WIRE -->
-  <div class="lrn-section" id="thermostat">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">🧭</div>
-      <h2>Thermostat C-wire (what smart thermostats need)</h2>
-    </div>
-    <p>The "C" (common) wire provides constant 24V power to a thermostat. Older mechanical thermostats and many older digital ones don't need it, they're powered by the heating/cooling call wires themselves. Smart thermostats (Nest, Ecobee, Honeywell smart, and similar) do need it for reliable operation.</p>
-    <ul class="lrn-bullets">
-      <li>If you don't have a C-wire, options include: running a new wire (best), using a C-wire adapter at the air handler, or using a thermostat that ships with its own power-extender kit (Ecobee).</li>
-      <li>Common color convention: R = 24V hot, C = common, W = heat, Y = cool, G = fan. Brands vary, always photograph the existing wiring before disconnecting anything.</li>
-    </ul>
-  </div>
-
-  <!-- SECTION 7: DIY VS CALL A PRO -->
-  <div class="lrn-section" id="diy-vs-pro">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">🛠️</div>
-      <h2>DIY vs call-a-pro</h2>
-    </div>
-
-    <div class="diy-grid">
-      <div class="diy-col yes">
-        <h4>Safe DIY</h4>
-        <ul>
-          <li>Changing filters</li>
-          <li>Clearing the condensate drain</li>
-          <li>Hosing dust off the outdoor condenser coil (power off!)</li>
-          <li>Keeping vegetation 2 ft back from the outdoor unit</li>
-          <li>Programming the thermostat</li>
-          <li>Replacing the thermostat itself</li>
-        </ul>
-      </div>
-      <div class="diy-col no">
-        <h4>Call a pro</h4>
-        <ul>
-          <li>Any refrigerant work (it's federally regulated)</li>
-          <li>Gas furnace problems (combustion safety)</li>
-          <li>Electrical issues at the unit</li>
-          <li>Capacitor or contactor replacement on the condenser</li>
-          <li>Anything that involves opening the sealed refrigerant system</li>
-          <li>Frozen coils that don't resolve after filter change + 24 hr off</li>
-          <li>No heat in winter</li>
-          <li>System shutting off on its own</li>
-        </ul>
-      </div>
+    <div class="wb-lb-rows" id="wbLbRows">
+      <p class="wb-lb-empty">Loading scores&hellip;</p>
     </div>
   </div>
 
 </div>
-
-<section class="other-issues" style="background:var(--blue-pale);padding:30px 0;">
-  <div class="wrap">
-    <h3 style="font-size:18px;margin-bottom:6px;">Having one of these problems right now?</h3>
-    <p style="font-size:13.5px;color:var(--slate);margin-bottom:20px;">Walk through it step by step with HOP, free, no signup.</p>
-    <div class="other-panel" style="background:#fff;border-radius:18px;border:1px solid var(--line);overflow:hidden;">
-      <a href="hvac-ac-not-cooling.html" class="other-row" style="display:flex;align-items:center;gap:12px;padding:13px 20px;border-bottom:1px solid var(--line);"><span style="font-size:13.5px;font-weight:600;flex:1;">AC running but not cooling</span></a>
-      <a href="hvac-no-heat.html" class="other-row" style="display:flex;align-items:center;gap:12px;padding:13px 20px;border-bottom:1px solid var(--line);"><span style="font-size:13.5px;font-weight:600;flex:1;">Furnace or heat not working</span></a>
-      <a href="hvac-thermostat-blank.html" class="other-row" style="display:flex;align-items:center;gap:12px;padding:13px 20px;"><span style="font-size:13.5px;font-weight:600;flex:1;">Thermostat blank or unresponsive</span></a>
-    </div>
-    <p style="margin-top:20px;font-size:13.5px;"><a href="find-a-pro.html?trade=hvac" style="color:var(--blue-deep);font-weight:700;text-decoration:underline;">Or find a trusted local HVAC pro →</a></p>
-  </div>
-</section>
-
-<section style="padding:30px 0;">
-  <div class="wrap">
-    <div style="background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:24px 28px;text-align:center;">
-      <p style="font-size:13.5px;color:var(--slate);line-height:1.7;margin-bottom:8px;">Stuck on something specific? Call or text the <a href="diagnose.html" style="color:var(--blue-deep);font-weight:700;text-decoration:underline;">HOPline</a>, it's free. We can walk you through your exact situation, no account needed. For active emergencies (smoke, sparks, or fire) call 911.</p>
-    </div>
-    <a href="emergency.html" style="display:flex;align-items:center;gap:14px;background:#FDEDEC;border:1.5px solid #F5C2BC;border-radius:16px;padding:18px 22px;margin-top:16px;text-decoration:none;">
-      <div style="width:36px;height:36px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;">🚨</div>
-      <div>
-        <div style="font-size:13.5px;font-weight:700;color:#8B2E23;margin-bottom:2px;">Emergency</div>
-        <div style="font-size:12.5px;color:#8B2E23;">When to call 911 vs. a licensed electrician →</div>
-      </div>
-    </a>
-  </div>
-</section>
 
 <section class="cta-band">
   <div class="wrap">
@@ -648,11 +505,10 @@ footer ul a:hover{color:var(--blue-deep);}
         <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="5"/></svg></a>
         <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></a>
       </div>
-      <div>© 2026 HomeownerPal. Built with care for homeowners.</div>
+      <div>&copy; 2026 HomeownerPal. Built with care for homeowners.</div>
     </div>
   </div>
 </footer>
-
 
 <script>
 (function () {
@@ -696,7 +552,6 @@ footer ul a:hover{color:var(--blue-deep);}
   });
 })();
 </script>
-
 
 <!-- ==== HOP NAV drawer ==== -->
 <div class="nav-drawer-overlay" id="hopNavOverlay" onclick="if(event.target===this)HOPNav.close()">
@@ -849,5 +704,327 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape') HOPInstall
 })();
 </script>
 <!-- ==== end HOP AUTH modal ==== -->
+
+<!-- ==== HOPScores: shared leaderboard contract, identical on every game page ==== -->
+<script>
+window.HOPScores = (function () {
+  var BASE = 'https://homeownerpal.com/api/scores';
+
+  function localKey(gameId) { return 'hop_scores_' + gameId; }
+
+  async function submit(gameId, name, score) {
+    try {
+      var res = await fetch(BASE, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ gameId: gameId, name: name, score: score })
+      });
+      if (!res.ok) throw new Error('bad response');
+      return await res.json();
+    } catch (e) {
+      // Fallback: local-only leaderboard until the backend is live
+      var list = [];
+      try { list = JSON.parse(localStorage.getItem(localKey(gameId))) || []; } catch (e2) {}
+      list.push({ name: name, score: score, date: new Date().toISOString() });
+      list.sort(function (a, b) { return b.score - a.score; });
+      list = list.slice(0, 10);
+      try { localStorage.setItem(localKey(gameId), JSON.stringify(list)); } catch (e3) {}
+      return { ok: true, local: true };
+    }
+  }
+
+  async function getTop(gameId, limit) {
+    limit = limit || 3;
+    try {
+      var res = await fetch(BASE + '/' + gameId + '/top?limit=' + limit);
+      if (!res.ok) throw new Error('bad response');
+      return await res.json();
+    } catch (e) {
+      var list = [];
+      try { list = JSON.parse(localStorage.getItem(localKey(gameId))) || []; } catch (e2) {}
+      return list.slice(0, limit);
+    }
+  }
+
+  async function getBest(gameId) {
+    try {
+      var res = await fetch(BASE + '/' + gameId + '/best');
+      if (!res.ok) throw new Error('bad response');
+      var data = await res.json();
+      return data.score || 0;
+    } catch (e) {
+      var list = [];
+      try { list = JSON.parse(localStorage.getItem(localKey(gameId))) || []; } catch (e2) {}
+      return list.length ? list[0].score : 0;
+    }
+  }
+
+  return { submit: submit, getTop: getTop, getBest: getBest };
+})();
+</script>
+<!-- ==== end HOPScores ==== -->
+
+<!-- ==== Whack-a-Bug: game logic ==== -->
+<script>
+/*
+ * Whack-a-Bug — DOM-based whack-a-mole reflex game.
+ * Rules: 9 holes on a 3x3 board. Bugs pop up on random holes for a shrinking
+ * window and disappear again on their own if left alone (no penalty for a
+ * miss). Roach = +1, Spider = +2, Ladybug = -3 (she's a friend — leave her).
+ * Score is clamped at 0. Final score submitted to the leaderboard = Score
+ * after 30 seconds.
+ *
+ * Controls: mouse / touch / keyboard (each hole is a real <button>, so Tab +
+ * Enter/Space works). No canvas — state is expressed via DOM classes.
+ *
+ * Score/leaderboard: uses window.HOPScores exclusively (see contract above).
+ */
+(function () {
+  'use strict';
+
+  var GAME_ID = 'whack-a-bug';
+  var TOTAL_TIME = 30; // seconds
+  var TILE_COUNT = 9;
+
+  var grid = document.getElementById('wbGrid');
+  var scoreEl = document.getElementById('wbScore');
+  var timerEl = document.getElementById('wbTimer');
+  var startBtn = document.getElementById('wbStartBtn');
+  var liveEl = document.getElementById('wbLive');
+  var lbRows = document.getElementById('wbLbRows');
+  var lbCard = document.getElementById('wbLbCard');
+
+  var BUGS = {
+    roach: { points: 1, color: '#5B3A29', svg: '<svg class="wb-tile-icon" viewBox="0 0 24 24" fill="none" stroke="#5B3A29" stroke-width="1.8" stroke-linecap="round"><ellipse cx="12" cy="13" rx="6" ry="4"/><path d="M6 11L2 9M6 15l-4 2M18 11l4-2M18 15l4 2M9 9l-1-3M15 9l1-3"/></svg>' },
+    spider: { points: 2, color: '#3A2E58', svg: '<svg class="wb-tile-icon" viewBox="0 0 24 24" fill="none" stroke="#3A2E58" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M8 10L2 6M8 12H2M8 14l-6 4M16 10l6-4M16 12h6M16 14l6 4"/></svg>' },
+    ladybug: { points: -3, color: '#C0392B', svg: '<svg class="wb-tile-icon" viewBox="0 0 24 24" fill="#C0392B"><circle cx="12" cy="13" r="7"/><path d="M12 6a3 3 0 013 3H9a3 3 0 013-3z" fill="#1B2430"/><circle cx="9" cy="12" r="1" fill="#1B2430"/><circle cx="15" cy="12" r="1" fill="#1B2430"/><circle cx="9" cy="16" r="1" fill="#1B2430"/><circle cx="15" cy="16" r="1" fill="#1B2430"/></svg>' }
+  };
+
+  var tiles = []; // { el, iconWrap, bug: null | {kind} }
+  var score = 0, best = 0;
+  var state = 'idle';
+  var startTs = null;
+  var spawnTimer = 0;
+  var rafId = null, lastTs = null;
+  var resetTimeouts = [];
+
+  function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+  function lerp(a, b, t) { return a + (b - a) * t; }
+
+  function escapeHtml(s) {
+    return String(s || '').replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  function announce(msg) { liveEl.textContent = msg; }
+
+  function buildGrid() {
+    grid.innerHTML = '';
+    tiles = [];
+    for (var i = 0; i < TILE_COUNT; i++) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'wb-tile';
+      btn.setAttribute('aria-label', 'Hole ' + (i + 1) + ', empty');
+      btn.innerHTML = '<span class="wb-popfx"></span>';
+      (function (idx, el) {
+        el.addEventListener('click', function () { whack(idx); });
+      })(i, btn);
+      grid.appendChild(btn);
+      tiles.push({ el: btn, bug: null });
+    }
+  }
+
+  function pickKind() {
+    var r = Math.random();
+    if (r < 0.5) return 'roach';
+    if (r < 0.8) return 'spider';
+    return 'ladybug';
+  }
+
+  function difficultyForElapsed(t) {
+    var r = clamp(t / TOTAL_TIME, 0, 1);
+    return {
+      lifespan: lerp(1.6, 0.9, r),
+      spawnInterval: lerp(0.75, 0.4, r),
+      maxConcurrent: r < 0.55 ? 1 : (r < 0.85 ? 2 : 3)
+    };
+  }
+
+  function freeTileIndices() {
+    var out = [];
+    for (var i = 0; i < tiles.length; i++) if (!tiles[i].bug) out.push(i);
+    return out;
+  }
+
+  function spawnBug(elapsed) {
+    var free = freeTileIndices();
+    if (!free.length) return;
+    var idx = free[Math.floor(Math.random() * free.length)];
+    var kind = pickKind();
+    var d = difficultyForElapsed(elapsed);
+    var tile = tiles[idx];
+    tile.bug = { kind: kind, start: performance.now(), lifespan: d.lifespan * 1000 };
+    tile.el.classList.add('up');
+    tile.el.innerHTML = BUGS[kind].svg + '<span class="wb-popfx"></span>';
+    tile.el.setAttribute('aria-label', 'Hole ' + (idx + 1) + ', ' + kind + ', tap to whack');
+  }
+
+  function clearResetTimeouts() {
+    resetTimeouts.forEach(function (id) { clearTimeout(id); });
+    resetTimeouts = [];
+  }
+
+  function resetTileVisual(idx) {
+    var tile = tiles[idx];
+    tile.el.classList.remove('up', 'hit-good', 'hit-bad');
+    tile.el.innerHTML = '<span class="wb-popfx"></span>';
+    tile.el.setAttribute('aria-label', 'Hole ' + (idx + 1) + ', empty');
+  }
+
+  function whack(idx) {
+    if (state !== 'playing') return;
+    var tile = tiles[idx];
+    if (!tile.bug) return;
+    var kind = tile.bug.kind;
+    var pts = BUGS[kind].points;
+    tile.bug = null;
+    score = Math.max(0, score + pts);
+    scoreEl.textContent = String(score);
+
+    tile.el.classList.remove('up');
+    tile.el.classList.add(pts >= 0 ? 'hit-good' : 'hit-bad');
+    var fx = tile.el.querySelector('.wb-popfx');
+    if (fx) fx.textContent = (pts > 0 ? '+' : '') + pts;
+    tile.el.setAttribute('aria-label', 'Hole ' + (idx + 1) + ', ' + (pts >= 0 ? 'squished' : 'ouch') + ', ' + (pts > 0 ? '+' : '') + pts);
+
+    if (kind !== 'ladybug' && score % 10 < Math.abs(pts)) announce('Score ' + score + '.');
+    if (kind === 'ladybug') announce('That was the ladybug. Minus three.');
+
+    var id = setTimeout(function () { resetTileVisual(idx); }, 380);
+    resetTimeouts.push(id);
+  }
+
+  function resetBoard() {
+    clearResetTimeouts();
+    for (var i = 0; i < tiles.length; i++) { tiles[i].bug = null; resetTileVisual(i); }
+    score = 0;
+    scoreEl.textContent = '0';
+    timerEl.textContent = TOTAL_TIME.toFixed(1);
+    spawnTimer = 0;
+  }
+
+  function startGame() {
+    resetBoard();
+    state = 'playing';
+    startBtn.textContent = 'Restart';
+    startTs = performance.now();
+    lastTs = null;
+    announce('Game started. Squish roaches and spiders, spare the ladybug.');
+    if (rafId) cancelAnimationFrame(rafId);
+    rafId = requestAnimationFrame(loop);
+  }
+
+  function endGame() {
+    state = 'over';
+    if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+    timerEl.textContent = '0.0';
+    startBtn.textContent = 'Play Again';
+    announce('Time. Final score ' + score + '.');
+    if (score > best) best = score;
+    submitScore(score);
+  }
+
+  function submitScore(finalScore) {
+    var user = null;
+    try { user = JSON.parse(localStorage.getItem('hop_user')); } catch (e) {}
+    var name = (user && user.name) ? user.name : 'Anonymous';
+    Promise.resolve(window.HOPScores.submit(GAME_ID, name, finalScore))
+      .catch(function () {})
+      .then(refreshLeaderboard);
+  }
+
+  function loop(ts) {
+    if (state !== 'playing') return;
+    if (lastTs == null) lastTs = ts;
+    var dt = Math.min(0.05, (ts - lastTs) / 1000);
+    lastTs = ts;
+
+    var elapsed = (ts - startTs) / 1000;
+    var remaining = TOTAL_TIME - elapsed;
+    if (remaining <= 0) { endGame(); return; }
+    timerEl.textContent = remaining.toFixed(1);
+
+    var d = difficultyForElapsed(elapsed);
+    spawnTimer += dt;
+    var activeCount = tiles.reduce(function (n, t) { return n + (t.bug ? 1 : 0); }, 0);
+    if (spawnTimer >= d.spawnInterval && activeCount < d.maxConcurrent) {
+      spawnTimer = 0;
+      spawnBug(elapsed);
+    }
+
+    for (var i = 0; i < tiles.length; i++) {
+      var tile = tiles[i];
+      if (!tile.bug) continue;
+      var bugElapsed = ts - tile.bug.start;
+      if (bugElapsed >= tile.bug.lifespan) {
+        tile.bug = null;
+        resetTileVisual(i);
+      }
+    }
+
+    rafId = requestAnimationFrame(loop);
+  }
+
+  startBtn.addEventListener('click', startGame);
+
+  // --- leaderboard ---
+  function formatDate(iso) {
+    try {
+      var d = new Date(iso);
+      if (isNaN(d.getTime())) return '';
+      return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    } catch (e) { return ''; }
+  }
+  function crownSvg() {
+    return '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 18h14l1.5-9-5 3-3.5-5-3.5 5-5-3L5 18z"/></svg>';
+  }
+  function renderLeaderboardRows(list) {
+    if (!list || !list.length) {
+      lbRows.innerHTML = '<p class="wb-lb-empty">No scores yet &mdash; be the first on the board.</p>';
+      return;
+    }
+    var html = list.slice(0, 3).map(function (row, i) {
+      var rank = i + 1;
+      var rankInner = rank === 1 ? crownSvg() : String(rank);
+      return '<div class="wb-lb-row">' +
+        '<span class="wb-lb-rank r' + rank + '">' + rankInner + '</span>' +
+        '<span class="wb-lb-name">' + escapeHtml(row.name || 'Anonymous') + '</span>' +
+        '<span class="wb-lb-score">' + escapeHtml(row.score) + '</span>' +
+        '<span class="wb-lb-date">' + formatDate(row.date) + '</span>' +
+        '</div>';
+    }).join('');
+    lbRows.innerHTML = html;
+  }
+  function refreshLeaderboard() {
+    Promise.resolve(window.HOPScores.getTop(GAME_ID, 3))
+      .then(function (top) { lbCard.style.display = ''; renderLeaderboardRows(top); })
+      .catch(function () { lbCard.style.display = 'none'; });
+  }
+  function loadBest() {
+    Promise.resolve(window.HOPScores.getBest(GAME_ID))
+      .then(function (b) { best = b || 0; })
+      .catch(function () { best = 0; });
+  }
+
+  // --- init ---
+  buildGrid();
+  loadBest();
+  refreshLeaderboard();
+})();
+</script>
+<!-- ==== end Whack-a-Bug game logic ==== -->
+
 </body>
 </html>

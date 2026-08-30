@@ -67,7 +67,7 @@ section{padding:44px 0;}
 header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
 header .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;}
 .logo{display:flex;align-items:center;gap:10px;font-family:'Fraunces';font-weight:700;font-size:19px;}
-.logo .mark{width:36px;height:36px;}
+.logo .mark{width:30px;height:46px;}
 .logo .pal{color:var(--orange);}
 nav.primary-nav{display:flex;gap:26px;font-size:14.5px;font-weight:600;color:var(--slate);}
 nav.primary-nav a:hover{color:var(--blue-deep);}
@@ -101,8 +101,12 @@ nav.primary-nav a.active{color:var(--blue-deep);}
 
 /* Footer */
 footer{background:#fff;border-top:1px solid var(--line);padding:30px 0 18px;}
-.footer-grid{display:grid;grid-template-columns:1.4fr repeat(4,1fr);gap:36px;margin-bottom:22px;}
-@media (max-width:800px){ .footer-grid{grid-template-columns:repeat(2,1fr);} }
+.footer-grid{display:grid;grid-template-columns:1.1fr repeat(5,1fr);gap:28px;margin-bottom:22px;}
+@media (max-width:1100px){ .footer-grid{grid-template-columns:repeat(3,1fr);} }
+@media (max-width:700px){ .footer-grid{grid-template-columns:repeat(2,1fr);} }
+@media (max-width:460px){ .footer-grid{grid-template-columns:1fr;} }
+.footer-soon{display:block;font-size:13.5px;color:var(--slate);cursor:default;}
+.footer-soon em{font-style:normal;color:#B9C2CE;font-size:11.5px;}
 .footer-brand p{font-size:13px;color:var(--slate);max-width:250px;line-height:1.6;margin-top:12px;}
 footer h5{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--slate);margin-bottom:14px;font-weight:700;}
 footer ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
@@ -122,7 +126,13 @@ footer ul a:hover{color:var(--blue-deep);}
 
 
   /* ---- Page-specific additions below ---- */
-  .tc-hero{background:linear-gradient(180deg,var(--blue-pale) 0%, #fff 85%);padding:30px 0 26px;text-align:left;}
+  .tc-hero{background:linear-gradient(180deg,var(--blue-pale) 0%, #fff 85%);padding:30px 0 26px;text-align:left;overflow:hidden;}
+  .tc-hero-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;}
+  .tc-hero-text{max-width:640px;}
+  .tc-hero-hop{width:170px;height:auto;flex-shrink:0;animation:tcHopFloat 3.2s ease-in-out infinite;filter:drop-shadow(0 14px 20px rgba(0,61,151,.14));}
+  @keyframes tcHopFloat{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-14px) rotate(-4deg);}}
+  @media (prefers-reduced-motion: reduce){ .tc-hero-hop{animation:none;} }
+  @media (max-width:760px){ .tc-hero-hop{display:none;} }
   .tc-hero .kicker{color:var(--blue-deep);}
   .tc-hero h1{font-size:clamp(30px,4vw,44px);margin-bottom:12px;}
   .tc-hero p.sub{color:var(--slate);font-size:16.5px;max-width:1600px;margin:0;}
@@ -178,21 +188,30 @@ footer ul a:hover{color:var(--blue-deep);}
     font-size:12px;font-weight:700;padding:6px 14px;border-radius:999px;margin-bottom:16px;
   }
   .insp-badge svg{width:13px;height:13px;}
-  .insp-h2{font-size:clamp(22px,2.6vw,28px);margin-bottom:14px;max-width:560px;}
-  .insp-intro-p{font-size:15px;color:var(--slate);line-height:1.7;margin-bottom:16px;max-width:620px;}
+  .insp-h2{font-size:clamp(22px,2.6vw,28px);margin-bottom:14px;max-width:900px;}
+  .insp-intro-p{font-size:15px;color:var(--slate);line-height:1.7;margin-bottom:16px;max-width:900px;}
 
   .insp-quickgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
   @media (max-width:640px){ .insp-quickgrid{grid-template-columns:1fr 1fr;} }
   .insp-quick-card{
-    background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:16px;
+    background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:18px 18px 18px 20px;
+    display:flex;align-items:center;gap:14px;
     transition:border-color .15s ease, box-shadow .15s ease, transform .15s ease;
   }
   .insp-quick-card:hover{border-color:var(--blue-deep);box-shadow:0 10px 24px rgba(0,61,151,.09);transform:translateY(-1px);}
-  .insp-quick-icon{width:30px;height:30px;border-radius:8px;background:var(--red-pale);color:var(--red);display:flex;align-items:center;justify-content:center;margin-bottom:10px;}
-  .insp-quick-icon svg{width:15px;height:15px;}
-  .insp-quick-tag{font-size:10.5px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.02em;margin-bottom:6px;line-height:1.3;}
-  .insp-quick-name{font-size:12.5px;font-weight:600;color:var(--ink);margin-bottom:6px;line-height:1.4;}
-  .insp-quick-price{font-family:'IBM Plex Mono';font-size:13px;font-weight:700;color:var(--blue-deep);}
+  .insp-quick-body{flex:1;min-width:0;}
+  .insp-quick-icon{width:36px;height:36px;border-radius:9px;background:var(--red-pale);color:var(--red);display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
+  .insp-quick-icon svg{width:18px;height:18px;}
+  .insp-quick-tag{font-size:12.5px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.02em;margin-bottom:8px;line-height:1.35;}
+  .insp-quick-name{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:8px;line-height:1.4;}
+  .insp-quick-price{font-family:'IBM Plex Mono';font-size:16px;font-weight:700;color:var(--blue-deep);}
+  .insp-quick-arrow{
+    width:42px;height:42px;border-radius:50%;background:var(--blue-deep);color:#fff;
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+    transition:background .15s ease, transform .15s ease;
+  }
+  .insp-quick-arrow svg{width:19px;height:19px;}
+  .insp-quick-card:hover .insp-quick-arrow{background:var(--orange);transform:translateX(3px);}
 
   .calc-panel{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:28px;box-shadow:0 16px 40px rgba(0,61,151,.07);}
   .calc-tabs{display:flex;gap:6px;margin-bottom:24px;flex-wrap:wrap;}
@@ -214,7 +233,7 @@ footer ul a:hover{color:var(--blue-deep);}
   .calc-field.calc-check label{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:0;}
   .calc-field.calc-check input[type="checkbox"]{width:16px;height:16px;accent-color:var(--blue-deep);}
 
-  .calc-outputs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding-top:20px;border-top:1px solid var(--line);}
+  .calc-outputs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;padding-top:20px;border-top:1px solid var(--line);}
   @media (max-width:640px){ .calc-outputs{grid-template-columns:1fr;} }
   .calc-out{background:var(--blue-pale);border-radius:14px;padding:16px 18px;}
   .calc-out-label{font-size:10.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--blue-deep);margin-bottom:6px;}
@@ -341,7 +360,7 @@ footer ul a:hover{color:var(--blue-deep);}
 .hop-modal-x:hover{background:var(--blue-pale);}
 .hop-modal-x svg{width:18px;height:18px;}
 .hop-brand{display:flex;align-items:center;gap:9px;margin-bottom:18px;}
-.hop-brand-icon{width:32px;height:32px;border-radius:9px;background:var(--blue-pale);display:flex;align-items:center;justify-content:center;}
+.hop-brand-icon{width:32px;height:42px;border-radius:9px;background:var(--blue-pale);display:flex;align-items:center;justify-content:center;}
 .hop-brand-icon svg{width:20px;height:20px;}
 .hop-brand-name{font-size:14px;font-weight:700;color:var(--ink);}
 .hop-modal h2{font-family:'Fraunces',serif;font-size:23px;color:var(--ink);margin-bottom:6px;line-height:1.15;}
@@ -375,7 +394,7 @@ footer ul a:hover{color:var(--blue-deep);}
 @keyframes hopnavslide{from{transform:translateX(-16px);opacity:.6;}to{transform:translateX(0);opacity:1;}}
 .nav-drawer-head{display:flex;align-items:center;justify-content:space-between;padding:0 20px 16px;border-bottom:1px solid var(--line);margin-bottom:6px;}
 .nav-drawer-head .logo{font-size:17px;}
-.nav-drawer-head .logo .mark{width:30px;height:30px;}
+.nav-drawer-head .logo .mark{width:26px;height:40px;}
 .nav-drawer-close{width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:8px;color:var(--slate);flex-shrink:0;}
 .nav-drawer-close:hover{background:var(--blue-pale);color:var(--blue-deep);}
 .nav-drawer-close svg{width:16px;height:16px;}
@@ -396,7 +415,7 @@ footer ul a:hover{color:var(--blue-deep);}
 @media (max-width:520px){ .hop-modal.install-modal{padding:26px 22px 22px;} }
 
 /* ==== HOP: mascot logo mark (img replacing svg mark, appended) ==== */
-.hop-brand-icon .mark{width:20px;height:20px;object-fit:contain;}
+.hop-brand-icon .mark{width:22px;height:34px;object-fit:contain;}
 .logo .mark{object-fit:contain;}
 </style>
 </head>
@@ -410,7 +429,7 @@ footer ul a:hover{color:var(--blue-deep);}
       </button>
       <a href="index.html" class="logo">
       <img class="mark" src="assets/hop-logo-mark.png" alt="HomeownerPal">
-      Homeowner<span class="pal">Pal</span>
+      
     </a>
     </div>
     <div class="header-actions">
@@ -422,9 +441,14 @@ footer ul a:hover{color:var(--blue-deep);}
 
 <section class="tc-hero">
   <div class="wrap">
-    <span class="kicker">Tools &amp; Costs</span>
-    <h1>Know what things cost before you start.</h1>
-    <p class="sub">Tools, materials, and guides generated for homeowners by real tradespeople.</p>
+    <div class="tc-hero-inner">
+      <div class="tc-hero-text">
+        <span class="kicker">Tools &amp; Costs</span>
+        <h1>Know what things cost before you start.</h1>
+        <p class="sub">Tools, materials, and guides generated for homeowners by real tradespeople.</p>
+      </div>
+      <img src="assets/hop-pointing-medium.png" alt="HOP" class="tc-hero-hop">
+    </div>
   </div>
 </section>
 
@@ -481,40 +505,58 @@ footer ul a:hover{color:var(--blue-deep);}
 
     <div class="insp-quickgrid">
       <a href="inspection-panel.html" class="insp-quick-card">
-        <div class="insp-quick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 9v4M12 17h.01M10.3 3.9L2.5 17a2 2 0 001.7 3h15.6a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/></svg></div>
-        <div class="insp-quick-tag">Old panel flagged for replacement</div>
-        <div class="insp-quick-name">Challenger / FPE / Zinsco panel</div>
-        <div class="insp-quick-price">$1,500 – $4,000</div>
+        <div class="insp-quick-body">
+          <div class="insp-quick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 9v4M12 17h.01M10.3 3.9L2.5 17a2 2 0 001.7 3h15.6a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/></svg></div>
+          <div class="insp-quick-tag">Old panel flagged for replacement</div>
+          <div class="insp-quick-name">Challenger / FPE / Zinsco panel</div>
+          <div class="insp-quick-price">$1,500 – $4,000</div>
+        </div>
+        <div class="insp-quick-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg></div>
       </a>
       <a href="inspection-cloth-wiring.html" class="insp-quick-card">
-        <div class="insp-quick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12c3 0 3-6 6-6s3 6 6 6 3-6 6-6"/></svg></div>
-        <div class="insp-quick-tag">Cloth wiring flagged</div>
-        <div class="insp-quick-name">Cloth-insulated wiring</div>
-        <div class="insp-quick-price">$8,000 – $25,000</div>
+        <div class="insp-quick-body">
+          <div class="insp-quick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12c3 0 3-6 6-6s3 6 6 6 3-6 6-6"/></svg></div>
+          <div class="insp-quick-tag">Cloth wiring flagged</div>
+          <div class="insp-quick-name">Cloth-insulated wiring</div>
+          <div class="insp-quick-price">$8,000 – $25,000</div>
+        </div>
+        <div class="insp-quick-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg></div>
       </a>
       <a href="inspection-knob-tube.html" class="insp-quick-card">
-        <div class="insp-quick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="7" cy="7" r="3"/><circle cx="17" cy="17" r="3"/><path d="M9.5 9.5l5 5"/></svg></div>
-        <div class="insp-quick-tag">Knob-and-tube flagged</div>
-        <div class="insp-quick-name">Knob-and-tube wiring</div>
-        <div class="insp-quick-price">$12,000 – $30,000</div>
+        <div class="insp-quick-body">
+          <div class="insp-quick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="7" cy="7" r="3"/><circle cx="17" cy="17" r="3"/><path d="M9.5 9.5l5 5"/></svg></div>
+          <div class="insp-quick-tag">Knob-and-tube flagged</div>
+          <div class="insp-quick-name">Knob-and-tube wiring</div>
+          <div class="insp-quick-price">$12,000 – $30,000</div>
+        </div>
+        <div class="insp-quick-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg></div>
       </a>
       <a href="inspection-aluminum-wiring.html" class="insp-quick-card">
-        <div class="insp-quick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12h4l2-3 4 6 2-3h4"/></svg></div>
-        <div class="insp-quick-tag">Aluminum branch wiring flagged</div>
-        <div class="insp-quick-name">Aluminum branch wiring</div>
-        <div class="insp-quick-price">$1,800 – $18,000</div>
+        <div class="insp-quick-body">
+          <div class="insp-quick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12h4l2-3 4 6 2-3h4"/></svg></div>
+          <div class="insp-quick-tag">Aluminum branch wiring flagged</div>
+          <div class="insp-quick-name">Aluminum branch wiring</div>
+          <div class="insp-quick-price">$1,800 – $18,000</div>
+        </div>
+        <div class="insp-quick-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg></div>
       </a>
       <a href="inspection-double-tapped.html" class="insp-quick-card">
-        <div class="insp-quick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L3 14h7v8l11-14h-8z"/></svg></div>
-        <div class="insp-quick-tag">Double-tapped breakers flagged</div>
-        <div class="insp-quick-name">Double-tapped breakers</div>
-        <div class="insp-quick-price">$150 – $600</div>
+        <div class="insp-quick-body">
+          <div class="insp-quick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L3 14h7v8l11-14h-8z"/></svg></div>
+          <div class="insp-quick-tag">Double-tapped breakers flagged</div>
+          <div class="insp-quick-name">Double-tapped breakers</div>
+          <div class="insp-quick-price">$150 – $600</div>
+        </div>
+        <div class="insp-quick-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg></div>
       </a>
       <a href="inspection-gfci-afci.html" class="insp-quick-card">
-        <div class="insp-quick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg></div>
-        <div class="insp-quick-tag">Missing GFCI/AFCI protection</div>
-        <div class="insp-quick-name">Missing GFCI / AFCI protection</div>
-        <div class="insp-quick-price">$200 – $1,500</div>
+        <div class="insp-quick-body">
+          <div class="insp-quick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg></div>
+          <div class="insp-quick-tag">Missing GFCI/AFCI protection</div>
+          <div class="insp-quick-name">Missing GFCI / AFCI protection</div>
+          <div class="insp-quick-price">$200 – $1,500</div>
+        </div>
+        <div class="insp-quick-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg></div>
       </a>
     </div>
   </div>
@@ -530,22 +572,31 @@ footer ul a:hover{color:var(--blue-deep);}
 
     <div class="insp-quickgrid" style="grid-template-columns:repeat(3,1fr);">
       <a href="learn-electrical.html" class="insp-quick-card">
-        <div class="insp-quick-icon" style="background:var(--blue-pale);color:var(--blue-deep);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L3 14h7v8l11-14h-8z"/></svg></div>
-        <div class="insp-quick-tag" style="color:var(--blue-deep);">Deep reference guide</div>
-        <div class="insp-quick-name">Electrical</div>
-        <div class="insp-quick-price" style="font-family:inherit;font-size:12px;font-weight:400;color:var(--slate);">Ampacity charts, panels, wiring, code minimums</div>
+        <div class="insp-quick-body">
+          <div class="insp-quick-icon" style="background:var(--blue-pale);color:var(--blue-deep);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L3 14h7v8l11-14h-8z"/></svg></div>
+          <div class="insp-quick-tag" style="color:var(--blue-deep);">Deep reference guide</div>
+          <div class="insp-quick-name">Electrical</div>
+          <div class="insp-quick-price" style="font-family:inherit;font-size:14px;font-weight:400;color:var(--slate);">Ampacity charts, panels, wiring, code minimums</div>
+        </div>
+        <div class="insp-quick-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg></div>
       </a>
       <a href="learn-plumbing.html" class="insp-quick-card">
-        <div class="insp-quick-icon" style="background:var(--blue-pale);color:var(--blue-deep);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2c-4 5-7 8.5-7 12a7 7 0 0014 0c0-3.5-3-7-7-12z"/></svg></div>
-        <div class="insp-quick-tag" style="color:var(--blue-deep);">Deep reference guide</div>
-        <div class="insp-quick-name">Plumbing</div>
-        <div class="insp-quick-price" style="font-family:inherit;font-size:12px;font-weight:400;color:var(--slate);">Shutoffs, pipe materials, water heaters</div>
+        <div class="insp-quick-body">
+          <div class="insp-quick-icon" style="background:var(--blue-pale);color:var(--blue-deep);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2c-4 5-7 8.5-7 12a7 7 0 0014 0c0-3.5-3-7-7-12z"/></svg></div>
+          <div class="insp-quick-tag" style="color:var(--blue-deep);">Deep reference guide</div>
+          <div class="insp-quick-name">Plumbing</div>
+          <div class="insp-quick-price" style="font-family:inherit;font-size:14px;font-weight:400;color:var(--slate);">Shutoffs, pipe materials, water heaters</div>
+        </div>
+        <div class="insp-quick-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg></div>
       </a>
       <a href="learn-hvac.html" class="insp-quick-card">
-        <div class="insp-quick-icon" style="background:var(--blue-pale);color:var(--blue-deep);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 19v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M3 12h2M19 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg></div>
-        <div class="insp-quick-tag" style="color:var(--blue-deep);">Deep reference guide</div>
-        <div class="insp-quick-name">HVAC</div>
-        <div class="insp-quick-price" style="font-family:inherit;font-size:12px;font-weight:400;color:var(--slate);">Split systems, filters, thermostats</div>
+        <div class="insp-quick-body">
+          <div class="insp-quick-icon" style="background:var(--blue-pale);color:var(--blue-deep);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 19v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M3 12h2M19 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg></div>
+          <div class="insp-quick-tag" style="color:var(--blue-deep);">Deep reference guide</div>
+          <div class="insp-quick-name">HVAC</div>
+          <div class="insp-quick-price" style="font-family:inherit;font-size:14px;font-weight:400;color:var(--slate);">Split systems, filters, thermostats</div>
+        </div>
+        <div class="insp-quick-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg></div>
       </a>
     </div>
   </div>
@@ -604,13 +655,81 @@ footer ul a:hover{color:var(--blue-deep);}
       </div>
 
       <div class="calc-body" id="calcbody-flooring" style="display:none;">
-        <div class="calc-coming-soon">Flooring calculator coming soon.</div>
+        <div class="calc-fields">
+          <div class="calc-field"><label>Room length</label><div class="calc-input-wrap"><input type="number" id="fl-length" value="12" min="0" step="0.1"><span class="calc-unit">ft</span></div></div>
+          <div class="calc-field"><label>Room width</label><div class="calc-input-wrap"><input type="number" id="fl-width" value="12" min="0" step="0.1"><span class="calc-unit">ft</span></div></div>
+          <div class="calc-field"><label>Sqft per box</label><div class="calc-input-wrap"><input type="number" id="fl-boxsize" value="24" min="0.1" step="0.5"><span class="calc-unit">sqft</span></div></div>
+          <div class="calc-field"><label>Waste / cuts</label><div class="calc-input-wrap"><input type="number" id="fl-waste" value="10" min="0" step="1"><span class="calc-unit">%</span></div></div>
+        </div>
+
+        <div class="calc-outputs">
+          <div class="calc-out">
+            <div class="calc-out-label">Room area</div>
+            <div class="calc-out-value"><span id="fl-out-area">144</span> sqft</div>
+          </div>
+          <div class="calc-out">
+            <div class="calc-out-label">With waste factor</div>
+            <div class="calc-out-value"><span id="fl-out-waste">158</span> sqft</div>
+            <div class="calc-out-note"><span id="fl-out-waste-note">Adds 10% for cuts &amp; mistakes</span></div>
+          </div>
+          <div class="calc-out">
+            <div class="calc-out-label">Buy this many boxes</div>
+            <div class="calc-out-value"><span id="fl-out-boxes">7</span> boxes</div>
+            <div class="calc-out-note">Rounded up to the next full box</div>
+          </div>
+        </div>
       </div>
       <div class="calc-body" id="calcbody-tile" style="display:none;">
-        <div class="calc-coming-soon">Tile calculator coming soon.</div>
+        <div class="calc-fields">
+          <div class="calc-field"><label>Area length</label><div class="calc-input-wrap"><input type="number" id="ti-length" value="8" min="0" step="0.1"><span class="calc-unit">ft</span></div></div>
+          <div class="calc-field"><label>Area width</label><div class="calc-input-wrap"><input type="number" id="ti-width" value="5" min="0" step="0.1"><span class="calc-unit">ft</span></div></div>
+          <div class="calc-field"><label>Tile width</label><div class="calc-input-wrap"><input type="number" id="ti-tilewidth" value="12" min="0.1" step="0.5"><span class="calc-unit">in</span></div></div>
+          <div class="calc-field"><label>Tile height</label><div class="calc-input-wrap"><input type="number" id="ti-tileheight" value="12" min="0.1" step="0.5"><span class="calc-unit">in</span></div></div>
+          <div class="calc-field"><label>Waste / cuts</label><div class="calc-input-wrap"><input type="number" id="ti-waste" value="15" min="0" step="1"><span class="calc-unit">%</span></div></div>
+        </div>
+
+        <div class="calc-outputs">
+          <div class="calc-out">
+            <div class="calc-out-label">Area to tile</div>
+            <div class="calc-out-value"><span id="ti-out-area">40</span> sqft</div>
+          </div>
+          <div class="calc-out">
+            <div class="calc-out-label">Buy this many tiles</div>
+            <div class="calc-out-value"><span id="ti-out-tiles">46</span> tiles</div>
+            <div class="calc-out-note"><span id="ti-out-tiles-note">Includes 15% waste — bump to 20% for diagonal patterns</span></div>
+          </div>
+        </div>
       </div>
       <div class="calc-body" id="calcbody-drywall" style="display:none;">
-        <div class="calc-coming-soon">Drywall calculator coming soon.</div>
+        <div class="calc-fields">
+          <div class="calc-field"><label>Room length</label><div class="calc-input-wrap"><input type="number" id="dw-length" value="12" min="0" step="0.1"><span class="calc-unit">ft</span></div></div>
+          <div class="calc-field"><label>Room width</label><div class="calc-input-wrap"><input type="number" id="dw-width" value="12" min="0" step="0.1"><span class="calc-unit">ft</span></div></div>
+          <div class="calc-field"><label>Ceiling height</label><div class="calc-input-wrap"><input type="number" id="dw-height" value="8" min="0" step="0.1"><span class="calc-unit">ft</span></div></div>
+          <div class="calc-field"><label>Sheet size</label><div class="calc-input-wrap"><input type="number" id="dw-sheetsize" value="32" min="1" step="1"><span class="calc-unit">sqft</span></div></div>
+          <div class="calc-field calc-check"><label><input type="checkbox" id="dw-ceiling" checked> Include ceiling</label></div>
+        </div>
+
+        <div class="calc-outputs">
+          <div class="calc-out">
+            <div class="calc-out-label">Total area</div>
+            <div class="calc-out-value"><span id="dw-out-area">528</span> sqft</div>
+          </div>
+          <div class="calc-out">
+            <div class="calc-out-label">Drywall sheets</div>
+            <div class="calc-out-value"><span id="dw-out-sheets">19</span></div>
+            <div class="calc-out-note">Includes 10% waste</div>
+          </div>
+          <div class="calc-out">
+            <div class="calc-out-label">Joint compound</div>
+            <div class="calc-out-value"><span id="dw-out-compound">2</span> boxes</div>
+            <div class="calc-out-note">~4.5 gal per 500 sqft</div>
+          </div>
+          <div class="calc-out">
+            <div class="calc-out-label">Paper tape</div>
+            <div class="calc-out-value"><span id="dw-out-tape">2</span> rolls</div>
+            <div class="calc-out-note">~500 ft per 500 sqft</div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -618,7 +737,7 @@ footer ul a:hover{color:var(--blue-deep);}
   </div>
 
   <div class="tc-hopline">
-    Stuck on a number? <a href="diagnose.html">Call the HOPline</a>, it's free.
+    Stuck on a number? <a href="hopline.html">Call the HOPline</a>, it's free.
   </div>
 </div>
 
@@ -629,7 +748,7 @@ footer ul a:hover{color:var(--blue-deep);}
       <h2>Start documenting your home today.</h2>
       <p>Free forever. No credit card. No sales calls.</p>
       <div class="btns">
-        <a href="index.html" class="btn btn-primary">Start my home profile, free</a>
+        <a href="#" class="btn btn-primary" onclick="HOP.open();return false;">Start my home profile, free</a>
         <a href="hopline.html" class="btn btn-outline">Talk to the HOPline</a>
       </div>
     </div>
@@ -679,20 +798,48 @@ footer ul a:hover{color:var(--blue-deep);}
         <p>Your home, documented and protected. Free tools for homeowners, built from real trade experience.</p>
       </div>
       <div>
-        <h5>My Home</h5>
-        <ul><li><a href="index.html#homeowners">Equipment &amp; records</a></li><li><a href="index.html#homeowners">Warranties</a></li><li><a href="index.html#stayfree">Premium scan</a></li></ul>
+        <h5>Homeowners</h5>
+        <ul>
+          <li><a href="my-home.html">My Home</a></li>
+          <li><a href="diagnose.html">Diagnose a Problem</a></li>
+          <li><a href="tools-costs.html#learn">Learn</a></li>
+          <li><a href="emergency.html">Emergency: 911 vs Pro</a></li>
+          <li><a href="#" onclick="HOP.open();return false;">Sign in / Start free</a></li>
+        </ul>
       </div>
       <div>
-        <h5>Diagnose</h5>
-        <ul><li><a href="diagnose.html#electrical-problems">Electrical guide</a></li><li><a href="diagnose.html#plumbing-problems">Plumbing guide</a></li><li><a href="diagnose.html#hvac-problems">HVAC guide</a></li></ul>
+        <h5>Tools &amp; Support</h5>
+        <ul>
+          <li><a href="tools-costs.html">Tools &amp; Costs</a></li>
+          <li><a href="tools-materials.html">Tools &amp; Materials</a></li>
+          <li><a href="tools-costs.html#inspection-costs">Inspection Red Flags</a></li>
+          <li><span class="footer-soon">Generator Sizing <em>(coming soon)</em></span></li>
+          <li><a href="hopline.html">Call the HOPline</a></li>
+        </ul>
       </div>
       <div>
-        <h5>Tools &amp; Costs</h5>
-        <ul><li><a href="tools-costs.html#material-calculator">Material calculator</a></li><li><a href="tools-materials.html">Tools &amp; materials</a></li><li><a href="tools-costs.html#inspection-costs">Inspection costs</a></li></ul>
+        <h5>For Pros &amp; Contractors</h5>
+        <ul>
+          <li><a href="find-a-pro.html">Find a Pro</a></li>
+          <li><a href="contractor-forum.html">Contractor Forum</a></li>
+          <li><a href="contractor-forum.html">List Your Business Free</a></li>
+        </ul>
       </div>
       <div>
-        <h5>Community</h5>
-        <ul><li><a href="contractor-forum.html">Contractor forum</a></li><li><a href="find-a-pro.html">Find a pro</a></li></ul>
+        <h5>Real Estate &amp; Builders</h5>
+        <ul>
+          <li><a href="realestate.html">Real Estate &amp; Builder Packs</a></li>
+          <li><a href="property-managers.html">Property Managers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>About HOP</h5>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="support-hop.html">Support</a></li>
+          <li><a href="game-arcade.html">Game Arcade</a></li>
+        </ul>
       </div>
     </div>
 
@@ -765,6 +912,76 @@ function calcPaint(){
   if(el){ el.addEventListener('input', calcPaint); el.addEventListener('change', calcPaint); }
 });
 calcPaint();
+
+function calcFlooring(){
+  var length = parseFloat(document.getElementById('fl-length').value) || 0;
+  var width = parseFloat(document.getElementById('fl-width').value) || 0;
+  var boxSize = parseFloat(document.getElementById('fl-boxsize').value) || 1;
+  var waste = parseFloat(document.getElementById('fl-waste').value) || 0;
+
+  var area = length * width;
+  var withWaste = area * (1 + waste / 100);
+  var boxes = Math.ceil(withWaste / boxSize);
+
+  document.getElementById('fl-out-area').textContent = Math.round(area);
+  document.getElementById('fl-out-waste').textContent = Math.round(withWaste);
+  document.getElementById('fl-out-waste-note').textContent = 'Adds ' + waste + '% for cuts & mistakes';
+  document.getElementById('fl-out-boxes').textContent = boxes;
+}
+['fl-length','fl-width','fl-boxsize','fl-waste'].forEach(function(id){
+  var el = document.getElementById(id);
+  if(el){ el.addEventListener('input', calcFlooring); el.addEventListener('change', calcFlooring); }
+});
+calcFlooring();
+
+function calcTile(){
+  var length = parseFloat(document.getElementById('ti-length').value) || 0;
+  var width = parseFloat(document.getElementById('ti-width').value) || 0;
+  var tileWidthIn = parseFloat(document.getElementById('ti-tilewidth').value) || 1;
+  var tileHeightIn = parseFloat(document.getElementById('ti-tileheight').value) || 1;
+  var waste = parseFloat(document.getElementById('ti-waste').value) || 0;
+
+  var area = length * width;
+  var tileAreaSqft = (tileWidthIn * tileHeightIn) / 144;
+  var tilesRaw = tileAreaSqft > 0 ? (area / tileAreaSqft) : 0;
+  var tilesWithWaste = tilesRaw * (1 + waste / 100);
+  var tiles = Math.ceil(tilesWithWaste);
+
+  document.getElementById('ti-out-area').textContent = Math.round(area);
+  document.getElementById('ti-out-tiles').textContent = tiles;
+  document.getElementById('ti-out-tiles-note').textContent = 'Includes ' + waste + '% waste — bump to 20% for diagonal patterns';
+}
+['ti-length','ti-width','ti-tilewidth','ti-tileheight','ti-waste'].forEach(function(id){
+  var el = document.getElementById(id);
+  if(el){ el.addEventListener('input', calcTile); el.addEventListener('change', calcTile); }
+});
+calcTile();
+
+function calcDrywall(){
+  var length = parseFloat(document.getElementById('dw-length').value) || 0;
+  var width = parseFloat(document.getElementById('dw-width').value) || 0;
+  var height = parseFloat(document.getElementById('dw-height').value) || 0;
+  var sheetSize = parseFloat(document.getElementById('dw-sheetsize').value) || 1;
+  var includeCeiling = document.getElementById('dw-ceiling').checked;
+
+  var wallArea = 2 * (length + width) * height;
+  var ceilingArea = includeCeiling ? (length * width) : 0;
+  var totalArea = wallArea + ceilingArea;
+
+  var sheets = Math.ceil((totalArea * 1.10) / sheetSize);
+  var compoundBoxes = Math.ceil(totalArea / 500) || 0;
+  var tapeRolls = Math.ceil(totalArea / 500) || 0;
+
+  document.getElementById('dw-out-area').textContent = Math.round(totalArea);
+  document.getElementById('dw-out-sheets').textContent = sheets;
+  document.getElementById('dw-out-compound').textContent = compoundBoxes;
+  document.getElementById('dw-out-tape').textContent = tapeRolls;
+}
+['dw-length','dw-width','dw-height','dw-sheetsize','dw-ceiling'].forEach(function(id){
+  var el = document.getElementById(id);
+  if(el){ el.addEventListener('input', calcDrywall); el.addEventListener('change', calcDrywall); }
+});
+calcDrywall();
 </script>
 
 
@@ -825,15 +1042,19 @@ calcPaint();
       </button>
     </div>
     <ul class="nav-drawer-list">
+      <li><a href="index.html">Home</a></li>
       <li><a href="diagnose.html">Diagnose</a></li>
       <li><a href="find-a-pro.html">Find a Pro</a></li>
       <li><a href="tools-costs.html">Tools and Costs</a></li>
+      <li><a href="tools-materials.html">Tools and Materials</a></li>
+      <li><a href="tools-costs.html#learn">Learn</a></li>
       <li><a href="realestate.html">Real Estate and Builder Packs</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="emergency.html">Emergency</a></li>
       <li><a href="contractor-forum.html">Contractor Forum</a></li>
       <li><a href="support-hop.html">Support</a></li>
       <li><a href="game-arcade.html">Game Arcade</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
       <li><a href="privacy.html">Privacy Policy</a></li>
       <li><a href="terms.html">Terms of Service</a></li>
     </ul>

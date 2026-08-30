@@ -11,8 +11,8 @@
 <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-<title>Home HVAC: The Homeowner's Plain-English Reference | HomeownerPal</title>
-<meta name="description" content="Split systems, heat pumps vs AC vs furnace, refrigerant and condensate, outdoor disconnects, filters, thermostat C-wire, and what's safe DIY vs a licensed tech.">
+<title>Whack-a-Leak | HOP Game Arcade | HomeownerPal</title>
+<meta name="description" content="Tap leaks before they flood the place. A free plumbing-themed reflex game from the HOP Game Arcade.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -62,6 +62,7 @@ section{padding:44px 0;}
 .btn-outline{background:transparent;color:var(--blue-deep);border:1.5px solid var(--blue-deep);}
 .btn-outline:hover{background:var(--blue-deep);color:#fff;}
 .btn-sm{padding:10px 18px;font-size:13.5px;}
+.btn:disabled{opacity:.5;cursor:not-allowed;transform:none!important;box-shadow:none!important;}
 
 /* Header */
 header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
@@ -88,9 +89,10 @@ nav.primary-nav a.active{color:var(--blue-deep);}
 .section-head p{color:var(--slate);font-size:16px;line-height:1.65;}
 
 /* Breadcrumb */
-.breadcrumb{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--slate);margin-bottom:24px;}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--slate);margin-bottom:24px;flex-wrap:wrap;}
 .breadcrumb a{color:var(--blue-deep);font-weight:600;}
 .breadcrumb a:hover{text-decoration:underline;}
+.breadcrumb svg{width:12px;height:12px;flex-shrink:0;}
 
 /* CTA band */
 .cta-band{background:#fff;}
@@ -124,79 +126,12 @@ footer ul a:hover{color:var(--blue-deep);}
 .footer-bottom .socials svg{width:16px;height:16px;color:var(--slate);}
 .footer-bottom .socials a:hover svg{color:var(--blue-deep);}
 
-
-  /* ---- Page-specific additions below ---- */
-  .lrn-hero{background:linear-gradient(180deg,var(--blue-pale) 0%, #fff 85%);padding:20px 0 24px;}
-  .lrn-hero .wrap{max-width:1600px;}
-  .lrn-kicker{font-size:11.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--blue-deep);margin-bottom:10px;}
-  .lrn-hero h1{font-size:clamp(24px,3.2vw,34px);margin-bottom:14px;max-width:1600px;}
-  .lrn-hero p{font-size:14.5px;color:var(--slate);line-height:1.75;max-width:660px;margin-bottom:16px;}
-  .lrn-cta-note{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 18px;font-size:13px;color:var(--slate);line-height:1.6;}
-  .lrn-cta-note a{color:var(--blue-deep);font-weight:700;text-decoration:underline;}
-
-  .lrn-body{max-width:1600px;margin:0;padding:0 28px;}
-
-  .lrn-toc{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:26px 28px;margin:20px 0;}
-  .lrn-toc-title{font-size:13px;font-weight:700;color:var(--blue-deep);text-transform:uppercase;letter-spacing:.03em;margin-bottom:14px;}
-  .lrn-toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;}
-  @media (max-width:560px){ .lrn-toc-grid{grid-template-columns:1fr;} }
-  .lrn-toc-grid a{font-size:13.5px;color:var(--ink);font-weight:600;padding:6px 0;border-bottom:1px dashed var(--line);}
-  .lrn-toc-grid a:hover{color:var(--blue-deep);}
-
-  .lrn-section{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:30px 32px;margin:16px 0;scroll-margin-top:48px;}
-  .lrn-section-head{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
-  .lrn-section-icon{width:38px;height:38px;border-radius:10px;background:var(--blue-pale);color:var(--blue-deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;}
-  .lrn-section h2{font-size:19px;}
-  .lrn-section p{font-size:13.5px;color:var(--slate);line-height:1.7;margin-bottom:14px;}
-
-  .lrn-diagram{background:var(--blue-pale);border-radius:14px;padding:22px;margin:16px 0 20px;}
-  .lrn-diagram-title{font-size:11px;font-weight:700;color:var(--blue-deep);text-transform:uppercase;letter-spacing:.03em;margin-bottom:14px;text-align:center;}
-
-  .split-diagram{display:flex;align-items:stretch;gap:10px;justify-content:center;flex-wrap:wrap;}
-  .split-col{background:#fff;border-radius:12px;padding:14px 16px;flex:1;min-width:150px;max-width:220px;border:1.5px solid var(--line);}
-  .split-col-title{font-size:11.5px;font-weight:700;color:var(--blue-deep);margin-bottom:8px;text-align:center;padding-bottom:6px;border-bottom:1px solid var(--line);}
-  .split-item{font-size:11px;color:var(--ink);padding:5px 0;border-bottom:1px dashed var(--line);}
-  .split-item:last-child{border-bottom:none;}
-  .split-connector{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:0 4px;min-width:110px;}
-  .split-connector-line{width:100%;height:2px;background:repeating-linear-gradient(90deg,var(--orange),var(--orange) 5px,transparent 5px,transparent 9px);}
-  .split-connector-text{font-size:10px;color:var(--orange);font-weight:700;text-align:center;line-height:1.4;}
-
-  .lrn-bullets{list-style:none;display:flex;flex-direction:column;gap:9px;margin:14px 0;}
-  .lrn-bullets li{position:relative;padding-left:17px;font-size:13.5px;color:var(--ink);line-height:1.65;}
-  .lrn-bullets li::before{content:"";position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--blue-deep);}
-  .lrn-bullets li strong{color:var(--blue-deep);}
-
-  .lrn-warn{background:#FFF6E9;border:1px solid #F0D9A8;border-radius:12px;padding:14px 18px;margin:16px 0;font-size:13px;color:#8A5D18;line-height:1.65;}
-  .lrn-warn strong{color:#6B4712;}
-
-  .lrn-rule{background:var(--blue-deep);color:#fff;border-radius:12px;padding:16px 20px;font-size:13px;line-height:1.7;margin:16px 0;}
-
-  .lrn-link-box{background:var(--blue-pale);border-radius:12px;padding:14px 18px;margin:14px 0;font-size:13px;}
-  .lrn-link-box a{color:var(--blue-deep);font-weight:700;text-decoration:underline;}
-
-  .diy-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0;}
-  @media (max-width:600px){ .diy-grid{grid-template-columns:1fr;} }
-  .diy-col{border-radius:14px;padding:18px 20px;}
-  .diy-col.yes{background:#F0FAF4;border:1px solid #C9E6D6;}
-  .diy-col.no{background:#FDEDEC;border:1px solid #F0C4BE;}
-  .diy-col h4{font-size:13px;font-weight:700;margin-bottom:10px;}
-  .diy-col.yes h4{color:#1D5C3F;}
-  .diy-col.no h4{color:var(--red);}
-  .diy-col ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
-  .diy-col li{font-size:12.5px;line-height:1.55;padding-left:16px;position:relative;}
-  .diy-col.yes li{color:#1D5C3F;}
-  .diy-col.no li{color:#8B2E23;}
-  .diy-col li::before{content:"";position:absolute;left:0;top:6px;width:5px;height:5px;border-radius:50%;}
-  .diy-col.yes li::before{background:#1E8A5A;}
-  .diy-col.no li::before{background:var(--red);}
-
-  /* ===== SECTION HEADLINE WIPE (site-wide, matches homepage) ===== */
-  .js .wipe{clip-path:inset(0 100% 0 0);transition:clip-path 5.5s cubic-bezier(.22,1,.36,1);will-change:clip-path;}
-  .js .wipe.is-visible{clip-path:inset(0 0 0 0);}
-  @media (prefers-reduced-motion:reduce){ .js .wipe{clip-path:none!important;transition:none!important;} }
+/* ===== SECTION HEADLINE WIPE (site-wide, matches homepage) ===== */
+.js .wipe{clip-path:inset(0 100% 0 0);transition:clip-path 5.5s cubic-bezier(.22,1,.36,1);will-change:clip-path;}
+.js .wipe.is-visible{clip-path:inset(0 0 0 0);}
+@media (prefers-reduced-motion:reduce){ .js .wipe{clip-path:none!important;transition:none!important;} }
 
 /* ==== HOP: full-width sections (uniform, left-to-right, no centering) — appended override ==== */
-/* Outermost section containers: span full width with one uniform side gutter */
 .wrap,
 .guide-body, .guide-hero .wrap, .other-issues .wrap,
 .insp-body, .insp-hero .wrap, .insp-other .wrap,
@@ -213,14 +148,14 @@ footer ul a:hover{color:var(--blue-deep);}
 .fap-hero .wrap,
 .reviews-strip .wrap,
 .myhome-section .wrap,
-.hl-hero .wrap, .hl-body {
+.hl-hero .wrap, .hl-body,
+.wl-hero .wrap, .wl-body {
   max-width: none;
   margin-left: 0;
   margin-right: 0;
   padding-left: 40px;
   padding-right: 40px;
 }
-/* Nested containers (already inside a padded .wrap): widen only, no extra gutter */
 .hero-center,
 .diag-hero-inner,
 .helpband-inner,
@@ -247,7 +182,8 @@ footer ul a:hover{color:var(--blue-deep);}
 .fap-hero .wrap,
 .reviews-strip .wrap,
 .myhome-section .wrap,
-.hl-hero .wrap, .hl-body {
+.hl-hero .wrap, .hl-body,
+.wl-hero .wrap, .wl-body {
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -334,6 +270,77 @@ footer ul a:hover{color:var(--blue-deep);}
 /* ==== HOP: mascot logo mark (img replacing svg mark, appended) ==== */
 .hop-brand-icon .mark{width:22px;height:34px;object-fit:contain;}
 .logo .mark{object-fit:contain;}
+
+/* ---- Page-specific: Whack-a-Leak (.wl-*) ---- */
+.wl-hero{background:linear-gradient(180deg,var(--blue-pale) 0%, #fff 85%);padding:20px 0 26px;}
+.wl-hero .wrap{max-width:1600px;}
+.wl-hero .kicker{color:var(--blue-deep);}
+.wl-hero h1{font-size:clamp(28px,4vw,42px);margin-bottom:10px;display:flex;align-items:center;gap:12px;}
+.wl-hero h1 svg{width:.82em;height:.82em;color:var(--blue-sky);flex-shrink:0;}
+.wl-sub{color:var(--slate);font-size:16px;}
+
+.wl-body{max-width:1600px;margin:0;padding:32px 28px 8px;}
+
+.wl-panel{background:#fff;border:1.5px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:0 20px 44px rgba(0,61,151,.08);max-width:820px;margin:0 auto;}
+.wl-stat-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px;font-size:14px;gap:10px;flex-wrap:wrap;}
+.wl-stat-row .num{font-family:'IBM Plex Mono';font-weight:700;}
+.wl-stat-plugged{font-weight:700;color:var(--ink);}
+.wl-stat-plugged .num{color:var(--blue-deep);}
+.wl-stat-missed{font-weight:700;color:var(--red);}
+.wl-stat-missed .num{color:var(--red);}
+.wl-stat-timer{display:flex;align-items:center;gap:6px;font-weight:700;color:var(--ink);}
+.wl-stat-timer svg{width:15px;height:15px;color:var(--slate);}
+.wl-stat-timer .num{color:var(--ink);min-width:44px;display:inline-block;text-align:right;}
+
+.wl-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+@media (max-width:520px){ .wl-grid{grid-template-columns:repeat(3,1fr);} }
+
+.wl-tile{
+  position:relative;aspect-ratio:1/1;border-radius:12px;
+  background:#F7FAFD;border:1.5px solid var(--line);
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+  transition:background .12s ease, border-color .12s ease, transform .08s ease;
+}
+.wl-tile:hover{border-color:var(--blue-sky);}
+.wl-tile:focus-visible{outline:3px solid var(--blue-sky);outline-offset:2px;}
+.wl-tile-icon{width:34%;height:34%;color:var(--line);transition:color .15s ease, transform .15s ease;}
+.wl-tile.leaking{background:var(--blue-pale);border-color:var(--blue-sky);}
+.wl-tile.leaking .wl-tile-icon{color:var(--blue-deep);animation:wldrip 1s ease-in-out infinite;}
+@keyframes wldrip{0%,100%{transform:translateY(0);}50%{transform:translateY(3px);}}
+@media (prefers-reduced-motion:reduce){ .wl-tile.leaking .wl-tile-icon{animation:none;} }
+.wl-tile.plugged{background:#E9F8EE;border-color:#3FA860;}
+.wl-tile.plugged .wl-tile-icon{color:#2E8B4F;}
+.wl-tile.flooded{background:var(--red-pale);border-color:var(--red);}
+.wl-tile.flooded .wl-tile-icon{color:var(--red);}
+.wl-tile-fill{position:absolute;left:0;bottom:0;width:100%;height:0%;background:rgba(192,57,43,.28);pointer-events:none;transition:height .05s linear;}
+
+.wl-start{display:block;width:100%;margin-top:18px;text-align:center;justify-content:center;}
+.wl-hint{text-align:center;font-size:12.5px;color:var(--slate);margin-top:12px;}
+
+.wl-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+
+.wl-lb-card{background:#fff;border:1.5px solid var(--line);border-radius:var(--radius);padding:24px;max-width:820px;margin:24px auto 0;}
+.wl-lb-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;gap:12px;}
+.wl-lb-title{display:flex;align-items:center;gap:10px;font-family:'Fraunces';font-size:16.5px;font-weight:600;}
+.wl-lb-title svg{width:19px;height:19px;color:var(--orange);flex-shrink:0;}
+.wl-lb-all{font-size:12px;color:var(--slate);font-weight:600;white-space:nowrap;}
+.wl-lb-rows{margin-top:10px;}
+.wl-lb-row{display:flex;align-items:center;gap:13px;padding:12px 0;border-bottom:1px solid var(--line);}
+.wl-lb-row:last-child{border-bottom:none;}
+.wl-lb-rank{width:26px;height:26px;border-radius:50%;background:var(--blue-pale);color:var(--blue-deep);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;}
+.wl-lb-rank svg{width:14px;height:14px;}
+.wl-lb-rank.r1{background:#FCE7B8;color:#9A6B10;}
+.wl-lb-rank.r2{background:#E9EDF2;color:#5F6B7A;}
+.wl-lb-rank.r3{background:#F3E0D2;color:#9A5A2E;}
+.wl-lb-name{flex:1;font-size:13.5px;font-weight:600;color:var(--ink);}
+.wl-lb-score{font-family:'IBM Plex Mono';font-size:13px;font-weight:600;color:var(--blue-deep);}
+.wl-lb-date{font-size:11.5px;color:var(--slate);min-width:52px;text-align:right;}
+.wl-lb-empty{font-size:13.5px;color:var(--slate);padding:10px 0;}
+
+@media (max-width:640px){
+  .wl-body{padding:24px 20px 8px;}
+  .wl-panel,.wl-lb-card{padding:18px;}
+}
 </style>
 </head>
 <body>
@@ -356,204 +363,55 @@ footer ul a:hover{color:var(--blue-deep);}
   </div>
 </header>
 
-<section class="lrn-hero">
+<section class="wl-hero">
   <div class="wrap">
     <div class="breadcrumb">
-      <a href="tools-costs.html#learn">Learn</a>
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
-      <span>HVAC</span>
+      <a href="index.html">Home</a>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+      <a href="game-arcade.html">Game Arcade</a>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+      <span>Whack-a-Leak</span>
     </div>
-    <div class="lrn-kicker">Learn · HVAC</div>
-    <h1>Home HVAC, the homeowner's plain-English reference</h1>
-    <p>The basics every homeowner should know about heating and cooling, enough to keep your system happy between service visits and recognize what needs a pro. HVAC equipment varies widely; treat this as a general primer and confirm specifics with a licensed local technician.</p>
-    <div class="lrn-cta-note"><strong>General reference.</strong> Plumbing &amp; HVAC codes, equipment, and "who owns what" vary by city, utility, and state. Always verify with a licensed local pro before working on your system.</div>
+    <span class="kicker">HOP Game Arcade</span>
+    <h1><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C12 2 5 11 5 15a7 7 0 0014 0c0-4-7-13-7-13z"/></svg>Whack-a-Leak</h1>
+    <p class="wl-sub">Tap leaks before they flood the place.</p>
   </div>
 </section>
 
-<div class="lrn-body">
+<div class="wl-body">
 
-  <div class="lrn-toc">
-    <div class="lrn-toc-title">On this page</div>
-    <div class="lrn-toc-grid">
-      <a href="#split-system">Split system overview</a>
-      <a href="#heat-vs-cool">Heat pump vs AC vs furnace</a>
-      <a href="#refrigerant">Refrigerant &amp; condensate</a>
-      <a href="#disconnect">Outdoor disconnect</a>
-      <a href="#filters">Filters &amp; change cadence</a>
-      <a href="#thermostat">Thermostat C-wire</a>
-      <a href="#diy-vs-pro">DIY vs call-a-pro</a>
+  <div class="wl-panel">
+    <div class="wl-stat-row">
+      <span class="wl-stat-plugged">Plugged: <span class="num" id="wlPlugged">0</span></span>
+      <span class="wl-stat-missed">Missed: <span class="num" id="wlMissed">0</span></span>
+      <span class="wl-stat-timer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        <span class="num" id="wlTimer">45.0</span>s
+      </span>
     </div>
+
+    <div class="wl-grid" id="wlGrid" role="group" aria-label="Whack-a-Leak game board, 12 pipe joints"></div>
+
+    <button type="button" class="btn btn-blue wl-start" id="wlStartBtn">Start</button>
+    <p class="wl-hint">Tap or click a leaking joint before it floods. Leaks get faster as the clock runs down.</p>
+
+    <div class="wl-sr-only" id="wlLive" aria-live="polite" role="status"></div>
   </div>
 
-  <!-- SECTION 1: SPLIT SYSTEM -->
-  <div class="lrn-section" id="split-system">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">🏠</div>
-      <h2>The classic split system</h2>
+  <div class="wl-lb-card" id="wlLbCard">
+    <div class="wl-lb-head">
+      <span class="wl-lb-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v4a4 4 0 01-8 0V4z"/><path d="M8 5H5a3 3 0 003 3M16 5h3a3 3 0 01-3 3"/><path d="M12 12v3M9 19h6M10 19v-1a2 2 0 012-2 2 2 0 012 2v1"/></svg>
+        Top 3 Global &mdash; Whack-a-Leak
+      </span>
+      <span class="wl-lb-all">All-time</span>
     </div>
-    <p>Most American homes have a "split" system, two halves of the same machine, separated by an exterior wall and connected by a pair of refrigerant lines.</p>
-
-    <div class="lrn-diagram">
-      <div class="lrn-diagram-title">Outside ↔ Inside</div>
-      <div class="split-diagram">
-        <div class="split-col">
-          <div class="split-col-title">OUTSIDE</div>
-          <div class="split-item">Condenser (compressor + fan)</div>
-          <div class="split-item">Disconnect</div>
-        </div>
-        <div class="split-connector">
-          <div class="split-connector-line"></div>
-          <div class="split-connector-text">Refrigerant lines<br>(suction + liquid)</div>
-          <div class="split-connector-line"></div>
-        </div>
-        <div class="split-col">
-          <div class="split-col-title">INSIDE</div>
-          <div class="split-item">Air handler / furnace</div>
-          <div class="split-item">Filter</div>
-          <div class="split-item">Evap coil</div>
-          <div class="split-item">Supply / Return</div>
-          <div class="split-item">Condensate drain</div>
-          <div class="split-item">Disconnect</div>
-        </div>
-      </div>
-    </div>
-
-    <ul class="lrn-bullets">
-      <li><strong>Outdoor unit (condenser):</strong> the metal box on a pad outside. Contains the compressor and a big fan. This is what hums in the summer.</li>
-      <li><strong>Indoor unit (air handler or furnace):</strong> in a closet, attic, basement, or garage. Holds the blower motor, the evaporator coil, and the air filter. Pushes conditioned air through your ducts.</li>
-      <li><strong>Refrigerant lines:</strong> the insulated copper line plus smaller bare copper line running between the two units. Refrigerant cycles between them, carrying heat outdoors in summer (and indoors in winter, if you have a heat pump).</li>
-    </ul>
-  </div>
-
-  <!-- SECTION 2: HEAT PUMP VS AC VS FURNACE -->
-  <div class="lrn-section" id="heat-vs-cool">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">🌡️</div>
-      <h2>Heat pump vs AC vs furnace</h2>
-    </div>
-    <ul class="lrn-bullets">
-      <li><strong>Air conditioner (AC) + furnace:</strong> the traditional setup. AC cools in summer, a gas (or electric) furnace heats in winter. Two completely different heat sources, one shared blower and duct system.</li>
-      <li><strong>Heat pump:</strong> looks just like an AC condenser but works both directions, moves heat out of the house in summer and pulls heat in from outdoors in winter. Increasingly common because they're very efficient down to surprisingly cold temperatures.</li>
-      <li><strong>Dual-fuel / hybrid:</strong> heat pump for mild weather plus gas furnace as backup for deep cold. Best of both in most climates.</li>
-      <li><strong>Mini-splits (ductless):</strong> wall-mounted indoor heads connected to a small outdoor unit with refrigerant lines and a control wire. No ducts needed, great for additions, garages, or retrofits.</li>
-    </ul>
-  </div>
-
-  <!-- SECTION 3: REFRIGERANT & CONDENSATE -->
-  <div class="lrn-section" id="refrigerant">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">💧</div>
-      <h2>Refrigerant lines &amp; condensate drain</h2>
-    </div>
-    <ul class="lrn-bullets">
-      <li>Refrigerant is a closed loop, it should never need "topping off." If a tech says you need refrigerant, you have a leak; topping it off without finding the leak just delays the problem.</li>
-      <li>As warm humid indoor air passes over the cold evaporator coil, water condenses out (same reason a cold glass sweats). That water drains through the condensate drain line, usually a PVC pipe leading outside or to a floor drain.</li>
-      <li>Clogged condensate drain is the single most common reason a healthy AC suddenly stops cooling, most systems have a safety float switch that shuts down the system when the drain backs up. Pouring a cup of distilled vinegar down the cleanout port once a year prevents most clogs.</li>
-    </ul>
-  </div>
-
-  <!-- SECTION 4: OUTDOOR DISCONNECT -->
-  <div class="lrn-section" id="disconnect">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">🔌</div>
-      <h2>The outdoor disconnect</h2>
-    </div>
-    <p>Required by code within sight of the outdoor unit. Some are cheap plastic pull-out blocks; better ones are switched metal disconnects with a real handle. This is what gets turned off before anyone services the condenser, and what a homeowner can flip if the outdoor unit ever needs to be killed in a hurry.</p>
-    <div class="lrn-link-box">See our recommended 60A switched disconnect in <a href="tools-materials.html">Tools &amp; Materials →</a></div>
-    <div class="lrn-warn"><strong>Heads up:</strong> pulling the outdoor disconnect doesn't cut power to the indoor air handler, that has its own disconnect near the unit (and its own breaker at the main panel).</div>
-  </div>
-
-  <!-- SECTION 5: FILTERS -->
-  <div class="lrn-section" id="filters">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">🌬️</div>
-      <h2>Filters, the cheapest insurance you can buy</h2>
-    </div>
-    <ul class="lrn-bullets">
-      <li><strong>Where it lives:</strong> usually at the return air opening or in a slot on the side/bottom of the air handler. Some homes have one big return-grille filter; others have a slot at the unit.</li>
-      <li><strong>Change cadence:</strong> 1" filters every 1 to 3 months, 4 to 5" media filters every 6 to 12 months. More often if you have pets or run the system hard.</li>
-      <li><strong>MERV rating:</strong> higher numbers filter finer particles but restrict more airflow. MERV 8 to MERV 11 is a sweet spot for most residential systems. Going too high (MERV 13+) without a properly-sized return can starve the unit and cause coil freeze-ups.</li>
-      <li>A neglected filter is the #1 cause of "my system stopped working" service calls. Frozen coils, tripped limit switches, dead blowers, most trace back to airflow.</li>
-    </ul>
-  </div>
-
-  <!-- SECTION 6: THERMOSTAT C-WIRE -->
-  <div class="lrn-section" id="thermostat">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">🧭</div>
-      <h2>Thermostat C-wire (what smart thermostats need)</h2>
-    </div>
-    <p>The "C" (common) wire provides constant 24V power to a thermostat. Older mechanical thermostats and many older digital ones don't need it, they're powered by the heating/cooling call wires themselves. Smart thermostats (Nest, Ecobee, Honeywell smart, and similar) do need it for reliable operation.</p>
-    <ul class="lrn-bullets">
-      <li>If you don't have a C-wire, options include: running a new wire (best), using a C-wire adapter at the air handler, or using a thermostat that ships with its own power-extender kit (Ecobee).</li>
-      <li>Common color convention: R = 24V hot, C = common, W = heat, Y = cool, G = fan. Brands vary, always photograph the existing wiring before disconnecting anything.</li>
-    </ul>
-  </div>
-
-  <!-- SECTION 7: DIY VS CALL A PRO -->
-  <div class="lrn-section" id="diy-vs-pro">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">🛠️</div>
-      <h2>DIY vs call-a-pro</h2>
-    </div>
-
-    <div class="diy-grid">
-      <div class="diy-col yes">
-        <h4>Safe DIY</h4>
-        <ul>
-          <li>Changing filters</li>
-          <li>Clearing the condensate drain</li>
-          <li>Hosing dust off the outdoor condenser coil (power off!)</li>
-          <li>Keeping vegetation 2 ft back from the outdoor unit</li>
-          <li>Programming the thermostat</li>
-          <li>Replacing the thermostat itself</li>
-        </ul>
-      </div>
-      <div class="diy-col no">
-        <h4>Call a pro</h4>
-        <ul>
-          <li>Any refrigerant work (it's federally regulated)</li>
-          <li>Gas furnace problems (combustion safety)</li>
-          <li>Electrical issues at the unit</li>
-          <li>Capacitor or contactor replacement on the condenser</li>
-          <li>Anything that involves opening the sealed refrigerant system</li>
-          <li>Frozen coils that don't resolve after filter change + 24 hr off</li>
-          <li>No heat in winter</li>
-          <li>System shutting off on its own</li>
-        </ul>
-      </div>
+    <div class="wl-lb-rows" id="wlLbRows">
+      <p class="wl-lb-empty">Loading scores&hellip;</p>
     </div>
   </div>
 
 </div>
-
-<section class="other-issues" style="background:var(--blue-pale);padding:30px 0;">
-  <div class="wrap">
-    <h3 style="font-size:18px;margin-bottom:6px;">Having one of these problems right now?</h3>
-    <p style="font-size:13.5px;color:var(--slate);margin-bottom:20px;">Walk through it step by step with HOP, free, no signup.</p>
-    <div class="other-panel" style="background:#fff;border-radius:18px;border:1px solid var(--line);overflow:hidden;">
-      <a href="hvac-ac-not-cooling.html" class="other-row" style="display:flex;align-items:center;gap:12px;padding:13px 20px;border-bottom:1px solid var(--line);"><span style="font-size:13.5px;font-weight:600;flex:1;">AC running but not cooling</span></a>
-      <a href="hvac-no-heat.html" class="other-row" style="display:flex;align-items:center;gap:12px;padding:13px 20px;border-bottom:1px solid var(--line);"><span style="font-size:13.5px;font-weight:600;flex:1;">Furnace or heat not working</span></a>
-      <a href="hvac-thermostat-blank.html" class="other-row" style="display:flex;align-items:center;gap:12px;padding:13px 20px;"><span style="font-size:13.5px;font-weight:600;flex:1;">Thermostat blank or unresponsive</span></a>
-    </div>
-    <p style="margin-top:20px;font-size:13.5px;"><a href="find-a-pro.html?trade=hvac" style="color:var(--blue-deep);font-weight:700;text-decoration:underline;">Or find a trusted local HVAC pro →</a></p>
-  </div>
-</section>
-
-<section style="padding:30px 0;">
-  <div class="wrap">
-    <div style="background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:24px 28px;text-align:center;">
-      <p style="font-size:13.5px;color:var(--slate);line-height:1.7;margin-bottom:8px;">Stuck on something specific? Call or text the <a href="diagnose.html" style="color:var(--blue-deep);font-weight:700;text-decoration:underline;">HOPline</a>, it's free. We can walk you through your exact situation, no account needed. For active emergencies (smoke, sparks, or fire) call 911.</p>
-    </div>
-    <a href="emergency.html" style="display:flex;align-items:center;gap:14px;background:#FDEDEC;border:1.5px solid #F5C2BC;border-radius:16px;padding:18px 22px;margin-top:16px;text-decoration:none;">
-      <div style="width:36px;height:36px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;">🚨</div>
-      <div>
-        <div style="font-size:13.5px;font-weight:700;color:#8B2E23;margin-bottom:2px;">Emergency</div>
-        <div style="font-size:12.5px;color:#8B2E23;">When to call 911 vs. a licensed electrician →</div>
-      </div>
-    </a>
-  </div>
-</section>
 
 <section class="cta-band">
   <div class="wrap">
@@ -648,11 +506,10 @@ footer ul a:hover{color:var(--blue-deep);}
         <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="5"/></svg></a>
         <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></a>
       </div>
-      <div>© 2026 HomeownerPal. Built with care for homeowners.</div>
+      <div>&copy; 2026 HomeownerPal. Built with care for homeowners.</div>
     </div>
   </div>
 </footer>
-
 
 <script>
 (function () {
@@ -696,7 +553,6 @@ footer ul a:hover{color:var(--blue-deep);}
   });
 })();
 </script>
-
 
 <!-- ==== HOP NAV drawer ==== -->
 <div class="nav-drawer-overlay" id="hopNavOverlay" onclick="if(event.target===this)HOPNav.close()">
@@ -849,5 +705,342 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape') HOPInstall
 })();
 </script>
 <!-- ==== end HOP AUTH modal ==== -->
+
+<!-- ==== HOPScores: shared leaderboard contract, identical on every game page ==== -->
+<script>
+window.HOPScores = (function () {
+  var BASE = 'https://homeownerpal.com/api/scores';
+
+  function localKey(gameId) { return 'hop_scores_' + gameId; }
+
+  async function submit(gameId, name, score) {
+    try {
+      var res = await fetch(BASE, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ gameId: gameId, name: name, score: score })
+      });
+      if (!res.ok) throw new Error('bad response');
+      return await res.json();
+    } catch (e) {
+      // Fallback: local-only leaderboard until the backend is live
+      var list = [];
+      try { list = JSON.parse(localStorage.getItem(localKey(gameId))) || []; } catch (e2) {}
+      list.push({ name: name, score: score, date: new Date().toISOString() });
+      list.sort(function (a, b) { return b.score - a.score; });
+      list = list.slice(0, 10);
+      try { localStorage.setItem(localKey(gameId), JSON.stringify(list)); } catch (e3) {}
+      return { ok: true, local: true };
+    }
+  }
+
+  async function getTop(gameId, limit) {
+    limit = limit || 3;
+    try {
+      var res = await fetch(BASE + '/' + gameId + '/top?limit=' + limit);
+      if (!res.ok) throw new Error('bad response');
+      return await res.json();
+    } catch (e) {
+      var list = [];
+      try { list = JSON.parse(localStorage.getItem(localKey(gameId))) || []; } catch (e2) {}
+      return list.slice(0, limit);
+    }
+  }
+
+  async function getBest(gameId) {
+    try {
+      var res = await fetch(BASE + '/' + gameId + '/best');
+      if (!res.ok) throw new Error('bad response');
+      var data = await res.json();
+      return data.score || 0;
+    } catch (e) {
+      var list = [];
+      try { list = JSON.parse(localStorage.getItem(localKey(gameId))) || []; } catch (e2) {}
+      return list.length ? list[0].score : 0;
+    }
+  }
+
+  return { submit: submit, getTop: getTop, getBest: getBest };
+})();
+</script>
+<!-- ==== end HOPScores ==== -->
+
+<!-- ==== Whack-a-Leak: game logic ==== -->
+<script>
+/*
+ * Whack-a-Leak — DOM-based whack-a-mole reflex game.
+ * Rules: 12 pipe joints on a 4-column board. Leaks spawn on random joints;
+ * each leak has a shrinking window before it "floods" (counts as Missed).
+ * Tapping/clicking a leaking joint plugs it (counts as Plugged). Leaks spawn
+ * faster and more of them run concurrently as the 45-second clock runs down.
+ * Final score submitted to the leaderboard = total Plugged.
+ *
+ * Controls: mouse / touch / keyboard (each joint is a real <button>, so Tab +
+ * Enter/Space works). No canvas — all state is expressed via DOM classes and
+ * inline widths for the per-tile flood-fill indicator.
+ *
+ * Score/leaderboard: uses window.HOPScores exclusively (see contract above).
+ */
+(function () {
+  'use strict';
+
+  var GAME_ID = 'whack-a-leak';
+  var TOTAL_TIME = 45; // seconds
+  var TILE_COUNT = 12;
+
+  var grid = document.getElementById('wlGrid');
+  var pluggedEl = document.getElementById('wlPlugged');
+  var missedEl = document.getElementById('wlMissed');
+  var timerEl = document.getElementById('wlTimer');
+  var startBtn = document.getElementById('wlStartBtn');
+  var liveEl = document.getElementById('wlLive');
+  var lbRows = document.getElementById('wlLbRows');
+  var lbCard = document.getElementById('wlLbCard');
+
+  var dropIcon = '<svg class="wl-tile-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C12 2 5 11 5 15a7 7 0 0014 0c0-4-7-13-7-13z"/></svg>';
+  var pipeIcon = '<svg class="wl-tile-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h7M4 12a2 2 0 100-4M4 12a2 2 0 100 4"/><path d="M13 12h7M20 12a2 2 0 100-4M20 12a2 2 0 100 4"/></svg>';
+  var checkIcon = '<svg class="wl-tile-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>';
+  var floodIcon = '<svg class="wl-tile-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 14c1.5-1.5 3-1.5 4.5 0s3 1.5 4.5 0 3-1.5 4.5 0 3 1.5 4.5 0"/><path d="M2 18c1.5-1.5 3-1.5 4.5 0s3 1.5 4.5 0 3-1.5 4.5 0 3 1.5 4.5 0"/></svg>';
+
+  var tiles = []; // { el, fillEl, iconEl, leak: null | { start, lifespan } }
+  var plugged = 0, missed = 0, best = 0;
+  var state = 'idle'; // idle | playing | over
+  var startTs = null;
+  var spawnTimer = 0;
+  var rafId = null;
+  var lastTs = null;
+  var resetTimeouts = [];
+
+  function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+  function lerp(a, b, t) { return a + (b - a) * t; }
+
+  function escapeHtml(s) {
+    return String(s || '').replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  function announce(msg) { liveEl.textContent = msg; }
+
+  function buildGrid() {
+    grid.innerHTML = '';
+    tiles = [];
+    for (var i = 0; i < TILE_COUNT; i++) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'wl-tile';
+      btn.setAttribute('aria-label', 'Pipe joint ' + (i + 1) + ', no leak');
+      btn.innerHTML = pipeIcon + '<span class="wl-tile-fill"></span>';
+      (function (idx, el) {
+        el.addEventListener('click', function () { plugLeak(idx); });
+      })(i, btn);
+      grid.appendChild(btn);
+      tiles.push({ el: btn, iconEl: btn.querySelector('.wl-tile-icon'), fillEl: btn.querySelector('.wl-tile-fill'), leak: null });
+    }
+  }
+
+  function setTileIcon(tile, svg) {
+    tile.fillEl.remove();
+    tile.el.innerHTML = svg;
+    var fill = document.createElement('span');
+    fill.className = 'wl-tile-fill';
+    tile.el.appendChild(fill);
+    tile.iconEl = tile.el.querySelector('.wl-tile-icon');
+    tile.fillEl = fill;
+  }
+
+  function difficultyForElapsed(elapsed) {
+    var t = clamp(elapsed / TOTAL_TIME, 0, 1);
+    return {
+      lifespan: lerp(3.0, 1.3, t),          // seconds a leak stays open before flooding
+      spawnInterval: lerp(1.3, 0.55, t),    // seconds between spawn attempts
+      maxConcurrent: t < 0.6 ? 1 : (t < 0.88 ? 2 : 3)
+    };
+  }
+
+  function freeTileIndices() {
+    var out = [];
+    for (var i = 0; i < tiles.length; i++) if (!tiles[i].leak) out.push(i);
+    return out;
+  }
+
+  function spawnLeak(elapsed) {
+    var free = freeTileIndices();
+    if (!free.length) return;
+    var idx = free[Math.floor(Math.random() * free.length)];
+    var d = difficultyForElapsed(elapsed);
+    var tile = tiles[idx];
+    tile.leak = { start: performance.now(), lifespan: d.lifespan };
+    tile.el.classList.add('leaking');
+    setTileIcon(tile, dropIcon);
+    tile.el.setAttribute('aria-label', 'Pipe joint ' + (idx + 1) + ', leaking, tap to plug');
+  }
+
+  function clearResetTimeouts() {
+    resetTimeouts.forEach(function (id) { clearTimeout(id); });
+    resetTimeouts = [];
+  }
+
+  function resetTileVisual(idx) {
+    var tile = tiles[idx];
+    tile.el.classList.remove('leaking', 'plugged', 'flooded');
+    setTileIcon(tile, pipeIcon);
+    tile.fillEl.style.height = '0%';
+    tile.el.setAttribute('aria-label', 'Pipe joint ' + (idx + 1) + ', no leak');
+  }
+
+  function plugLeak(idx) {
+    if (state !== 'playing') return;
+    var tile = tiles[idx];
+    if (!tile.leak) return;
+    tile.leak = null;
+    plugged += 1;
+    pluggedEl.textContent = String(plugged);
+    tile.el.classList.remove('leaking');
+    tile.el.classList.add('plugged');
+    setTileIcon(tile, checkIcon);
+    tile.el.setAttribute('aria-label', 'Pipe joint ' + (idx + 1) + ', plugged');
+    if (plugged % 5 === 0) announce(plugged + ' plugged.');
+    var id = setTimeout(function () { resetTileVisual(idx); }, 380);
+    resetTimeouts.push(id);
+  }
+
+  function floodTile(idx) {
+    var tile = tiles[idx];
+    tile.leak = null;
+    missed += 1;
+    missedEl.textContent = String(missed);
+    tile.el.classList.remove('leaking');
+    tile.el.classList.add('flooded');
+    setTileIcon(tile, floodIcon);
+    tile.el.setAttribute('aria-label', 'Pipe joint ' + (idx + 1) + ', flooded, missed');
+    var id = setTimeout(function () { resetTileVisual(idx); }, 420);
+    resetTimeouts.push(id);
+  }
+
+  function resetBoard() {
+    clearResetTimeouts();
+    for (var i = 0; i < tiles.length; i++) { tiles[i].leak = null; resetTileVisual(i); }
+    plugged = 0; missed = 0;
+    pluggedEl.textContent = '0';
+    missedEl.textContent = '0';
+    timerEl.textContent = TOTAL_TIME.toFixed(1);
+    spawnTimer = 0;
+  }
+
+  function startGame() {
+    resetBoard();
+    state = 'playing';
+    startBtn.textContent = 'Restart';
+    startTs = performance.now();
+    lastTs = null;
+    announce('Game started. Tap the leaks before they flood.');
+    if (rafId) cancelAnimationFrame(rafId);
+    rafId = requestAnimationFrame(loop);
+  }
+
+  function endGame() {
+    state = 'over';
+    if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+    timerEl.textContent = '0.0';
+    startBtn.textContent = 'Play Again';
+    announce('Time. Plugged ' + plugged + ', missed ' + missed + '.');
+    if (plugged > best) { best = plugged; }
+    submitScore(plugged);
+  }
+
+  function submitScore(finalScore) {
+    var user = null;
+    try { user = JSON.parse(localStorage.getItem('hop_user')); } catch (e) {}
+    var name = (user && user.name) ? user.name : 'Anonymous';
+    Promise.resolve(window.HOPScores.submit(GAME_ID, name, finalScore))
+      .catch(function () {})
+      .then(refreshLeaderboard);
+  }
+
+  function loop(ts) {
+    if (state !== 'playing') return;
+    if (lastTs == null) lastTs = ts;
+    var dt = Math.min(0.05, (ts - lastTs) / 1000);
+    lastTs = ts;
+
+    var elapsed = (ts - startTs) / 1000;
+    var remaining = TOTAL_TIME - elapsed;
+    if (remaining <= 0) { endGame(); return; }
+    timerEl.textContent = remaining.toFixed(1);
+
+    var d = difficultyForElapsed(elapsed);
+    spawnTimer += dt;
+    var activeCount = tiles.reduce(function (n, t) { return n + (t.leak ? 1 : 0); }, 0);
+    if (spawnTimer >= d.spawnInterval && activeCount < d.maxConcurrent) {
+      spawnTimer = 0;
+      spawnLeak(elapsed);
+    }
+
+    for (var i = 0; i < tiles.length; i++) {
+      var tile = tiles[i];
+      if (!tile.leak) continue;
+      var leakElapsed = (ts - tile.leak.start) / 1000;
+      var ratio = clamp(leakElapsed / tile.leak.lifespan, 0, 1);
+      tile.fillEl.style.height = (ratio * 100).toFixed(1) + '%';
+      if (ratio >= 1) floodTile(i);
+    }
+
+    rafId = requestAnimationFrame(loop);
+  }
+
+  startBtn.addEventListener('click', startGame);
+
+  // --- leaderboard ---
+  function formatDate(iso) {
+    try {
+      var d = new Date(iso);
+      if (isNaN(d.getTime())) return '';
+      return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    } catch (e) { return ''; }
+  }
+
+  function crownSvg() {
+    return '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 18h14l1.5-9-5 3-3.5-5-3.5 5-5-3L5 18z"/></svg>';
+  }
+
+  function renderLeaderboardRows(list) {
+    if (!list || !list.length) {
+      lbRows.innerHTML = '<p class="wl-lb-empty">No scores yet &mdash; be the first on the board.</p>';
+      return;
+    }
+    var html = list.slice(0, 3).map(function (row, i) {
+      var rank = i + 1;
+      var rankInner = rank === 1 ? crownSvg() : String(rank);
+      return '<div class="wl-lb-row">' +
+        '<span class="wl-lb-rank r' + rank + '">' + rankInner + '</span>' +
+        '<span class="wl-lb-name">' + escapeHtml(row.name || 'Anonymous') + '</span>' +
+        '<span class="wl-lb-score">' + escapeHtml(row.score) + '</span>' +
+        '<span class="wl-lb-date">' + formatDate(row.date) + '</span>' +
+        '</div>';
+    }).join('');
+    lbRows.innerHTML = html;
+  }
+
+  function refreshLeaderboard() {
+    Promise.resolve(window.HOPScores.getTop(GAME_ID, 3))
+      .then(function (top) { lbCard.style.display = ''; renderLeaderboardRows(top); })
+      .catch(function () { lbCard.style.display = 'none'; });
+  }
+
+  function loadBest() {
+    Promise.resolve(window.HOPScores.getBest(GAME_ID))
+      .then(function (b) { best = b || 0; })
+      .catch(function () { best = 0; });
+  }
+
+  // --- init ---
+  buildGrid();
+  loadBest();
+  refreshLeaderboard();
+})();
+</script>
+<!-- ==== end Whack-a-Leak game logic ==== -->
+
 </body>
 </html>

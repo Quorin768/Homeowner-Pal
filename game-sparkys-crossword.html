@@ -11,8 +11,8 @@
 <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-<title>Home HVAC: The Homeowner's Plain-English Reference | HomeownerPal</title>
-<meta name="description" content="Split systems, heat pumps vs AC vs furnace, refrigerant and condensate, outdoor disconnects, filters, thermostat C-wire, and what's safe DIY vs a licensed tech.">
+<title>Sparky's Crossword | HOP Game Arcade | HomeownerPal</title>
+<meta name="description" content="Daily 11×11 grid. Construction & home clues. Difficult. A free crossword from the HOP Game Arcade.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -62,6 +62,7 @@ section{padding:44px 0;}
 .btn-outline{background:transparent;color:var(--blue-deep);border:1.5px solid var(--blue-deep);}
 .btn-outline:hover{background:var(--blue-deep);color:#fff;}
 .btn-sm{padding:10px 18px;font-size:13.5px;}
+.btn:disabled{opacity:.5;cursor:not-allowed;transform:none!important;box-shadow:none!important;}
 
 /* Header */
 header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
@@ -88,9 +89,10 @@ nav.primary-nav a.active{color:var(--blue-deep);}
 .section-head p{color:var(--slate);font-size:16px;line-height:1.65;}
 
 /* Breadcrumb */
-.breadcrumb{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--slate);margin-bottom:24px;}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--slate);margin-bottom:24px;flex-wrap:wrap;}
 .breadcrumb a{color:var(--blue-deep);font-weight:600;}
 .breadcrumb a:hover{text-decoration:underline;}
+.breadcrumb svg{width:12px;height:12px;flex-shrink:0;}
 
 /* CTA band */
 .cta-band{background:#fff;}
@@ -124,79 +126,12 @@ footer ul a:hover{color:var(--blue-deep);}
 .footer-bottom .socials svg{width:16px;height:16px;color:var(--slate);}
 .footer-bottom .socials a:hover svg{color:var(--blue-deep);}
 
-
-  /* ---- Page-specific additions below ---- */
-  .lrn-hero{background:linear-gradient(180deg,var(--blue-pale) 0%, #fff 85%);padding:20px 0 24px;}
-  .lrn-hero .wrap{max-width:1600px;}
-  .lrn-kicker{font-size:11.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--blue-deep);margin-bottom:10px;}
-  .lrn-hero h1{font-size:clamp(24px,3.2vw,34px);margin-bottom:14px;max-width:1600px;}
-  .lrn-hero p{font-size:14.5px;color:var(--slate);line-height:1.75;max-width:660px;margin-bottom:16px;}
-  .lrn-cta-note{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 18px;font-size:13px;color:var(--slate);line-height:1.6;}
-  .lrn-cta-note a{color:var(--blue-deep);font-weight:700;text-decoration:underline;}
-
-  .lrn-body{max-width:1600px;margin:0;padding:0 28px;}
-
-  .lrn-toc{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:26px 28px;margin:20px 0;}
-  .lrn-toc-title{font-size:13px;font-weight:700;color:var(--blue-deep);text-transform:uppercase;letter-spacing:.03em;margin-bottom:14px;}
-  .lrn-toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;}
-  @media (max-width:560px){ .lrn-toc-grid{grid-template-columns:1fr;} }
-  .lrn-toc-grid a{font-size:13.5px;color:var(--ink);font-weight:600;padding:6px 0;border-bottom:1px dashed var(--line);}
-  .lrn-toc-grid a:hover{color:var(--blue-deep);}
-
-  .lrn-section{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:30px 32px;margin:16px 0;scroll-margin-top:48px;}
-  .lrn-section-head{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
-  .lrn-section-icon{width:38px;height:38px;border-radius:10px;background:var(--blue-pale);color:var(--blue-deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;}
-  .lrn-section h2{font-size:19px;}
-  .lrn-section p{font-size:13.5px;color:var(--slate);line-height:1.7;margin-bottom:14px;}
-
-  .lrn-diagram{background:var(--blue-pale);border-radius:14px;padding:22px;margin:16px 0 20px;}
-  .lrn-diagram-title{font-size:11px;font-weight:700;color:var(--blue-deep);text-transform:uppercase;letter-spacing:.03em;margin-bottom:14px;text-align:center;}
-
-  .split-diagram{display:flex;align-items:stretch;gap:10px;justify-content:center;flex-wrap:wrap;}
-  .split-col{background:#fff;border-radius:12px;padding:14px 16px;flex:1;min-width:150px;max-width:220px;border:1.5px solid var(--line);}
-  .split-col-title{font-size:11.5px;font-weight:700;color:var(--blue-deep);margin-bottom:8px;text-align:center;padding-bottom:6px;border-bottom:1px solid var(--line);}
-  .split-item{font-size:11px;color:var(--ink);padding:5px 0;border-bottom:1px dashed var(--line);}
-  .split-item:last-child{border-bottom:none;}
-  .split-connector{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:0 4px;min-width:110px;}
-  .split-connector-line{width:100%;height:2px;background:repeating-linear-gradient(90deg,var(--orange),var(--orange) 5px,transparent 5px,transparent 9px);}
-  .split-connector-text{font-size:10px;color:var(--orange);font-weight:700;text-align:center;line-height:1.4;}
-
-  .lrn-bullets{list-style:none;display:flex;flex-direction:column;gap:9px;margin:14px 0;}
-  .lrn-bullets li{position:relative;padding-left:17px;font-size:13.5px;color:var(--ink);line-height:1.65;}
-  .lrn-bullets li::before{content:"";position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--blue-deep);}
-  .lrn-bullets li strong{color:var(--blue-deep);}
-
-  .lrn-warn{background:#FFF6E9;border:1px solid #F0D9A8;border-radius:12px;padding:14px 18px;margin:16px 0;font-size:13px;color:#8A5D18;line-height:1.65;}
-  .lrn-warn strong{color:#6B4712;}
-
-  .lrn-rule{background:var(--blue-deep);color:#fff;border-radius:12px;padding:16px 20px;font-size:13px;line-height:1.7;margin:16px 0;}
-
-  .lrn-link-box{background:var(--blue-pale);border-radius:12px;padding:14px 18px;margin:14px 0;font-size:13px;}
-  .lrn-link-box a{color:var(--blue-deep);font-weight:700;text-decoration:underline;}
-
-  .diy-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0;}
-  @media (max-width:600px){ .diy-grid{grid-template-columns:1fr;} }
-  .diy-col{border-radius:14px;padding:18px 20px;}
-  .diy-col.yes{background:#F0FAF4;border:1px solid #C9E6D6;}
-  .diy-col.no{background:#FDEDEC;border:1px solid #F0C4BE;}
-  .diy-col h4{font-size:13px;font-weight:700;margin-bottom:10px;}
-  .diy-col.yes h4{color:#1D5C3F;}
-  .diy-col.no h4{color:var(--red);}
-  .diy-col ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
-  .diy-col li{font-size:12.5px;line-height:1.55;padding-left:16px;position:relative;}
-  .diy-col.yes li{color:#1D5C3F;}
-  .diy-col.no li{color:#8B2E23;}
-  .diy-col li::before{content:"";position:absolute;left:0;top:6px;width:5px;height:5px;border-radius:50%;}
-  .diy-col.yes li::before{background:#1E8A5A;}
-  .diy-col.no li::before{background:var(--red);}
-
-  /* ===== SECTION HEADLINE WIPE (site-wide, matches homepage) ===== */
-  .js .wipe{clip-path:inset(0 100% 0 0);transition:clip-path 5.5s cubic-bezier(.22,1,.36,1);will-change:clip-path;}
-  .js .wipe.is-visible{clip-path:inset(0 0 0 0);}
-  @media (prefers-reduced-motion:reduce){ .js .wipe{clip-path:none!important;transition:none!important;} }
+/* ===== SECTION HEADLINE WIPE (site-wide, matches homepage) ===== */
+.js .wipe{clip-path:inset(0 100% 0 0);transition:clip-path 5.5s cubic-bezier(.22,1,.36,1);will-change:clip-path;}
+.js .wipe.is-visible{clip-path:inset(0 0 0 0);}
+@media (prefers-reduced-motion:reduce){ .js .wipe{clip-path:none!important;transition:none!important;} }
 
 /* ==== HOP: full-width sections (uniform, left-to-right, no centering) — appended override ==== */
-/* Outermost section containers: span full width with one uniform side gutter */
 .wrap,
 .guide-body, .guide-hero .wrap, .other-issues .wrap,
 .insp-body, .insp-hero .wrap, .insp-other .wrap,
@@ -213,14 +148,14 @@ footer ul a:hover{color:var(--blue-deep);}
 .fap-hero .wrap,
 .reviews-strip .wrap,
 .myhome-section .wrap,
-.hl-hero .wrap, .hl-body {
+.hl-hero .wrap, .hl-body,
+.sc-hero .wrap, .sc-body {
   max-width: none;
   margin-left: 0;
   margin-right: 0;
   padding-left: 40px;
   padding-right: 40px;
 }
-/* Nested containers (already inside a padded .wrap): widen only, no extra gutter */
 .hero-center,
 .diag-hero-inner,
 .helpband-inner,
@@ -247,7 +182,8 @@ footer ul a:hover{color:var(--blue-deep);}
 .fap-hero .wrap,
 .reviews-strip .wrap,
 .myhome-section .wrap,
-.hl-hero .wrap, .hl-body {
+.hl-hero .wrap, .hl-body,
+.sc-hero .wrap, .sc-body {
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -334,6 +270,82 @@ footer ul a:hover{color:var(--blue-deep);}
 /* ==== HOP: mascot logo mark (img replacing svg mark, appended) ==== */
 .hop-brand-icon .mark{width:22px;height:34px;object-fit:contain;}
 .logo .mark{object-fit:contain;}
+
+/* ---- Page-specific: Sparky's Crossword (.sc-*) ---- */
+.sc-hero{background:linear-gradient(180deg,var(--blue-pale) 0%, #fff 85%);padding:20px 0 26px;}
+.sc-hero .wrap{max-width:1600px;}
+.sc-hero .kicker{color:var(--blue-deep);}
+.sc-hero h1{font-size:clamp(28px,4vw,42px);margin-bottom:10px;display:flex;align-items:center;gap:12px;}
+.sc-hero h1 svg{width:.82em;height:.82em;color:var(--orange);flex-shrink:0;}
+.sc-sub{color:var(--slate);font-size:16px;}
+
+.sc-body{max-width:1600px;margin:0;padding:32px 28px 8px;}
+
+.sc-panel{background:#fff;border:1.5px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:0 20px 44px rgba(0,61,151,.08);max-width:760px;margin:0 auto;}
+
+.sc-datenav{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:18px;}
+.sc-datebtn{width:32px;height:32px;border-radius:8px;border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--blue-deep);flex-shrink:0;}
+.sc-datebtn:hover{border-color:var(--blue-deep);}
+.sc-datebtn:disabled{opacity:.4;cursor:not-allowed;}
+.sc-datebtn svg{width:15px;height:15px;}
+.sc-datelabel{display:flex;align-items:center;gap:7px;font-size:13.5px;font-weight:700;color:var(--ink);background:var(--blue-pale);border:1px solid var(--line);border-radius:999px;padding:8px 16px;}
+.sc-datelabel svg{width:14px;height:14px;color:var(--blue-deep);}
+.sc-archive-note{text-align:center;font-size:12.5px;color:var(--slate);margin:-8px 0 16px;min-height:1.2em;}
+
+.sc-grid-wrap{width:100%;max-width:460px;margin:0 auto;}
+.sc-grid{display:grid;grid-template-columns:repeat(11,1fr);width:100%;aspect-ratio:1/1;border:1.5px solid var(--ink);border-radius:6px;overflow:hidden;background:var(--ink);gap:1px;}
+.sc-cell{position:relative;background:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:clamp(9px,2vw,15px);color:var(--ink);text-transform:uppercase;}
+.sc-cell.sc-black{background:var(--ink);cursor:default;}
+.sc-cell:not(.sc-black){cursor:pointer;}
+.sc-cell:not(.sc-black):focus-visible{outline:2px solid var(--blue-sky);outline-offset:-2px;z-index:3;}
+.sc-num{position:absolute;top:1px;left:2px;font-size:clamp(6px,1.1vw,9px);font-weight:700;color:var(--slate);}
+.sc-cell.sc-inword{background:var(--blue-pale);}
+.sc-cell.sc-selected{background:#FFE7B8;}
+.sc-cell.sc-correct{color:#2E8B4F;}
+.sc-cell.sc-wrong{background:var(--red-pale);color:var(--red);}
+
+.sc-clues{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px;}
+@media (max-width:520px){ .sc-clues{grid-template-columns:1fr;} }
+.sc-clue-col h3{font-family:'IBM Plex Mono';font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--blue-deep);margin-bottom:8px;}
+.sc-clue-list{list-style:none;display:flex;flex-direction:column;gap:2px;}
+.sc-clue-btn{width:100%;text-align:left;padding:6px 8px;border-radius:8px;font-size:12.5px;color:var(--ink);line-height:1.4;}
+.sc-clue-btn:hover{background:var(--blue-pale);}
+.sc-clue-btn.sc-active{background:var(--orange-pale);color:var(--ink);font-weight:600;}
+.sc-clue-btn b{font-family:'IBM Plex Mono';margin-right:5px;color:var(--blue-deep);}
+
+.sc-toolbar{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:20px;}
+.sc-toolbar button{padding:9px 14px;border-radius:999px;font-size:12.5px;font-weight:700;border:1.5px solid var(--line);color:var(--blue-deep);background:#fff;}
+.sc-toolbar button:hover{border-color:var(--blue-deep);}
+.sc-toolbar button.sc-danger{color:var(--red);}
+.sc-toolbar button.sc-danger:hover{border-color:var(--red);}
+
+.sc-status{text-align:center;font-size:13px;color:var(--slate);margin-top:14px;min-height:1.2em;}
+.sc-status.sc-solved-msg{color:#2E8B4F;font-weight:700;}
+
+.sc-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+
+.sc-lb-card{background:#fff;border:1.5px solid var(--line);border-radius:var(--radius);padding:24px;max-width:760px;margin:24px auto 0;}
+.sc-lb-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;gap:12px;}
+.sc-lb-title{display:flex;align-items:center;gap:10px;font-family:'Fraunces';font-size:16.5px;font-weight:600;}
+.sc-lb-title svg{width:19px;height:19px;color:var(--orange);flex-shrink:0;}
+.sc-lb-all{font-size:12px;color:var(--slate);font-weight:600;white-space:nowrap;}
+.sc-lb-rows{margin-top:10px;}
+.sc-lb-row{display:flex;align-items:center;gap:13px;padding:12px 0;border-bottom:1px solid var(--line);}
+.sc-lb-row:last-child{border-bottom:none;}
+.sc-lb-rank{width:26px;height:26px;border-radius:50%;background:var(--blue-pale);color:var(--blue-deep);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;}
+.sc-lb-rank svg{width:14px;height:14px;}
+.sc-lb-rank.r1{background:#FCE7B8;color:#9A6B10;}
+.sc-lb-rank.r2{background:#E9EDF2;color:#5F6B7A;}
+.sc-lb-rank.r3{background:#F3E0D2;color:#9A5A2E;}
+.sc-lb-name{flex:1;font-size:13.5px;font-weight:600;color:var(--ink);}
+.sc-lb-score{font-family:'IBM Plex Mono';font-size:13px;font-weight:600;color:var(--blue-deep);}
+.sc-lb-date{font-size:11.5px;color:var(--slate);min-width:52px;text-align:right;}
+.sc-lb-empty{font-size:13.5px;color:var(--slate);padding:10px 0;}
+
+@media (max-width:640px){
+  .sc-body{padding:24px 20px 8px;}
+  .sc-panel,.sc-lb-card{padding:18px;}
+}
 </style>
 </head>
 <body>
@@ -356,204 +368,80 @@ footer ul a:hover{color:var(--blue-deep);}
   </div>
 </header>
 
-<section class="lrn-hero">
+<section class="sc-hero">
   <div class="wrap">
     <div class="breadcrumb">
-      <a href="tools-costs.html#learn">Learn</a>
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
-      <span>HVAC</span>
+      <a href="index.html">Home</a>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+      <a href="game-arcade.html">Game Arcade</a>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+      <span>Sparky's Crossword</span>
     </div>
-    <div class="lrn-kicker">Learn · HVAC</div>
-    <h1>Home HVAC, the homeowner's plain-English reference</h1>
-    <p>The basics every homeowner should know about heating and cooling, enough to keep your system happy between service visits and recognize what needs a pro. HVAC equipment varies widely; treat this as a general primer and confirm specifics with a licensed local technician.</p>
-    <div class="lrn-cta-note"><strong>General reference.</strong> Plumbing &amp; HVAC codes, equipment, and "who owns what" vary by city, utility, and state. Always verify with a licensed local pro before working on your system.</div>
+    <span class="kicker">HOP Game Arcade</span>
+    <h1><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Sparky's Crossword</h1>
+    <p class="sc-sub">Daily 11&times;11 grid. Construction &amp; home clues. Difficult.</p>
   </div>
 </section>
 
-<div class="lrn-body">
+<div class="sc-body">
 
-  <div class="lrn-toc">
-    <div class="lrn-toc-title">On this page</div>
-    <div class="lrn-toc-grid">
-      <a href="#split-system">Split system overview</a>
-      <a href="#heat-vs-cool">Heat pump vs AC vs furnace</a>
-      <a href="#refrigerant">Refrigerant &amp; condensate</a>
-      <a href="#disconnect">Outdoor disconnect</a>
-      <a href="#filters">Filters &amp; change cadence</a>
-      <a href="#thermostat">Thermostat C-wire</a>
-      <a href="#diy-vs-pro">DIY vs call-a-pro</a>
+  <div class="sc-panel">
+    <div class="sc-datenav">
+      <button type="button" class="sc-datebtn" id="scPrevBtn" aria-label="Previous puzzle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M15 6l-6 6 6 6"/></svg>
+      </button>
+      <span class="sc-datelabel">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 2v4M16 2v4M3 9h18"/></svg>
+        <span id="scDateLabel">Today</span>
+      </span>
+      <button type="button" class="sc-datebtn" id="scNextBtn" aria-label="Next puzzle" disabled>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
     </div>
-  </div>
+    <p class="sc-archive-note" id="scArchiveNote"></p>
 
-  <!-- SECTION 1: SPLIT SYSTEM -->
-  <div class="lrn-section" id="split-system">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">🏠</div>
-      <h2>The classic split system</h2>
+    <div class="sc-grid-wrap">
+      <div class="sc-grid" id="scGrid" role="group" aria-label="Crossword grid, 11 by 11"></div>
     </div>
-    <p>Most American homes have a "split" system, two halves of the same machine, separated by an exterior wall and connected by a pair of refrigerant lines.</p>
 
-    <div class="lrn-diagram">
-      <div class="lrn-diagram-title">Outside ↔ Inside</div>
-      <div class="split-diagram">
-        <div class="split-col">
-          <div class="split-col-title">OUTSIDE</div>
-          <div class="split-item">Condenser (compressor + fan)</div>
-          <div class="split-item">Disconnect</div>
-        </div>
-        <div class="split-connector">
-          <div class="split-connector-line"></div>
-          <div class="split-connector-text">Refrigerant lines<br>(suction + liquid)</div>
-          <div class="split-connector-line"></div>
-        </div>
-        <div class="split-col">
-          <div class="split-col-title">INSIDE</div>
-          <div class="split-item">Air handler / furnace</div>
-          <div class="split-item">Filter</div>
-          <div class="split-item">Evap coil</div>
-          <div class="split-item">Supply / Return</div>
-          <div class="split-item">Condensate drain</div>
-          <div class="split-item">Disconnect</div>
-        </div>
+    <div class="sc-toolbar">
+      <button type="button" id="scCheckLetter">Check letter</button>
+      <button type="button" id="scCheckWord">Check word</button>
+      <button type="button" id="scCheckPuzzle">Check puzzle</button>
+      <button type="button" id="scRevealLetter">Reveal letter</button>
+      <button type="button" id="scRevealWord">Reveal word</button>
+      <button type="button" class="sc-danger" id="scClear">Clear</button>
+    </div>
+    <p class="sc-status" id="scStatus">Click a cell and start typing. Click a clue to jump to it.</p>
+
+    <div class="sc-clues">
+      <div class="sc-clue-col">
+        <h3>Across</h3>
+        <ul class="sc-clue-list" id="scAcrossList"></ul>
+      </div>
+      <div class="sc-clue-col">
+        <h3>Down</h3>
+        <ul class="sc-clue-list" id="scDownList"></ul>
       </div>
     </div>
 
-    <ul class="lrn-bullets">
-      <li><strong>Outdoor unit (condenser):</strong> the metal box on a pad outside. Contains the compressor and a big fan. This is what hums in the summer.</li>
-      <li><strong>Indoor unit (air handler or furnace):</strong> in a closet, attic, basement, or garage. Holds the blower motor, the evaporator coil, and the air filter. Pushes conditioned air through your ducts.</li>
-      <li><strong>Refrigerant lines:</strong> the insulated copper line plus smaller bare copper line running between the two units. Refrigerant cycles between them, carrying heat outdoors in summer (and indoors in winter, if you have a heat pump).</li>
-    </ul>
+    <div class="sc-sr-only" id="scLive" aria-live="polite" role="status"></div>
   </div>
 
-  <!-- SECTION 2: HEAT PUMP VS AC VS FURNACE -->
-  <div class="lrn-section" id="heat-vs-cool">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">🌡️</div>
-      <h2>Heat pump vs AC vs furnace</h2>
+  <div class="sc-lb-card" id="scLbCard">
+    <div class="sc-lb-head">
+      <span class="sc-lb-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v4a4 4 0 01-8 0V4z"/><path d="M8 5H5a3 3 0 003 3M16 5h3a3 3 0 01-3 3"/><path d="M12 12v3M9 19h6M10 19v-1a2 2 0 012-2 2 2 0 012 2v1"/></svg>
+        Top 3 Global &mdash; Sparky's Crossword
+      </span>
+      <span class="sc-lb-all">All-time</span>
     </div>
-    <ul class="lrn-bullets">
-      <li><strong>Air conditioner (AC) + furnace:</strong> the traditional setup. AC cools in summer, a gas (or electric) furnace heats in winter. Two completely different heat sources, one shared blower and duct system.</li>
-      <li><strong>Heat pump:</strong> looks just like an AC condenser but works both directions, moves heat out of the house in summer and pulls heat in from outdoors in winter. Increasingly common because they're very efficient down to surprisingly cold temperatures.</li>
-      <li><strong>Dual-fuel / hybrid:</strong> heat pump for mild weather plus gas furnace as backup for deep cold. Best of both in most climates.</li>
-      <li><strong>Mini-splits (ductless):</strong> wall-mounted indoor heads connected to a small outdoor unit with refrigerant lines and a control wire. No ducts needed, great for additions, garages, or retrofits.</li>
-    </ul>
-  </div>
-
-  <!-- SECTION 3: REFRIGERANT & CONDENSATE -->
-  <div class="lrn-section" id="refrigerant">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">💧</div>
-      <h2>Refrigerant lines &amp; condensate drain</h2>
-    </div>
-    <ul class="lrn-bullets">
-      <li>Refrigerant is a closed loop, it should never need "topping off." If a tech says you need refrigerant, you have a leak; topping it off without finding the leak just delays the problem.</li>
-      <li>As warm humid indoor air passes over the cold evaporator coil, water condenses out (same reason a cold glass sweats). That water drains through the condensate drain line, usually a PVC pipe leading outside or to a floor drain.</li>
-      <li>Clogged condensate drain is the single most common reason a healthy AC suddenly stops cooling, most systems have a safety float switch that shuts down the system when the drain backs up. Pouring a cup of distilled vinegar down the cleanout port once a year prevents most clogs.</li>
-    </ul>
-  </div>
-
-  <!-- SECTION 4: OUTDOOR DISCONNECT -->
-  <div class="lrn-section" id="disconnect">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">🔌</div>
-      <h2>The outdoor disconnect</h2>
-    </div>
-    <p>Required by code within sight of the outdoor unit. Some are cheap plastic pull-out blocks; better ones are switched metal disconnects with a real handle. This is what gets turned off before anyone services the condenser, and what a homeowner can flip if the outdoor unit ever needs to be killed in a hurry.</p>
-    <div class="lrn-link-box">See our recommended 60A switched disconnect in <a href="tools-materials.html">Tools &amp; Materials →</a></div>
-    <div class="lrn-warn"><strong>Heads up:</strong> pulling the outdoor disconnect doesn't cut power to the indoor air handler, that has its own disconnect near the unit (and its own breaker at the main panel).</div>
-  </div>
-
-  <!-- SECTION 5: FILTERS -->
-  <div class="lrn-section" id="filters">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">🌬️</div>
-      <h2>Filters, the cheapest insurance you can buy</h2>
-    </div>
-    <ul class="lrn-bullets">
-      <li><strong>Where it lives:</strong> usually at the return air opening or in a slot on the side/bottom of the air handler. Some homes have one big return-grille filter; others have a slot at the unit.</li>
-      <li><strong>Change cadence:</strong> 1" filters every 1 to 3 months, 4 to 5" media filters every 6 to 12 months. More often if you have pets or run the system hard.</li>
-      <li><strong>MERV rating:</strong> higher numbers filter finer particles but restrict more airflow. MERV 8 to MERV 11 is a sweet spot for most residential systems. Going too high (MERV 13+) without a properly-sized return can starve the unit and cause coil freeze-ups.</li>
-      <li>A neglected filter is the #1 cause of "my system stopped working" service calls. Frozen coils, tripped limit switches, dead blowers, most trace back to airflow.</li>
-    </ul>
-  </div>
-
-  <!-- SECTION 6: THERMOSTAT C-WIRE -->
-  <div class="lrn-section" id="thermostat">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">🧭</div>
-      <h2>Thermostat C-wire (what smart thermostats need)</h2>
-    </div>
-    <p>The "C" (common) wire provides constant 24V power to a thermostat. Older mechanical thermostats and many older digital ones don't need it, they're powered by the heating/cooling call wires themselves. Smart thermostats (Nest, Ecobee, Honeywell smart, and similar) do need it for reliable operation.</p>
-    <ul class="lrn-bullets">
-      <li>If you don't have a C-wire, options include: running a new wire (best), using a C-wire adapter at the air handler, or using a thermostat that ships with its own power-extender kit (Ecobee).</li>
-      <li>Common color convention: R = 24V hot, C = common, W = heat, Y = cool, G = fan. Brands vary, always photograph the existing wiring before disconnecting anything.</li>
-    </ul>
-  </div>
-
-  <!-- SECTION 7: DIY VS CALL A PRO -->
-  <div class="lrn-section" id="diy-vs-pro">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">🛠️</div>
-      <h2>DIY vs call-a-pro</h2>
-    </div>
-
-    <div class="diy-grid">
-      <div class="diy-col yes">
-        <h4>Safe DIY</h4>
-        <ul>
-          <li>Changing filters</li>
-          <li>Clearing the condensate drain</li>
-          <li>Hosing dust off the outdoor condenser coil (power off!)</li>
-          <li>Keeping vegetation 2 ft back from the outdoor unit</li>
-          <li>Programming the thermostat</li>
-          <li>Replacing the thermostat itself</li>
-        </ul>
-      </div>
-      <div class="diy-col no">
-        <h4>Call a pro</h4>
-        <ul>
-          <li>Any refrigerant work (it's federally regulated)</li>
-          <li>Gas furnace problems (combustion safety)</li>
-          <li>Electrical issues at the unit</li>
-          <li>Capacitor or contactor replacement on the condenser</li>
-          <li>Anything that involves opening the sealed refrigerant system</li>
-          <li>Frozen coils that don't resolve after filter change + 24 hr off</li>
-          <li>No heat in winter</li>
-          <li>System shutting off on its own</li>
-        </ul>
-      </div>
+    <div class="sc-lb-rows" id="scLbRows">
+      <p class="sc-lb-empty">Loading scores&hellip;</p>
     </div>
   </div>
 
 </div>
-
-<section class="other-issues" style="background:var(--blue-pale);padding:30px 0;">
-  <div class="wrap">
-    <h3 style="font-size:18px;margin-bottom:6px;">Having one of these problems right now?</h3>
-    <p style="font-size:13.5px;color:var(--slate);margin-bottom:20px;">Walk through it step by step with HOP, free, no signup.</p>
-    <div class="other-panel" style="background:#fff;border-radius:18px;border:1px solid var(--line);overflow:hidden;">
-      <a href="hvac-ac-not-cooling.html" class="other-row" style="display:flex;align-items:center;gap:12px;padding:13px 20px;border-bottom:1px solid var(--line);"><span style="font-size:13.5px;font-weight:600;flex:1;">AC running but not cooling</span></a>
-      <a href="hvac-no-heat.html" class="other-row" style="display:flex;align-items:center;gap:12px;padding:13px 20px;border-bottom:1px solid var(--line);"><span style="font-size:13.5px;font-weight:600;flex:1;">Furnace or heat not working</span></a>
-      <a href="hvac-thermostat-blank.html" class="other-row" style="display:flex;align-items:center;gap:12px;padding:13px 20px;"><span style="font-size:13.5px;font-weight:600;flex:1;">Thermostat blank or unresponsive</span></a>
-    </div>
-    <p style="margin-top:20px;font-size:13.5px;"><a href="find-a-pro.html?trade=hvac" style="color:var(--blue-deep);font-weight:700;text-decoration:underline;">Or find a trusted local HVAC pro →</a></p>
-  </div>
-</section>
-
-<section style="padding:30px 0;">
-  <div class="wrap">
-    <div style="background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:24px 28px;text-align:center;">
-      <p style="font-size:13.5px;color:var(--slate);line-height:1.7;margin-bottom:8px;">Stuck on something specific? Call or text the <a href="diagnose.html" style="color:var(--blue-deep);font-weight:700;text-decoration:underline;">HOPline</a>, it's free. We can walk you through your exact situation, no account needed. For active emergencies (smoke, sparks, or fire) call 911.</p>
-    </div>
-    <a href="emergency.html" style="display:flex;align-items:center;gap:14px;background:#FDEDEC;border:1.5px solid #F5C2BC;border-radius:16px;padding:18px 22px;margin-top:16px;text-decoration:none;">
-      <div style="width:36px;height:36px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;">🚨</div>
-      <div>
-        <div style="font-size:13.5px;font-weight:700;color:#8B2E23;margin-bottom:2px;">Emergency</div>
-        <div style="font-size:12.5px;color:#8B2E23;">When to call 911 vs. a licensed electrician →</div>
-      </div>
-    </a>
-  </div>
-</section>
 
 <section class="cta-band">
   <div class="wrap">
@@ -648,11 +536,10 @@ footer ul a:hover{color:var(--blue-deep);}
         <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="5"/></svg></a>
         <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></a>
       </div>
-      <div>© 2026 HomeownerPal. Built with care for homeowners.</div>
+      <div>&copy; 2026 HomeownerPal. Built with care for homeowners.</div>
     </div>
   </div>
 </footer>
-
 
 <script>
 (function () {
@@ -696,7 +583,6 @@ footer ul a:hover{color:var(--blue-deep);}
   });
 })();
 </script>
-
 
 <!-- ==== HOP NAV drawer ==== -->
 <div class="nav-drawer-overlay" id="hopNavOverlay" onclick="if(event.target===this)HOPNav.close()">
@@ -849,5 +735,510 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape') HOPInstall
 })();
 </script>
 <!-- ==== end HOP AUTH modal ==== -->
+
+<!-- ==== HOPScores: shared leaderboard contract, identical on every game page ==== -->
+<script>
+window.HOPScores = (function () {
+  var BASE = 'https://homeownerpal.com/api/scores';
+
+  function localKey(gameId) { return 'hop_scores_' + gameId; }
+
+  async function submit(gameId, name, score) {
+    try {
+      var res = await fetch(BASE, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ gameId: gameId, name: name, score: score })
+      });
+      if (!res.ok) throw new Error('bad response');
+      return await res.json();
+    } catch (e) {
+      // Fallback: local-only leaderboard until the backend is live
+      var list = [];
+      try { list = JSON.parse(localStorage.getItem(localKey(gameId))) || []; } catch (e2) {}
+      list.push({ name: name, score: score, date: new Date().toISOString() });
+      list.sort(function (a, b) { return b.score - a.score; });
+      list = list.slice(0, 10);
+      try { localStorage.setItem(localKey(gameId), JSON.stringify(list)); } catch (e3) {}
+      return { ok: true, local: true };
+    }
+  }
+
+  async function getTop(gameId, limit) {
+    limit = limit || 3;
+    try {
+      var res = await fetch(BASE + '/' + gameId + '/top?limit=' + limit);
+      if (!res.ok) throw new Error('bad response');
+      return await res.json();
+    } catch (e) {
+      var list = [];
+      try { list = JSON.parse(localStorage.getItem(localKey(gameId))) || []; } catch (e2) {}
+      return list.slice(0, limit);
+    }
+  }
+
+  async function getBest(gameId) {
+    try {
+      var res = await fetch(BASE + '/' + gameId + '/best');
+      if (!res.ok) throw new Error('bad response');
+      var data = await res.json();
+      return data.score || 0;
+    } catch (e) {
+      var list = [];
+      try { list = JSON.parse(localStorage.getItem(localKey(gameId))) || []; } catch (e2) {}
+      return list.length ? list[0].score : 0;
+    }
+  }
+
+  return { submit: submit, getTop: getTop, getBest: getBest };
+})();
+</script>
+<!-- ==== end HOPScores ==== -->
+
+<!-- ==== Sparky's Crossword: game logic ==== -->
+<script>
+/*
+ * Sparky's Crossword — DOM-based interactive crossword.
+ * Grid: fixed, hand-verified 11x11 layout (5 across, 5 down entries; every
+ * crossing letter double-checked against both its across and down word).
+ * Solution grid uses '#' for black squares.
+ *
+ * Interaction: click/tap a cell to select it (re-clicking a cell that's part
+ * of both an across and down word toggles direction). Type A-Z to fill the
+ * selected cell and auto-advance; Backspace clears and steps back; arrow
+ * keys move between cells (Left/Right = across, Up/Down = down). Clicking a
+ * clue jumps to that word. Check/Reveal act on the selected letter, the
+ * selected word, or (Check only) the whole puzzle. Clear wipes all entries.
+ *
+ * Scoring: the clock starts on first keystroke. On a full correct solve,
+ * score = 1000 minus seconds elapsed (floor 0) — faster solves score higher,
+ * consistent with every other game's "higher is better" leaderboard. Score
+ * is submitted once per solve via window.HOPScores (see contract above).
+ */
+(function () {
+  'use strict';
+
+  var GAME_ID = 'sparkys-crossword';
+
+  // '#' = black square. Verified: every crossing cell matches both its
+  // across and down word letter-for-letter (see build notes).
+  var SOLUTION = [
+    "#######PEX#",
+    "###HVAC####",
+    "###########",
+    "OSHA#######",
+    "###########",
+    "ELECTRICAL#",
+    "A#P#R#N#U##",
+    "V#O#I#C#G##",
+    "E#X#M#H#E##",
+    "##Y#####R##",
+    "####TAPE###"
+  ];
+  var ROWS = SOLUTION.length, COLS = SOLUTION[0].length;
+
+  var WORDS = [
+    { id: 'a1', dir: 'across', number: 1, row: 0, col: 7, answer: 'PEX', clue: "Modern plumbing tubing, for short" },
+    { id: 'a2', dir: 'across', number: 2, row: 1, col: 3, answer: 'HVAC', clue: "Heating and cooling system, for short" },
+    { id: 'a3', dir: 'across', number: 3, row: 3, col: 0, answer: 'OSHA', clue: "Workplace safety agency (abbr.)" },
+    { id: 'a4', dir: 'across', number: 4, row: 5, col: 0, answer: 'ELECTRICAL', clue: "Panel, wiring, and everything that can shock you" },
+    { id: 'a9', dir: 'across', number: 9, row: 10, col: 4, answer: 'TAPE', clue: "Measuring ___, a contractor's best friend" },
+    { id: 'd4', dir: 'down', number: 4, row: 5, col: 0, answer: 'EAVE', clue: "Roof's overhanging edge" },
+    { id: 'd5', dir: 'down', number: 5, row: 5, col: 2, answer: 'EPOXY', clue: "Two-part adhesive that cures rock hard" },
+    { id: 'd6', dir: 'down', number: 6, row: 5, col: 4, answer: 'TRIM', clue: "Baseboard or crown molding" },
+    { id: 'd7', dir: 'down', number: 7, row: 5, col: 6, answer: 'INCH', clue: "1/12 of a foot" },
+    { id: 'd8', dir: 'down', number: 8, row: 5, col: 8, answer: 'AUGER', clue: "Spiral drilling or drain-clearing tool" }
+  ];
+
+  var grid = document.getElementById('scGrid');
+  var acrossListEl = document.getElementById('scAcrossList');
+  var downListEl = document.getElementById('scDownList');
+  var statusEl = document.getElementById('scStatus');
+  var liveEl = document.getElementById('scLive');
+  var dateLabelEl = document.getElementById('scDateLabel');
+  var prevBtn = document.getElementById('scPrevBtn');
+  var nextBtn = document.getElementById('scNextBtn');
+  var archiveNote = document.getElementById('scArchiveNote');
+  var lbRows = document.getElementById('scLbRows');
+  var lbCard = document.getElementById('scLbCard');
+
+  var cells = []; // [row][col] -> { el, black, numEl, letterEl }
+  var values = []; // [row][col] -> current letter or ''
+  var selected = null; // {row,col}
+  var direction = 'across';
+  var currentWordId = null;
+  var firstInputTs = null;
+  var solved = false;
+
+  function escapeHtml(s) {
+    return String(s || '').replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+  function announce(msg) { liveEl.textContent = msg; }
+  function setStatus(msg, solvedMsg) {
+    statusEl.textContent = msg;
+    statusEl.classList.toggle('sc-solved-msg', !!solvedMsg);
+  }
+
+  function wordCells(word) {
+    var out = [];
+    for (var i = 0; i < word.answer.length; i++) {
+      out.push(word.dir === 'across' ? { row: word.row, col: word.col + i } : { row: word.row + i, col: word.col });
+    }
+    return out;
+  }
+  function wordAt(row, col, dir) {
+    for (var i = 0; i < WORDS.length; i++) {
+      var w = WORDS[i];
+      if (w.dir !== dir) continue;
+      if (w.dir === 'across' && w.row === row && col >= w.col && col < w.col + w.answer.length) return w;
+      if (w.dir === 'down' && w.col === col && row >= w.row && row < w.row + w.answer.length) return w;
+    }
+    return null;
+  }
+  function numberAt(row, col) {
+    for (var i = 0; i < WORDS.length; i++) {
+      if (WORDS[i].row === row && WORDS[i].col === col) return WORDS[i].number;
+    }
+    return null;
+  }
+
+  // ---- build grid DOM ----
+  function buildGrid() {
+    grid.innerHTML = '';
+    for (var r = 0; r < ROWS; r++) {
+      cells[r] = [];
+      values[r] = [];
+      for (var c = 0; c < COLS; c++) {
+        var solChar = SOLUTION[r][c];
+        var isBlack = solChar === '#';
+        var cellEl = document.createElement(isBlack ? 'div' : 'button');
+        if (!isBlack) cellEl.type = 'button';
+        cellEl.className = 'sc-cell' + (isBlack ? ' sc-black' : '');
+        if (isBlack) {
+          cellEl.setAttribute('aria-hidden', 'true');
+        } else {
+          var num = numberAt(r, c);
+          if (num) {
+            var numEl = document.createElement('span');
+            numEl.className = 'sc-num';
+            numEl.textContent = num;
+            cellEl.appendChild(numEl);
+          }
+          var letterEl = document.createElement('span');
+          letterEl.className = 'sc-letter';
+          cellEl.appendChild(letterEl);
+          cellEl.setAttribute('aria-label', 'Row ' + (r + 1) + ', column ' + (c + 1) + ', blank');
+          (function (row, col, el) {
+            el.addEventListener('click', function () { selectCell(row, col); el.focus(); });
+          })(r, c, cellEl);
+          cells[r][c] = { el: cellEl, letterEl: letterEl };
+        }
+        values[r][c] = '';
+        grid.appendChild(cellEl);
+      }
+    }
+  }
+
+  // ---- clue lists ----
+  function buildClueLists() {
+    var across = WORDS.filter(function (w) { return w.dir === 'across'; });
+    var down = WORDS.filter(function (w) { return w.dir === 'down'; });
+    function renderList(list, el) {
+      el.innerHTML = list.map(function (w) {
+        return '<li><button type="button" class="sc-clue-btn" data-word="' + w.id + '"><b>' + w.number + '.</b>' + escapeHtml(w.clue) + ' (' + w.answer.length + ')</button></li>';
+      }).join('');
+      el.querySelectorAll('.sc-clue-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var word = WORDS.filter(function (w) { return w.id === btn.getAttribute('data-word'); })[0];
+          if (!word) return;
+          direction = word.dir;
+          selectCell(word.row, word.col);
+          if (cells[word.row][word.col]) cells[word.row][word.col].el.focus();
+        });
+      });
+    }
+    renderList(across, acrossListEl);
+    renderList(down, downListEl);
+  }
+
+  // ---- selection & highlighting ----
+  function selectCell(row, col) {
+    if (SOLUTION[row][col] === '#') return;
+    var across = wordAt(row, col, 'across');
+    var down = wordAt(row, col, 'down');
+    var sameCell = selected && selected.row === row && selected.col === col;
+
+    if (sameCell && across && down) {
+      direction = direction === 'across' ? 'down' : 'across';
+    } else if (direction === 'across' && !across && down) {
+      direction = 'down';
+    } else if (direction === 'down' && !down && across) {
+      direction = 'across';
+    } else if (!across && !down) {
+      return;
+    } else if (!wordAt(row, col, direction)) {
+      direction = across ? 'across' : 'down';
+    }
+
+    selected = { row: row, col: col };
+    var word = wordAt(row, col, direction);
+    currentWordId = word ? word.id : null;
+    renderHighlights();
+    updateStatusForSelection();
+  }
+
+  function renderHighlights() {
+    for (var r = 0; r < ROWS; r++) {
+      for (var c = 0; c < COLS; c++) {
+        if (SOLUTION[r][c] === '#') continue;
+        cells[r][c].el.classList.remove('sc-inword', 'sc-selected');
+      }
+    }
+    if (!currentWordId) return;
+    var word = WORDS.filter(function (w) { return w.id === currentWordId; })[0];
+    if (!word) return;
+    wordCells(word).forEach(function (cc) {
+      cells[cc.row][cc.col].el.classList.add('sc-inword');
+    });
+    if (selected) cells[selected.row][selected.col].el.classList.add('sc-selected');
+
+    acrossListEl.querySelectorAll('.sc-clue-btn').forEach(function (b) { b.classList.remove('sc-active'); });
+    downListEl.querySelectorAll('.sc-clue-btn').forEach(function (b) { b.classList.remove('sc-active'); });
+    var activeBtn = grid.parentElement.querySelector('.sc-clue-btn[data-word="' + currentWordId + '"]');
+    if (activeBtn) activeBtn.classList.add('sc-active');
+  }
+
+  function updateStatusForSelection() {
+    var word = WORDS.filter(function (w) { return w.id === currentWordId; })[0];
+    if (word) setStatus(word.number + ' ' + (word.dir === 'across' ? 'Across' : 'Down') + ': ' + word.clue);
+  }
+
+  // ---- typing ----
+  function setCellValue(row, col, letter) {
+    values[row][col] = letter;
+    var c = cells[row][col];
+    c.letterEl.textContent = letter;
+    c.el.classList.remove('sc-correct', 'sc-wrong');
+  }
+
+  function moveSelection(row, col) {
+    if (row < 0 || row >= ROWS || col < 0 || col >= COLS) return false;
+    if (SOLUTION[row][col] === '#') return false;
+    selected = { row: row, col: col };
+    var word = wordAt(row, col, direction) || wordAt(row, col, direction === 'across' ? 'down' : 'across');
+    if (word) { direction = word.dir; currentWordId = word.id; }
+    renderHighlights();
+    updateStatusForSelection();
+    cells[row][col].el.focus();
+    return true;
+  }
+
+  function stepInDirection(row, col, dir, delta) {
+    return dir === 'across' ? { row: row, col: col + delta } : { row: row + delta, col: col };
+  }
+
+  function selectNextClue() {
+    if (!currentWordId) return;
+    var idx = WORDS.map(function (w) { return w.id; }).indexOf(currentWordId);
+    var next = WORDS[(idx + 1) % WORDS.length];
+    direction = next.dir;
+    selectCell(next.row, next.col);
+    if (cells[next.row][next.col]) cells[next.row][next.col].el.focus();
+  }
+
+  function handleTyping(key) {
+    if (!selected) return;
+    var row = selected.row, col = selected.col;
+
+    if (/^[a-zA-Z]$/.test(key)) {
+      if (firstInputTs == null) firstInputTs = Date.now();
+      setCellValue(row, col, key.toUpperCase());
+      var word = WORDS.filter(function (w) { return w.id === currentWordId; })[0];
+      if (word) {
+        var idxInWord = direction === 'across' ? col - word.col : row - word.row;
+        if (idxInWord < word.answer.length - 1) {
+          var nxt = stepInDirection(row, col, direction, 1);
+          moveSelection(nxt.row, nxt.col);
+        } else {
+          checkIfSolved();
+          selectNextClue();
+        }
+      }
+      checkIfSolved();
+      return;
+    }
+    if (key === 'Backspace') {
+      if (values[row][col]) {
+        setCellValue(row, col, '');
+      } else {
+        var prev = stepInDirection(row, col, direction, -1);
+        if (prev.row >= 0 && prev.col >= 0 && SOLUTION[prev.row] && SOLUTION[prev.row][prev.col] !== '#') {
+          moveSelection(prev.row, prev.col);
+          setCellValue(prev.row, prev.col, '');
+        }
+      }
+      return;
+    }
+    if (key === 'ArrowLeft') { direction = 'across'; moveSelection(row, col - 1); return; }
+    if (key === 'ArrowRight') { direction = 'across'; moveSelection(row, col + 1); return; }
+    if (key === 'ArrowUp') { direction = 'down'; moveSelection(row - 1, col); return; }
+    if (key === 'ArrowDown') { direction = 'down'; moveSelection(row + 1, col); return; }
+  }
+
+  grid.addEventListener('keydown', function (e) {
+    if (e.key.length === 1 && /[a-zA-Z]/.test(e.key)) { handleTyping(e.key); e.preventDefault(); return; }
+    if (['Backspace', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].indexOf(e.key) !== -1) {
+      handleTyping(e.key);
+      e.preventDefault();
+    }
+  });
+
+  // ---- check / reveal / clear ----
+  function markCell(row, col) {
+    var c = cells[row][col];
+    if (!values[row][col]) return null;
+    var ok = values[row][col] === SOLUTION[row][col];
+    c.el.classList.toggle('sc-correct', ok);
+    if (!ok) {
+      c.el.classList.add('sc-wrong');
+      setTimeout(function () { c.el.classList.remove('sc-wrong'); }, 700);
+    }
+    return ok;
+  }
+
+  document.getElementById('scCheckLetter').addEventListener('click', function () {
+    if (!selected) return;
+    var ok = markCell(selected.row, selected.col);
+    announce(ok ? 'Correct.' : 'Not quite.');
+  });
+  document.getElementById('scCheckWord').addEventListener('click', function () {
+    var word = WORDS.filter(function (w) { return w.id === currentWordId; })[0];
+    if (!word) return;
+    var correct = 0, total = 0;
+    wordCells(word).forEach(function (cc) {
+      if (values[cc.row][cc.col]) { total++; if (markCell(cc.row, cc.col)) correct++; }
+    });
+    announce(correct + ' of ' + total + ' filled letters correct in this word.');
+  });
+  document.getElementById('scCheckPuzzle').addEventListener('click', function () {
+    var correct = 0, total = 0;
+    for (var r = 0; r < ROWS; r++) for (var c = 0; c < COLS; c++) {
+      if (SOLUTION[r][c] === '#') continue;
+      if (values[r][c]) { total++; if (markCell(r, c)) correct++; }
+    }
+    announce(correct + ' of ' + total + ' filled letters correct.');
+    checkIfSolved();
+  });
+  document.getElementById('scRevealLetter').addEventListener('click', function () {
+    if (!selected) return;
+    setCellValue(selected.row, selected.col, SOLUTION[selected.row][selected.col]);
+    cells[selected.row][selected.col].el.classList.add('sc-correct');
+    checkIfSolved();
+  });
+  document.getElementById('scRevealWord').addEventListener('click', function () {
+    var word = WORDS.filter(function (w) { return w.id === currentWordId; })[0];
+    if (!word) return;
+    wordCells(word).forEach(function (cc) {
+      setCellValue(cc.row, cc.col, SOLUTION[cc.row][cc.col]);
+      cells[cc.row][cc.col].el.classList.add('sc-correct');
+    });
+    checkIfSolved();
+  });
+  document.getElementById('scClear').addEventListener('click', function () {
+    for (var r = 0; r < ROWS; r++) for (var c = 0; c < COLS; c++) {
+      if (SOLUTION[r][c] === '#') continue;
+      setCellValue(r, c, '');
+    }
+    solved = false;
+    firstInputTs = null;
+    setStatus('Cleared. Click a cell and start typing.');
+    announce('Puzzle cleared.');
+  });
+
+  // ---- solve detection & scoring ----
+  function checkIfSolved() {
+    if (solved) return;
+    for (var r = 0; r < ROWS; r++) {
+      for (var c = 0; c < COLS; c++) {
+        if (SOLUTION[r][c] === '#') continue;
+        if (values[r][c] !== SOLUTION[r][c]) return;
+      }
+    }
+    solved = true;
+    for (var r2 = 0; r2 < ROWS; r2++) for (var c2 = 0; c2 < COLS; c2++) {
+      if (SOLUTION[r2][c2] !== '#') cells[r2][c2].el.classList.add('sc-correct');
+    }
+    var elapsedSeconds = firstInputTs ? (Date.now() - firstInputTs) / 1000 : 0;
+    var score = Math.max(0, Math.round(1000 - elapsedSeconds));
+    setStatus('Solved! Nice work.', true);
+    announce('Puzzle solved. Score ' + score + '.');
+    submitScore(score);
+  }
+
+  function submitScore(finalScore) {
+    var user = null;
+    try { user = JSON.parse(localStorage.getItem('hop_user')); } catch (e) {}
+    var name = (user && user.name) ? user.name : 'Anonymous';
+    Promise.resolve(window.HOPScores.submit(GAME_ID, name, finalScore))
+      .catch(function () {})
+      .then(refreshLeaderboard);
+  }
+
+  // ---- date navigator (single authored puzzle for now) ----
+  function initDateNav() {
+    var todayStr = new Date().toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' });
+    dateLabelEl.textContent = 'Today \u2014 ' + todayStr;
+    nextBtn.disabled = true;
+    prevBtn.addEventListener('click', function () {
+      archiveNote.textContent = "Older puzzles aren't available yet \u2014 check back daily for a new one.";
+    });
+  }
+
+  // ---- leaderboard ----
+  function formatDate(iso) {
+    try {
+      var d = new Date(iso);
+      if (isNaN(d.getTime())) return '';
+      return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    } catch (e) { return ''; }
+  }
+  function crownSvg() {
+    return '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 18h14l1.5-9-5 3-3.5-5-3.5 5-5-3L5 18z"/></svg>';
+  }
+  function renderLeaderboardRows(list) {
+    if (!list || !list.length) {
+      lbRows.innerHTML = '<p class="sc-lb-empty">No scores yet &mdash; be the first on the board.</p>';
+      return;
+    }
+    var html = list.slice(0, 3).map(function (row, i) {
+      var rank = i + 1;
+      var rankInner = rank === 1 ? crownSvg() : String(rank);
+      return '<div class="sc-lb-row">' +
+        '<span class="sc-lb-rank r' + rank + '">' + rankInner + '</span>' +
+        '<span class="sc-lb-name">' + escapeHtml(row.name || 'Anonymous') + '</span>' +
+        '<span class="sc-lb-score">' + escapeHtml(row.score) + '</span>' +
+        '<span class="sc-lb-date">' + formatDate(row.date) + '</span>' +
+        '</div>';
+    }).join('');
+    lbRows.innerHTML = html;
+  }
+  function refreshLeaderboard() {
+    Promise.resolve(window.HOPScores.getTop(GAME_ID, 3))
+      .then(function (top) { lbCard.style.display = ''; renderLeaderboardRows(top); })
+      .catch(function () { lbCard.style.display = 'none'; });
+  }
+
+  // --- init ---
+  buildGrid();
+  buildClueLists();
+  initDateNav();
+  refreshLeaderboard();
+  selectCell(5, 0);
+})();
+</script>
+<!-- ==== end Sparky's Crossword game logic ==== -->
+
 </body>
 </html>

@@ -11,8 +11,8 @@
 <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-<title>Home HVAC: The Homeowner's Plain-English Reference | HomeownerPal</title>
-<meta name="description" content="Split systems, heat pumps vs AC vs furnace, refrigerant and condensate, outdoor disconnects, filters, thermostat C-wire, and what's safe DIY vs a licensed tech.">
+<title>Duct Dash | HOP Game Arcade | HomeownerPal</title>
+<meta name="description" content="Three-lane runner. Dodge dust, lint, and ice. A free HVAC-themed reflex game from the HOP Game Arcade.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -62,6 +62,7 @@ section{padding:44px 0;}
 .btn-outline{background:transparent;color:var(--blue-deep);border:1.5px solid var(--blue-deep);}
 .btn-outline:hover{background:var(--blue-deep);color:#fff;}
 .btn-sm{padding:10px 18px;font-size:13.5px;}
+.btn:disabled{opacity:.5;cursor:not-allowed;transform:none!important;box-shadow:none!important;}
 
 /* Header */
 header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
@@ -88,9 +89,10 @@ nav.primary-nav a.active{color:var(--blue-deep);}
 .section-head p{color:var(--slate);font-size:16px;line-height:1.65;}
 
 /* Breadcrumb */
-.breadcrumb{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--slate);margin-bottom:24px;}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--slate);margin-bottom:24px;flex-wrap:wrap;}
 .breadcrumb a{color:var(--blue-deep);font-weight:600;}
 .breadcrumb a:hover{text-decoration:underline;}
+.breadcrumb svg{width:12px;height:12px;flex-shrink:0;}
 
 /* CTA band */
 .cta-band{background:#fff;}
@@ -124,79 +126,12 @@ footer ul a:hover{color:var(--blue-deep);}
 .footer-bottom .socials svg{width:16px;height:16px;color:var(--slate);}
 .footer-bottom .socials a:hover svg{color:var(--blue-deep);}
 
-
-  /* ---- Page-specific additions below ---- */
-  .lrn-hero{background:linear-gradient(180deg,var(--blue-pale) 0%, #fff 85%);padding:20px 0 24px;}
-  .lrn-hero .wrap{max-width:1600px;}
-  .lrn-kicker{font-size:11.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--blue-deep);margin-bottom:10px;}
-  .lrn-hero h1{font-size:clamp(24px,3.2vw,34px);margin-bottom:14px;max-width:1600px;}
-  .lrn-hero p{font-size:14.5px;color:var(--slate);line-height:1.75;max-width:660px;margin-bottom:16px;}
-  .lrn-cta-note{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 18px;font-size:13px;color:var(--slate);line-height:1.6;}
-  .lrn-cta-note a{color:var(--blue-deep);font-weight:700;text-decoration:underline;}
-
-  .lrn-body{max-width:1600px;margin:0;padding:0 28px;}
-
-  .lrn-toc{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:26px 28px;margin:20px 0;}
-  .lrn-toc-title{font-size:13px;font-weight:700;color:var(--blue-deep);text-transform:uppercase;letter-spacing:.03em;margin-bottom:14px;}
-  .lrn-toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;}
-  @media (max-width:560px){ .lrn-toc-grid{grid-template-columns:1fr;} }
-  .lrn-toc-grid a{font-size:13.5px;color:var(--ink);font-weight:600;padding:6px 0;border-bottom:1px dashed var(--line);}
-  .lrn-toc-grid a:hover{color:var(--blue-deep);}
-
-  .lrn-section{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:30px 32px;margin:16px 0;scroll-margin-top:48px;}
-  .lrn-section-head{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
-  .lrn-section-icon{width:38px;height:38px;border-radius:10px;background:var(--blue-pale);color:var(--blue-deep);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;}
-  .lrn-section h2{font-size:19px;}
-  .lrn-section p{font-size:13.5px;color:var(--slate);line-height:1.7;margin-bottom:14px;}
-
-  .lrn-diagram{background:var(--blue-pale);border-radius:14px;padding:22px;margin:16px 0 20px;}
-  .lrn-diagram-title{font-size:11px;font-weight:700;color:var(--blue-deep);text-transform:uppercase;letter-spacing:.03em;margin-bottom:14px;text-align:center;}
-
-  .split-diagram{display:flex;align-items:stretch;gap:10px;justify-content:center;flex-wrap:wrap;}
-  .split-col{background:#fff;border-radius:12px;padding:14px 16px;flex:1;min-width:150px;max-width:220px;border:1.5px solid var(--line);}
-  .split-col-title{font-size:11.5px;font-weight:700;color:var(--blue-deep);margin-bottom:8px;text-align:center;padding-bottom:6px;border-bottom:1px solid var(--line);}
-  .split-item{font-size:11px;color:var(--ink);padding:5px 0;border-bottom:1px dashed var(--line);}
-  .split-item:last-child{border-bottom:none;}
-  .split-connector{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:0 4px;min-width:110px;}
-  .split-connector-line{width:100%;height:2px;background:repeating-linear-gradient(90deg,var(--orange),var(--orange) 5px,transparent 5px,transparent 9px);}
-  .split-connector-text{font-size:10px;color:var(--orange);font-weight:700;text-align:center;line-height:1.4;}
-
-  .lrn-bullets{list-style:none;display:flex;flex-direction:column;gap:9px;margin:14px 0;}
-  .lrn-bullets li{position:relative;padding-left:17px;font-size:13.5px;color:var(--ink);line-height:1.65;}
-  .lrn-bullets li::before{content:"";position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--blue-deep);}
-  .lrn-bullets li strong{color:var(--blue-deep);}
-
-  .lrn-warn{background:#FFF6E9;border:1px solid #F0D9A8;border-radius:12px;padding:14px 18px;margin:16px 0;font-size:13px;color:#8A5D18;line-height:1.65;}
-  .lrn-warn strong{color:#6B4712;}
-
-  .lrn-rule{background:var(--blue-deep);color:#fff;border-radius:12px;padding:16px 20px;font-size:13px;line-height:1.7;margin:16px 0;}
-
-  .lrn-link-box{background:var(--blue-pale);border-radius:12px;padding:14px 18px;margin:14px 0;font-size:13px;}
-  .lrn-link-box a{color:var(--blue-deep);font-weight:700;text-decoration:underline;}
-
-  .diy-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0;}
-  @media (max-width:600px){ .diy-grid{grid-template-columns:1fr;} }
-  .diy-col{border-radius:14px;padding:18px 20px;}
-  .diy-col.yes{background:#F0FAF4;border:1px solid #C9E6D6;}
-  .diy-col.no{background:#FDEDEC;border:1px solid #F0C4BE;}
-  .diy-col h4{font-size:13px;font-weight:700;margin-bottom:10px;}
-  .diy-col.yes h4{color:#1D5C3F;}
-  .diy-col.no h4{color:var(--red);}
-  .diy-col ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
-  .diy-col li{font-size:12.5px;line-height:1.55;padding-left:16px;position:relative;}
-  .diy-col.yes li{color:#1D5C3F;}
-  .diy-col.no li{color:#8B2E23;}
-  .diy-col li::before{content:"";position:absolute;left:0;top:6px;width:5px;height:5px;border-radius:50%;}
-  .diy-col.yes li::before{background:#1E8A5A;}
-  .diy-col.no li::before{background:var(--red);}
-
-  /* ===== SECTION HEADLINE WIPE (site-wide, matches homepage) ===== */
-  .js .wipe{clip-path:inset(0 100% 0 0);transition:clip-path 5.5s cubic-bezier(.22,1,.36,1);will-change:clip-path;}
-  .js .wipe.is-visible{clip-path:inset(0 0 0 0);}
-  @media (prefers-reduced-motion:reduce){ .js .wipe{clip-path:none!important;transition:none!important;} }
+/* ===== SECTION HEADLINE WIPE (site-wide, matches homepage) ===== */
+.js .wipe{clip-path:inset(0 100% 0 0);transition:clip-path 5.5s cubic-bezier(.22,1,.36,1);will-change:clip-path;}
+.js .wipe.is-visible{clip-path:inset(0 0 0 0);}
+@media (prefers-reduced-motion:reduce){ .js .wipe{clip-path:none!important;transition:none!important;} }
 
 /* ==== HOP: full-width sections (uniform, left-to-right, no centering) — appended override ==== */
-/* Outermost section containers: span full width with one uniform side gutter */
 .wrap,
 .guide-body, .guide-hero .wrap, .other-issues .wrap,
 .insp-body, .insp-hero .wrap, .insp-other .wrap,
@@ -213,14 +148,14 @@ footer ul a:hover{color:var(--blue-deep);}
 .fap-hero .wrap,
 .reviews-strip .wrap,
 .myhome-section .wrap,
-.hl-hero .wrap, .hl-body {
+.hl-hero .wrap, .hl-body,
+.dd-hero .wrap, .dd-body {
   max-width: none;
   margin-left: 0;
   margin-right: 0;
   padding-left: 40px;
   padding-right: 40px;
 }
-/* Nested containers (already inside a padded .wrap): widen only, no extra gutter */
 .hero-center,
 .diag-hero-inner,
 .helpband-inner,
@@ -247,7 +182,8 @@ footer ul a:hover{color:var(--blue-deep);}
 .fap-hero .wrap,
 .reviews-strip .wrap,
 .myhome-section .wrap,
-.hl-hero .wrap, .hl-body {
+.hl-hero .wrap, .hl-body,
+.dd-hero .wrap, .dd-body {
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -334,6 +270,72 @@ footer ul a:hover{color:var(--blue-deep);}
 /* ==== HOP: mascot logo mark (img replacing svg mark, appended) ==== */
 .hop-brand-icon .mark{width:22px;height:34px;object-fit:contain;}
 .logo .mark{object-fit:contain;}
+
+/* ---- Page-specific: Duct Dash (.dd-*) ---- */
+.dd-hero{background:linear-gradient(180deg,var(--blue-pale) 0%, #fff 85%);padding:20px 0 26px;}
+.dd-hero .wrap{max-width:1600px;}
+.dd-hero .kicker{color:var(--blue-deep);}
+.dd-hero h1{font-size:clamp(28px,4vw,42px);margin-bottom:10px;display:flex;align-items:center;gap:12px;}
+.dd-hero h1 svg{width:.82em;height:.82em;color:var(--blue-sky);flex-shrink:0;}
+.dd-sub{color:var(--slate);font-size:16px;}
+
+.dd-body{max-width:1600px;margin:0;padding:32px 28px 8px;}
+
+.dd-panel{background:#fff;border:1.5px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:0 20px 44px rgba(0,61,151,.08);max-width:460px;margin:0 auto;}
+.dd-stat-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px;font-size:14px;gap:10px;flex-wrap:wrap;}
+.dd-stat-row .hw-label,.dd-stat-row .dd-label{font-weight:700;color:var(--ink);}
+.dd-stat-row .num{font-family:'IBM Plex Mono';color:var(--blue-deep);}
+.dd-stat-row .dd-best{color:var(--slate);font-size:13px;}
+.dd-stat-row .dd-best .num{color:var(--ink);font-weight:700;}
+.dd-boost-badge{display:none;align-items:center;gap:4px;background:var(--orange-pale);color:var(--orange);font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:999px;}
+.dd-boost-badge.on{display:inline-flex;}
+
+.dd-stage{position:relative;width:100%;aspect-ratio:3/4;max-height:560px;border-radius:14px;overflow:hidden;background:#101A28;touch-action:none;}
+.dd-stage canvas{display:block;width:100%;height:100%;}
+.dd-stage:focus-visible{outline:3px solid var(--blue-sky);outline-offset:3px;}
+
+.dd-controls{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px;}
+.dd-dirbtn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  padding:14px;border-radius:12px;font-weight:700;font-size:14px;
+  background:var(--blue-pale);color:var(--blue-deep);border:1.5px solid var(--line);
+  transition:background .12s ease, border-color .12s ease, transform .08s ease;
+  user-select:none;-webkit-user-select:none;
+}
+.dd-dirbtn svg{width:16px;height:16px;}
+.dd-dirbtn:hover{border-color:var(--blue-deep);}
+.dd-dirbtn:active{background:var(--blue-deep);color:#fff;transform:scale(.97);}
+.dd-start{display:block;width:100%;margin-top:12px;text-align:center;justify-content:center;}
+.dd-hint{text-align:center;font-size:12.5px;color:var(--slate);margin-top:12px;line-height:1.6;}
+.dd-hint kbd{font-family:'IBM Plex Mono';background:var(--blue-pale);border:1px solid var(--line);border-radius:5px;padding:1px 6px;font-size:11.5px;}
+.dd-legend{display:flex;justify-content:center;gap:18px;margin-top:6px;font-size:11.5px;color:var(--slate);}
+.dd-legend span{display:inline-flex;align-items:center;gap:5px;}
+.dd-legend svg{width:14px;height:14px;}
+
+.dd-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+
+.dd-lb-card{background:#fff;border:1.5px solid var(--line);border-radius:var(--radius);padding:24px;max-width:460px;margin:24px auto 0;}
+.dd-lb-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;gap:12px;}
+.dd-lb-title{display:flex;align-items:center;gap:10px;font-family:'Fraunces';font-size:16.5px;font-weight:600;}
+.dd-lb-title svg{width:19px;height:19px;color:var(--orange);flex-shrink:0;}
+.dd-lb-all{font-size:12px;color:var(--slate);font-weight:600;white-space:nowrap;}
+.dd-lb-rows{margin-top:10px;}
+.dd-lb-row{display:flex;align-items:center;gap:13px;padding:12px 0;border-bottom:1px solid var(--line);}
+.dd-lb-row:last-child{border-bottom:none;}
+.dd-lb-rank{width:26px;height:26px;border-radius:50%;background:var(--blue-pale);color:var(--blue-deep);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;}
+.dd-lb-rank svg{width:14px;height:14px;}
+.dd-lb-rank.r1{background:#FCE7B8;color:#9A6B10;}
+.dd-lb-rank.r2{background:#E9EDF2;color:#5F6B7A;}
+.dd-lb-rank.r3{background:#F3E0D2;color:#9A5A2E;}
+.dd-lb-name{flex:1;font-size:13.5px;font-weight:600;color:var(--ink);}
+.dd-lb-score{font-family:'IBM Plex Mono';font-size:13px;font-weight:600;color:var(--blue-deep);}
+.dd-lb-date{font-size:11.5px;color:var(--slate);min-width:52px;text-align:right;}
+.dd-lb-empty{font-size:13.5px;color:var(--slate);padding:10px 0;}
+
+@media (max-width:640px){
+  .dd-body{padding:24px 20px 8px;}
+  .dd-panel,.dd-lb-card{padding:18px;}
+}
 </style>
 </head>
 <body>
@@ -356,204 +358,71 @@ footer ul a:hover{color:var(--blue-deep);}
   </div>
 </header>
 
-<section class="lrn-hero">
+<section class="dd-hero">
   <div class="wrap">
     <div class="breadcrumb">
-      <a href="tools-costs.html#learn">Learn</a>
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
-      <span>HVAC</span>
+      <a href="index.html">Home</a>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+      <a href="game-arcade.html">Game Arcade</a>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+      <span>Duct Dash</span>
     </div>
-    <div class="lrn-kicker">Learn · HVAC</div>
-    <h1>Home HVAC, the homeowner's plain-English reference</h1>
-    <p>The basics every homeowner should know about heating and cooling, enough to keep your system happy between service visits and recognize what needs a pro. HVAC equipment varies widely; treat this as a general primer and confirm specifics with a licensed local technician.</p>
-    <div class="lrn-cta-note"><strong>General reference.</strong> Plumbing &amp; HVAC codes, equipment, and "who owns what" vary by city, utility, and state. Always verify with a licensed local pro before working on your system.</div>
+    <span class="kicker">HOP Game Arcade</span>
+    <h1><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h13a4 4 0 010 8H9M3 12h9M3 16h6"/></svg>Duct Dash</h1>
+    <p class="dd-sub">Three-lane runner. Dodge dust, lint, and ice.</p>
   </div>
 </section>
 
-<div class="lrn-body">
+<div class="dd-body">
 
-  <div class="lrn-toc">
-    <div class="lrn-toc-title">On this page</div>
-    <div class="lrn-toc-grid">
-      <a href="#split-system">Split system overview</a>
-      <a href="#heat-vs-cool">Heat pump vs AC vs furnace</a>
-      <a href="#refrigerant">Refrigerant &amp; condensate</a>
-      <a href="#disconnect">Outdoor disconnect</a>
-      <a href="#filters">Filters &amp; change cadence</a>
-      <a href="#thermostat">Thermostat C-wire</a>
-      <a href="#diy-vs-pro">DIY vs call-a-pro</a>
+  <div class="dd-panel">
+    <div class="dd-stat-row">
+      <span class="dd-label">Score: <span class="num" id="ddScore">0</span></span>
+      <span class="dd-boost-badge" id="ddBoostBadge">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h7v8l11-14h-8z"/></svg>2&times;
+      </span>
+      <span class="dd-best">Best: <span class="num" id="ddBest">0</span></span>
     </div>
+
+    <div class="dd-stage" id="ddStage" tabindex="0" aria-label="Duct Dash game area. Use the left and right arrow keys, tap either side, or the buttons below, to switch lanes.">
+      <canvas id="ddCanvas"></canvas>
+    </div>
+
+    <div class="dd-controls">
+      <button type="button" class="dd-dirbtn" id="ddLeftBtn" aria-label="Move left">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        Left
+      </button>
+      <button type="button" class="dd-dirbtn" id="ddRightBtn" aria-label="Move right">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Right
+      </button>
+    </div>
+
+    <button type="button" class="btn btn-blue dd-start" id="ddStartBtn">Start Dash</button>
+    <p class="dd-hint">Swipe or tap either side of the duct, or use <kbd>&larr;</kbd> <kbd>&rarr;</kbd>, to swap lanes.</p>
+    <div class="dd-legend">
+      <span><svg viewBox="0 0 24 24" fill="currentColor" style="color:#FFD60A"><path d="M13 2L3 14h7v8l11-14h-8z"/></svg>Invincibility</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--orange)"><path d="M14.7 6.3a4 4 0 00-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 005.4-5.4l-2.1 2.1-2-2z"/></svg>Speed boost</span>
+    </div>
+
+    <div class="dd-sr-only" id="ddLive" aria-live="polite" role="status"></div>
   </div>
 
-  <!-- SECTION 1: SPLIT SYSTEM -->
-  <div class="lrn-section" id="split-system">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">🏠</div>
-      <h2>The classic split system</h2>
+  <div class="dd-lb-card" id="ddLbCard">
+    <div class="dd-lb-head">
+      <span class="dd-lb-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v4a4 4 0 01-8 0V4z"/><path d="M8 5H5a3 3 0 003 3M16 5h3a3 3 0 01-3 3"/><path d="M12 12v3M9 19h6M10 19v-1a2 2 0 012-2 2 2 0 012 2v1"/></svg>
+        Top 3 Global &mdash; Duct Dash
+      </span>
+      <span class="dd-lb-all">All-time</span>
     </div>
-    <p>Most American homes have a "split" system, two halves of the same machine, separated by an exterior wall and connected by a pair of refrigerant lines.</p>
-
-    <div class="lrn-diagram">
-      <div class="lrn-diagram-title">Outside ↔ Inside</div>
-      <div class="split-diagram">
-        <div class="split-col">
-          <div class="split-col-title">OUTSIDE</div>
-          <div class="split-item">Condenser (compressor + fan)</div>
-          <div class="split-item">Disconnect</div>
-        </div>
-        <div class="split-connector">
-          <div class="split-connector-line"></div>
-          <div class="split-connector-text">Refrigerant lines<br>(suction + liquid)</div>
-          <div class="split-connector-line"></div>
-        </div>
-        <div class="split-col">
-          <div class="split-col-title">INSIDE</div>
-          <div class="split-item">Air handler / furnace</div>
-          <div class="split-item">Filter</div>
-          <div class="split-item">Evap coil</div>
-          <div class="split-item">Supply / Return</div>
-          <div class="split-item">Condensate drain</div>
-          <div class="split-item">Disconnect</div>
-        </div>
-      </div>
-    </div>
-
-    <ul class="lrn-bullets">
-      <li><strong>Outdoor unit (condenser):</strong> the metal box on a pad outside. Contains the compressor and a big fan. This is what hums in the summer.</li>
-      <li><strong>Indoor unit (air handler or furnace):</strong> in a closet, attic, basement, or garage. Holds the blower motor, the evaporator coil, and the air filter. Pushes conditioned air through your ducts.</li>
-      <li><strong>Refrigerant lines:</strong> the insulated copper line plus smaller bare copper line running between the two units. Refrigerant cycles between them, carrying heat outdoors in summer (and indoors in winter, if you have a heat pump).</li>
-    </ul>
-  </div>
-
-  <!-- SECTION 2: HEAT PUMP VS AC VS FURNACE -->
-  <div class="lrn-section" id="heat-vs-cool">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">🌡️</div>
-      <h2>Heat pump vs AC vs furnace</h2>
-    </div>
-    <ul class="lrn-bullets">
-      <li><strong>Air conditioner (AC) + furnace:</strong> the traditional setup. AC cools in summer, a gas (or electric) furnace heats in winter. Two completely different heat sources, one shared blower and duct system.</li>
-      <li><strong>Heat pump:</strong> looks just like an AC condenser but works both directions, moves heat out of the house in summer and pulls heat in from outdoors in winter. Increasingly common because they're very efficient down to surprisingly cold temperatures.</li>
-      <li><strong>Dual-fuel / hybrid:</strong> heat pump for mild weather plus gas furnace as backup for deep cold. Best of both in most climates.</li>
-      <li><strong>Mini-splits (ductless):</strong> wall-mounted indoor heads connected to a small outdoor unit with refrigerant lines and a control wire. No ducts needed, great for additions, garages, or retrofits.</li>
-    </ul>
-  </div>
-
-  <!-- SECTION 3: REFRIGERANT & CONDENSATE -->
-  <div class="lrn-section" id="refrigerant">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">💧</div>
-      <h2>Refrigerant lines &amp; condensate drain</h2>
-    </div>
-    <ul class="lrn-bullets">
-      <li>Refrigerant is a closed loop, it should never need "topping off." If a tech says you need refrigerant, you have a leak; topping it off without finding the leak just delays the problem.</li>
-      <li>As warm humid indoor air passes over the cold evaporator coil, water condenses out (same reason a cold glass sweats). That water drains through the condensate drain line, usually a PVC pipe leading outside or to a floor drain.</li>
-      <li>Clogged condensate drain is the single most common reason a healthy AC suddenly stops cooling, most systems have a safety float switch that shuts down the system when the drain backs up. Pouring a cup of distilled vinegar down the cleanout port once a year prevents most clogs.</li>
-    </ul>
-  </div>
-
-  <!-- SECTION 4: OUTDOOR DISCONNECT -->
-  <div class="lrn-section" id="disconnect">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">🔌</div>
-      <h2>The outdoor disconnect</h2>
-    </div>
-    <p>Required by code within sight of the outdoor unit. Some are cheap plastic pull-out blocks; better ones are switched metal disconnects with a real handle. This is what gets turned off before anyone services the condenser, and what a homeowner can flip if the outdoor unit ever needs to be killed in a hurry.</p>
-    <div class="lrn-link-box">See our recommended 60A switched disconnect in <a href="tools-materials.html">Tools &amp; Materials →</a></div>
-    <div class="lrn-warn"><strong>Heads up:</strong> pulling the outdoor disconnect doesn't cut power to the indoor air handler, that has its own disconnect near the unit (and its own breaker at the main panel).</div>
-  </div>
-
-  <!-- SECTION 5: FILTERS -->
-  <div class="lrn-section" id="filters">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">🌬️</div>
-      <h2>Filters, the cheapest insurance you can buy</h2>
-    </div>
-    <ul class="lrn-bullets">
-      <li><strong>Where it lives:</strong> usually at the return air opening or in a slot on the side/bottom of the air handler. Some homes have one big return-grille filter; others have a slot at the unit.</li>
-      <li><strong>Change cadence:</strong> 1" filters every 1 to 3 months, 4 to 5" media filters every 6 to 12 months. More often if you have pets or run the system hard.</li>
-      <li><strong>MERV rating:</strong> higher numbers filter finer particles but restrict more airflow. MERV 8 to MERV 11 is a sweet spot for most residential systems. Going too high (MERV 13+) without a properly-sized return can starve the unit and cause coil freeze-ups.</li>
-      <li>A neglected filter is the #1 cause of "my system stopped working" service calls. Frozen coils, tripped limit switches, dead blowers, most trace back to airflow.</li>
-    </ul>
-  </div>
-
-  <!-- SECTION 6: THERMOSTAT C-WIRE -->
-  <div class="lrn-section" id="thermostat">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">🧭</div>
-      <h2>Thermostat C-wire (what smart thermostats need)</h2>
-    </div>
-    <p>The "C" (common) wire provides constant 24V power to a thermostat. Older mechanical thermostats and many older digital ones don't need it, they're powered by the heating/cooling call wires themselves. Smart thermostats (Nest, Ecobee, Honeywell smart, and similar) do need it for reliable operation.</p>
-    <ul class="lrn-bullets">
-      <li>If you don't have a C-wire, options include: running a new wire (best), using a C-wire adapter at the air handler, or using a thermostat that ships with its own power-extender kit (Ecobee).</li>
-      <li>Common color convention: R = 24V hot, C = common, W = heat, Y = cool, G = fan. Brands vary, always photograph the existing wiring before disconnecting anything.</li>
-    </ul>
-  </div>
-
-  <!-- SECTION 7: DIY VS CALL A PRO -->
-  <div class="lrn-section" id="diy-vs-pro">
-    <div class="lrn-section-head">
-      <div class="lrn-section-icon">🛠️</div>
-      <h2>DIY vs call-a-pro</h2>
-    </div>
-
-    <div class="diy-grid">
-      <div class="diy-col yes">
-        <h4>Safe DIY</h4>
-        <ul>
-          <li>Changing filters</li>
-          <li>Clearing the condensate drain</li>
-          <li>Hosing dust off the outdoor condenser coil (power off!)</li>
-          <li>Keeping vegetation 2 ft back from the outdoor unit</li>
-          <li>Programming the thermostat</li>
-          <li>Replacing the thermostat itself</li>
-        </ul>
-      </div>
-      <div class="diy-col no">
-        <h4>Call a pro</h4>
-        <ul>
-          <li>Any refrigerant work (it's federally regulated)</li>
-          <li>Gas furnace problems (combustion safety)</li>
-          <li>Electrical issues at the unit</li>
-          <li>Capacitor or contactor replacement on the condenser</li>
-          <li>Anything that involves opening the sealed refrigerant system</li>
-          <li>Frozen coils that don't resolve after filter change + 24 hr off</li>
-          <li>No heat in winter</li>
-          <li>System shutting off on its own</li>
-        </ul>
-      </div>
+    <div class="dd-lb-rows" id="ddLbRows">
+      <p class="dd-lb-empty">Loading scores&hellip;</p>
     </div>
   </div>
 
 </div>
-
-<section class="other-issues" style="background:var(--blue-pale);padding:30px 0;">
-  <div class="wrap">
-    <h3 style="font-size:18px;margin-bottom:6px;">Having one of these problems right now?</h3>
-    <p style="font-size:13.5px;color:var(--slate);margin-bottom:20px;">Walk through it step by step with HOP, free, no signup.</p>
-    <div class="other-panel" style="background:#fff;border-radius:18px;border:1px solid var(--line);overflow:hidden;">
-      <a href="hvac-ac-not-cooling.html" class="other-row" style="display:flex;align-items:center;gap:12px;padding:13px 20px;border-bottom:1px solid var(--line);"><span style="font-size:13.5px;font-weight:600;flex:1;">AC running but not cooling</span></a>
-      <a href="hvac-no-heat.html" class="other-row" style="display:flex;align-items:center;gap:12px;padding:13px 20px;border-bottom:1px solid var(--line);"><span style="font-size:13.5px;font-weight:600;flex:1;">Furnace or heat not working</span></a>
-      <a href="hvac-thermostat-blank.html" class="other-row" style="display:flex;align-items:center;gap:12px;padding:13px 20px;"><span style="font-size:13.5px;font-weight:600;flex:1;">Thermostat blank or unresponsive</span></a>
-    </div>
-    <p style="margin-top:20px;font-size:13.5px;"><a href="find-a-pro.html?trade=hvac" style="color:var(--blue-deep);font-weight:700;text-decoration:underline;">Or find a trusted local HVAC pro →</a></p>
-  </div>
-</section>
-
-<section style="padding:30px 0;">
-  <div class="wrap">
-    <div style="background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:24px 28px;text-align:center;">
-      <p style="font-size:13.5px;color:var(--slate);line-height:1.7;margin-bottom:8px;">Stuck on something specific? Call or text the <a href="diagnose.html" style="color:var(--blue-deep);font-weight:700;text-decoration:underline;">HOPline</a>, it's free. We can walk you through your exact situation, no account needed. For active emergencies (smoke, sparks, or fire) call 911.</p>
-    </div>
-    <a href="emergency.html" style="display:flex;align-items:center;gap:14px;background:#FDEDEC;border:1.5px solid #F5C2BC;border-radius:16px;padding:18px 22px;margin-top:16px;text-decoration:none;">
-      <div style="width:36px;height:36px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;">🚨</div>
-      <div>
-        <div style="font-size:13.5px;font-weight:700;color:#8B2E23;margin-bottom:2px;">Emergency</div>
-        <div style="font-size:12.5px;color:#8B2E23;">When to call 911 vs. a licensed electrician →</div>
-      </div>
-    </a>
-  </div>
-</section>
 
 <section class="cta-band">
   <div class="wrap">
@@ -648,11 +517,10 @@ footer ul a:hover{color:var(--blue-deep);}
         <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="5"/></svg></a>
         <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></a>
       </div>
-      <div>© 2026 HomeownerPal. Built with care for homeowners.</div>
+      <div>&copy; 2026 HomeownerPal. Built with care for homeowners.</div>
     </div>
   </div>
 </footer>
-
 
 <script>
 (function () {
@@ -696,7 +564,6 @@ footer ul a:hover{color:var(--blue-deep);}
   });
 })();
 </script>
-
 
 <!-- ==== HOP NAV drawer ==== -->
 <div class="nav-drawer-overlay" id="hopNavOverlay" onclick="if(event.target===this)HOPNav.close()">
@@ -849,5 +716,497 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape') HOPInstall
 })();
 </script>
 <!-- ==== end HOP AUTH modal ==== -->
+
+<!-- ==== HOPScores: shared leaderboard contract, identical on every game page ==== -->
+<script>
+window.HOPScores = (function () {
+  var BASE = 'https://homeownerpal.com/api/scores';
+
+  function localKey(gameId) { return 'hop_scores_' + gameId; }
+
+  async function submit(gameId, name, score) {
+    try {
+      var res = await fetch(BASE, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ gameId: gameId, name: name, score: score })
+      });
+      if (!res.ok) throw new Error('bad response');
+      return await res.json();
+    } catch (e) {
+      // Fallback: local-only leaderboard until the backend is live
+      var list = [];
+      try { list = JSON.parse(localStorage.getItem(localKey(gameId))) || []; } catch (e2) {}
+      list.push({ name: name, score: score, date: new Date().toISOString() });
+      list.sort(function (a, b) { return b.score - a.score; });
+      list = list.slice(0, 10);
+      try { localStorage.setItem(localKey(gameId), JSON.stringify(list)); } catch (e3) {}
+      return { ok: true, local: true };
+    }
+  }
+
+  async function getTop(gameId, limit) {
+    limit = limit || 3;
+    try {
+      var res = await fetch(BASE + '/' + gameId + '/top?limit=' + limit);
+      if (!res.ok) throw new Error('bad response');
+      return await res.json();
+    } catch (e) {
+      var list = [];
+      try { list = JSON.parse(localStorage.getItem(localKey(gameId))) || []; } catch (e2) {}
+      return list.slice(0, limit);
+    }
+  }
+
+  async function getBest(gameId) {
+    try {
+      var res = await fetch(BASE + '/' + gameId + '/best');
+      if (!res.ok) throw new Error('bad response');
+      var data = await res.json();
+      return data.score || 0;
+    } catch (e) {
+      var list = [];
+      try { list = JSON.parse(localStorage.getItem(localKey(gameId))) || []; } catch (e2) {}
+      return list.length ? list[0].score : 0;
+    }
+  }
+
+  return { submit: submit, getTop: getTop, getBest: getBest };
+})();
+</script>
+<!-- ==== end HOPScores ==== -->
+
+<!-- ==== Duct Dash: game logic ==== -->
+<script>
+/*
+ * Duct Dash — 3-lane canvas runner.
+ * Rules: HOP runs through a duct with three lanes. Hazards (dust, lint, ice)
+ * fall from the top in a random lane; switch lanes to dodge them. Power-ups:
+ * a lightning bolt grants brief invincibility (pass through one hazard),
+ * a wrench grants a brief speed boost with a 2x score multiplier. One
+ * unshielded hit ends the run. Score accrues continuously with distance.
+ *
+ * Controls: ArrowLeft / ArrowRight (single step per press), tap left/right
+ * half of the stage, or the on-screen Left / Right buttons. Start Dash
+ * (re)starts a run from any state.
+ *
+ * Score/leaderboard: uses window.HOPScores exclusively (see contract above).
+ */
+(function () {
+  'use strict';
+
+  var GAME_ID = 'duct-dash';
+  var LANES = 3;
+
+  var stage = document.getElementById('ddStage');
+  var canvas = document.getElementById('ddCanvas');
+  var ctx = canvas.getContext('2d');
+  var scoreEl = document.getElementById('ddScore');
+  var bestEl = document.getElementById('ddBest');
+  var boostBadge = document.getElementById('ddBoostBadge');
+  var startBtn = document.getElementById('ddStartBtn');
+  var leftBtn = document.getElementById('ddLeftBtn');
+  var rightBtn = document.getElementById('ddRightBtn');
+  var liveEl = document.getElementById('ddLive');
+  var lbRows = document.getElementById('ddLbRows');
+  var lbCard = document.getElementById('ddLbCard');
+
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var W = 0, H = 0, dpr = 1, laneW = 0;
+  var player = { lane: 1, x: 0, y: 0, r: 16, drawX: 0 };
+  var items = []; // {x(lane center computed), lane, y, kind:'dust'|'lint'|'ice'|'bolt'|'wrench', r}
+  var score = 0, best = 0, scoreAccum = 0;
+  var state = 'idle';
+  var spawnTimer = 0, powerupTimer = 0;
+  var elapsed = 0;
+  var invincibleUntil = 0, boostUntil = 0;
+  var rafId = null, lastTs = null;
+  var lastAnnounced = 0;
+  var bgOffset = 0;
+
+  function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+  function lerp(a, b, t) { return a + (b - a) * t; }
+
+  function escapeHtml(s) {
+    return String(s || '').replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  function announce(msg) { liveEl.textContent = msg; }
+
+  function laneCenterX(lane) { return laneW * lane + laneW / 2; }
+
+  function resizeCanvas() {
+    var rect = stage.getBoundingClientRect();
+    W = rect.width; H = rect.height;
+    dpr = window.devicePixelRatio || 1;
+    canvas.width = Math.max(1, Math.round(W * dpr));
+    canvas.height = Math.max(1, Math.round(H * dpr));
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    laneW = W / LANES;
+    player.r = clamp(laneW * 0.28, 12, 30);
+    player.y = H * 0.86;
+    player.drawX = laneCenterX(player.lane);
+    render();
+  }
+  var resizeTimer = null;
+  function onResize() { clearTimeout(resizeTimer); resizeTimer = setTimeout(resizeCanvas, 150); }
+  window.addEventListener('resize', onResize);
+  if ('ResizeObserver' in window) new ResizeObserver(onResize).observe(stage);
+
+  function difficultyForElapsed(t) {
+    var r = clamp(t / 45, 0, 1);
+    return {
+      fallSpeed: H * (0.34 + 0.30 * r),
+      spawnInterval: lerp(1.05, 0.5, r)
+    };
+  }
+
+  function moveLane(delta) {
+    if (state !== 'playing') return;
+    player.lane = clamp(player.lane + delta, 0, LANES - 1);
+  }
+
+  function spawnHazard() {
+    var lane = Math.floor(Math.random() * LANES);
+    var kinds = ['dust', 'lint', 'ice'];
+    var kind = kinds[Math.floor(Math.random() * kinds.length)];
+    items.push({ lane: lane, y: -30, r: clamp(laneW * 0.24, 10, 26), kind: kind });
+  }
+  function spawnPowerup() {
+    var lane = Math.floor(Math.random() * LANES);
+    var kind = Math.random() < 0.5 ? 'bolt' : 'wrench';
+    items.push({ lane: lane, y: -30, r: clamp(laneW * 0.22, 10, 24), kind: kind });
+  }
+
+  function resetRun() {
+    score = 0; scoreAccum = 0;
+    items = [];
+    player.lane = 1;
+    spawnTimer = 0; powerupTimer = 0; elapsed = 0;
+    invincibleUntil = 0; boostUntil = 0;
+    lastAnnounced = 0;
+    scoreEl.textContent = '0';
+    boostBadge.classList.remove('on');
+  }
+
+  function startGame() {
+    resetRun();
+    state = 'playing';
+    startBtn.textContent = 'Restart Dash';
+    announce('Dash started. Dodge dust, lint, and ice.');
+    lastTs = null;
+    if (rafId) cancelAnimationFrame(rafId);
+    rafId = requestAnimationFrame(loop);
+  }
+
+  function endGame() {
+    state = 'over';
+    if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+    var finalScore = Math.floor(score);
+    if (finalScore > best) { best = finalScore; bestEl.textContent = String(best); }
+    startBtn.textContent = 'Play Again';
+    boostBadge.classList.remove('on');
+    announce('Game over. Score ' + finalScore + '.');
+    submitScore(finalScore);
+  }
+
+  function submitScore(finalScore) {
+    var user = null;
+    try { user = JSON.parse(localStorage.getItem('hop_user')); } catch (e) {}
+    var name = (user && user.name) ? user.name : 'Anonymous';
+    Promise.resolve(window.HOPScores.submit(GAME_ID, name, finalScore))
+      .catch(function () {})
+      .then(refreshLeaderboard);
+  }
+
+  function loop(ts) {
+    if (state !== 'playing') return;
+    if (lastTs == null) lastTs = ts;
+    var dt = Math.min(0.05, (ts - lastTs) / 1000);
+    lastTs = ts;
+    elapsed += dt;
+
+    update(dt, ts);
+    render(ts);
+
+    if (state === 'playing') rafId = requestAnimationFrame(loop);
+  }
+
+  function update(dt, ts) {
+    var d = difficultyForElapsed(elapsed);
+    var boosted = ts < boostUntil;
+    var invincible = ts < invincibleUntil;
+    boostBadge.classList.toggle('on', boosted);
+
+    // lane easing
+    var targetX = laneCenterX(player.lane);
+    player.drawX = lerp(player.drawX, targetX, clamp(dt * 12, 0, 1));
+
+    // score accrual
+    var rate = 12 * (boosted ? 2 : 1);
+    scoreAccum += rate * dt;
+    var newScore = Math.floor(scoreAccum);
+    if (newScore !== score) {
+      score = newScore;
+      scoreEl.textContent = String(score);
+      if (score - lastAnnounced >= 25) { lastAnnounced = score; announce('Score ' + score + '.'); }
+    }
+
+    // spawn
+    spawnTimer += dt;
+    var spawnInterval = boosted ? d.spawnInterval * 0.8 : d.spawnInterval;
+    if (spawnTimer >= spawnInterval) { spawnTimer = 0; spawnHazard(); }
+    powerupTimer += dt;
+    if (powerupTimer >= 6.5) { powerupTimer = 0; if (Math.random() < 0.7) spawnPowerup(); }
+
+    var fallSpeed = d.fallSpeed * (boosted ? 1.35 : 1);
+    for (var i = items.length - 1; i >= 0; i--) {
+      var it = items[i];
+      it.y += fallSpeed * dt;
+
+      var sameLane = it.lane === player.lane;
+      var overlapsY = Math.abs(it.y - player.y) < (it.r + player.r) * 0.85;
+      if (sameLane && overlapsY) {
+        if (it.kind === 'bolt') {
+          invincibleUntil = ts + 4000;
+          announce('Invincibility!');
+          items.splice(i, 1);
+          continue;
+        }
+        if (it.kind === 'wrench') {
+          boostUntil = ts + 4000;
+          announce('Speed boost!');
+          items.splice(i, 1);
+          continue;
+        }
+        // hazard
+        if (invincible) {
+          items.splice(i, 1);
+          continue;
+        }
+        endGame();
+        return;
+      }
+
+      if (it.y - it.r > H + 10) items.splice(i, 1);
+    }
+  }
+
+  // ---- drawing ----
+  function drawBackground(ts) {
+    ctx.fillStyle = '#101A28';
+    ctx.fillRect(0, 0, W, H);
+
+    // lane dividers (dashed)
+    ctx.strokeStyle = 'rgba(79,168,224,0.28)';
+    ctx.lineWidth = 2;
+    ctx.setLineDash([10, 12]);
+    for (var l = 1; l < LANES; l++) {
+      var x = laneW * l;
+      ctx.beginPath();
+      ctx.moveTo(x, 0);
+      ctx.lineTo(x, H);
+      ctx.stroke();
+    }
+    ctx.setLineDash([]);
+
+    // scrolling duct segment lines (decorative motion cue)
+    var boosted = boostUntil && ts && ts < boostUntil;
+    if (!reduceMotion) {
+      var speed = (boosted ? 220 : 90);
+      bgOffset = (bgOffset + speed * 0.016) % 60;
+    }
+    ctx.strokeStyle = 'rgba(255,255,255,0.05)';
+    ctx.lineWidth = 1;
+    for (var y = -60 + (bgOffset % 60); y < H; y += 60) {
+      ctx.beginPath();
+      ctx.moveTo(0, y);
+      ctx.lineTo(W, y);
+      ctx.stroke();
+    }
+  }
+
+  function drawHazard(it) {
+    var x = laneCenterX(it.lane);
+    ctx.save();
+    ctx.translate(x, it.y);
+    if (it.kind === 'dust') {
+      ctx.fillStyle = 'rgba(200,205,214,0.85)';
+      ctx.beginPath(); ctx.arc(-it.r * 0.35, 0, it.r * 0.55, 0, Math.PI * 2); ctx.fill();
+      ctx.beginPath(); ctx.arc(it.r * 0.35, -it.r * 0.15, it.r * 0.5, 0, Math.PI * 2); ctx.fill();
+      ctx.beginPath(); ctx.arc(0, it.r * 0.3, it.r * 0.5, 0, Math.PI * 2); ctx.fill();
+    } else if (it.kind === 'lint') {
+      ctx.fillStyle = 'rgba(214,196,161,0.9)';
+      ctx.beginPath();
+      ctx.moveTo(-it.r, 0);
+      ctx.quadraticCurveTo(-it.r * 0.6, -it.r, 0, -it.r * 0.7);
+      ctx.quadraticCurveTo(it.r * 0.7, -it.r * 0.9, it.r, -it.r * 0.1);
+      ctx.quadraticCurveTo(it.r * 0.6, it.r * 0.8, 0, it.r * 0.7);
+      ctx.quadraticCurveTo(-it.r * 0.7, it.r * 0.9, -it.r, 0);
+      ctx.fill();
+    } else if (it.kind === 'ice') {
+      ctx.fillStyle = 'rgba(190,225,245,0.92)';
+      ctx.beginPath();
+      ctx.moveTo(0, -it.r);
+      ctx.lineTo(it.r * 0.8, 0);
+      ctx.lineTo(0, it.r);
+      ctx.lineTo(-it.r * 0.8, 0);
+      ctx.closePath();
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(255,255,255,0.8)';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath(); ctx.moveTo(-it.r * 0.3, -it.r * 0.3); ctx.lineTo(it.r * 0.3, it.r * 0.3); ctx.stroke();
+    } else if (it.kind === 'bolt') {
+      ctx.fillStyle = '#FFD60A';
+      ctx.beginPath();
+      ctx.moveTo(it.r * 0.15, -it.r);
+      ctx.lineTo(-it.r * 0.5, it.r * 0.1);
+      ctx.lineTo(0, it.r * 0.1);
+      ctx.lineTo(-it.r * 0.15, it.r);
+      ctx.lineTo(it.r * 0.5, -it.r * 0.05);
+      ctx.lineTo(0, -it.r * 0.05);
+      ctx.closePath();
+      ctx.fill();
+    } else if (it.kind === 'wrench') {
+      ctx.strokeStyle = 'var(--orange)';
+      ctx.strokeStyle = '#F5820D';
+      ctx.lineWidth = it.r * 0.32;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.moveTo(-it.r * 0.55, it.r * 0.55);
+      ctx.lineTo(it.r * 0.45, -it.r * 0.45);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.arc(-it.r * 0.6, it.r * 0.6, it.r * 0.32, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+    ctx.restore();
+  }
+
+  function drawPlayer(ts) {
+    var invincible = ts && ts < invincibleUntil;
+    ctx.save();
+    ctx.translate(player.drawX, player.y);
+    if (invincible) {
+      var pulse = reduceMotion ? 0.8 : 0.6 + 0.3 * Math.sin((ts || 0) / 120);
+      ctx.strokeStyle = 'rgba(255,214,10,' + pulse.toFixed(2) + ')';
+      ctx.lineWidth = 3;
+      ctx.beginPath(); ctx.arc(0, 0, player.r + 7, 0, Math.PI * 2); ctx.stroke();
+    }
+    // ears
+    ctx.fillStyle = '#E9EDF2';
+    ctx.beginPath(); ctx.ellipse(-player.r * 0.4, -player.r * 1.15, player.r * 0.22, player.r * 0.55, -0.2, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(player.r * 0.4, -player.r * 1.15, player.r * 0.22, player.r * 0.55, 0.2, 0, Math.PI * 2); ctx.fill();
+    // body
+    ctx.fillStyle = '#003D97';
+    ctx.beginPath(); ctx.arc(0, 0, player.r, 0, Math.PI * 2); ctx.fill();
+    // nose
+    ctx.fillStyle = '#F5820D';
+    ctx.beginPath(); ctx.ellipse(0, player.r * 0.15, player.r * 0.16, player.r * 0.12, 0, 0, Math.PI * 2); ctx.fill();
+    ctx.restore();
+  }
+
+  function drawOverlayText(lines) {
+    ctx.fillStyle = 'rgba(16,26,40,0.72)';
+    ctx.fillRect(0, 0, W, H);
+    ctx.fillStyle = '#fff';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    var baseSize = clamp(W * 0.1, 15, 24);
+    lines.forEach(function (line, i) {
+      ctx.font = (i === 0 ? '700 ' : '500 ') + (i === 0 ? baseSize : baseSize * 0.6) + 'px Inter, sans-serif';
+      ctx.fillText(line, W / 2, H / 2 + i * (baseSize * 0.9) - (lines.length - 1) * baseSize * 0.4);
+    });
+  }
+
+  function render(ts) {
+    if (!W || !H) return;
+    drawBackground(ts);
+    items.forEach(drawHazard);
+    drawPlayer(ts);
+    if (state === 'idle') {
+      drawOverlayText(['Press Start Dash', 'Swap lanes to dodge']);
+    } else if (state === 'over') {
+      drawOverlayText(['Game Over', 'Score: ' + Math.floor(score), 'Press Start to dash again']);
+    }
+  }
+
+  function idleRenderLoop(ts) {
+    if (state !== 'idle' && state !== 'over') return;
+    render(ts);
+    requestAnimationFrame(idleRenderLoop);
+  }
+
+  // --- input wiring ---
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') { if (!e.repeat) moveLane(-1); e.preventDefault(); }
+    else if (e.key === 'ArrowRight') { if (!e.repeat) moveLane(1); e.preventDefault(); }
+    else if ((e.key === ' ' || e.key === 'Enter') && (state === 'idle' || state === 'over') && document.activeElement !== startBtn) {
+      startGame();
+    }
+  });
+
+  stage.addEventListener('pointerdown', function (e) {
+    var rect = stage.getBoundingClientRect();
+    var relX = e.clientX - rect.left;
+    if (state === 'idle' || state === 'over') { startGame(); return; }
+    moveLane(relX < rect.width / 2 ? -1 : 1);
+  });
+
+  leftBtn.addEventListener('click', function () { moveLane(-1); });
+  rightBtn.addEventListener('click', function () { moveLane(1); });
+  startBtn.addEventListener('click', startGame);
+
+  // --- leaderboard ---
+  function formatDate(iso) {
+    try {
+      var d = new Date(iso);
+      if (isNaN(d.getTime())) return '';
+      return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    } catch (e) { return ''; }
+  }
+  function crownSvg() {
+    return '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 18h14l1.5-9-5 3-3.5-5-3.5 5-5-3L5 18z"/></svg>';
+  }
+  function renderLeaderboardRows(list) {
+    if (!list || !list.length) {
+      lbRows.innerHTML = '<p class="dd-lb-empty">No scores yet &mdash; be the first on the board.</p>';
+      return;
+    }
+    var html = list.slice(0, 3).map(function (row, i) {
+      var rank = i + 1;
+      var rankInner = rank === 1 ? crownSvg() : String(rank);
+      return '<div class="dd-lb-row">' +
+        '<span class="dd-lb-rank r' + rank + '">' + rankInner + '</span>' +
+        '<span class="dd-lb-name">' + escapeHtml(row.name || 'Anonymous') + '</span>' +
+        '<span class="dd-lb-score">' + escapeHtml(row.score) + '</span>' +
+        '<span class="dd-lb-date">' + formatDate(row.date) + '</span>' +
+        '</div>';
+    }).join('');
+    lbRows.innerHTML = html;
+  }
+  function refreshLeaderboard() {
+    Promise.resolve(window.HOPScores.getTop(GAME_ID, 3))
+      .then(function (top) { lbCard.style.display = ''; renderLeaderboardRows(top); })
+      .catch(function () { lbCard.style.display = 'none'; });
+  }
+  function loadBest() {
+    Promise.resolve(window.HOPScores.getBest(GAME_ID))
+      .then(function (b) { best = b || 0; bestEl.textContent = String(best); })
+      .catch(function () { best = 0; });
+  }
+
+  // --- init ---
+  resizeCanvas();
+  loadBest();
+  refreshLeaderboard();
+  requestAnimationFrame(idleRenderLoop);
+})();
+</script>
+<!-- ==== end Duct Dash game logic ==== -->
+
 </body>
 </html>
