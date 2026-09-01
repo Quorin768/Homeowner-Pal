@@ -12,6 +12,24 @@
 <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 <title>My Home | HomeownerPal</title>
 <meta name="description" content="Set up and manage your private home profile — equipment, documents, reminders, and maintenance history, all in one place.">
+
+<link rel="canonical" href="https://homeownerpal.com/my-home.html">
+<meta name="robots" content="noindex,follow">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HomeownerPal">
+<meta property="og:title" content="My Home | HomeownerPal">
+<meta property="og:description" content="Set up and manage your private home profile — equipment, documents, reminders, and maintenance history, all in one place.">
+<meta property="og:url" content="https://homeownerpal.com/my-home.html">
+<meta property="og:image" content="https://homeownerpal.com/assets/default-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@HomeownerPal">
+<meta name="twitter:title" content="My Home | HomeownerPal">
+<meta name="twitter:description" content="Set up and manage your private home profile — equipment, documents, reminders, and maintenance history, all in one place.">
+<meta name="twitter:image" content="https://homeownerpal.com/assets/default-og.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -198,6 +216,42 @@
 /* ==== HOP: mascot logo mark (img replacing svg mark, appended) ==== */
 .hop-brand-icon .mark{width:22px;height:34px;object-fit:contain;}
 .logo .mark{object-fit:contain;}
+/* ==== HOP: floating call/text widget (site-wide) ==== */
+.hop-phone-widget{position:fixed;right:24px;bottom:24px;z-index:300;display:flex;flex-direction:column;align-items:flex-end;gap:12px;}
+.hpw-options{display:flex;flex-direction:column;gap:10px;align-items:flex-end;
+  opacity:0;pointer-events:none;transform:translateY(10px) scale(.96);transform-origin:bottom right;
+  transition:opacity .18s ease, transform .18s ease;}
+.hop-phone-widget.open .hpw-options{opacity:1;pointer-events:auto;transform:translateY(0) scale(1);}
+.hpw-option{display:flex;align-items:center;gap:11px;background:#fff;border:1.5px solid var(--line);
+  padding:9px 20px 9px 9px;border-radius:999px;box-shadow:0 10px 26px rgba(0,61,151,.16);
+  font-weight:700;font-size:14px;color:var(--ink);transition:transform .15s ease, box-shadow .15s ease;white-space:nowrap;}
+.hpw-option:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(0,61,151,.22);}
+.hpw-option-icon{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;}
+.hpw-option-icon svg{width:17px;height:17px;}
+.hpw-call .hpw-option-icon{background:var(--blue-deep);}
+.hpw-text .hpw-option-icon{background:var(--orange);}
+.hpw-option-text{display:flex;flex-direction:column;line-height:1.25;}
+.hpw-option-label{font-size:13.5px;font-weight:700;color:var(--ink);}
+.hpw-option-sub{font-size:11px;font-weight:600;color:var(--slate);}
+.hpw-toggle{width:60px;height:60px;border-radius:50%;background:var(--orange);color:#fff;
+  display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px rgba(245,130,13,.42);
+  transition:transform .18s ease, box-shadow .18s ease;position:relative;flex-shrink:0;}
+.hpw-toggle:hover{transform:scale(1.06);box-shadow:0 16px 36px rgba(245,130,13,.5);}
+.hpw-toggle svg{width:26px;height:26px;position:absolute;transition:opacity .15s ease, transform .15s ease;}
+.hpw-toggle .hpw-icon-close{opacity:0;transform:rotate(-45deg) scale(.7);}
+.hpw-toggle .hpw-icon-phone{opacity:1;transform:none;}
+.hop-phone-widget.open .hpw-toggle .hpw-icon-phone{opacity:0;transform:rotate(45deg) scale(.7);}
+.hop-phone-widget.open .hpw-toggle .hpw-icon-close{opacity:1;transform:none;}
+.hpw-pulse{position:absolute;inset:0;border-radius:50%;border:2px solid var(--orange);opacity:0;
+  animation:hpwPulse 2.6s ease-out infinite;}
+@keyframes hpwPulse{0%{opacity:.55;transform:scale(1);}100%{opacity:0;transform:scale(1.55);}}
+.hop-phone-widget.open .hpw-pulse{display:none;}
+@media (prefers-reduced-motion:reduce){ .hpw-pulse{animation:none;display:none;} }
+@media (max-width:640px){
+  .hop-phone-widget{right:16px;bottom:16px;}
+  .hpw-toggle{width:54px;height:54px;}
+  .hpw-toggle svg{width:23px;height:23px;}
+}
 </style>
 </head>
 <body>
@@ -208,7 +262,7 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
     </a>
     <a href="index.html" class="mh-logo">
-      <img class="mark" src="assets/hop-logo-mark.png" alt="HomeownerPal">
+      <img class="mark" src="assets/hop-logo-mark-v2.png" alt="HomeownerPal">
       <span class="mh-logo-txt">
         <span class="mh-logo-title">My Home</span>
         <span class="mh-logo-sub">HomeownerPal</span>
@@ -460,5 +514,46 @@
     Object.keys(map).forEach(function(id){ var el=document.getElementById(id); if(el&&h[map[id]]) el.value=h[map[id]]; });
   })();
 </script>
+<!-- ==== HOP: floating call/text widget (site-wide) ==== -->
+<div class="hop-phone-widget" id="hopPhoneWidget">
+  <div class="hpw-options" id="hpwOptions">
+    <a href="sms:+14234675463" class="hpw-option hpw-text">
+      <span class="hpw-option-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      </span>
+      <span class="hpw-option-text">
+        <span class="hpw-option-label">Text HOP</span>
+        <span class="hpw-option-sub">(423) 467-5463</span>
+      </span>
+    </a>
+    <a href="tel:+14234675463" class="hpw-option hpw-call">
+      <span class="hpw-option-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+      </span>
+      <span class="hpw-option-text">
+        <span class="hpw-option-label">Call HOP</span>
+        <span class="hpw-option-sub">(423) 467-5463</span>
+      </span>
+    </a>
+  </div>
+  <button type="button" class="hpw-toggle" id="hpwToggle" onclick="HOPPhone.toggle(event)" aria-label="Call or text HomeownerPal" aria-expanded="false">
+    <span class="hpw-pulse" aria-hidden="true"></span>
+    <svg class="hpw-icon-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+    <svg class="hpw-icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+</div>
+<script>
+window.HOPPhone={
+  toggle:function(e){ if(e) e.stopPropagation(); var w=document.getElementById('hopPhoneWidget'); if(!w) return;
+    var isOpen=w.classList.toggle('open'); var t=document.getElementById('hpwToggle'); if(t) t.setAttribute('aria-expanded', isOpen?'true':'false'); },
+  close:function(){ var w=document.getElementById('hopPhoneWidget'); if(w){ w.classList.remove('open'); var t=document.getElementById('hpwToggle'); if(t) t.setAttribute('aria-expanded','false'); } }
+};
+document.addEventListener('click',function(e){
+  var w=document.getElementById('hopPhoneWidget');
+  if(w && w.classList.contains('open') && !w.contains(e.target)) HOPPhone.close();
+});
+document.addEventListener('keydown',function(e){ if(e.key==='Escape') HOPPhone.close(); });
+</script>
+<!-- ==== end HOP floating call/text widget ==== -->
 </body>
 </html>

@@ -13,6 +13,44 @@
 <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 <title>Tools & Costs: Know What Things Cost Before You Start | HomeownerPal</title>
 <meta name="description" content="Tools, materials, and guides generated for homeowners by real tradespeople. Free calculators, flagged inspection costs, and gear picks with no sponsors, no paid placement.">
+
+<link rel="canonical" href="https://homeownerpal.com/tools-costs.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HomeownerPal">
+<meta property="og:title" content="Tools &amp; Costs: Know What Things Cost Before You Start | HomeownerPal">
+<meta property="og:description" content="Tools, materials, and guides generated for homeowners by real tradespeople. Free calculators, flagged inspection costs, and gear picks with no sponsors, no paid placement.">
+<meta property="og:url" content="https://homeownerpal.com/tools-costs.html">
+<meta property="og:image" content="https://homeownerpal.com/assets/default-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@HomeownerPal">
+<meta name="twitter:title" content="Tools &amp; Costs: Know What Things Cost Before You Start | HomeownerPal">
+<meta name="twitter:description" content="Tools, materials, and guides generated for homeowners by real tradespeople. Free calculators, flagged inspection costs, and gear picks with no sponsors, no paid placement.">
+<meta name="twitter:image" content="https://homeownerpal.com/assets/default-og.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://homeownerpal.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tools & Costs: Know What Things Cost Before You Start",
+      "item": "https://homeownerpal.com/tools-costs.html"
+    }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -129,11 +167,13 @@ footer ul a:hover{color:var(--blue-deep);}
   .tc-hero{background:linear-gradient(180deg,var(--blue-pale) 0%, #fff 85%);padding:30px 0 26px;text-align:left;overflow:hidden;}
   .tc-hero-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;}
   .tc-hero-text{max-width:640px;}
-  .tc-hero-hop{width:170px;height:auto;flex-shrink:0;animation:tcHopFloat 3.2s ease-in-out infinite;filter:drop-shadow(0 14px 20px rgba(0,61,151,.14));}
+  .tc-hero-hop{height:250px;width:auto;flex-shrink:0;animation:tcHopFloat 3.2s ease-in-out infinite;filter:drop-shadow(0 14px 20px rgba(0,61,151,.14));}
+  @media (max-width:960px){ .tc-hero-hop{height:210px;} }
   @keyframes tcHopFloat{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-14px) rotate(-4deg);}}
   @media (prefers-reduced-motion: reduce){ .tc-hero-hop{animation:none;} }
   @media (max-width:760px){ .tc-hero-hop{display:none;} }
-  .tc-hero .kicker{color:var(--blue-deep);}
+  .tc-hero .kicker{color:var(--blue-deep);font-size:37.5px;line-height:1.12;}
+  @media (max-width:640px){ .tc-hero .kicker{font-size:24px;} }
   .tc-hero h1{font-size:clamp(30px,4vw,44px);margin-bottom:12px;}
   .tc-hero p.sub{color:var(--slate);font-size:16.5px;max-width:1600px;margin:0;}
 
@@ -190,6 +230,28 @@ footer ul a:hover{color:var(--blue-deep);}
   .insp-badge svg{width:13px;height:13px;}
   .insp-h2{font-size:clamp(22px,2.6vw,28px);margin-bottom:14px;max-width:900px;}
   .insp-intro-p{font-size:15px;color:var(--slate);line-height:1.7;margin-bottom:16px;max-width:900px;}
+
+  /* Big "kicker-style" section badge — matches the tripled TOOLS & COSTS kicker (37.5px, blue-deep) on a pale-blue pill */
+  .tc-bigbadge{
+    display:inline-flex;align-items:center;gap:12px;
+    background:var(--blue-pale);color:var(--blue-deep);
+    font-family:'IBM Plex Mono';font-size:37.5px;font-weight:600;
+    letter-spacing:.05em;text-transform:uppercase;line-height:1.1;
+    padding:10px 22px;border-radius:16px;margin-bottom:16px;
+  }
+  .tc-bigbadge svg{width:30px;height:30px;flex-shrink:0;}
+  @media (max-width:640px){ .tc-bigbadge{font-size:19px;padding:8px 15px;gap:8px;} .tc-bigbadge svg{width:17px;height:17px;} }
+
+  /* Two-column section header: text on the left, a floating illustration on the right */
+  .tc-sec-head{display:flex;align-items:center;justify-content:space-between;gap:44px;}
+  .tc-sec-head-text{flex:1 1 auto;min-width:0;}
+  .tc-sec-head-text .insp-intro-p{margin-bottom:0;}
+  .tc-sec-float{flex-shrink:0;width:auto;animation:tcTilt 4.2s ease-in-out infinite;filter:drop-shadow(0 16px 26px rgba(0,61,151,.16));}
+  .tc-sec-float--book{height:185px;}
+  .tc-sec-float--calc{height:215px;}
+  @keyframes tcTilt{0%,100%{transform:translateY(0) rotate(-3deg);}50%{transform:translateY(-11px) rotate(3deg);}}
+  @media (prefers-reduced-motion: reduce){ .tc-sec-float{animation:none;} }
+  @media (max-width:760px){ .tc-sec-float{display:none;} }
 
   .insp-quickgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
   @media (max-width:640px){ .insp-quickgrid{grid-template-columns:1fr 1fr;} }
@@ -374,6 +436,15 @@ footer ul a:hover{color:var(--blue-deep);}
 .hop-field label{display:block;font-size:12px;font-weight:700;color:var(--slate);margin-bottom:6px;}
 .hop-field input{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;font-family:inherit;font-size:14px;color:var(--ink);background:#FBFDFF;}
 .hop-field input:focus{outline:none;border-color:var(--blue-sky);background:#fff;}
+  .hop-field textarea{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;font-family:inherit;font-size:14px;color:var(--ink);background:#FBFDFF;resize:vertical;min-height:120px;line-height:1.5;box-sizing:border-box;}
+  .hop-field textarea:focus{outline:none;border-color:var(--blue-sky);background:#fff;}
+  .hop-field label .opt{font-weight:400;color:var(--slate);}
+  .feedback-modal h2{font-size:22px;margin-bottom:6px;}
+  .feedback-modal .fb-sub{font-size:13.5px;color:var(--slate);line-height:1.55;margin-bottom:20px;}
+  .feedback-modal .fb-thanks{display:none;text-align:center;padding:6px 0;}
+  .feedback-modal .fb-thanks svg{width:46px;height:46px;color:var(--blue-deep);margin-bottom:8px;}
+  .feedback-modal.sent .fb-form{display:none;}
+  .feedback-modal.sent .fb-thanks{display:block;}
 .hop-forgot{text-align:right;margin-bottom:18px;}
 .hop-forgot a{font-size:12.5px;font-weight:600;color:var(--blue-deep);}
 .hop-submit{display:block;width:100%;background:var(--blue-deep);color:#fff;font-family:inherit;font-weight:700;font-size:15px;padding:14px;border:none;border-radius:12px;text-align:center;cursor:pointer;margin-bottom:16px;transition:opacity .15s ease;}
@@ -417,6 +488,42 @@ footer ul a:hover{color:var(--blue-deep);}
 /* ==== HOP: mascot logo mark (img replacing svg mark, appended) ==== */
 .hop-brand-icon .mark{width:22px;height:34px;object-fit:contain;}
 .logo .mark{object-fit:contain;}
+/* ==== HOP: floating call/text widget (site-wide) ==== */
+.hop-phone-widget{position:fixed;right:24px;bottom:24px;z-index:300;display:flex;flex-direction:column;align-items:flex-end;gap:12px;}
+.hpw-options{display:flex;flex-direction:column;gap:10px;align-items:flex-end;
+  opacity:0;pointer-events:none;transform:translateY(10px) scale(.96);transform-origin:bottom right;
+  transition:opacity .18s ease, transform .18s ease;}
+.hop-phone-widget.open .hpw-options{opacity:1;pointer-events:auto;transform:translateY(0) scale(1);}
+.hpw-option{display:flex;align-items:center;gap:11px;background:#fff;border:1.5px solid var(--line);
+  padding:9px 20px 9px 9px;border-radius:999px;box-shadow:0 10px 26px rgba(0,61,151,.16);
+  font-weight:700;font-size:14px;color:var(--ink);transition:transform .15s ease, box-shadow .15s ease;white-space:nowrap;}
+.hpw-option:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(0,61,151,.22);}
+.hpw-option-icon{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;}
+.hpw-option-icon svg{width:17px;height:17px;}
+.hpw-call .hpw-option-icon{background:var(--blue-deep);}
+.hpw-text .hpw-option-icon{background:var(--orange);}
+.hpw-option-text{display:flex;flex-direction:column;line-height:1.25;}
+.hpw-option-label{font-size:13.5px;font-weight:700;color:var(--ink);}
+.hpw-option-sub{font-size:11px;font-weight:600;color:var(--slate);}
+.hpw-toggle{width:60px;height:60px;border-radius:50%;background:var(--orange);color:#fff;
+  display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px rgba(245,130,13,.42);
+  transition:transform .18s ease, box-shadow .18s ease;position:relative;flex-shrink:0;}
+.hpw-toggle:hover{transform:scale(1.06);box-shadow:0 16px 36px rgba(245,130,13,.5);}
+.hpw-toggle svg{width:26px;height:26px;position:absolute;transition:opacity .15s ease, transform .15s ease;}
+.hpw-toggle .hpw-icon-close{opacity:0;transform:rotate(-45deg) scale(.7);}
+.hpw-toggle .hpw-icon-phone{opacity:1;transform:none;}
+.hop-phone-widget.open .hpw-toggle .hpw-icon-phone{opacity:0;transform:rotate(45deg) scale(.7);}
+.hop-phone-widget.open .hpw-toggle .hpw-icon-close{opacity:1;transform:none;}
+.hpw-pulse{position:absolute;inset:0;border-radius:50%;border:2px solid var(--orange);opacity:0;
+  animation:hpwPulse 2.6s ease-out infinite;}
+@keyframes hpwPulse{0%{opacity:.55;transform:scale(1);}100%{opacity:0;transform:scale(1.55);}}
+.hop-phone-widget.open .hpw-pulse{display:none;}
+@media (prefers-reduced-motion:reduce){ .hpw-pulse{animation:none;display:none;} }
+@media (max-width:640px){
+  .hop-phone-widget{right:16px;bottom:16px;}
+  .hpw-toggle{width:54px;height:54px;}
+  .hpw-toggle svg{width:23px;height:23px;}
+}
 </style>
 </head>
 <body>
@@ -428,7 +535,7 @@ footer ul a:hover{color:var(--blue-deep);}
         <span></span><span></span><span></span>
       </button>
       <a href="index.html" class="logo">
-      <img class="mark" src="assets/hop-logo-mark.png" alt="HomeownerPal">
+      <img class="mark" src="assets/hop-logo-mark-v2.png" alt="HomeownerPal">
       
     </a>
     </div>
@@ -447,7 +554,7 @@ footer ul a:hover{color:var(--blue-deep);}
         <h1>Know what things cost before you start.</h1>
         <p class="sub">Tools, materials, and guides generated for homeowners by real tradespeople.</p>
       </div>
-      <img src="assets/hop-pointing-medium.png" alt="HOP" class="tc-hero-hop">
+      <img src="assets/hop-tool-money.png" alt="HOP holding a wrench and cash" class="tc-hero-hop">
     </div>
   </div>
 </section>
@@ -563,12 +670,21 @@ footer ul a:hover{color:var(--blue-deep);}
 
   <!-- SECTION 3: LEARN -->
   <div class="tc-feature" id="learn">
-    <div class="insp-badge">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h20M6 3v18M6 8h4M6 13h4M6 18h4M14 21V3l6 4v14z"/></svg>
-      Free, no sign-in, no paywall
+    <div class="tc-sec-head">
+      <div class="tc-sec-head-text">
+        <div class="tc-bigbadge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h20M6 3v18M6 8h4M6 13h4M6 18h4M14 21V3l6 4v14z"/></svg>
+          Guides
+        </div>
+        <div class="insp-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h20M6 3v18M6 8h4M6 13h4M6 18h4M14 21V3l6 4v14z"/></svg>
+          Free, no sign-in, no paywall
+        </div>
+        <h2 class="insp-h2">Real trade knowledge, not a watered-down FAQ.</h2>
+        <p class="insp-intro-p">Plain-English guides, diagrams, and reference material covering the electrical, plumbing, and HVAC systems behind your walls, built from real hands-on trade experience. Not to turn you into a tradesperson, but so you can spot a problem early, ask the right questions, and know when a quote doesn't add up.</p>
+      </div>
+      <img src="assets/home-systems-guide.png" alt="Home Systems Guide book" class="tc-sec-float tc-sec-float--book">
     </div>
-    <h2 class="insp-h2">Real trade knowledge, not a watered-down FAQ.</h2>
-    <p class="insp-intro-p">Plain-English guides, diagrams, and reference material covering the electrical, plumbing, and HVAC systems behind your walls, built from real hands-on trade experience. Not to turn you into a tradesperson, but so you can spot a problem early, ask the right questions, and know when a quote doesn't add up.</p>
 
     <div class="insp-quickgrid" style="grid-template-columns:repeat(3,1fr);">
       <a href="learn-electrical.html" class="insp-quick-card">
@@ -608,12 +724,17 @@ footer ul a:hover{color:var(--blue-deep);}
 
   <!-- SECTION 4: MATERIAL CALCULATOR -->
   <div class="tc-feature" id="material-calculator">
-    <div class="insp-badge" style="background:var(--blue-pale);color:var(--blue-deep);">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg>
-      Free DIY calculator
+    <div class="tc-sec-head">
+      <div class="tc-sec-head-text">
+        <div class="tc-bigbadge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg>
+          Free DIY calculator
+        </div>
+        <h2 class="insp-h2">Paint &amp; Material Calculator</h2>
+        <p class="insp-intro-p">Enter your room dimensions and we'll tell you exactly how much paint, flooring, tile, or drywall to buy. Stop guessing at the hardware store, and stop hauling back leftovers.</p>
+      </div>
+      <img src="assets/material-calculator.png" alt="Paint &amp; Material Calculator device" class="tc-sec-float tc-sec-float--calc">
     </div>
-    <h2 class="insp-h2">Paint &amp; Material Calculator</h2>
-    <p class="insp-intro-p">Enter your room dimensions and we'll tell you exactly how much paint, flooring, tile, or drywall to buy. Stop guessing at the hardware store, and stop hauling back leftovers.</p>
 
     <div class="calc-panel">
       <div class="calc-tabs">
@@ -746,7 +867,7 @@ footer ul a:hover{color:var(--blue-deep);}
   <div class="wrap">
     <div class="inner">
       <h2>Start documenting your home today.</h2>
-      <p>Free forever. No credit card. No sales calls.</p>
+      <p>Free to sign up. No credit card. No sales calls.</p>
       <div class="btns">
         <a href="#" class="btn btn-primary" onclick="HOP.open();return false;">Start my home profile, free</a>
         <a href="hopline.html" class="btn btn-outline">Talk to the HOPline</a>
@@ -759,7 +880,7 @@ footer ul a:hover{color:var(--blue-deep);}
   <div class="wrap">
     <div class="reviews-strip-head">
       <span class="kicker"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.1 6.3 7 1-5 4.9 1.2 6.9L12 17.8l-6.3 3.3L7 14.2l-5-4.9 7-1z"/></svg> Reviews</span>
-      <a href="about.html#reviews">Read more reviews →</a>
+      <a href="reviews.html">Read more reviews →</a>
     </div>
     <div class="reviews-strip-grid">
       <div class="review-card">
@@ -792,7 +913,7 @@ footer ul a:hover{color:var(--blue-deep);}
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="index.html" class="logo">
-          <img class="mark" src="assets/hop-logo-mark.png" alt="HomeownerPal">
+          <img class="mark" src="assets/hop-logo-mark-v2.png" alt="HomeownerPal">
           HomeownerPal
         </a>
         <p>Your home, documented and protected. Free tools for homeowners, built from real trade experience.</p>
@@ -813,7 +934,7 @@ footer ul a:hover{color:var(--blue-deep);}
           <li><a href="tools-costs.html">Tools &amp; Costs</a></li>
           <li><a href="tools-materials.html">Tools &amp; Materials</a></li>
           <li><a href="tools-costs.html#inspection-costs">Inspection Red Flags</a></li>
-          <li><span class="footer-soon">Generator Sizing <em>(coming soon)</em></span></li>
+          <li><a href="generator-sizing.html">Generator Sizing</a></li>
           <li><a href="hopline.html">Call the HOPline</a></li>
         </ul>
       </div>
@@ -839,6 +960,7 @@ footer ul a:hover{color:var(--blue-deep);}
           <li><a href="reviews.html">Reviews</a></li>
           <li><a href="support-hop.html">Support</a></li>
           <li><a href="game-arcade.html">Game Arcade</a></li>
+          <li><a href="chatgpt.html">HomeownerPal + ChatGPT</a></li>
         </ul>
       </div>
     </div>
@@ -859,13 +981,13 @@ footer ul a:hover{color:var(--blue-deep);}
         <a href="privacy.html">Privacy</a>
         <a href="property-managers.html">For Property Managers</a>
         <a href="hopline.html">Call the HOPline</a>
-        <a href="#">Send feedback</a>
+        <a href="#" onclick="HOPFeedback.open();return false;">Send feedback</a>
       </div>
       <div class="socials">
-        <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 5.9c-.7.3-1.5.6-2.3.7.8-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.6 1-.8-.8-1.9-1.3-3-1.3-2.3 0-4.1 1.9-4.1 4.1 0 .3 0 .6.1.9-3.4-.2-6.5-1.8-8.5-4.3-.4.6-.6 1.3-.6 2.1 0 1.4.7 2.7 1.8 3.4-.7 0-1.3-.2-1.9-.5v.1c0 2 1.4 3.6 3.3 4-.3.1-.7.1-1.1.1-.3 0-.5 0-.8-.1.5 1.6 2 2.8 3.8 2.8-1.4 1.1-3.2 1.7-5.1 1.7-.3 0-.7 0-1-.1 1.8 1.2 4 1.8 6.3 1.8 7.5 0 11.7-6.3 11.7-11.7v-.5c.8-.6 1.5-1.3 2-2.1z"/></svg></a>
-        <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5H16l.5-3H13.5V8.4c0-.9.2-1.5 1.5-1.5H16.5V4.2C16.2 4.2 15.2 4 14 4c-2.4 0-4 1.5-4 4.1v2.4H7.5v3H10V21h3.5z"/></svg></a>
-        <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="5"/></svg></a>
-        <a href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></a>
+        <a href="https://x.com/HomeownerPal" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 5.9c-.7.3-1.5.6-2.3.7.8-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.6 1-.8-.8-1.9-1.3-3-1.3-2.3 0-4.1 1.9-4.1 4.1 0 .3 0 .6.1.9-3.4-.2-6.5-1.8-8.5-4.3-.4.6-.6 1.3-.6 2.1 0 1.4.7 2.7 1.8 3.4-.7 0-1.3-.2-1.9-.5v.1c0 2 1.4 3.6 3.3 4-.3.1-.7.1-1.1.1-.3 0-.5 0-.8-.1.5 1.6 2 2.8 3.8 2.8-1.4 1.1-3.2 1.7-5.1 1.7-.3 0-.7 0-1-.1 1.8 1.2 4 1.8 6.3 1.8 7.5 0 11.7-6.3 11.7-11.7v-.5c.8-.6 1.5-1.3 2-2.1z"/></svg></a>
+        <a href="https://www.facebook.com/HomeownerPal/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5H16l.5-3H13.5V8.4c0-.9.2-1.5 1.5-1.5H16.5V4.2C16.2 4.2 15.2 4 14 4c-2.4 0-4 1.5-4 4.1v2.4H7.5v3H10V21h3.5z"/></svg></a>
+        <a href="https://www.tiktok.com/@homeownerpal" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.53 1.5h3.03c.18 1.53.73 3.02 1.85 4.1 1.1 1.06 2.6 1.55 4.09 1.71v3.13c-1.4-.05-2.8-.34-4.07-.95-.55-.25-1.06-.57-1.57-.89-.01 2.83.01 5.66-.02 8.48-.08 1.36-.53 2.71-1.31 3.83-1.27 1.86-3.47 3.08-5.73 3.12-1.39.08-2.78-.3-3.96-1-1.96-1.15-3.34-3.27-3.54-5.54-.02-.48-.03-.97-.01-1.45.18-1.84 1.09-3.61 2.5-4.81 1.61-1.4 3.86-2.07 5.97-1.67.02 1.44-.04 2.87-.04 4.31-.96-.31-2.09-.22-2.93.36-.61.4-1.08 1.01-1.32 1.7-.2.5-.15 1.04-.14 1.57.23 1.59 1.76 2.93 3.39 2.79 1.09-.01 2.13-.64 2.69-1.56.19-.32.39-.65.4-1.03.1-1.74.06-3.47.07-5.2.01-3.91-.01-7.81.02-11.71z"/></svg></a>
+        <a href="https://www.youtube.com/@HomeownerPal/shorts" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></a>
       </div>
       <div>© 2026 HomeownerPal. Built with care for homeowners.</div>
     </div>
@@ -1034,7 +1156,7 @@ calcDrywall();
   <nav class="nav-drawer" aria-label="Site menu">
     <div class="nav-drawer-head">
       <a href="index.html" class="logo">
-        <img class="mark" src="assets/hop-logo-mark.png" alt="HomeownerPal">
+        <img class="mark" src="assets/hop-logo-mark-v2.png" alt="HomeownerPal">
         Homeowner<span class="pal">Pal</span>
       </a>
       <button class="nav-drawer-close" onclick="HOPNav.close()" aria-label="Close menu">
@@ -1043,6 +1165,7 @@ calcDrywall();
     </div>
     <ul class="nav-drawer-list">
       <li><a href="index.html">Home</a></li>
+      <li><a href="my-home.html">My Home</a></li>
       <li><a href="diagnose.html">Diagnose</a></li>
       <li><a href="find-a-pro.html">Find a Pro</a></li>
       <li><a href="tools-costs.html">Tools and Costs</a></li>
@@ -1054,6 +1177,7 @@ calcDrywall();
       <li><a href="contractor-forum.html">Contractor Forum</a></li>
       <li><a href="support-hop.html">Support</a></li>
       <li><a href="game-arcade.html">Game Arcade</a></li>
+      <li><a href="chatgpt.html">HomeownerPal + ChatGPT</a></li>
       <li><a href="reviews.html">Reviews</a></li>
       <li><a href="privacy.html">Privacy Policy</a></li>
       <li><a href="terms.html">Terms of Service</a></li>
@@ -1106,6 +1230,43 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape') HOPInstall
 <!-- ==== end HOP INSTALL modal ==== -->
 
 <!-- ==== HOP AUTH modal ==== -->
+<!-- ==== HOP: feedback popup (appended) ==== -->
+<div class="hop-modal-overlay" id="hopFeedback" onclick="if(event.target===this)HOPFeedback.close()">
+  <div class="hop-modal feedback-modal">
+    <button class="hop-modal-x" onclick="HOPFeedback.close()" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div class="fb-form">
+      <h2>Send us feedback</h2>
+      <p class="fb-sub">Spotted a bug? Got an idea? Tell us, every message goes straight to the team.</p>
+      <div class="hop-field"><label>Name <span class="opt">(optional)</span></label><input id="fbName" type="text" placeholder="Your name" autocomplete="name"></div>
+      <div class="hop-field"><label>Email</label><input id="fbEmail" type="email" placeholder="you@example.com" autocomplete="email"></div>
+      <div class="hop-field"><label>Message</label><textarea id="fbMessage" placeholder="What's on your mind?"></textarea></div>
+      <button class="hop-submit" onclick="HOPFeedback.send()">Send feedback</button>
+    </div>
+    <div class="fb-thanks">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+      <h2>Thanks for the feedback!</h2>
+      <p class="fb-sub">We read every message. Thanks for helping make HomeownerPal better.</p>
+      <button class="hop-submit" onclick="HOPFeedback.close()">Done</button>
+    </div>
+  </div>
+</div>
+<script>
+window.HOPFeedback={
+  open:function(){ var m=document.getElementById('hopFeedback'); if(!m)return; var md=m.querySelector('.feedback-modal'); if(md)md.classList.remove('sent'); m.classList.add('open'); document.body.style.overflow='hidden'; var n=document.getElementById('fbName'); if(n)setTimeout(function(){n.focus();},50); },
+  close:function(){ var m=document.getElementById('hopFeedback'); if(m){ m.classList.remove('open'); document.body.style.overflow=''; } },
+  send:function(){
+    var em=document.getElementById('fbEmail'), mg=document.getElementById('fbMessage');
+    var email=(em.value||'').trim(), msg=(mg.value||'').trim();
+    if(!msg){ mg.focus(); mg.style.borderColor='var(--orange)'; return; }
+    if(!email){ em.focus(); em.style.borderColor='var(--orange)'; return; }
+    var md=document.getElementById('hopFeedback').querySelector('.feedback-modal'); if(md)md.classList.add('sent');
+    try{ document.getElementById('fbName').value=''; em.value=''; mg.value=''; em.style.borderColor=''; mg.style.borderColor=''; }catch(e){}
+  }
+};
+</script>
+<!-- ==== end HOP feedback popup ==== -->
 <div class="hop-modal-overlay" id="hopSignin" onclick="if(event.target===this)HOP.close()">
   <div class="hop-modal">
     <button class="hop-modal-x" onclick="HOP.close()" aria-label="Close">
@@ -1113,7 +1274,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape') HOPInstall
     </button>
     <div class="hop-brand">
       <span class="hop-brand-icon">
-        <img class="mark" src="assets/hop-logo-mark.png" alt="HomeownerPal">
+        <img class="mark" src="assets/hop-logo-mark-v2.png" alt="HomeownerPal">
       </span>
       <span class="hop-brand-name">HomeownerPal</span>
     </div>
@@ -1180,5 +1341,46 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape') HOPInstall
 })();
 </script>
 <!-- ==== end HOP AUTH modal ==== -->
+<!-- ==== HOP: floating call/text widget (site-wide) ==== -->
+<div class="hop-phone-widget" id="hopPhoneWidget">
+  <div class="hpw-options" id="hpwOptions">
+    <a href="sms:+14234675463" class="hpw-option hpw-text">
+      <span class="hpw-option-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      </span>
+      <span class="hpw-option-text">
+        <span class="hpw-option-label">Text HOP</span>
+        <span class="hpw-option-sub">(423) 467-5463</span>
+      </span>
+    </a>
+    <a href="tel:+14234675463" class="hpw-option hpw-call">
+      <span class="hpw-option-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+      </span>
+      <span class="hpw-option-text">
+        <span class="hpw-option-label">Call HOP</span>
+        <span class="hpw-option-sub">(423) 467-5463</span>
+      </span>
+    </a>
+  </div>
+  <button type="button" class="hpw-toggle" id="hpwToggle" onclick="HOPPhone.toggle(event)" aria-label="Call or text HomeownerPal" aria-expanded="false">
+    <span class="hpw-pulse" aria-hidden="true"></span>
+    <svg class="hpw-icon-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+    <svg class="hpw-icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+</div>
+<script>
+window.HOPPhone={
+  toggle:function(e){ if(e) e.stopPropagation(); var w=document.getElementById('hopPhoneWidget'); if(!w) return;
+    var isOpen=w.classList.toggle('open'); var t=document.getElementById('hpwToggle'); if(t) t.setAttribute('aria-expanded', isOpen?'true':'false'); },
+  close:function(){ var w=document.getElementById('hopPhoneWidget'); if(w){ w.classList.remove('open'); var t=document.getElementById('hpwToggle'); if(t) t.setAttribute('aria-expanded','false'); } }
+};
+document.addEventListener('click',function(e){
+  var w=document.getElementById('hopPhoneWidget');
+  if(w && w.classList.contains('open') && !w.contains(e.target)) HOPPhone.close();
+});
+document.addEventListener('keydown',function(e){ if(e.key==='Escape') HOPPhone.close(); });
+</script>
+<!-- ==== end HOP floating call/text widget ==== -->
 </body>
 </html>
